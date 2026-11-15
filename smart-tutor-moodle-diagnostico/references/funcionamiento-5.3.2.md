@@ -79,4 +79,3 @@ La copia del curso incluye la configuración de cada asistente, sus herramientas
 - Los PDF escaneados (solo imagen) no aportan texto.
 - En la app de Moodle solo hay chat escrito; voz, imágenes y botones están en la web.
 - La política de idioma solo permite fijar inglés o español; «Automático» sigue al alumno.
-- Existen dos permisos antiguos (ver registros de conversación y ejecutar pruebas de conexión) que el plugin declara pero no usa: concederlos o quitarlos no cambia nada.
