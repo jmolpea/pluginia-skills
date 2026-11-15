@@ -1,0 +1,14 @@
+interface:
+  display_name: Pluginia Analytics · Diagnóstico
+  short_description: Revisa paneles, alumnos en riesgo y mensajes automáticos
+  default_prompt: Usa $pluginia-analytics-moodle-diagnostico para analizar este caso y
+    proponer primero ajustes de configuración con una prueba controlada.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

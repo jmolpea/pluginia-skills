@@ -1,0 +1,14 @@
+interface:
+  display_name: Tema RSMAX · Diagnóstico
+  short_description: Configura colores, encabezado, pie y cursos del tema RSMAX
+  default_prompt: Usa $tema-rsmax-moodle-diagnostico para analizar este caso del
+    tema RSMAX y proponer primero ajustes del panel con una prueba controlada.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

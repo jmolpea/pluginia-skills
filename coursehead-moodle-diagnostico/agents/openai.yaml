@@ -1,0 +1,14 @@
+interface:
+  display_name: Course Head Assets · Diagnóstico
+  short_description: Resuelve por qué el CSS o JS de un curso no se aplica
+  default_prompt: Usa $coursehead-moodle-diagnostico para analizar este caso y proponer
+    primero ajustes de configuración con una prueba controlada.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
