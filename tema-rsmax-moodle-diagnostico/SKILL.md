@@ -1,6 +1,6 @@
 ---
 name: tema-rsmax-moodle-diagnostico
-description: Diagnosticar y configurar el tema RSMAX de Moodle (theme_rsmax). Usar cuando alguien pregunta cómo cambiar colores, paletas, tipografía, logotipo, encabezado, pie, página de inicio, página de matriculación o el aspecto de los cursos (Aula RSMAX, banners, presentación del módulo, áreas, etiquetas de tipo y duración), o cuando algo no se ve como espera, por ejemplo colores que no cambian, logotipo ilegible, progreso que no aparece, botón o enlaces del pie ausentes, barra de navegación que falta o asistente de IA mal colocado. Priorizar ajustes del panel y pruebas controladas antes de proponer SCSS propio o cambios de código. Basarse en documentación verificada de la versión 1.4.2 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnosticar y configurar el tema RSMAX de Moodle (theme_rsmax). Usar cuando alguien pregunta cómo cambiar colores, paletas, tipografía, logotipo, encabezado, pie, página de inicio, página de matriculación o el aspecto de los cursos (Aula RSMAX, banners, presentación del módulo, áreas, etiquetas de tipo y duración), o cuando algo no se ve como espera, por ejemplo colores que no cambian, logotipo ilegible, progreso que no aparece, botón o enlaces del pie ausentes, barra de navegación que falta o asistente de IA mal colocado. Priorizar ajustes del panel y pruebas controladas antes de proponer SCSS propio o cambios de código. Basarse en documentación verificada de la versión 1.4.3 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Tema RSMAX: diagnóstico y configuración
@@ -12,11 +12,11 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional del tema. Responder en el idioma del usuario, con una explicación concreta y pasos comprobables en pantalla.
-Leer references/funcionamiento-1.4.2.md al iniciar un diagnóstico y references/limites-1.4.2.md ante dudas de valores admitidos, tamaños, formatos o valores de fábrica.
+Leer references/funcionamiento-1.4.3.md al iniciar un diagnóstico y references/limites-1.4.3.md ante dudas de valores admitidos, tamaños, formatos o valores de fábrica.
 Leer references/configuracion.md para explicar un ajuste, references/protocolo-diagnostico.md para analizar un síntoma y references/ajustes-y-pruebas.md para proponer cambios y pruebas.
 Usar references/casos-validacion.md para comprobar la cobertura antes de distribuir una revisión; sus casos son sintéticos, no incidentes reales.
 Manual público con todos los ajustes, maquetas y simuladores: https://claude.ai/artifact/UgYL8Job3Sh5p6a56HMjSQ
-Esta skill documenta una revisión estática del código que declara la versión 1.4.2 (versión interna 2026111400, solo Moodle 5.3), revisada el 15-11-2026. No afirmar que se ha probado en el Moodle del usuario ni que vale para versiones posteriores.
+Esta skill documenta una revisión estática del código que declara la versión 1.4.3 (versión interna 2026111500, solo Moodle 5.3), revisada el 15-11-2026. No afirmar que se ha probado en el Moodle del usuario ni que vale para versiones posteriores.
 Pedir la versión instalada si se desconoce. Si es otra, delimitar qué información sigue siendo aplicable y remitir al mantenedor (julio@rsmax.es) para lo demás.
 El tema se distribuye solo (gratuito) o con el paquete premium de 17 bloques Pluginia y plugins de IA. Esta skill cubre el tema; de los bloques solo lo que el tema decide (dónde van, colores comunes, «Mostrar a»). Los ajustes propios de cada bloque y de los plugins de IA tienen su documentación.
 

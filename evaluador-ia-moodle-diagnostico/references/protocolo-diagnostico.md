@@ -1,6 +1,6 @@
 # Protocolo de casos
 
-Revisado para la versión 1.7.1 el 15-11-2026.
+Revisado para la versión 1.7.2 el 15-11-2026. En versiones anteriores, los casos de la fila «no se ha podido calificar» no dejaban ninguna nota.
 
 ## Ficha mínima
 Pedir según la consulta:
@@ -18,7 +18,8 @@ No exigir todo para contestar una pregunta simple. No pedir claves ni acceso adm
 ## Árbol de síntomas
 | Síntoma | Causas posibles, de más a menos frecuente | Comprobación |
 |---|---|---|
-| La entrega no tiene nota, comentario ni aviso | Entregó una cuenta que puede calificar; AI Tutor no estaba activado al entregar; retraso de una hora; cron parado; licencia o clave; tope alcanzado; fallo o tiempo de espera del proveedor; modelo inexistente; respuesta sin nota utilizable en tarea de puntos o escala; usuario que firma sin permiso para calificar | Rol de quien entregó; página de AI Tutor; tareas ad hoc pendientes; estado de la licencia; número de correcciones del día; notificaciones a administradores; salida del cron |
+| La entrega no tiene nota, comentario ni aviso | Entregó una cuenta que puede calificar; AI Tutor no estaba activado al entregar; retraso de una hora; cron parado; licencia caducada o clave de API vacía; tope alcanzado; comentarios de retroalimentación desactivados en la tarea; versión anterior a 1.7.2 | Rol de quien entregó; página de AI Tutor; tareas ad hoc pendientes; estado de la licencia; número de correcciones del día; versión instalada; salida del cron |
+| Nota de «no se ha podido calificar automáticamente» | Fallo o tiempo de espera del proveedor; clave rechazada o sin saldo; modelo inexistente; dirección personalizada errónea; respuesta sin nota utilizable en tarea de puntos o escala; usuario que firma sin permiso para calificar | Notificaciones a administradores; proveedor, modelo y modelo personalizado; matrícula y rol del usuario que firma; tamaño de la entrega; salida del cron |
 | Aviso de «no se ha podido leer» | Formato no admitido; archivo protegido, vacío o dañado; tamaño superior al tope; audio sin transcripción activa | Extensión y tamaño de cada archivo frente a la tabla de límites |
 | Nota sin comentario | Comentarios de retroalimentación desactivados en la tarea | Tipos de retroalimentación de la tarea |
 | El alumno ve una nota que debía revisarse | La tarea no usa el flujo de trabajo de calificación | Ajuste de calificación de la tarea |
@@ -27,7 +28,7 @@ No exigir todo para contestar una pregunta simple. No pedir claves ni acceso adm
 | Aviso de confianza baja | Entrega breve, ambigua o parcialmente ilegible; evidencia que la IA no ve; umbral alto | Qué parte de la evidencia llegó realmente a la IA |
 | Unas entregas sí y otras no | Límite diario de la tarea; máximo por alumno; topes por hora; archivos de formatos distintos | Recuento de correcciones guardadas ese día y por alumno |
 | La corrección ignora parte del trabajo | Recorte a 200.000 caracteres o a 5 imágenes; archivo omitido; imágenes de Word, Excel o PowerPoint; descripción más allá de 8.000 caracteres | Orden y tamaño de los archivos; dónde está la evidencia |
-| AI Tutor desactivado sin tocarlo | Usuario que firma eliminado o suspendido y sin reserva válida; tarea copiada o restaurada sin usuarios; restauración anterior a 1.7.1 | Usuario elegido en la tarea; origen de la tarea |
+| AI Tutor desactivado sin tocarlo | Usuario que firma eliminado o suspendido y sin reserva válida; tarea copiada o restaurada sin usuarios (llega siempre desactivada); restauración anterior a 1.7.1 | Usuario elegido en la tarea; origen de la tarea |
 | Doble corrección o doble cobro | Plugin antiguo «AI Tutor» aún instalado y activo | Aviso de migración en los ajustes del sitio |
 | Aviso de autenticación a los administradores | Clave errónea, caducada, sin saldo o de otro proveedor | Proveedor elegido frente a la clave; cuenta del proveedor |
 

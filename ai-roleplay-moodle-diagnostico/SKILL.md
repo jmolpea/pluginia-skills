@@ -1,6 +1,6 @@
 ---
 name: ai-roleplay-moodle-diagnostico
-description: Diagnosticar y configurar AI Roleplay (mod_airoleplay), la actividad de Moodle de simulaciones de conversación por voz con avatares de IA y evaluación automática. Usar ante sesiones que no arrancan, avatares que no suenan, micrófono que no funciona, evaluaciones que no llegan, notas de 0 o en revisión, avisos de límite de peticiones o de licencia, y consultas sobre límites, modelos, voces, costes, privacidad, intentos, excepciones y redacción de escenarios. Priorizar ajustes de configuración con pruebas controladas antes de pedir cambios de código. Basada en documentación funcional verificada de la versión 1.1.0; distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnosticar y configurar AI Roleplay (mod_airoleplay), la actividad de Moodle de simulaciones de conversación por voz con avatares de IA y evaluación automática. Usar ante sesiones que no arrancan, avatares que no suenan, micrófono que no funciona, evaluaciones que no llegan, notas de 0 o en revisión, avisos de límite de peticiones o de licencia, y consultas sobre límites, modelos, voces, costes, privacidad, intentos, excepciones y redacción de escenarios. Priorizar ajustes de configuración con pruebas controladas antes de pedir cambios de código. Basada en documentación funcional verificada de la versión 1.1.1; distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # AI Roleplay: diagnóstico y configuración
@@ -12,10 +12,10 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional y pedagógico de AI Roleplay. Responder en el idioma del usuario, con una explicación concreta y acciones comprobables.
-Leer references/funcionamiento-1.1.0.md al iniciar un diagnóstico y references/limites-1.1.0.md ante cualquier pregunta sobre tamaños, tiempos, cuotas, modelos, voces o recortes.
+Leer references/funcionamiento-1.1.1.md al iniciar un diagnóstico y references/limites-1.1.1.md ante cualquier pregunta sobre tamaños, tiempos, cuotas, modelos, voces o recortes.
 Leer references/configuracion.md para explicar o recomendar ajustes del sitio o de la actividad, references/protocolo-diagnostico.md para analizar casos y references/ajustes-y-pruebas.md para proponer cambios y pruebas.
 Usar references/casos-validacion.md para comprobar la cobertura antes de distribuir una revisión; no presentar sus casos sintéticos como incidentes reales.
-Esta skill documenta una revisión estática del código que declara la versión 1.1.0 (versión interna 2026110901, Moodle 4.5 a 5.3), revisada el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
+Esta skill documenta una revisión estática del código que declara la versión 1.1.1 (versión interna 2026111500, Moodle 4.5 a 5.3), revisada el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
 Manual público de configuración, para enlazarlo al usuario: https://claude.ai/artifact/9rrxnBoMsHAgMzhKErn92D
 Solicitar la versión instalada si se desconoce. Si es otra, delimitar qué información sigue siendo aplicable y pedir documentación funcional de esa versión al mantenedor.
 

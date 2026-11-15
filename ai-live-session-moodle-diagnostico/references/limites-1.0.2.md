@@ -1,6 +1,6 @@
-# Límites y valores de fábrica de AI Live Session 1.0.0
+# Límites y valores de fábrica de AI Live Session 1.0.2
 
-Verificados leyendo el código de la versión 1.0.0 (interna 2026111301) el 15-11-2026. «Fijo» significa que no hay ajuste en pantalla para cambiarlo.
+Verificados leyendo el código de la versión 1.0.2 (interna 2026111501) el 15-11-2026. «Fijo» significa que no hay ajuste en pantalla para cambiarlo.
 
 ## Licencia
 | Dato | Valor |
@@ -22,7 +22,7 @@ Verificados leyendo el código de la versión 1.0.0 (interna 2026111301) el 15-1
 | Llamadas por usuario y minuto | 30 | Mínimo efectivo 1 (0 no es «sin límite») |
 | Llamadas por minuto, todo el sitio | 2000 | Mínimo efectivo 1; cuenta a todos los proveedores juntos |
 
-## Catálogo de modelos (1.0.0)
+## Catálogo de modelos (1.0.2)
 | Proveedor | Recomendado | Otros |
 |---|---|---|
 | OpenAI | GPT-6 Sol | GPT-6 Luna (económico), GPT-6 Astra (premium) |
@@ -40,7 +40,7 @@ Voces: OpenAI 9 (Alloy, Ash, Coral, Echo, Fable, Onyx, Nova, Sage, Shimmer); Gem
 | Velocidad máxima | 1.5x | 1x, 1.25x, 1.5x o 2x |
 | Subtítulos | Sí | Solo YouTube y Vimeo |
 | Tiempo que el reloj puede detenerse | 15 min | Total por intento; 0 = nunca se detiene |
-| Puntuación máxima | 100 | Usar tipo «Puntuación» |
+| Puntuación máxima | 100 | Solo tipo «Puntuación», máximo de 1 o más (el formulario lo exige) |
 | Un tutor valida la nota | El valor del sitio | Fijo si el administrador lo bloquea |
 
 ## Bloque
@@ -49,7 +49,7 @@ Voces: OpenAI 9 (Alloy, Ash, Coral, Echo, Fable, Onyx, Nova, Sage, Shimmer); Gem
 | Bloques por sesión | 1 | Mínimo 1; sin máximo fijado |
 | Fuente del vídeo | YouTube | YouTube, Vimeo o archivo |
 | Archivo de vídeo | — | MP4 o WebM, 1 archivo; tamaño según el límite de subida del sitio |
-| Inicio / final | 0:00 / obligatorio | Final posterior al inicio |
+| Inicio / final | 0:00 / obligatorio | Final posterior al inicio y a todas las preguntas del bloque |
 | Título del bloque | Bloque N | 255 caracteres |
 | Opciones por pregunta | 4 filas | Mínimo 2; se añaden de 2 en 2 |
 | Puntos por pregunta | 1 | Las encuestas no puntúan |
@@ -79,7 +79,7 @@ Voces: OpenAI 9 (Alloy, Ash, Coral, Echo, Fable, Onyx, Nova, Sage, Shimmer); Gem
 | Espera del navegador por un turno | 120 s, con 2 reintentos automáticos |
 | Reintentos del servidor ante fallo transitorio del proveedor | Hasta 3 |
 | Cierre de conversaciones abandonadas | Tarea cada 5 min |
-| Evaluación considerada atascada | 30 min |
+| Evaluación considerada atascada | 30 min; desde entonces el tutor puede relanzarla con «Evaluar de nuevo» |
 | Sondeo del resultado en la página | Cada 5 s, 120 veces (10 min); después hay que recargar |
 
 ## Texto y recortes (fijos)

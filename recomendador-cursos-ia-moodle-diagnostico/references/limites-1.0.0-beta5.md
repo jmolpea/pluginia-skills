@@ -1,24 +1,24 @@
-# Límites y valores por defecto: 1.0.0-beta4
+# Límites y valores por defecto: 1.0.0-beta5
 
-Valores leídos en el código de 1.0.0-beta4 el 15-11-2026. «Fijo» significa que no hay ajuste para cambiarlo.
+Valores leídos en el código de 1.0.0-beta5 el 15-11-2026. «Fijo» significa que no hay ajuste para cambiarlo.
 
-## Ajustes numéricos y su comportamiento con 0
-Los campos numéricos de la página de ajustes no validan rangos: aceptan 0 y negativos sin avisar.
-| Ajuste (nombre en pantalla) | De fábrica | Con 0 o valor extremo |
+## Ajustes numéricos y su rango
+Desde 1.0.0-beta5 la página de ajustes valida estos campos: un valor fuera de rango no se guarda y se muestra el mínimo (o el rango) admitido. Un valor fuera de rango guardado con una versión anterior sigue activo hasta que se guarde la página.
+| Ajuste (nombre en pantalla) | De fábrica | Rango admitido y notas |
 |---|---|---|
 | Duración de la caché del ranking | 1 día | Mínimo efectivo de 1 minuto. |
-| Peticiones a la IA por usuario y día | 5 | 0 bloquea todos los rankings nuevos; no significa «sin límite». |
-| Máximo de cursos por petición | 120 | 0 no envía ningún curso. |
-| Resúmenes de curso por ejecución | 50 | 0 no genera resúmenes. |
-| Cursos mostrados | 4 | 0 no muestra cursos. |
-| Cursos en el ranking | 24 | Si es menor que «Cursos mostrados», no habrá «Ver más». |
-| Rutas mostradas | 2 | 0 no muestra rutas. |
-| Rutas en el ranking | 6 | — |
-| Umbral de relevancia para notificaciones | 70 | 0 avisa de cualquier curso nuevo devuelto. |
-| Días ocultos tras un pulgar abajo | 90 | 0 no oculta nada. |
-| Actividad del usuario (días) | 90 | — |
-| Usuarios por ejecución | 200 | Mínimo efectivo de 1. |
-| Conservación de datos (días) | 365 | 0 conserva siempre; mínimo efectivo de 30. |
+| Peticiones a la IA por usuario y día | 5 | 1 o más. No hay «sin límite». Un 0 heredado de una versión anterior bloquea todos los rankings nuevos. |
+| Máximo de cursos por petición | 120 | 1 o más. |
+| Resúmenes de curso por ejecución | 50 | 0 o más; 0 no genera resúmenes. |
+| Cursos mostrados | 4 | 1 o más. |
+| Cursos en el ranking | 24 | 1 o más. Si es menor que «Cursos mostrados», no habrá «Ver más». |
+| Rutas mostradas | 2 | 1 o más. Para no mostrar rutas se usa «Recomendar rutas de aprendizaje». |
+| Rutas en el ranking | 6 | 1 o más. |
+| Umbral de relevancia para notificaciones | 70 | 0 a 100; 0 avisa de cualquier curso nuevo devuelto. |
+| Días ocultos tras un pulgar abajo | 90 | 0 o más; 0 no oculta nada. |
+| Actividad del usuario (días) | 90 | 1 o más. |
+| Usuarios por ejecución | 200 | 1 o más. |
+| Conservación de datos (días) | 365 | 0 o más; 0 conserva siempre; mínimo efectivo de 30. |
 
 ## Límites fijos
 | Elemento | Límite |

@@ -1,6 +1,6 @@
-# Configuración de Peer Review Studio 1.0.0
+# Configuración de Peer Review Studio 1.0.1
 
-Nombres tal como aparecen en pantalla (idioma español). Valores de fábrica verificados en la versión 1.0.0. Manual público con simuladores: https://claude.ai/artifact/RzMxCe9u5hXWWZy9kPUcXq
+Nombres tal como aparecen en pantalla (idioma español). Valores de fábrica verificados en la versión 1.0.1. Manual público con simuladores: https://claude.ai/artifact/RzMxCe9u5hXWWZy9kPUcXq
 
 ## Sitio (administrador)
 Ruta: Administración del sitio › Extensiones › Módulos de actividad › Peer Review Studio.
@@ -21,7 +21,7 @@ Fuera del plugin, el administrador prepara:
 ## Actividad: Ajustes del flujo de trabajo
 - «Tipo de entrega» (Subida de fichero): fichero, texto en línea o ambos. Con IA, preferir texto en línea o .docx.
 - «Modo de flujo de trabajo» (Programado por fechas): Programado, Manual o Abierto / autoformativo. Programado para cursos con calendario común; Abierto para cursos sin fechas; Manual para controlar cada paso.
-- «Fase manual» (Entrega; solo en Manual): Entrega, Asignación, Revisión, Feedback, Cerrada. Recomendación: pasar pronto de Asignación a Revisión y no ir a Feedback con entregas sin revisar.
+- «Fase manual» (Entrega; solo en Manual): Entrega, Asignación, Revisión, Feedback, Cerrada. Los plazos de recordatorio y reasignación empiezan al abrir Revisión. Recomendación: no ir a Feedback con entregas sin revisar.
 - «Apertura de entregas» (sin fecha; solo Programado): opcional.
 - «Cierre de entregas» (obligatoria en Programado): posterior a la apertura.
 - «Fecha límite de revisión» (obligatoria en Programado): posterior al cierre. Dejar más días que el umbral de reasignación.
@@ -55,7 +55,7 @@ Recomendaciones: criterios observables y distintos entre sí; descripciones que 
 
 ## Panel del tutor y página de una entrega
 - «Emparejar revisores ahora»: reparto inmediato (con asignación automática y en fase que lo permita).
-- «Requiere atención»: «Sin ninguna revisión; requiere a un tutor», «No hay ningún revisor elegible», «Pendiente de emparejamiento», «Pendiente de asignación manual».
+- «Requiere atención»: «Sin ninguna revisión; requiere a un tutor», «No hay ningún revisor elegible», «Revisada parcialmente; sin revisores pendientes», «Pendiente de emparejamiento», «Pendiente de asignación manual».
 - «Asignar manualmente»: entre los «Revisores disponibles».
 - «Retirar revisiones abiertas y volver a emparejar»: conserva las revisiones recibidas.
 - «Nota final fijada por el docente» › «Guardar calificación»: sustituye la nota calculada; vacío la restaura.

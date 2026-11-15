@@ -35,9 +35,9 @@ Un código sin referencia final (solo momento C) no estará en «Problemas técn
 | Aviso de licencia y actividad parada | Evaluación terminada, licencia caducada, dirección del sitio distinta | Estado bajo «Clave de licencia» |
 | «Esta sesión todavía no está disponible» | Algún bloque incompleto | Lista «Falta:» del diseñador |
 | «Esta sesión todavía no está abierta» o «está cerrada» | Fechas o excepción | Apertura, Cierre y excepciones del alumno o de su grupo |
-| El docente en modo prueba no avanza el vídeo fuera de fechas | Limitación conocida de la 1.0.0 | Probar dentro de fechas o quitar la fecha temporalmente |
+| El docente en modo prueba no avanza el vídeo fuera de fechas | Versión anterior a la 1.0.2 | Actualizar; mientras tanto, probar dentro de fechas |
 | El vídeo vuelve atrás o no avanza | Salto más allá de lo visto, velocidad superior a la permitida, pregunta pendiente | «Velocidad máxima»; preguntas del bloque |
-| Nadie completa el vídeo | Final escrito mayor que la duración real; pregunta situada tras el final del fragmento; vídeo privado | «Comprobar el vídeo»; tiempos de las preguntas frente a inicio y final |
+| Nadie completa el vídeo | Final escrito mayor que la duración real; pregunta situada tras el final del fragmento (bloques guardados antes de la 1.0.2); vídeo privado | «Comprobar el vídeo»; tiempos de las preguntas frente a inicio y final |
 | No aparece «Empezar a preparar» | Vídeo incompleto, otro intento en marcha, sin intentos, nota anterior sin publicar, fuera de fechas | Estado en el informe; intentos y publicación |
 | «Debes prepararte un poco más» | Preparación mínima sin cumplir | Valor de «Preparación mínima» |
 | La conversación no empieza (código S) | Clave, modelo o proveedor | Motivo del código; «Probar la conexión» |
@@ -45,14 +45,14 @@ Un código sin referencia final (solo momento C) no estará en «Problemas técn
 | «El contenido fue marcado por el filtro» | Moderación de OpenAI | Si es un falso positivo recurrente, valorar el ajuste con el responsable |
 | No se oye al avatar | Voz de servidor fallida, audio bloqueado, «Sin voz» | Proveedor de TTS y su clave; «Comprobar el sonido» |
 | El alumno no puede hablar | Sin https, navegador sin reconocimiento, permiso denegado, red que bloquea el servicio de voz | Navegador y mensaje mostrado; escribir como alternativa |
-| «En evaluación» durante mucho tiempo | Cron parado, clave o cuota, evaluación que falla y se reintenta | Cron; «Probar la conexión»; tareas fallidas en Moodle |
+| «En evaluación» durante mucho tiempo | Cron parado, clave o cuota, evaluación que falla y se reintenta o que agotó sus reintentos | Cron; «Probar la conexión»; pasados 30 minutos, «Evaluar de nuevo» en la revisión |
 | «Un tutor está revisando tu resultado» | Espera validación; hay avisos; nota retirada | Filtro «Por revisar» |
 | La nota se publicó sola | Validación desactivada en la actividad y sin avisos | Ajuste de la actividad y bloqueo del sitio |
 | Nota baja «injusta» | Poca participación, criterio no evidenciado, entregable no subido (cuenta 0), pesos | Puntuación por criterio y citas; avisos; pesos del bloque |
 | Aviso «La IA no ha podido leer la imagen» | Proveedor sin lectura de imágenes (DeepSeek), imagen ilegible, fallo del análisis | Proveedor del modelo de evaluación; ver la imagen en la revisión |
 | Aviso «Algunas respuestas se han pegado» | El alumno pegó texto en el campo de respuesta | Modo de cada turno en la revisión |
 | No puede repetir | Nota sin publicar, intentos agotados, fuera de fechas | Publicación; intentos; excepción |
-| Falta la nota en el libro | Sin publicar, retirada, modo prueba, tipo de calificación no numérico | Estado del resultado; tipo de calificación |
+| Falta la nota en el libro | Sin publicar, retirada, modo prueba, actividad antigua con escala o sin calificación | Estado del resultado; tipo de calificación |
 | Borrador con IA no llega | Falta transcripción o misión, límite de 30 al día, cron, clave | Mensaje mostrado; cron |
 
 ## Dudas sobre la nota: tabla por criterio

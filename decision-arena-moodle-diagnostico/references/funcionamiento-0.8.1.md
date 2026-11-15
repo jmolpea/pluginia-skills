@@ -1,6 +1,6 @@
-# Funcionamiento verificado de Decision Arena 0.8.0
+# Funcionamiento verificado de Decision Arena 0.8.1
 
-Base: revisión estática del código que declara la versión 0.8.0 y versión interna 2026111211, el 15-11-2026. Requiere Moodle 4.5 y declara compatibilidad hasta Moodle 5.3; madurez beta. No se comparó el ZIP instalado por el cliente ni se ejecutó su Moodle.
+Base: revisión estática del código que declara la versión 0.8.1 y versión interna 2026111500, el 15-11-2026. Requiere Moodle 4.5 y declara compatibilidad hasta Moodle 5.3; madurez beta. No se comparó el ZIP instalado por el cliente ni se ejecutó su Moodle.
 Manual público: https://claude.ai/artifact/LWRnWzs6sxsFBc3Nx2AD3K
 
 ## Qué es
@@ -36,7 +36,7 @@ Si se edita el escenario con intentos existentes, los resultados antiguos conser
 
 ## Límite de tiempo
 Cuenta desde el inicio del intento, sin pausas. La cuenta atrás visible es informativa; quien aplica el límite es el servidor.
-El cierre por tiempo se produce cuando el alumno abre la actividad, la pantalla de juego o intenta enviar una decisión (también desde la aplicación). No hay ningún proceso programado que cierre intentos caducados: un intento abandonado permanece «En curso» y sin nota hasta que el alumno vuelva a entrar o un docente lo elimine.
+El cierre por tiempo se produce al instante cuando el alumno abre la actividad, la pantalla de juego o intenta enviar una decisión (también desde la aplicación). Desde la 0.8.1, además, una tarea programada que se ejecuta cada 10 minutos cierra los intentos abandonados cuando han pasado 5 minutos desde que se agotó el tiempo; depende de que el cron de Moodle funcione. En la 0.8.0 no existe esa tarea y un intento abandonado permanece «En curso» y sin nota hasta que el alumno vuelva a entrar o un docente lo elimine.
 Al cerrarse por tiempo se puntúa con las decisiones tomadas y se anota que expiró el tiempo.
 
 ## Revisión docente
@@ -60,7 +60,7 @@ Una evaluación completada queda pendiente de revisión si la actividad exige ap
 El alumno solo ve algo de la IA cuando la evaluación está completada y aprobada, el intento no está esperando revisión docente y el ajuste de feedback para el alumnado no es «Nada». Ve el feedback general, o también el detalle por criterio y decisión, según ese ajuste, con el aviso de que está generado por IA.
 Modo «Solo feedback»: la IA nunca cambia la nota.
 Modo «Feedback y parte de la nota»: nota combinada = reglas × (100 − peso) % + IA × peso %. Solo se publica automáticamente si la evaluación no requiere revisión y el intento está en «Evaluado». Mientras tanto, la nota publicada es la de reglas. Si el intento exige revisión docente o ya fue revisado, la IA no toca la nota: la combinada aparece como sugerencia en el formulario de revisión.
-Si un docente publica su revisión antes de que la IA termine, la evaluación posterior de la IA vuelve a aplicar sus propias reglas de liberación; puede hacer falta guardar de nuevo la revisión para aprobarla.
+Si un docente publica su revisión antes de que la IA termine, esa revisión no aprueba ni descarta una evaluación que todavía no existe. Cuando la IA responde, la evaluación aplica sus propias reglas de liberación; si queda pendiente de revisión, hay que guardar de nuevo la revisión para aprobarla. La nota publicada por el docente no cambia.
 
 ## Redacción de escenarios con IA
 «Redactar con cualquier asistente de IA» está siempre disponible: el plugin prepara un texto de instrucciones para copiar en un asistente externo y luego se importa la respuesta. Moodle no envía nada.
@@ -80,10 +80,15 @@ Los docentes no tienen por defecto el permiso de realizar el escenario; para pro
 ## Qué se guarda
 Intentos, decisiones con su justificación y estados, evaluaciones automáticas y docentes, y evaluaciones de IA (estado, proveedor, modelo, puntuaciones, confianza, alertas, feedback, error). El texto enmascarado enviado solo se conserva si el administrador lo activa. No se guarda la respuesta íntegra del proveedor ni las instrucciones enviadas.
 El plugin atiende exportación y borrado de datos personales de Moodle; al borrar a un docente, sus revisiones permanecen sin su identidad.
-La copia de seguridad incluye escenario e imágenes y, con datos de usuario, intentos y evaluaciones. El reinicio de curso puede eliminar todos los intentos.
+La copia de seguridad incluye escenario e imágenes y, con datos de usuario, intentos y evaluaciones. Desde la 0.8.1, una evaluación de IA que estuviera en cola al hacer la copia se restaura como fallida, con un mensaje que lo explica, para que un docente pueda relanzarla; en la 0.8.0 quedaba pendiente sin posibilidad de relanzarla. El reinicio de curso puede eliminar todos los intentos.
 
 ## Aplicación Moodle
 El alumno puede hacer la actividad completa en la aplicación con conexión a internet. No hay modo sin conexión. La creación de escenarios, la revisión y la analítica solo están en el navegador.
 
 ## Registros
 Moodle anota intento iniciado, enviado, revisado y eliminado, y evaluación de IA procesada y revisada. No hay panel propio de consumo o coste.
+
+## Tareas en segundo plano
+- Tarea puntual por cada evaluación de IA, creada al terminar el intento o al relanzarla.
+- Tarea programada «Cerrar los intentos de Decision Arena con el tiempo agotado», cada 10 minutos (desde la 0.8.1).
+Ambas dependen del cron de Moodle.

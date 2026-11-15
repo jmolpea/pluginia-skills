@@ -12,7 +12,7 @@ Proveedor de IA de Moodle con «Generar texto» activado. Opcional, «Generar im
 | Prompt base | Solo lectura | Muestra las instrucciones fijas y su versión. | No editable. |
 | Prompt institucional | Vacío | Tono, estilo y prioridades. Admite {sitename}, {userlang}, {maxresults}, {today}. No cambia reglas ni formato. | Pocas frases claras. Cambiarlo obliga a recalcular el ranking de todos en su siguiente visita. |
 | Duración de la caché del ranking | 1 día | Tiempo de reutilización del ranking. | Subir con catálogos estables para gastar menos. |
-| Peticiones a la IA por usuario y día | 5 | Tope de rankings nuevos por persona. | Entre 3 y 5. Nunca 0. |
+| Peticiones a la IA por usuario y día | 5 | Tope de rankings nuevos por persona. | Entre 3 y 5. Mínimo 1. |
 | Máximo de cursos por petición | 120 | Candidatos enviados; el resto se descarta por coincidencia de palabras. | Bajar para ahorrar; mejor acotar con categorías. |
 | Resúmenes de curso por ejecución | 50 | Resúmenes por ejecución horaria. | Dejar. El freno real es el tope del proveedor. |
 
@@ -36,6 +36,7 @@ Si se cambia lo que se envía, ajustar el «Aviso de privacidad» para que diga 
 | Enviar campos de curso no públicos | No | Envía también campos visibles solo para profesorado o nadie. | Dejar apagado: pueden aflorar datos internos en los motivos. |
 
 ## Resultados
+Los campos numéricos se validan al guardar (rangos en la referencia de límites).
 «Cursos mostrados» 4, «Cursos en el ranking» 24, «Rutas mostradas» 2, «Rutas en el ranking» 6, «Umbral de relevancia para notificaciones» 70, «Días ocultos tras un pulgar abajo» 90. Mantener el ranking igual o mayor que lo mostrado. Bloque en columna estrecha: mostrar 2 o 3.
 
 ## Rutas de aprendizaje

@@ -1,6 +1,6 @@
 ---
 name: evaluador-ia-moodle-diagnostico
-description: Diagnostica y ayuda a configurar RSMAX AI Tutor (local_rsmaxtutor), el evaluador de tareas de Moodle con IA. Se usa ante entregas que no se corrigen, rúbricas incompletas, notas distintas para una misma entrega, archivos ignorados, ausencia de retroalimentación, notas publicadas o retenidas sin esperarlo, y ante consultas sobre límites, ajustes del sitio y de cada tarea, prompts y diseño de rúbricas. Prioriza ajustes de configuración, descripción, rúbrica y prompt con pruebas controladas antes de proponer cambios de código. Se basa en documentación funcional verificada de la versión 1.7.1 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnostica y ayuda a configurar RSMAX AI Tutor (local_rsmaxtutor), el evaluador de tareas de Moodle con IA. Se usa ante entregas que no se corrigen, rúbricas incompletas, notas distintas para una misma entrega, archivos ignorados, ausencia de retroalimentación, notas publicadas o retenidas sin esperarlo, y ante consultas sobre límites, ajustes del sitio y de cada tarea, prompts y diseño de rúbricas. Prioriza ajustes de configuración, descripción, rúbrica y prompt con pruebas controladas antes de proponer cambios de código. Se basa en documentación funcional verificada de la versión 1.7.2 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # RSMAX AI Tutor: diagnóstico y configuración
@@ -12,11 +12,11 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional y pedagógico. Responder en el idioma del usuario, con una explicación concreta y acciones comprobables.
-Leer references/funcionamiento-1.7.1.md al iniciar un diagnóstico y references/limites-1.7.1.md ante archivos, tamaños, caracteres, cuotas o respuestas incompletas.
+Leer references/funcionamiento-1.7.2.md al iniciar un diagnóstico y references/limites-1.7.2.md ante archivos, tamaños, caracteres, cuotas o respuestas incompletas.
 Leer references/configuracion.md para explicar cualquier ajuste del sitio o de la tarea con su nombre de pantalla y su valor de fábrica, y references/configuracion-pedagogica.md para mejorar instrucciones y rúbricas.
 Leer references/protocolo-diagnostico.md para analizar casos y references/ajustes-y-pruebas.md antes de proponer cualquier cambio.
 Usar references/casos-validacion.md para comprobar la cobertura antes de distribuir una revisión; no presentar sus casos sintéticos como incidentes reales.
-Esta skill documenta una revisión estática del código que declara la versión 1.7.1 (versión interna 2026111300), revisada el 15-11-2026. No afirmar equivalencia binaria con el ZIP instalado, funcionamiento probado en un Moodle concreto ni vigencia para versiones posteriores.
+Esta skill documenta una revisión estática del código que declara la versión 1.7.2 (versión interna 2026111500), revisada el 15-11-2026. No afirmar equivalencia binaria con el ZIP instalado, funcionamiento probado en un Moodle concreto ni vigencia para versiones posteriores.
 Manual público de configuración, para enlazarlo al usuario: https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk
 Solicitar la versión instalada si se desconoce. Si es otra, delimitar qué información es aplicable y pedir al mantenedor la documentación funcional de esa versión.
 
@@ -66,7 +66,7 @@ No confundir la confianza declarada por la IA con exactitud medida ni con la not
 No equiparar una evaluación nueva hecha en este chat con una reproducción de la ejecución del plugin.
 No asumir que un archivo admitido por Moodle fue leído íntegramente, ni que el plugin avisa de cada archivo omitido.
 No asegurar que el plugin guarda el prompt final ni la respuesta íntegra: no los conserva.
-No prometer reintentos: una entrega que no se corrigió por un límite o un fallo del proveedor no se vuelve a intentar sola.
+No prometer reintentos: una entrega que no se corrigió por un límite o un fallo del proveedor no se vuelve a intentar sola. Desde 1.7.2 el fallo del proveedor deja una nota en la tarea; el límite alcanzado, no.
 No afirmar que omitir un criterio en la retroalimentación significa que no se calificó: pedir la rúbrica guardada.
 No afirmar que el plugin retiene las notas si la tarea no usa el flujo de trabajo de calificación de Moodle.
 No presentar la skill como instalada en Moodle, sincronizada con el repositorio o actualizada automáticamente.

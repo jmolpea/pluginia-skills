@@ -1,6 +1,6 @@
-# Funcionamiento verificado: 1.0.0-beta4
+# Funcionamiento verificado: 1.0.0-beta5
 
-Revisión estática del código que declara 1.0.0-beta4 (interna 2026100600), hecha el 15-11-2026. Admite Moodle 4.5 a 5.3. Todo lo que sigue es comportamiento leído en el código, no probado en un sitio concreto, salvo que se indique.
+Revisión estática del código que declara 1.0.0-beta5 (interna 2026111500), hecha el 15-11-2026. Admite Moodle 4.5 a 5.3. Todo lo que sigue es comportamiento leído en el código, no probado en un sitio concreto, salvo que se indique.
 
 ## Qué es
 Un bloque de Moodle que recomienda a cada persona cursos y rutas de aprendizaje del catálogo del sitio. Solo se puede colocar en la portada del sitio y en el Área personal; nunca dentro de un curso. Solo una instancia por página. No tiene ajustes por instancia: toda la configuración es de sitio.
@@ -53,7 +53,7 @@ La IA escribe una vez por curso un resumen breve en inglés. Se rehace solo si c
 «Útil» / «No me sirve», con motivo opcional en el pulgar abajo. Un pulgar abajo oculta el elemento durante «Días ocultos tras un pulgar abajo» desde la última valoración y se comunica a la IA. Solo se aceptan valoraciones, clics y matrículas de elementos que estén en el ranking guardado de esa persona. Las valoraciones no caducan el ranking.
 
 ## Rutas de aprendizaje
-Las crea quien tenga «Gestionar las rutas de aprendizaje del recomendador»: título, cursos visibles, orden, descripción, imagen y visibilidad. Una ruta se recomienda si está visible, «Recomendar rutas de aprendizaje» está activado y al menos uno de sus cursos visibles es candidato para la persona. La página de la ruta la puede abrir cualquier usuario con permiso de uso; muestra por curso: Completado, En curso, Disponible o No disponible ahora (con motivo). «Matricularme en toda la ruta» matricula solo en los cursos con automatriculación sin clave y muestra el resultado curso por curso.
+Las crea quien tenga «Gestionar las rutas de aprendizaje del recomendador»: título, cursos visibles, orden, descripción, imagen y visibilidad. Una ruta se recomienda si está visible, «Recomendar rutas de aprendizaje» está activado y al menos uno de sus cursos visibles es candidato para la persona. La página de la ruta la puede abrir cualquier usuario con permiso de uso; muestra por curso: Completado, En curso, Disponible o No disponible ahora (con motivo). Si el curso tiene la automatriculación abierta pero queda fuera del catálogo configurado (categoría, exclusión o métodos), el motivo es «No se te puede matricular en este curso desde el recomendador. Abre el curso para ver las opciones de matriculación». «Matricularme en toda la ruta» matricula solo en los cursos con automatriculación sin clave y muestra el resultado curso por curso.
 Botones de IA del formulario: «Generar descripción con IA» (texto en todos los idiomas instalados, con vista previa) y «Generar imagen con IA» (solo con proveedor de imagen; sustituye la imagen al guardar). Requieren cursos seleccionados y que el gestor acepte la política de IA.
 
 ## Tareas
@@ -62,10 +62,10 @@ Botones de IA del formulario: «Generar descripción con IA» (texto en todos lo
 | Generar resúmenes de curso con IA | Cada hora | Hasta «Resúmenes de curso por ejecución». |
 | Ordenar cursos nuevos y avisar a los usuarios | Diaria, sobre las 3:00 | Personas con ranking y respuestas, activas, no revisadas en las últimas 12 horas, con permiso, consentimiento y política aceptados; las menos recientes primero. Pide puntuar solo los cursos nuevos, los añade al ranking y avisa de los que alcanzan el umbral. |
 | Borrar datos antiguos | Diaria, sobre las 4:00 | Aplica «Conservación de datos (días)». |
-Un curso es «nuevo» para una persona si no estaba en su ranking y se creó o modificó, o su matrícula se abrió o cambió, después de la última revisión. Apagar «Avisar de cursos nuevos» quita el aviso, pero la tarea sigue puntuando cursos nuevos (con coste).
+Un curso es «nuevo» para una persona si no estaba en su ranking y se creó o modificó, o su matrícula se abrió o cambió, después de la última revisión. Apagar «Avisar de cursos nuevos» quita el aviso, pero la tarea sigue puntuando cursos nuevos (con coste); la descripción del ajuste lo indica desde 1.0.0-beta5. Si el proveedor rechaza una petición por tope de uso, la tarea se detiene y continúa en la ejecución siguiente.
 
 ## Qué se guarda
 Respuestas actuales y consentimiento; historial de respuestas; último ranking; valoraciones; actividad (mostrado, clic, matrícula); registro de peticiones a la IA (tipo, éxito, error, duración, tokens; no el texto enviado ni la respuesta). «Borrar mis datos» elimina respuestas, consentimiento, ranking, valoraciones y actividad, pero conserva el registro de peticiones. Todo se incluye en las herramientas de privacidad de Moodle y se borra al eliminar al usuario.
 
 ## Informe
-Para quien tenga «Ver el informe…». Periodo por fechas (30 días al abrir). Totales, cursos y rutas más recomendados, y registro de peticiones con usuario. Tablas descargables. «Veces mostrado» cuenta cada aparición de una tarjeta, también recargas.
+Para quien tenga «Ver el informe…». Periodo por fechas (30 días al abrir); el filtro por fechas fallaba en versiones anteriores y está corregido en 1.0.0-beta5. Totales, cursos y rutas más recomendados, y registro de peticiones con usuario. Tablas descargables. «Veces mostrado» cuenta cada aparición de una tarjeta, también recargas.

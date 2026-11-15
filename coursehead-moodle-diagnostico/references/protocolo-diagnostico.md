@@ -28,7 +28,7 @@ No pedir claves, acceso administrativo ni el ZIP del plugin.
 ## Síntoma: llega pero no se nota (CSS)
 Causas probables, por orden: selector que no existe en ese tema o en esa página; regla del tema con más prioridad; errata que invalida la regla o el bloque; propiedad que ese elemento no admite; el elemento se dibuja después.
 Comprobación: inspeccionar el elemento en el navegador y ver si la regla aparece, y si aparece tachada. Probar con un selector más preciso antes de recurrir a forzar la prioridad.
-No verificado: el orden exacto respecto al CSS del tema. No afirmar que «va después».
+Hecho comprobado en Moodle 5.3: el CSS del curso va antes que el del tema, así que a igual precisión gana el tema. No afirmar que «va después».
 
 ## Síntoma: llega pero no se nota (JavaScript)
 1. Sitio: «Permitir JavaScript personalizado». Curso: casilla marcada (viene sin marcar).
@@ -38,14 +38,14 @@ No verificado: el orden exacto respecto al CSS del tema. No afirmar que «va des
 5. La página puede estar excluida (ver síntoma anterior).
 
 ## Síntoma: el formulario no guarda
-- «El código no debe contener…»: localizar el fragmento literal. Si no hay etiquetas, buscar el falso positivo descrito en límites y separar los signos con un espacio.
+- «El código no debe contener…»: localizar la etiqueta o la marca. Si no hay etiquetas, preguntar la versión y buscar el falso positivo descrito en límites (más amplio en 1.2.0); separar los signos con un espacio.
 - «El código supera la longitud máxima…»: reducir el código o pedir al administrador que suba el límite.
-- «El código enviado no superó la validación y no se ha guardado»: el fallo está en un contenido guardado que quien edita no ve (sin permiso o tipo no permitido en el sitio), normalmente porque se bajó un límite después. Lo resuelve quien sí puede ver ese campo, o el administrador subiendo el límite.
+- «El código enviado no superó la validación y no se ha guardado»: en 1.2.0, el fallo está en un contenido guardado que quien edita no ve (sin permiso o tipo no permitido en el sitio), normalmente porque se bajó un límite después; lo resuelve quien sí puede ver ese campo, el administrador subiendo el límite, o actualizar a 1.2.1. En 1.2.1 no debería aparecer: si aparece, recoger el caso para el mantenedor.
 
 ## Síntoma: falta el enlace o faltan campos
 - Sin enlace en el menú «Más»: falta el permiso de gestionar en ese curso.
 - «La edición de … no está disponible»: el sitio no permite ese tipo o falta el permiso de edición. Son dos causas distintas; comprobar las dos.
-- Sin botón de eliminar: el curso no tiene registro guardado.
+- Sin botón de eliminar: el curso no tiene registro guardado o, desde 1.2.1, tiene CSS o JavaScript que ese rol no puede editar.
 
 ## Síntoma: se perdió al restaurar, duplicar o importar
 1. ¿Quién restauró y con qué permisos en el curso de destino? Sin el permiso de edición de cada tipo, ese tipo se descarta.

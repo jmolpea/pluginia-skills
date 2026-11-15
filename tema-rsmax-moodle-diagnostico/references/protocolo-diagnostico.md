@@ -53,7 +53,7 @@ Actividades opcionales con finalización, o secciones bloqueadas visibles que cu
 Cabecera apagada; edición activada; Aula apagada (sin mapa ni siguiente paso); sin progreso no hay mapa; sitio actualizado desde una versión sin Aula (queda apagada hasta que el administrador la encienda).
 
 ### No aparece «Añadir presentación del módulo» o «Añadir área»
-Presentación: Aula encendida, edición activada, página principal del curso y permiso para editar los ajustes del curso; en la primera sección solo si ya existe. Área: edición activada y permiso para gestionar actividades.
+Presentación: Aula encendida, edición activada, página principal del curso y permiso para editar los ajustes del curso; en la primera sección solo si ya existe. Área: edición activada y permisos para gestionar actividades y para añadir un área de texto y medios (sin el segundo, el enlace lleva a un aviso de permiso).
 
 ### No veo «Aspecto de las páginas del curso»
 Solo existe con el Aula apagada.
@@ -61,7 +61,7 @@ Solo existe con el Aula apagada.
 ### El banner no se ve
 1. Banner de curso con «solo en la página principal» y se mira una actividad.
 2. La sección tiene banner propio.
-3. En la página de matriculación, a personas que no pueden entrar en el curso puede no cargarles el banner subido (los archivos se sirven a quien puede entrar): probable; verificar con una persona no matriculada. Alternativa: usar la imagen del curso.
+3. En la página de matriculación sin banner para personas no matriculadas: en versiones anteriores a la 1.4.3 el banner subido solo se servía a quien podía entrar en el curso; desde la 1.4.3 se sirve como la imagen del curso. Comprobar la versión; en un sitio con inicio de sesión obligatorio hace falta sesión.
 4. Caché del curso: purgar cachés.
 
 ### Falta la barra anterior/siguiente
@@ -83,7 +83,10 @@ El sitio fijó sus bloques por otra vía (archivo de configuración o valor ajen
 Error en el SCSS propio. Vaciar ambos campos, guardar y purgar cachés.
 
 ### Error al guardar la presentación de un módulo
-Probable: un campo de una línea supera 255 caracteres. Acortarlo.
+Los campos de una línea admiten 255 caracteres (1333 la dirección del vídeo). Desde la 1.4.3 el formulario lo avisa; en versiones anteriores el guardado fallaba con un error de base de datos. Acortar el texto.
+
+### Un alumno no ve la presentación de un módulo
+Desde la 1.4.3 la presentación solo se muestra a quien puede abrir la sección: no se ve en secciones ocultas ni cerradas por una restricción de acceso. Previsto. El profesorado la ve siempre.
 
 ### Tras restaurar un curso faltan banners o presentaciones
 Se restauran con la copia si esta incluía los archivos del curso. Verificar que el tema está instalado en el sitio de destino. Los ajustes del tema (colores, logotipo) no viajan con el curso.

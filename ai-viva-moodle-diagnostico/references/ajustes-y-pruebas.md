@@ -1,4 +1,4 @@
-# Ajustes y pruebas antes de escalar (AI Viva 1.3.0)
+# Ajustes y pruebas antes de escalar (AI Viva 1.3.1)
 
 Revisado el 15-11-2026.
 
@@ -36,7 +36,6 @@ Avisar siempre del coste: cada intento de prueba y cada regeneración consumen I
 - Usar otro proveedor de IA o un servidor propio.
 - Que la IA vea el vídeo completo o la cara del alumno.
 - Recuperar grabaciones ya borradas.
-- Reescalar notas guardadas tras cambiar la calificación máxima.
 - Ver el gasto real dentro de Moodle.
 En estos casos, explicar la limitación, ofrecer la alternativa más cercana y, si el cliente lo pide, preparar la solicitud para el mantenedor.
 

@@ -40,7 +40,7 @@ No proponer cambios sobre intentos reales con nota publicada sin advertir de su 
 - Nota combinada: comprobar con la fórmula del peso que la nota publicada coincide tras la liberación.
 - Recorte: justificación más larga que su parte del máximo; activar temporalmente la conservación del texto enviado para ver el corte, y desactivarla después.
 - Anonimización: texto con un correo y un nombre inventados; comprobar las marcas en el texto conservado.
-- Límite de tiempo: límite de dos minutos; dejar pasar el tiempo y volver a entrar; el intento debe cerrarse y puntuarse.
+- Límite de tiempo: límite de dos minutos; dejar pasar el tiempo y volver a entrar; el intento debe cerrarse y puntuarse. Variante sin volver a entrar: pasados unos 15 minutos con el cron en marcha, el intento debe aparecer cerrado en el informe.
 - Método de calificación: tres intentos de prueba con recorridos distintos; comparar con el libro de calificaciones.
 - Reescalado: criterios que no suman la calificación máxima; comprobar el aviso y el desglose.
 

@@ -1,6 +1,6 @@
-# Límites y valores por defecto: Peer Review Studio 1.0.0
+# Límites y valores por defecto: Peer Review Studio 1.0.1
 
-Verificados en el código de la versión 1.0.0 el 15-11-2026, salvo las filas marcadas como estimación. Distinguir siempre el límite del plugin del límite de Moodle o del servidor (tamaño de subida, cron, proveedor de IA).
+Verificados en el código de la versión 1.0.1 el 15-11-2026, salvo las filas marcadas como estimación. Distinguir siempre el límite del plugin del límite de Moodle o del servidor (tamaño de subida, cron, proveedor de IA).
 
 ## Requisitos
 | Elemento | Valor |
@@ -39,9 +39,9 @@ Verificados en el código de la versión 1.0.0 el 15-11-2026, salvo las filas ma
 | Elemento | Límite o valor |
 |---|---|
 | Criterios | De 1 a 5 |
-| Niveles por criterio | De 2 a 4 |
+| Niveles por criterio | De 2 a 4; un criterio con etiqueta y menos de 2 niveles da error |
 | Etiquetas de criterio y de nivel | Hasta 255 caracteres |
-| Peso del criterio | Por defecto 1; cualquier valor menor que 0,1 se guarda como 0,1 |
+| Peso del criterio | Por defecto 1; mínimo 0,1 (un valor menor da el error «El peso del criterio debe ser 0,1 o mayor») |
 | Puntuación de nivel | No negativa; al menos un nivel del criterio debe valer más de 0 |
 | Rúbrica de fábrica | 3 criterios de peso 1, niveles con 1, 2, 3 y 4 puntos |
 | Nota mínima con la rúbrica de fábrica | 25 % del máximo de la entrega |
@@ -89,5 +89,5 @@ Verificados en el código de la versión 1.0.0 el 15-11-2026, salvo las filas ma
 | Página de prueba del administrador | Una petición mínima; admite hasta 5 minutos de espera |
 | Modelo, temperatura, tokens, coste | No los fija el plugin: dependen del proveedor de IA del sitio |
 
-## Lo que el plugin no hace en 1.0.0
+## Lo que el plugin no hace en 1.0.1
 No hay entregas en grupo, autoevaluación, revisión por el docente con rúbrica, borradores de revisión, edición de una revisión enviada, anonimato del revisor frente al tutor, exportación de notas propia, ni límite de carga por revisor. No lee PDF ni imágenes para la IA. No guarda el texto enviado a la IA.

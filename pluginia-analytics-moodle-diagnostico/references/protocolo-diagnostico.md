@@ -37,7 +37,7 @@ Comprobar: línea «Actividades con seguimiento»; ajustes de finalización; lib
 ### Un docente no ve un panel, una pestaña o un botón
 - No ve «Pluginia Analytics» en Informes: no tiene el permiso de ver las estadísticas del curso.
 - No ve Demografía, Satisfacción ni el panel de alumnos en riesgo: le falta el permiso de ver demografía y nombres (de fábrica solo gestor).
-- No encuentra «Configurar mensajes automáticos»: el botón está junto al panel de alumnos en riesgo; sin el permiso anterior no se muestra, aunque pueda configurar mensajes.
+- No encuentra «Configurar mensajes automáticos»: está al final de la pestaña Resumen. En 1.1.0 solo se mostraba a quien veía el panel de alumnos en riesgo; desde 1.1.1 lo ve quien puede configurar mensajes. Si falta, comprobar versión y permiso.
 - Ve «Alumno n.º N»: está activado «Ocultar la identidad de los alumnos».
 - Cola de intervención vacía: necesita ambos permisos en el curso, curso visible y datos ya calculados.
 Acción: ajustar permisos del rol o asignarlos solo en los cursos necesarios.
@@ -63,14 +63,14 @@ Comprobar en orden:
 6. Hay alumnos que cumplen la condición (panel de alumnos en riesgo).
 7. Plazo mínimo vencido para ese alumno (historial).
 8. Tope de 200 por curso y ejecución.
-9. El alumno sigue matriculado y no está suspendido.
+9. El alumno sigue matriculado, no está suspendido y no es personal del curso (desde 1.1.1 el profesorado matriculado no recibe mensajes).
 10. Entrega: preferencias de notificación del alumno y correo saliente de Moodle.
 Si el historial muestra el envío, el plugin lo entregó a Moodle; el problema está en la entrega.
 
 ### Mensajes repetidos, inesperados o a quien no toca
 - Se repite cada N días: comportamiento previsto mientras siga cumpliendo la condición; no hay tope.
 - Llega tras acabar el curso: no se miran las fechas del curso; desactivar los mensajes.
-- Lo recibe un docente matriculado: no se filtra por rol.
+- Lo recibe un docente matriculado: solo en 1.1.0; desde 1.1.1 el personal del curso se omite. Recomendar actualizar.
 - Recibe una automatización distinta de la esperada: solo se envía la primera que cumple, por orden.
 - Llega antes del plazo: registro de mensajes borrado por una conservación menor que el plazo.
 - Texto en idioma inesperado: texto propio o plantilla del sitio (igual para todos) frente a texto incorporado (idioma del perfil).
@@ -80,7 +80,7 @@ Si el historial muestra el envío, el plugin lo entregó a Moodle; el problema e
 ### Resumen semanal o exportación programada
 - No llega el resumen: opción sin marcar; semana sin actividad; curso oculto; notificación desactivada por el destinatario.
 - Lo recibe quien no lo pidió: llega a todos los que pueden configurar los mensajes del curso.
-- No llega la exportación: la dirección no corresponde a una cuenta de Moodle activa con acceso al panel del sitio; mayúsculas distintas en el correo (hipótesis en algunas bases de datos); sin cursos con datos.
+- No llega la exportación: la dirección no corresponde a una cuenta de Moodle activa con acceso al panel del sitio; sin cursos con datos. En 1.1.0, además, mayúsculas distintas en el correo podían impedir la coincidencia en algunas bases de datos.
 
 ### Asistente de IA
 - No aparece: proveedor «Desactivado» o sin clave; solo está en la pestaña Resumen.

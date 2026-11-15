@@ -1,6 +1,6 @@
-# Configuración de Decision Arena 0.8.0
+# Configuración de Decision Arena 0.8.1
 
-Nombres tal como se ven en pantalla en español. Valores y límites: ver limites-0.8.0.md. Manual público con explicaciones y simuladores: https://claude.ai/artifact/LWRnWzs6sxsFBc3Nx2AD3K
+Nombres tal como se ven en pantalla en español. Valores y límites: ver limites-0.8.1.md. Manual público con explicaciones y simuladores: https://claude.ai/artifact/LWRnWzs6sxsFBc3Nx2AD3K
 
 ## Ajustes del sitio
 Ubicación: Administración del sitio › Extensiones › Módulos de actividad › Decision Arena. Todos tratan de la IA, que es opcional. Si no se usa IA, no hay nada que configurar.
@@ -11,7 +11,7 @@ Ubicación: Administración del sitio › Extensiones › Módulos de actividad 
 - **Clave de API**: solo con proveedor directo. Recomendar una clave exclusiva para Moodle con límite de gasto en el proveedor. Nunca pedir al usuario que la comparta.
 - **Modelos**: uno por línea; el primero es el predeterminado. Vacío usa la lista propia del proveedor. Un nombre mal escrito o retirado provoca fallos. Si se retira un modelo que una actividad tenía elegido, la evaluación usa el primero de la lista.
 - **Timeout de petición IA**: espera máxima de respuesta. Subir a 120 segundos solo ante fallos por tiempo con modelos lentos. No se aplica con el subsistema de IA de Moodle.
-- **Máximo de caracteres enviados a la IA**: tope de texto del alumno por intento, repartido entre decisiones. Subir si se piden justificaciones largas.
+- **Máximo de caracteres enviados a la IA**: tope de texto del alumno por intento, repartido entre las decisiones con justificación; cada una conserva al menos 200 caracteres. Subir si se piden justificaciones largas.
 - **Modo de anonimización**: estricta (recomendada) o básica. La estricta puede tapar nombres propios que no son personas.
 - **Conservar el texto enviado a la IA**: guarda copia del texto enmascarado para auditoría. Recomendación: apagado, salvo exigencia de auditoría o investigación temporal.
 - **Probar la conexión con la IA** (enlace en la descripción del bloque): envía una petición fija sin datos de alumnos y muestra el resultado o el error del proveedor. Usa los ajustes guardados. Primer paso de cualquier diagnóstico de IA.
@@ -34,9 +34,9 @@ Ubicación: actividad › Configuración.
 ### Intentos y calificación
 - **Intentos permitidos**: 1 para evaluar; varios o ilimitado para practicar. Para una oportunidad extra individual, eliminar el intento.
 - **Método de calificación**: visible con más de un intento.
-- **Calificación máxima**: fijarla antes de que haya intentos; los criterios del escenario deberían sumarla.
+- **Calificación máxima**: fijarla antes de que haya intentos, porque los intentos terminados no se recalculan; los criterios del escenario deberían sumarla.
 - **Un docente revisa cada intento antes de publicar la nota**: retiene nota y desglose hasta la revisión. No activar si no se va a poder revisar. Es distinto de la aprobación de la IA.
-- **Límite de tiempo**: sin pausas; cierre al volver a entrar o enviar.
+- **Límite de tiempo**: sin pausas; cierre al volver a entrar o enviar y, si el alumno abandona, automático a los pocos minutos (requiere cron).
 - **Número máximo de decisiones** (avanzado): 0 recomendado.
 
 ### Evaluación con IA (solo si el administrador la permite)
@@ -52,7 +52,7 @@ Ubicación: actividad › Configuración.
 
 ### Avanzado y finalización
 - **Editar a mano el JSON del escenario** y **JSON del escenario**: solo usuarios avanzados; sustituye el escenario. Preferir importar y exportar en el constructor.
-- **Intentos finalizados / Intentos a finalizar**: condición de finalización propia. No pedir más intentos de los permitidos.
+- **Intentos finalizados / Intentos a finalizar**: condición de finalización propia. El formulario no deja pedir más intentos de los permitidos.
 - Grupos y restricciones de acceso: estándar de Moodle. Para abrir o cerrar por fecha, usar restricciones de acceso.
 
 ## Constructor de escenarios

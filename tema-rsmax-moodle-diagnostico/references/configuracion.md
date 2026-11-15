@@ -1,6 +1,6 @@
-# Configuración del tema RSMAX (1.4.2)
+# Configuración del tema RSMAX (1.4.3)
 
-Ruta de los ajustes de sitio: Administración del sitio > Apariencia > Temas > RSMAX (engranaje). Diez pestañas. Los nombres son los de pantalla en español. Valores de fábrica en limites-1.4.2.md. Manual público: https://claude.ai/artifact/UgYL8Job3Sh5p6a56HMjSQ
+Ruta de los ajustes de sitio: Administración del sitio > Apariencia > Temas > RSMAX (engranaje). Diez pestañas. Los nombres son los de pantalla en español. Valores de fábrica en limites-1.4.3.md. Manual público: https://claude.ai/artifact/UgYL8Job3Sh5p6a56HMjSQ
 
 ## Pestaña «Colores y formas»
 - Manual de configuración: enlace al manual público.

@@ -1,6 +1,6 @@
 ---
 name: forumia-moodle-diagnostico
-description: Diagnostica y ayuda a configurar Forumia - Asistente IA para foros de Moodle (local_forumia). Usar cuando el asistente no responde en un foro, responde solo a algunos estudiantes, no llega el resumen diario, no aparecen sugerencias de nota, reactiva debates antiguos, se desactiva solo, o ante consultas sobre límites diarios, modos de respuesta, prompts, calificación por IA, cuenta del asistente, licencia, proveedores y qué datos se envían a la IA. Prioriza ajustes de configuración con pruebas controladas antes de pedir cambios de código. Se basa en documentación verificada de la versión 1.8.2 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnostica y ayuda a configurar Forumia - Asistente IA para foros de Moodle (local_forumia). Usar cuando el asistente no responde en un foro, responde solo a algunos estudiantes, no llega el resumen diario, no aparecen sugerencias de nota, reactiva debates antiguos, se desactiva solo, o ante consultas sobre límites diarios, modos de respuesta, prompts, calificación por IA, cuenta del asistente, licencia, proveedores y qué datos se envían a la IA. Prioriza ajustes de configuración con pruebas controladas antes de pedir cambios de código. Se basa en documentación verificada de la versión 1.8.3 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Forumia: diagnóstico y configuración
@@ -12,10 +12,10 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional de Forumia para administradores de Moodle y docentes. Responder en el idioma del usuario, con una explicación concreta y pasos comprobables. Tratar al usuario con respeto y sin dar por sabidos Moodle ni la IA.
-Leer references/funcionamiento-1.8.2.md al iniciar cualquier diagnóstico y references/limites-1.8.2.md ante preguntas de cuotas, recortes, tiempos, modelos o formatos.
+Leer references/funcionamiento-1.8.3.md al iniciar cualquier diagnóstico y references/limites-1.8.3.md ante preguntas de cuotas, recortes, tiempos, modelos o formatos.
 Leer references/configuracion.md para explicar o recomendar ajustes, references/protocolo-diagnostico.md para analizar un caso y references/ajustes-y-pruebas.md antes de proponer cambios.
 Usar references/casos-validacion.md solo para comprobar la skill; no presentar sus casos sintéticos como incidentes reales.
-Esta skill documenta una revisión estática del código que declara la versión 1.8.2 (Moodle 4.5 a 5.3), revisada el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
+Esta skill documenta una revisión estática del código que declara la versión 1.8.3 (Moodle 4.5 a 5.3), revisada el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
 Manual público de configuración, con maquetas y simuladores: https://claude.ai/artifact/Qg9adYg7HtbnatxfFCi825. Enlazarlo cuando ayude a localizar un ajuste.
 Preguntar la versión instalada si se desconoce. Si es otra, delimitar qué información sigue siendo aplicable y recomendar pedir al mantenedor la documentación de esa versión.
 
@@ -66,4 +66,4 @@ No afirmar que se anonimiza todo: se quitan los autores, pero el texto escrito p
 No equiparar una respuesta redactada en este chat con lo que habría generado el plugin.
 No atribuir un fallo al proveedor, al cron o a un límite sin una evidencia que lo respalde.
 No presentar como defecto confirmado un comportamiento que la referencia marca como probable.
-No presentar la skill como actualizada automáticamente: documenta la versión 1.8.2.
+No presentar la skill como actualizada automáticamente: documenta la versión 1.8.3.

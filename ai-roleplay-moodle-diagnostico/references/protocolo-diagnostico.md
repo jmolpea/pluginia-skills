@@ -67,13 +67,13 @@ Moderación de OpenAI (si está activa y el modelo es de OpenAI) o filtro propio
 | Aviso «El estudiante habló muy poco…» | Menos de 20 palabras; poca evidencia |
 | Muchas palabras de avatares y pocas del alumno | La nota solo valora al alumno |
 | Conversación correcta y nota baja | Revisar desglose y comentarios; valorar instrucciones de evaluación |
-| Sin conversación y texto de consentimiento retirado | El alumno retiró su consentimiento; no recalcular (la nota pasaría a 0) |
+| Sin conversación y texto de consentimiento retirado | El alumno retiró su consentimiento; la nota se conserva y no se ofrece recalcular. En versiones anteriores a la 1.1.1 el botón sí aparecía y recalcular dejaba la nota en 0: si ocurrió, el profesor debe restituir la nota a mano |
 
 ### El alumno no ve su nota o no está en el libro de calificaciones
 «En revisión»: falta publicar, la revisión está activada o bloqueada por el administrador, o el intento tiene avisos. Solo las notas publicadas llegan al libro, y llega la mejor. Si el alumno retiró su consentimiento, no ve resultados hasta aceptarlo de nuevo.
 
 ### La nota no encaja con la escala
-La nota se guarda ya convertida a la «Calificación máxima» vigente al evaluar. Si la escala se cambió después, las notas anteriores no se reconvierten: comprobar fechas del cambio y de los intentos.
+La nota se guarda convertida a la «Calificación máxima» de la actividad. Desde la 1.1.1, al cambiar esa escala las notas guardadas se convierten solas. Si la escala se cambió con una versión anterior, las notas de entonces quedaron en la escala antigua y no se corrigen solas: comprobar fechas del cambio y de los intentos, y corregir a mano.
 
 ### El tiempo real no se activa o se corta
 Requisitos: motor elegido en el sitio, clave de ese proveedor y un solo avatar. Si falla la conexión, la sesión sigue por turnos con un aviso. Comprobar nombre del modelo de tiempo real, saldo y red del alumno. Gemini Live no está declarado como probado de extremo a extremo.

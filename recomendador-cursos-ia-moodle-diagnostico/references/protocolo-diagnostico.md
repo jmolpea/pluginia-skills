@@ -30,7 +30,7 @@ Distinguir 1 de 2 con el informe: si no hay petición de ranking registrada en e
 La petición falló o la respuesta no tuvo el formato esperado dos veces. Mirar el error en el informe: clave o saldo del proveedor, modelo inexistente, tope de peticiones, tiempo de espera, entrada demasiado larga (bajar «Máximo de cursos por petición»). Si hay éxito en el registro pero error en pantalla, la respuesta era ilegible: probar otro modelo.
 
 ### Mensajes de límite
-«Has alcanzado el límite de hoy…» o «…límite diario…»: ajuste «Peticiones a la IA por usuario y día». Comprobar que no vale 0. Recordar que cuentan fallos y reintentos y que se reinicia a la medianoche del usuario.
+«Has alcanzado el límite de hoy…» o «…límite diario…»: ajuste «Peticiones a la IA por usuario y día». Desde 1.0.0-beta5 el mínimo es 1; en un sitio actualizado desde una versión anterior, comprobar que no quedó guardado un 0. Recordar que cuentan fallos y reintentos y que se reinicia a la medianoche del usuario.
 
 ### Un curso concreto no se recomienda
 Tabla por condición: visible, no terminado, persona no matriculada, método marcado y en plazo, plazas y cohorte, categoría permitida, sin exclusión, visible para la persona. Si todas se cumplen: ¿supera el catálogo el máximo por petición? (preselección por palabras) ¿tiene pulgar abajo de esa persona? ¿la IA lo puntuó bajo? Lo último no es un fallo: mejorar nombre, descripción, etiquetas y campos del curso.
@@ -43,7 +43,7 @@ Solo con automatriculación sin clave y si Moodle admite a esa persona. Con clav
 
 ### Rutas
 - No se recomiendan: «Recomendar rutas de aprendizaje» apagado, ruta oculta, o ninguno de sus cursos es candidato para esa persona.
-- Curso «No disponible ahora» con un motivo que no encaja (dice que no permite automatriculación y sí la permite): el curso queda fuera por el filtro de categoría o el campo de exclusión. Limitación conocida del mensaje.
+- Curso «No disponible ahora» con el motivo «No se te puede matricular en este curso desde el recomendador…»: tiene la automatriculación abierta pero queda fuera por el filtro de categoría, el campo de exclusión o los métodos de matriculación marcados. En versiones anteriores a 1.0.0-beta5 ese caso mostraba, por error, que el curso no permitía la automatriculación.
 - No aparece «Generar imagen con IA»: no hay proveedor de imagen. Error al generar: leer el mensaje del proveedor que muestra el formulario.
 - No deja guardar: hay un curso oculto seleccionado o falta título o cursos.
 
@@ -54,7 +54,7 @@ Cron parado; tarea desactivada; «Avisar de cursos nuevos» apagado; puntuación
 Revisar en el informe qué tipo de petición domina. Rankings: caché corta, cambios frecuentes del prompt institucional o de cursos, límite diario alto. Resúmenes: catálogo que cambia mucho. Ranking de cursos nuevos: tarea nocturna (sigue activa aunque los avisos estén apagados).
 
 ### Informe
-Página en blanco de datos: periodo sin actividad o datos ya borrados por la conservación. CTR bajo: «Veces mostrado» cuenta cada carga. Tokens vacíos: el proveedor no los comunica.
+Error al pulsar el filtro de fechas: fallo de versiones anteriores a 1.0.0-beta5; actualizar. Página en blanco de datos: periodo sin actividad o datos ya borrados por la conservación. CTR bajo: «Veces mostrado» cuenta cada carga. Tokens vacíos: el proveedor no los comunica.
 
 ## Grado de certeza
 Confirmado: evidencia directa del caso y regla aplicable. Probable: mecanismo compatible, pendiente de una comprobación identificada. No comprobable: falta la evidencia decisiva; decir cuál.

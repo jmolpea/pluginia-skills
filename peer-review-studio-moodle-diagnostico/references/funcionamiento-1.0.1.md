@@ -1,6 +1,6 @@
-# Funcionamiento verificado de Peer Review Studio 1.0.0
+# Funcionamiento verificado de Peer Review Studio 1.0.1
 
-Base: revisión estática del código que declara la versión 1.0.0 (versión interna 2026111305, Moodle 4.5 a 5.3), el 15-11-2026. No se ejecutó Moodle ni se comparó con el ZIP instalado. Todo lo que sigue es hecho verificado en el código salvo donde se indica «hipótesis» o «estimación».
+Base: revisión estática del código que declara la versión 1.0.1 (versión interna 2026111500, Moodle 4.5 a 5.3), el 15-11-2026. No se ejecutó Moodle ni se comparó con el ZIP instalado. Todo lo que sigue es hecho verificado en el código salvo donde se indica «hipótesis» o «estimación».
 
 ## Qué es
 Actividad de Moodle de evaluación entre pares. Cada alumno entrega un trabajo, revisa con una rúbrica los trabajos de otros alumnos que el plugin le asigna y recibe comentarios anónimos y una nota. El tutor supervisa desde un panel. Opcionalmente, la IA del sitio da una segunda opinión.
@@ -29,7 +29,8 @@ Solo son candidatos los alumnos que ya han entregado en esa misma actividad, sig
 Nunca se asigna la propia entrega ni una entrega que ese revisor ya tuvo asignada antes, aunque se le retirase.
 Si «Evitar revisiones recíprocas» está marcado, no se asigna a A la entrega de B mientras B tenga asignada (o haya hecho) la de A.
 «Modo del grupo de revisores»: cualquiera, solo quien comparte algún grupo con el autor, o solo quien no comparte ninguno. Se usan los grupos del curso, limitados al agrupamiento de la actividad si lo tiene. Con «mismo grupo», un autor sin grupo no tiene candidatos.
-El reparto es secuencial: procesa las entregas en cola por orden de llegada y, para cada una, toma a los candidatos con menos revisiones asignadas (a igualdad, menos retiradas y entrega más antigua) hasta cubrir el «Objetivo de revisiones recibidas por entrega».
+Siempre se elige a los candidatos con menos revisiones asignadas hasta cubrir el «Objetivo de revisiones recibidas por entrega». Desde 1.0.1 hay dos formas de recorrer la cola. Sin regla de grupos ni de recíprocas (la configuración de fábrica), toda la cola se reparte junta: un revisor por entrega en cada vuelta y, a igualdad de carga, primero quienes entregaron después del autor; así la carga queda igualada. Con «mismo grupo», «grupos distintos» o «Evitar revisiones recíprocas», el reparto sigue siendo secuencial, entrega a entrega por orden de llegada (a igualdad, menos retiradas y entrega más antigua).
+En los dos casos cada entrega recibe el mismo número de revisores, y las asignaciones que ya existen nunca se cambian.
 «Revisiones que cada alumno debe completar» no interviene en el reparto: no limita ni garantiza cuántas se asignan a cada alumno.
 Con asignación automática desmarcada no se encola ni se reparte nada automáticamente; el tutor asigna desde la página de cada entrega.
 El emparejamiento se ejecuta al entregar (si la fase lo permite), en la tarea programada, al guardar la configuración y con el botón «Emparejar revisores ahora». Solo una ejecución a la vez por actividad.
@@ -45,14 +46,14 @@ El autor ve las revisiones como «Comentarios del revisor N», sin identidad. El
 En cada pasada, por cada actividad con cola pendiente, revisiones abiertas o plazo de revisión vencido sin publicar: empareja, avisa a revisores pendientes de aviso, envía recordatorios, retira y reasigna, escala y, en Programado, publica el feedback.
 Recordatorio: uno solo por revisión asignada, pasados los días configurados.
 Reasignación: pasados los días configurados se retira la revisión (el revisor recibe aviso) y la entrega vuelve a la cola mientras no acumule más de 3 revisiones retiradas y siga necesitando revisores.
-Reloj de inactividad: en Programado cuenta desde el cierre de entregas (o desde la asignación si es posterior); en Manual y Abierto, desde el momento de la asignación. Solo corre mientras se puede revisar.
+Reloj de inactividad: en Programado cuenta desde el cierre de entregas (o desde la asignación si es posterior); en Manual, desde que se avisó al revisor de que ya podía revisar, es decir, al abrirse la fase Revisión o al asignarle la revisión si es posterior (corregido en 1.0.1; antes contaba desde la asignación); en Abierto, desde la asignación. Solo corre mientras se puede revisar.
 En Programado, al vencer la fecha límite de revisión se cancelan sin aviso las revisiones abiertas.
 
 ## Escalado y respaldo
 Solo se escalan entregas con cero revisiones recibidas, sin revisiones abiertas, sin nota fijada por el docente y no escaladas antes, cuando ocurre una de estas cosas: terminó el plazo de revisión (Programado), se alcanzaron 3 revisiones retiradas, o la entrega lleva en cola más días que el umbral de reasignación.
 Escalar significa: si el respaldo por IA está activo y disponible, encargar a la IA la nota de la entrega; si no, enviar a los tutores un resumen con los alumnos afectados. La entrega aparece en «Requiere atención».
 En Manual, el escalado solo ocurre en las fases Asignación y Revisión. Una vez en Feedback o Cerrada, las entregas sin revisar ya no se escalan solas.
-Una entrega con alguna revisión pero sin llegar al objetivo nunca se escala.
+Una entrega con alguna revisión pero sin llegar al objetivo nunca se escala: ni aviso a tutores ni respaldo por IA. Desde 1.0.1, si además no le queda ningún revisor asignado mientras el emparejamiento está permitido, aparece en «Requiere atención» como «Revisada parcialmente; sin revisores pendientes».
 Si un tutor asigna a mano o vuelve a emparejar, la entrega sale del estado escalado y el ciclo puede repetirse.
 
 ## Nota
@@ -90,9 +91,17 @@ Con grupos separados, un tutor sin acceso a todos los grupos solo ve y recibe av
 Exporta la entrega, el feedback recibido (sin identidad de revisores) y las revisiones escritas. Borrar a un autor elimina trabajo y ficheros; borrar a un revisor quita identidad y comentarios y conserva la nota propuesta.
 La copia de seguridad incluye ajustes y rúbrica siempre, y entregas, revisiones y notas solo con datos de usuario. El reinicio de curso puede vaciar la actividad y desplaza las fechas.
 
-## Comportamientos conocidos de 1.0.0 que conviene tener presentes
+## Corregido en 1.0.1 respecto a 1.0.0
+- Modo Manual: recordatorios y retiradas ya no se adelantan por los días pasados en la fase Asignación.
+- Reparto: con la configuración de fábrica la carga de revisiones queda igualada cuando se reparte una cola entera (por ejemplo, al cerrar las entregas en Programado).
+- Entregas «Revisada parcialmente» sin nadie asignado: ahora se ven en «Requiere atención».
+- Rúbrica: un peso menor que 0,1 o un criterio con etiqueta y sin niveles dan error en el formulario en lugar de cambiarse en silencio.
+- Ayudas de recordatorio y reasignación: indican que en Manual el contador empieza al abrir la fase Revisión.
+- Enlace al manual de configuración en los ajustes del sitio y en el formulario de la actividad.
+Si el cliente tiene 1.0.0, estos comportamientos siguen presentes en su sitio: recomendar actualizar.
+
+## Comportamientos conocidos de 1.0.1 que conviene tener presentes
 Verificados leyendo el código; no reproducidos en Moodle para esta revisión.
-- Reparto desigual: por ser secuencial, el último alumno en entregar puede quedar con menos revisiones asignadas que las requeridas y otro con más, aunque exista un reparto equilibrado. Rodeo: «Asignar manualmente».
-- Modo Manual: los días de recordatorio y reasignación cuentan desde la asignación, también los pasados en la fase Asignación. Si se tarda en abrir Revisión más que el umbral, puede haber recordatorios y retiradas inmediatos. Rodeo: abrir Revisión enseguida o subir los umbrales.
-- Modo Abierto: una entrega «Revisada parcialmente» que agota las reasignaciones no se escala ni aparece en «Requiere atención», y su autor no ve feedback. Rodeo: asignar a mano, bajar el objetivo o fijar la nota.
-- El contador de revisiones retiradas de una entrega no se reinicia cuando un tutor vuelve a emparejar.
+- Con regla de grupos o de recíprocas, el reparto sigue siendo secuencial y puede dejar a algún alumno con menos revisiones asignadas que las requeridas y a otro con más. Rodeo: «Asignar manualmente».
+- Modo Abierto: una entrega «Revisada parcialmente» que agota las reasignaciones sigue sin publicarse hasta completar el objetivo; no hay aviso por mensaje ni respaldo por IA, solo la fila en «Requiere atención». Rodeo: asignar a mano, bajar el objetivo o fijar la nota.
+- El contador de revisiones retiradas de una entrega no se reinicia cuando un tutor vuelve a emparejar: tras 3 retiradas acumuladas, la siguiente revisión que caduque ya no se reasigna sola.

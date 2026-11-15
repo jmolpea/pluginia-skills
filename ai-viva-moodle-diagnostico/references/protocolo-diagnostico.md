@@ -1,6 +1,6 @@
 # Protocolo de diagnóstico de AI Viva
 
-Para la versión 1.3.0, revisado el 15-11-2026.
+Para la versión 1.3.1, revisado el 15-11-2026.
 
 ## Ficha mínima
 Pedir según la consulta, no todo siempre:
@@ -26,9 +26,10 @@ Comprobar: registro del servidor (ahí está el motivo real); panel de OpenAI; r
 Nota: el alumno nunca ve el motivo real; no deducirlo del mensaje.
 
 ### El alumno se queda en «Analizando…» (documento o presentación)
-Causas: cron parado o lento (el análisis quedó en cola); análisis largo en curso; hipótesis: el proceso que hacía el análisis en el momento de la subida fue interrumpido por el servidor y no quedó en cola.
-Comprobar: que el cron corre; tareas en cola pendientes de AI Viva; tiempo transcurrido.
-Salida: esperar si hay tarea en cola; si lleva mucho más de 10 minutos sin tarea en cola, el docente puede eliminar el intento para que el alumno empiece otro (acción irreversible).
+Causas: cron parado o lento (el análisis quedó en cola); análisis largo en curso; el proceso que hacía el análisis en el momento de la subida fue interrumpido por el servidor.
+Hecho (1.3.1): hay una tarea de respaldo que repite el análisis 30 minutos después de la subida si el intento sigue sin avanzar. En 1.3.0 y anteriores no existía y el intento podía quedarse esperando indefinidamente.
+Comprobar: versión instalada; que el cron corre; tareas en cola pendientes de AI Viva; tiempo transcurrido.
+Salida: esperar al menos 30 a 40 minutos con el cron en marcha; si después sigue igual, el docente puede eliminar el intento para que el alumno empiece otro (acción irreversible).
 
 ### No puede subir el PDF
 Causas: no es un PDF real (documento renombrado); supera «Tamaño máximo del PDF (MB)»; supera el límite de subida del servidor; actividad cerrada; falta el consentimiento.
@@ -80,7 +81,7 @@ No reevaluar el trabajo en el chat como si fuera el plugin.
 
 ### Las grabaciones han desaparecido
 Hecho: borrado nocturno según «Conservar las grabaciones (días)». Se conservan PDF, transcripciones y notas.
-Comprobar: días configurados, fecha de fin del tribunal y fecha de publicación (ver reglas en límites).
+Comprobar: versión instalada (la regla cambió en 1.3.1), días configurados, fecha de publicación de la nota y fecha de fin del tribunal (ver reglas en límites).
 
 ### La IA responde en un idioma inesperado
 Hecho: usa el idioma del perfil de Moodle del alumno, no el del curso ni el del documento.

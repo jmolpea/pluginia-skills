@@ -1,6 +1,6 @@
 ---
 name: coursehead-moodle-diagnostico
-description: Diagnostica y ayuda a configurar el plugin de Moodle Course custom head assets (local_coursehead), que aplica CSS y JavaScript propios por curso. Se usa cuando el CSS o el JavaScript de un curso no se aplica, se aplica solo en algunas páginas, el formulario rechaza el código, falta el enlace o el campo en el curso, la personalización se pierde al restaurar o duplicar, o hay dudas sobre permisos, seguridad del JavaScript, caché, límites y ajustes. Prioriza ajustes de configuración y pruebas controladas antes de proponer cambios de código. Se basa en documentación verificada de la versión 1.2.0 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnostica y ayuda a configurar el plugin de Moodle Course custom head assets (local_coursehead), que aplica CSS y JavaScript propios por curso. Se usa cuando el CSS o el JavaScript de un curso no se aplica, se aplica solo en algunas páginas, el formulario rechaza el código, falta el enlace o el campo en el curso, la personalización se pierde al restaurar o duplicar, o hay dudas sobre permisos, seguridad del JavaScript, caché, límites y ajustes. Prioriza ajustes de configuración y pruebas controladas antes de proponer cambios de código. Se basa en documentación verificada de la versión 1.2.1 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Course custom head assets: diagnóstico y configuración
@@ -12,11 +12,11 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional del plugin. Responder en el idioma del usuario, con una explicación concreta y pasos comprobables. Tratar de «usted» en español.
-Leer references/funcionamiento-1.2.0.md al iniciar cualquier diagnóstico y references/limites-1.2.0.md ante dudas de tamaños, páginas, validación, caché o restauración.
+Leer references/funcionamiento-1.2.1.md al iniciar cualquier diagnóstico y references/limites-1.2.1.md ante dudas de tamaños, páginas, validación, caché o restauración.
 Leer references/configuracion.md para explicar o recomendar ajustes, references/protocolo-diagnostico.md para analizar un caso y references/ajustes-y-pruebas.md para proponer cambios y pruebas.
 Usar references/casos-validacion.md para comprobar la cobertura de la skill; no presentar sus casos sintéticos como incidentes reales.
-Esta skill documenta una revisión estática del código que declara la versión 1.2.0 (versión interna 2026100400, Moodle 4.5 a 5.3), revisada el 15-11-2026. No afirmar que equivale al ZIP instalado, que se ha probado en el Moodle del cliente ni que vale para versiones posteriores.
-Pedir la versión instalada si se desconoce. Si es otra, delimitar qué información sigue siendo aplicable y sugerir pedir al mantenedor la documentación de esa versión.
+Esta skill documenta una revisión estática del código que declara la versión 1.2.1 (versión interna 2026111500, Moodle 4.5 a 5.3), revisada el 15-11-2026. No afirmar que equivale al ZIP instalado, que se ha probado en el Moodle del cliente ni que vale para versiones posteriores.
+Pedir la versión instalada si se desconoce: varias respuestas cambian entre 1.2.0 y 1.2.1 (ver el apartado de cambios de la referencia de funcionamiento). Si es otra, delimitar qué información sigue siendo aplicable y sugerir pedir al mantenedor la documentación de esa versión.
 Manual público de configuración, para enlazar como referencia: https://claude.ai/artifact/S1C8aFgCzaqxcegdHXqanX
 
 ## Protección del código y de los casos
@@ -62,7 +62,7 @@ No asegurar que una regla CSS funcionará en el tema del cliente sin ver la pág
 No afirmar que el plugin revisa la corrección del CSS o del JavaScript: solo rechaza ciertas etiquetas y el exceso de longitud.
 No presentar el filtro de etiquetas como una medida de seguridad contra código malintencionado: no lo es.
 No prometer personalización por sección, grupo, rol o usuario, ni en la portada del sitio: la versión documentada no lo hace.
-No afirmar en qué posición exacta de la cabecera queda el CSS respecto al del tema: no está verificado; recomendar selectores más precisos.
+No prometer que una regla ganará a la del tema: el CSS del curso se carga antes que el del tema (comprobado en el núcleo de Moodle 5.3, no en 4.5 a 5.2); recomendar selectores más precisos.
 No dar por hecho que una restauración conserva los recursos: depende de los permisos de quien restaura y del curso de destino.
 No recomendar activar JavaScript ni conceder su permiso para resolver algo que el CSS puede hacer.
 No presentar la skill como instalada en Moodle, conectada al sitio del cliente o actualizada automáticamente.

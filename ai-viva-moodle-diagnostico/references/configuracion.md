@@ -1,4 +1,4 @@
-# Configuración de AI Viva (versión 1.3.0)
+# Configuración de AI Viva (versión 1.3.1)
 
 Nombres tal como se ven en pantalla en español. Revisado el 15-11-2026. Manual público con fichas, maquetas y simuladores: https://claude.ai/artifact/RckemidnHhdYikr8HM2XHQ
 
@@ -30,7 +30,7 @@ Dónde: Administración del sitio › Extensiones › Módulos de actividad › 
 
 ### Avanzado
 - Tiempo de espera de la API (segundos). Subir solo si fallan por tiempo los documentos muy largos.
-- Máximo de llamadas a la API por usuario por minuto. No bajar de 15; nunca 0.
+- Máximo de llamadas a la API por usuario por minuto. No bajar de 15; nunca 0 (la descripción en pantalla indica ya los mínimos de este ajuste, del tiempo de espera y de los tokens).
 
 ## Ajustes de la actividad
 Dónde: en el curso, Añadir una actividad o un recurso › AI Viva; después, Configuración en el menú de la actividad. Profesor con edición o gestor.
@@ -59,11 +59,11 @@ Dónde: en el curso, Añadir una actividad o un recurso › AI Viva; después, C
 - Modelo IA para evaluación final. Una sola llamada por intento; es donde más rinde un modelo mejor.
 
 ### Miembro del tribunal 1, 2 y 3
-- Nombre, Rol / Cargo (vienen en inglés: cambiarlos), Personalidad y estilo de interrogación, Voz TTS, Avatar y Subir imagen de avatar personalizado.
+- Nombre (viene en inglés: cambiarlo), Rol / Cargo (viene en el idioma de quien crea la actividad), Personalidad y estilo de interrogación, Voz TTS, Avatar y Subir imagen de avatar personalizado.
 - El miembro 1 abre y cierra la sesión. Recomendación: tres perfiles complementarios (método, contenido, aplicación práctica) y tres voces distintas.
 
 ### Calificación y flujo de trabajo
-- Calificación máxima. No cambiarla con intentos ya calificados: las notas guardadas no se reescalan.
+- Calificación máxima. Si se cambia con intentos ya calificados, las notas guardadas se convierten a la escala nueva manteniendo la proporción (desde 1.3.1).
 - Peso del documento, de la presentación y del tribunal (%). Deben sumar 100.
 - Retener las calificaciones para revisión del profesor. Recomendación: activado siempre que la nota cuente.
 - Notificar al estudiante cuando se publique la nota.
@@ -78,6 +78,14 @@ Dónde: en el curso, Añadir una actividad o un recurso › AI Viva; después, C
 ## Excepciones de usuario/grupo
 Dónde: menú de la actividad › Excepciones de usuario/grupo › Añadir excepción.
 Campos: Tipo de excepción, Usuario o Grupo, Número máximo de intentos, Apertura, Cierre. Hay que rellenar al menos uno de los tres últimos.
+
+## Reinicio del curso
+Dónde: reinicio del curso de Moodle, apartado de AI Viva.
+- Eliminar todos los intentos (documentos, grabaciones, conversaciones y calificaciones). Marcada de fábrica. Irreversible.
+- Eliminar todas las excepciones de usuario (marcada) y Eliminar todas las excepciones de grupo (sin marcar).
+
+## Enlace al manual
+Desde 1.3.1 hay un enlace «Manual de configuración» al principio de la página de ajustes del sitio y del formulario de la actividad.
 
 ## Recomendaciones por escenario
 | Escenario | Configuración sugerida |

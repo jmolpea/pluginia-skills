@@ -25,14 +25,14 @@ Mirar el resumen de bloqueados en la página de la entrega: no está en el mismo
 
 ### Un alumno no tiene nada que revisar o tiene menos de las requeridas
 1. No ha entregado: no puede revisar.
-2. Ha entregado tarde respecto a los demás (Abierto) o fue el último en la cola: reparto desigual conocido.
+2. Ha entregado tarde respecto a los demás (Abierto), o la actividad usa regla de grupos o de recíprocas (reparto secuencial), o el sitio sigue en 1.0.0.
 3. Objetivo por entrega menor que las requeridas por alumno.
 4. Reglas de grupo o recíprocas.
 5. No tiene el permiso de revisar o está suspendido en el curso.
 Comprobar la columna «Revisiones hechas» y los pendientes del alumno en el panel.
 
 ### Al alumno le han quitado una revisión
-Superó los días de reasignación, o un tutor volvió a emparejar, o terminó el plazo. En Manual, comprobar cuánto tiempo pasó la actividad en fase Asignación antes de abrir Revisión.
+Superó los días de reasignación, o un tutor volvió a emparejar, o terminó el plazo. En Manual con la versión 1.0.0, comprobar cuánto tiempo pasó la actividad en fase Asignación antes de abrir Revisión (corregido en 1.0.1).
 
 ### No llegan recordatorios o avisos
 Umbral a 0; ya se envió el único recordatorio; cron parado; correo saliente de Moodle; preferencias del usuario; la actividad está oculta o restringida para ese usuario; en Programado el reloj empieza en el cierre.
@@ -41,7 +41,7 @@ Umbral a 0; ya se envió el único recordatorio; cron parado; correo saliente de
 1. Feedback no publicado: Programado antes de la fecha límite; Manual fuera de Feedback o Cerrada; Abierto con la entrega sin completar sus revisiones.
 2. Programado con plazo vencido y cron parado.
 3. Entrega sin ninguna revisión: no hay nota; ver si está escalada.
-4. Abierto y «Revisada parcialmente» de forma indefinida: falta un revisor posible.
+4. Abierto y «Revisada parcialmente» de forma indefinida: falta un revisor posible; mirar si aparece en «Requiere atención» como «Revisada parcialmente; sin revisores pendientes».
 Comprobar en la página de la entrega el texto «Esta nota todavía no es visible para el estudiante…».
 
 ### La nota no cuadra

@@ -1,11 +1,11 @@
-# Configuración de RSMAX AI Tutor 1.7.1: todos los ajustes
+# Configuración de RSMAX AI Tutor 1.7.2: todos los ajustes
 
 Nombres tal como se ven en pantalla en español. Valores de fábrica verificados el 15-11-2026.
 Manual público con explicaciones, maquetas y simuladores: https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk
 Para el diseño de prompts y rúbricas, ver configuracion-pedagogica.md.
 
 ## Ajustes del sitio
-Dónde: Administración del sitio › Extensiones › Extensiones locales › AI Tutor. Solo administradores. Una sola página.
+Dónde: Administración del sitio › Extensiones › Extensiones locales › AI Tutor. Solo administradores. Una sola página, con estos apartados: Manual de configuración (enlace), Licencia, Configuración del proveedor de IA, Transcripción de audio, Usuario AI Tutor y Límites de peticiones.
 
 | Ajuste | De fábrica | Qué hace | Recomendación |
 |---|---|---|---|
@@ -27,7 +27,7 @@ Dónde: Administración del sitio › Extensiones › Extensiones locales › AI
 | Activar el límite de peticiones por usuario | No | Enciende el tope por hora de cada alumno. | Solo ante reenvíos abusivos. |
 | Máximo de peticiones por hora (por usuario) | 10 | Correcciones por hora que puede provocar un alumno. | No bajarlo demasiado si hay varias tareas el mismo día. |
 
-Avisos de la página: estado de la licencia bajo la clave; aviso amarillo «Migración desde la versión anterior» si el plugin antiguo sigue instalado.
+Avisos de la página: enlace al manual al principio; estado de la licencia bajo la clave; aviso amarillo «Migración desde la versión anterior» si el plugin antiguo sigue instalado.
 Al cambiar de proveedor hay que cambiar tres cosas: proveedor, clave y, si se usó, el identificador de modelo personalizado.
 
 ## Ajustes de la tarea de Moodle de los que depende AI Tutor
@@ -35,8 +35,8 @@ Dónde: Tarea › Configuración. No son del plugin, pero condicionan su comport
 
 | Ajuste de Moodle | Efecto sobre AI Tutor |
 |---|---|
-| Flujo de trabajo de calificación | Imprescindible para que existan borradores. Sin él, todo lo que corrige la IA lo ve el alumno al momento. |
-| Tipo de retroalimentación «Comentarios de retroalimentación» | Imprescindible para que se guarden el texto de la IA y el aviso de entrega ilegible. |
+| Flujo de trabajo de calificación | Imprescindible para que existan borradores. Sin él, todo lo que corrige la IA lo ve el alumno al momento. La página de AI Tutor de la tarea avisa cuando no está activado. |
+| Tipo de retroalimentación «Comentarios de retroalimentación» | Imprescindible para que se guarden el texto de la IA y las notas de entrega ilegible o no calificada. |
 | Tipos de entrega y tipos de archivo aceptados | Conviene limitarlos a los formatos que el plugin lee. |
 | Calificación: puntos, escala o ninguna | Determina si la IA propone número, valor de escala o solo comentario. |
 | Método de calificación avanzada: rúbrica o guía | Se usa solo si en la página de AI Tutor se elige usarla. Debe estar definida y lista. |
@@ -46,12 +46,12 @@ Dónde: Tarea › Configuración. No son del plugin, pero condicionan su comport
 | Descripción | Solo llegan a la IA sus primeros 8.000 caracteres de texto. |
 
 ## Ajustes de AI Tutor en la tarea
-Dónde: Tarea › Más › AI Tutor («Configuración de AI Tutor»). Profesor con edición y gestor. Mientras la primera casilla está sin marcar, el resto no se ve.
+Dónde: Tarea › Más › AI Tutor («Configuración de AI Tutor»). Profesor con edición y gestor. Mientras la primera casilla está sin marcar, el resto no se ve. Al principio hay un enlace al manual y, si la tarea no usa el flujo de trabajo de calificación, un aviso.
 
 | Ajuste | De fábrica | Qué hace | Recomendación |
 |---|---|---|---|
 | Activar AI Tutor en esta tarea | No | Interruptor de la tarea. Bloqueado si la licencia no es válida. | Activar antes de que empiecen a entregar; lo anterior no se corrige. |
-| Usuario que responde como IA | Obligatorio al activar | Cuenta a cuyo nombre se guarda la nota. Lista: matriculados en el curso que pueden calificar. | Usar una cuenta específica «AI Tutor», no la del docente. |
+| Usuario que responde como IA | Obligatorio al activar | Cuenta a cuyo nombre se guarda la nota. Lista: matriculados en el curso que pueden calificar. Si deja de poder calificar, las entregas no se envían a la IA y quedan con una nota. | Usar una cuenta específica «AI Tutor», no la del docente. |
 | Prompt para AI Tutor | Plantilla completa | Instrucciones de corrección. Máximo 16.000 caracteres. Vacío = plantilla. | Añadir lo propio de la materia; no repetir formato, idioma, enunciado ni rúbrica. Sin datos personales. |
 | Método de calificación | Solo retroalimentación y calificación (sin rúbrica) | La otra opción: «Usar la rúbrica o guía de evaluación de la tarea (si está configurada)». | Usar la rúbrica siempre que exista y sus nombres sean inequívocos. |
 | Retrasar la respuesta de la IA 1 hora | No | Espera mínima de una hora antes de corregir. | Para que la respuesta no parezca instantánea. |
@@ -74,9 +74,9 @@ Mensajes del formulario: «La configuración de AI Tutor se ha guardado correcta
 | Entregas habladas | Transcripción activada con clave de OpenAI; audios de menos de 25 MB. |
 | Fecha límite masiva | Límite diario de la tarea y tope por hora del sitio por encima del número de alumnos. |
 
-## Lo que no existe en 1.7.1
+## Lo que no existe en 1.7.2
 No hay ajustes por curso ni por categoría, ni configuración por defecto para tareas nuevas.
-No hay botón para volver a corregir una entrega, ni para corregir las anteriores a la activación, ni para reiniciar contadores.
+No hay reintentos automáticos ni botón para volver a corregir una entrega, ni para corregir las anteriores a la activación, ni para reiniciar contadores.
 No hay panel de uso, de coste ni de historial; solo el evento en los registros de Moodle.
 No hay ajustes de temperatura, de longitud de respuesta, de tiempo de espera ni de duración del retraso.
 No funciona con cuestionarios, foros, talleres ni otras actividades: solo con la actividad Tarea.

@@ -1,6 +1,6 @@
-# Límites y valores de fábrica: Pluginia Analytics 1.1.0
+# Límites y valores de fábrica: Pluginia Analytics 1.1.1
 
-Valores leídos en la versión 1.1.0 el 15-11-2026. Un límite documentado es un hecho; que haya causado un caso concreto es una conclusión aparte.
+Valores leídos en la versión 1.1.1 el 15-11-2026. Un límite documentado es un hecho; que haya causado un caso concreto es una conclusión aparte.
 
 ## Datos y actualización
 | Elemento | Valor verificado |
@@ -25,12 +25,12 @@ Valores leídos en la versión 1.1.0 el 15-11-2026. Un límite documentado es un
 |---|---|
 | Umbral de inactividad (sitio) | 14 días; 0 o vacío = 14 |
 | Umbral de progreso (sitio) | 50 %; fuera de 1–100 = 50 |
-| Valores del curso | 0 = usar el del sitio; progreso admitido 1–100 |
+| Valores del curso | 0 = usar el del sitio; progreso admitido 1–100; inactividad máxima 9.999 días (un valor mayor se guarda como 9.999) |
 | Alertas de comportamiento | Activadas de fábrica |
 | «Vista, sin completar» | 7 días de fábrica; permitido 1–60; ventana de 90 días |
 | «Caída de actividad» | 70 % de fábrica; permitido 20–100; compara los últimos 7 días con la media semanal de los 14 anteriores; exige al menos 20 eventos en esos 14 días |
 | Alumnos listados por grupo en el panel | 50; el resto solo se cuenta |
-| Exportación de alumnos en riesgo | Los mismos listados (hasta 50 por grupo) |
+| Exportación de alumnos en riesgo | Todos los alumnos de cada grupo (hasta 5.000 por grupo); en 1.1.0, solo los 50 listados |
 | Cola de intervención | Hasta 200 cursos (por orden alfabético) y 500 filas; solo cursos visibles con datos ya calculados |
 | Tiempo dedicado | Estimación: pausas de más de 30 minutos cierran sesión; cada sesión suma al menos 5 minutos |
 
@@ -42,6 +42,8 @@ Valores leídos en la versión 1.1.0 el 15-11-2026. Un límite documentado es un
 | Candidatos examinados por automatización | Hasta 5.000 |
 | Días mínimos entre mensajes | 7 de fábrica; opciones 1, 2, 3, 5, 7, 14, 21, 30; mínimo efectivo 1 |
 | Tope de mensajes por alumno | No existe |
+| Fechas del curso | No se tienen en cuenta: se envía también tras la fecha de fin mientras esté activado |
+| Personal del curso | No recibe mensajes automáticos (desde 1.1.1) |
 | Automatizaciones encendidas de fábrica | Nunca accedió, Inactivo |
 | Asunto | Obligatorio; máximo 200 caracteres |
 | Plantilla | Obligatoria; texto plano |
@@ -54,7 +56,7 @@ Valores leídos en la versión 1.1.0 el 15-11-2026. Un límite documentado es un
 | Color de acento | #1f4e79 de fábrica; solo se aceptan colores de 3 o 6 cifras hexadecimales |
 | Logotipo en los mensajes | Activado; sin logotipo se muestra el nombre del sitio |
 | Resumen semanal | Lunes 08:00; periodo de 7 días; no se envía si no hubo nada |
-| Exportación programada | Viernes 07:00; destinatarios: cuentas de Moodle no suspendidas con acceso al panel del sitio |
+| Exportación programada | Viernes 07:00; destinatarios: cuentas de Moodle no suspendidas con acceso al panel del sitio; la dirección no distingue mayúsculas |
 | Limpieza por conservación | Domingo 03:00; 0 = conservar siempre (geolocalización y registro de mensajes) |
 
 ## Asistente de IA
@@ -87,7 +89,7 @@ Destinos de red: api.anthropic.com, api.openai.com, generativelanguage.googleapi
 | Efecto | Panel del curso: «≤ N». Sitio, exportaciones e IA: se omite. Filtros con menos personas que el umbral: sin cifras |
 | Ocultar la identidad | Desactivado; afecta a quien no puede configurar el plugin |
 | Evaluación | 15 días |
-| Gracia tras caducar | 30 días |
+| Gracia tras caducar | 30 días, contados desde la fecha de caducidad; la clave vale todo el día de esa fecha |
 | Ligadura de la clave | Dirección exacta del sitio |
 
 No hay límites verificados distintos de estos; no inventar topes (por ejemplo, de número de cursos del sitio o de alumnos por curso).

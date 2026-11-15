@@ -1,6 +1,6 @@
-# Límites y valores de fábrica: 1.4.2
+# Límites y valores de fábrica: 1.4.3
 
-Verificados en el código de la versión 1.4.2 el 15-11-2026. «Vacío» significa que el valor se deriva de otro.
+Verificados en el código de la versión 1.4.3 el 15-11-2026. «Vacío» significa que el valor se deriva de otro.
 
 ## Requisitos
 | Elemento | Valor |
@@ -23,7 +23,7 @@ Verificados en el código de la versión 1.4.2 el 15-11-2026. «Vacío» signifi
 | Cabecera de las actividades, fondo de las actividades, índice del curso | Vacío | Oscuro, fondo del sitio, oscuro de cabeceras |
 | Correcto, parcialmente correcto, incorrecto | #4f8a63, #c98a1f, #c4573f | |
 | Fondo y texto del pie | Vacío | Los del estilo de pie |
-- Formato admitido por el tema: hexadecimal con almohadilla. Un color escrito de otra forma (nombre, rgb) no se aplica y queda el de fábrica.
+- Formato admitido por el tema: hexadecimal con almohadilla, de 3, 6 u 8 dígitos. Un color escrito de otra forma (nombre, rgb) no se aplica y queda el de fábrica.
 - Contraste que busca el tema para el texto sobre color: 4,5 a 1.
 - Paletas preparadas: 8 (Cálida, Pizarra, Bosque, Océano, Marino, Ciruela, Arena, Grafito) más «Personalizada».
 
@@ -93,7 +93,7 @@ Verificados en el código de la versión 1.4.2 el 15-11-2026. «Vacío» signifi
 | Aspecto de las páginas | Escenario (de fábrica) o claro; solo con el Aula apagada |
 | Presentación: archivo | 2 archivos como máximo (imagen o vídeo, y subtítulos VTT); tamaño máximo, el del curso |
 | Presentación: dirección de vídeo | Debe empezar por http o https; YouTube y Vimeo se incrustan |
-| Presentación: línea sobre el texto, vídeo pendiente, título y línea de la tarjeta | 255 caracteres cada uno; el formulario no avisa si se supera y el guardado puede fallar |
+| Presentación: línea sobre el texto, vídeo pendiente, título y línea de la tarjeta | 255 caracteres cada uno (1333 la dirección del vídeo); el formulario avisa si se supera |
 | Nombre de un área | 120 caracteres |
 | Etiqueta de duración | Número (con decimales) seguido de min, m o h |
 | Caché de imágenes de banner en el navegador | Hasta 30 días; una imagen nueva cambia de dirección y se ve al momento |

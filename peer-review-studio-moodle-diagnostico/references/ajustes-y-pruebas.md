@@ -21,7 +21,7 @@ No usar la nota fijada por el docente para tapar un problema de configuración q
 ## Ajustes frecuentes por síntoma
 - Entregas sin revisor en grupos pequeños: quitar «Evitar revisiones recíprocas», volver a «Cualquier alumno elegible», bajar el objetivo.
 - Alumnos que no llegan a las requeridas: igualar requeridas y objetivo; compensar con «Asignar manualmente»; no exigir la finalización por revisiones si el grupo es muy pequeño.
-- Revisiones retiradas demasiado pronto: subir la reasignación; en Manual, abrir Revisión enseguida tras Asignación.
+- Revisiones retiradas demasiado pronto: subir la reasignación; en Manual, si ocurre nada más abrir Revisión, comprobar la versión (corregido en 1.0.1).
 - Feedback que no llega en Abierto: bajar el objetivo, asignar a mano o activar el respaldo por IA.
 - Notas demasiado altas con trabajos flojos: puntuar los niveles desde 0; revisar descripciones de criterios.
 - La IA no califica: cambiar el tipo de entrega a texto en línea o pedir .docx; recordar a los alumnos que acepten la política de IA.

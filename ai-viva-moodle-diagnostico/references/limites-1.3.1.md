@@ -1,6 +1,6 @@
-# Límites y valores por defecto de AI Viva 1.3.0
+# Límites y valores por defecto de AI Viva 1.3.1
 
-Verificados en una revisión estática de la versión 1.3.0, revisada el 15-11-2026. «Fijo» significa que no hay ajuste para cambiarlo. Que un límite exista no demuestra que haya causado un incidente concreto.
+Verificados en una revisión estática de la versión 1.3.1, revisada el 15-11-2026. «Fijo» significa que no hay ajuste para cambiarlo. Que un límite exista no demuestra que haya causado un incidente concreto.
 
 ## Licencia
 | Concepto | Valor |
@@ -33,10 +33,10 @@ Verificados en una revisión estática de la versión 1.3.0, revisada el 15-11-2
 | Duración de la sesión del tribunal (minutos) | 10 | Mínimo 1; el formulario no impone máximo |
 | Modelo IA (documento, tribunal, evaluación) | GPT-6.1 Sol | GPT-6.1 Sol, GPT-6 Astra, GPT-6 Luna (los permitidos) |
 | Nombres de los miembros | Dr. Smith, Prof. Johnson, Dr. Williams | Vacío = «Examinador N» |
-| Rol / Cargo | Chair, Reviewer, Subject Expert | Texto libre |
+| Rol / Cargo | En español: Presidente del tribunal, Revisor, Experto en la materia (según el idioma de quien crea la actividad) | Texto libre |
 | Voz TTS | Onyx, Nova, Echo | 13 voces: Alloy, Ash, Ballad, Cedar, Coral, Echo, Fable, Marin, Nova, Onyx, Sage, Shimmer, Verse |
 | Avatar | 3 (masculino), 2 (femenino), 1 (neutro) | Tres incluidos o una imagen propia (un archivo de imagen) |
-| Calificación máxima | 100 | Entero, mínimo 1 |
+| Calificación máxima | 100 | Entero, mínimo 1; al cambiarla, las notas guardadas se convierten a la escala nueva |
 | Pesos documento · presentación · tribunal | 33 · 33 · 34 | Enteros de 0 a 100 que sumen exactamente 100 |
 | Retener las calificaciones para revisión del profesor | Activado | — |
 | Notificar al estudiante cuando se publique la nota | Activado | — |
@@ -64,6 +64,7 @@ Verificados en una revisión estática de la versión 1.3.0, revisada el 15-11-2
 | Margen para la última respuesta tras acabar el tribunal | 2 minutos |
 | Cierre automático de un tribunal abandonado | 15 minutos después del final, por una tarea que corre cada 10 minutos |
 | Espera del audio de un examinador | Reintento a los 8 segundos; si se atasca 10 segundos, se muestra el texto |
+| Tarea de respaldo de un análisis interrumpido | Se ejecuta 30 minutos después de la subida; no hace nada si el intento ya avanzó |
 | Preparación previa del tribunal | La primera intervención se guarda preparada hasta 2 horas |
 | Espera entre regeneraciones del mismo intento por el mismo docente | 60 segundos por opción; 120 segundos para «Re-analizar todo» |
 | Duración indicada de una regeneración | 1 a 3 minutos |
@@ -84,15 +85,17 @@ Verificados en una revisión estática de la versión 1.3.0, revisada el 15-11-2
 Se borran vídeo, audios de la presentación, capturas y audios de las respuestas cuando se cumplen todas las condiciones:
 - la actividad tiene un plazo mayor que 0;
 - el intento tiene grabación;
-- han pasado esos días desde que el alumno terminó el tribunal (o desde su última actividad, si no lo terminó);
-- y, si lo terminó, la nota está publicada.
-Consecuencia verificada: si la nota se publica cuando el plazo ya ha pasado, el borrado ocurre la noche siguiente a la publicación. Los textos de ayuda en pantalla dicen «días después de calificarse y publicarse»; el cálculo real cuenta desde el final del tribunal.
+- si el alumno terminó el tribunal: la nota está publicada y han pasado esos días desde la publicación (y desde el final del tribunal);
+- si no lo terminó: han pasado esos días desde su última actividad.
+Una nota retenida o retirada no se borra. Retirar y volver a publicar, o que un docente edite la nota publicada, reinicia el plazo.
+Cambio en 1.3.1: hasta la 1.3.0 el plazo se contaba desde el final del tribunal, de modo que una nota publicada tarde perdía sus grabaciones la noche siguiente. Si el cliente está en 1.3.0 o anterior, ese comportamiento sigue aplicándose.
 Tras el borrado ya no se puede re-analizar la presentación; sí recalcular la evaluación con la transcripción guardada.
 
 ## Reglas de excepciones
-Una excepción por usuario o por grupo. La de usuario prevalece sobre las de grupo.
-Con varios grupos: apertura más temprana, cierre más tardío y el número de intentos más alto. Atención: «Ilimitado» en un grupo no gana frente a un número en otro grupo (se toma el número); para garantizar intentos ilimitados use una excepción de usuario.
+Una excepción por usuario o por grupo: añadir otra, o editar una para que apunte a quien ya tenía otra, sustituye a la anterior. La de usuario prevalece sobre las de grupo.
+Con varios grupos: apertura más temprana, cierre más tardío y el número de intentos más alto; «Ilimitado» gana a cualquier número (corregido en 1.3.1; antes se tomaba el número).
+Si la excepción lleva apertura y cierre, el cierre debe ser posterior a la apertura.
 
 ## Precios orientativos que muestra el plugin
 Por millón de tokens de entrada / salida: GPT-6.1 Sol 2 $ / 10 $; GPT-6 Astra 10 $ / 50 $; GPT-6 Luna 0,10 $ / 0,50 $. Transcripción: unos 0,0045 $ por minuto. Las voces se facturan aparte.
-Son los precios de lista que conocía la versión 1.3.0; los vigentes son los de OpenAI. El plugin no calcula ni muestra el gasto real.
+Son los precios de lista que conocía la versión 1.3.1; los vigentes son los de OpenAI. El plugin no calcula ni muestra el gasto real.

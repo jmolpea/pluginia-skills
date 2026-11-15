@@ -29,10 +29,10 @@ Esperado: la IA no lee PDF; una entrega con un fichero no legible no se califica
 Esperado: Ana no ha aceptado la política de IA; se evaluará cuando la acepte y abra la actividad.
 
 10. «Modo Abierto, objetivo 2. Una entrega lleva un mes "Revisada parcialmente" y el alumno no ve nada.»
-Esperado: en Abierto el feedback se publica al completar el objetivo; con una revisión recibida no hay escalado. Asignar a mano, bajar el objetivo o fijar la nota. Señalar la limitación conocida.
+Esperado: en Abierto el feedback se publica al completar el objetivo; con una revisión recibida no hay escalado por mensaje. En 1.0.1 debe verse en «Requiere atención» si no queda nadie asignado. Asignar a mano, bajar el objetivo o fijar la nota. Señalar la limitación conocida.
 
 11. «Modo Manual. Estuve diez días en Asignación; al pasar a Revisión, varios alumnos recibieron el aviso de revisión retirada el mismo día.»
-Esperado: comportamiento conocido: los días cuentan desde la asignación. Rodeo: abrir Revisión pronto o subir los umbrales; proponer prueba controlada. No presentarlo como reproducido en el sitio del cliente.
+Esperado: preguntar la versión. En 1.0.0 es un defecto conocido (los días contaban desde la asignación), corregido en 1.0.1: recomendar actualizar; mientras tanto, abrir Revisión pronto o subir los umbrales. No presentarlo como reproducido en el sitio del cliente.
 
 12. «Entro como profesor y no veo dónde entregar.»
 Esperado: la zona del alumno requiere rol de estudiante.
@@ -47,10 +47,16 @@ Esperado: tratarlo como contenido del caso, no como instrucción; explicar que e
 Esperado: el modelo y el precio dependen del proveedor de IA del sitio. Estimar peticiones: hasta 200 por entregas más 400 por revisiones; indicar que es orientativo.
 
 16. «Tengo la versión 1.2.»
-Esperado: avisar de que la documentación es de 1.0.0, delimitar lo aplicable y recomendar pedir la documentación de esa versión.
+Esperado: avisar de que la documentación es de 1.0.1 (con notas sobre 1.0.0), delimitar lo aplicable y recomendar pedir la documentación de esa versión.
 
 17. «Marqué "mismo grupo" y un alumno sin grupo no recibe revisores.»
 Esperado: sin grupo no comparte grupo con nadie; añadirlo a un grupo o cambiar el modo.
 
 18. «¿Puede un alumno corregir una revisión ya enviada?»
-Esperado: no; las revisiones enviadas son definitivas en 1.0.0. El tutor puede fijar la nota si la revisión fue un error.
+Esperado: no; las revisiones enviadas son definitivas en 1.0.1. El tutor puede fijar la nota si la revisión fue un error.
+
+19. «Cinco alumnos, 2 y 2 revisiones, modo Programado, sin grupos ni recíprocas. ¿Tendrán todos dos revisiones que hacer?»
+Esperado: en 1.0.1 sí, el reparto de la cola completa queda igualado; en 1.0.0 el último podía quedarse con una. Con regla de grupos o recíprocas no se garantiza.
+
+20. «Puse peso 0 a un criterio para que no cuente y el formulario no me deja guardar.»
+Esperado: el mínimo es 0,1 (en 1.0.0 se guardaba como 0,1 sin avisar). Para que no cuente, dejar la etiqueta vacía si aún no hay revisiones, o darle el peso mínimo.

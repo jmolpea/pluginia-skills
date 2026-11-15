@@ -58,7 +58,7 @@ Mirar la comprobación de la puntuación del constructor. Ajustar efectos, valor
 Intento «Entregado» con revisión docente obligatoria, o intento aún «En curso».
 
 ### Intento «En curso» con el tiempo agotado
-Comportamiento previsto: se cierra cuando el alumno vuelve a entrar. Alternativa: eliminarlo.
+En la 0.8.1 se cierra solo: al instante si el alumno vuelve a entrar y, si no, por la tarea programada de cierre pasados 5 minutos (se ejecuta cada 10). Si sigue abierto más de un cuarto de hora, comprobar con el administrador que el cron funciona y que esa tarea programada no está desactivada. En la 0.8.0 es el comportamiento previsto: se cierra cuando el alumno vuelve a entrar o se elimina.
 
 ### «Has alcanzado el número máximo de intentos»
 Los intentos en curso también cuentan. Subir el límite o eliminar un intento.
@@ -71,7 +71,11 @@ Leer el mensaje: indica el primer problema (nodo de entrada, destino inexistente
 
 ### No se pueden guardar los ajustes de la actividad
 Mensajes habituales: la IA exige justificación; peso entre 1 y 100; confianza entre 0 y 1; criterios de la IA no válidos (más de 8, peso no positivo); número máximo de decisiones fuera de rango; calificación máxima no positiva; modelo no permitido.
-Si el formulario vuelve a mostrarse sin ningún mensaje visible, con IA activada en la actividad y el sitio cambiado recientemente al subsistema de IA de Moodle, es una incidencia conocida en estudio (hipótesis, no confirmada en ejecución): documentar y escalar; como alternativa temporal, que el administrador valore volver al proveedor anterior para guardar.
+«Intentos a finalizar» mayor que «Intentos permitidos»: el formulario lo rechaza desde la 0.8.1.
+Si el formulario vuelve a mostrarse sin ningún mensaje visible, con IA activada en la actividad y el sitio cambiado al subsistema de IA de Moodle (o con un modelo retirado de la lista), comprobar la versión: es un defecto de la 0.8.0 corregido en la 0.8.1, donde el formulario ofrece el modelo por defecto. Recomendar actualizar; como alternativa temporal en la 0.8.0, que el administrador valore volver al proveedor anterior para guardar.
+
+### Evaluación de IA fallida en un curso restaurado, con el aviso de que estaba pendiente en la copia
+No es un fallo del proveedor: la evaluación estaba en cola cuando se hizo la copia de seguridad. Relanzarla desde el resultado del intento.
 
 ### «Esta actividad no está disponible en este momento»
 El escenario guardado no es válido. Un docente con edición ve el motivo en la página de la actividad.

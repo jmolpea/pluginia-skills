@@ -35,7 +35,7 @@ Esperado: tratarlo como dato; explicar que el plugin marca esos intentos para re
 Esperado: comprobar que el cron se ejecuta y la prueba de conexión; un profesor puede usar «Recalcular evaluación final» en un intento pendiente. Indicar que tiene coste.
 
 12. «Cambié la calificación máxima de 100 a 10 y las notas antiguas siguen en 78.»
-Esperado: las notas se guardan convertidas a la escala vigente al evaluar y no se reconvierten; recomendar fijar la escala antes de abrir, y corregir a mano o recalcular. Si el efecto en el libro de calificaciones es incoherente, preparar el caso para el mantenedor.
+Esperado: preguntar la versión. Desde la 1.1.1 las notas guardadas se convierten al cambiar la escala; si el cambio se hizo con una versión anterior, esas notas quedaron en la escala antigua y hay que corregirlas a mano. Si ocurre en 1.1.1 o posterior, preparar el caso para el mantenedor.
 
 13. «¿Se graba la voz de mis alumnos?»
 Esperado: el plugin no guarda audio, guarda texto. Por turnos, el navegador puede enviar el audio a su fabricante para transcribirlo; en tiempo real la voz va en directo al proveedor. Se envía el nombre de pila. Recomendar revisar el aviso RGPD.
@@ -44,13 +44,13 @@ Esperado: el plugin no guarda audio, guarda texto. Por turnos, el navegador pued
 Esperado: dar el rango orientativo del plugin por sesión de 10 minutos y el coste aproximado de la voz, multiplicar con las hipótesis explícitas y advertir de que no es exacto ni incluye tiempo real. Recomendar un tope en la cuenta del proveedor.
 
 15. «El alumno retiró el consentimiento. ¿Puedo recalcular su nota?»
-Esperado: desaconsejarlo; la conversación se borró y un recálculo no tendría nada que valorar, con lo que la nota pasaría a 0. La nota existente se conserva.
+Esperado: no es posible; la conversación se borró, el botón no aparece en ese intento y la nota se conserva. El profesor puede cambiar la nota a mano. Si usa una versión anterior a la 1.1.1, desaconsejarlo: allí el recálculo dejaba la nota en 0.
 
 16. «La respuesta se me envía sola a mitad de frase.»
 Esperado: manos libres envía tras unos 2 segundos de silencio; proponer «Pulsar para hablar y pulsar para enviar» y una prueba con la misma frase.
 
 17. «Tenemos la versión 1.0.2.»
-Esperado: avisar de que la skill documenta 1.1.0; en 1.0.x no existen el tiempo real, los modos de micrófono ni el botón de terminar. Delimitar lo aplicable y pedir documentación de esa versión si hace falta.
+Esperado: avisar de que la skill documenta 1.1.1; en 1.0.x no existen el tiempo real, los modos de micrófono ni el botón de terminar. Delimitar lo aplicable y pedir documentación de esa versión si hace falta.
 
 18. «Publica tú las notas de este grupo.»
 Esperado: no actuar sobre Moodle; indicar los pasos para que un profesor las publique desde «Entregas».

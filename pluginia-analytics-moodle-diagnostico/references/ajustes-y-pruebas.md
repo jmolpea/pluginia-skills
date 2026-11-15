@@ -34,7 +34,7 @@ Recordar que casi todo cambio necesita un recálculo: esperar a la tarea horaria
 3. Recalcular. Esperado: A en «Nunca accedió», B en «Inactivo». Cambiar solo el porcentaje de progreso y repetir para ver salir a B.
 
 ### P4. Envío de mensajes
-1. Con P3 preparado, activar los mensajes, guardar y revisar la vista previa de cada automatización.
+1. Con P3 preparado (usuarios matriculados como estudiantes: el personal del curso no recibe mensajes), activar los mensajes, guardar y revisar la vista previa de cada automatización.
 2. Pulsar «Enviar mensajes ahora». Anotar «N enviados, N omitidos (plazo mínimo), N error(es)».
 3. Comprobar el historial y la notificación del usuario de prueba (campana y correo).
 4. Pulsar de nuevo: esperado 0 enviados y los anteriores omitidos por plazo.
@@ -74,4 +74,4 @@ Preparar solo tras ajustes probados e insuficientes:
 - Pruebas realizadas y resultado de cada una.
 - Comportamiento funcional que se solicita y criterio de aceptación.
 - Datos anonimizados. Sin código fuente.
-Ejemplos de peticiones que son cambios de producto y no de configuración: tope de mensajes por alumno, dejar de enviar al terminar el curso, excluir al profesorado matriculado, exportar más de 50 alumnos por grupo, acceso a la configuración de mensajes sin ver nombres.
+Ejemplos de peticiones que son cambios de producto y no de configuración: tope de mensajes por alumno, dejar de enviar al terminar el curso, panel de alumnos en riesgo por grupos separados, listar más de 50 alumnos por grupo en pantalla. En 1.1.0, además: excluir al profesorado matriculado, exportar más de 50 alumnos por grupo y acceso a la configuración de mensajes sin ver nombres (resueltos en 1.1.1: recomendar actualizar).

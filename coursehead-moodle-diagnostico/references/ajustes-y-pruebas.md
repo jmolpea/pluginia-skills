@@ -12,7 +12,7 @@ No proponer activar JavaScript ni ampliar permisos como atajo. No proponer vacia
 | Curso | Gestor o rol autorizado | Las tres casillas, el contenido, la estrategia de carga, eliminar |
 | Código propio | Quien lo escribe | Selectores, prioridad de reglas, espacios en comparaciones, momento de ejecución del programa |
 
-## Lo que no se resuelve con ajustes (versión 1.2.0)
+## Lo que no se resuelve con ajustes (versión 1.2.1)
 - Personalizar por sección, grupo, rol o usuario; personalizar la portada del sitio.
 - Excluir una actividad concreta por su número, o elegir tipos de página por curso.
 - Recuperar una versión anterior del código.
@@ -31,7 +31,7 @@ P5. Ruta excluida. Añadir la ruta de una actividad de prueba, guardar y recarga
 P6. Validación. Pegar el CSS envuelto en su etiqueta. Esperado: error que nombra el fragmento, nada guardado.
 P7. Acceso. Abrir la dirección del CSS que muestra el panel con una cuenta sin acceso al curso o sin sesión. Esperado: respuesta de prohibido, sin contenido.
 P8. JavaScript, solo si está permitido. Un programa de una línea que escriba un mensaje en la consola. Esperado: aparece en la consola del alumno en las páginas permitidas y no en el intento de cuestionario.
-P9. Permisos. Con un rol que solo tenga gestionar y editar CSS. Esperado: ve el campo de CSS y el aviso de no disponible en JavaScript; al guardar, el JavaScript existente no cambia.
+P9. Permisos. Con un rol que solo tenga gestionar y editar CSS. Esperado: ve el campo de CSS y el aviso de no disponible en JavaScript; al guardar, el JavaScript existente no cambia; si el curso tiene JavaScript guardado, no ve el botón de eliminar (1.2.1).
 P10. Restauración. Duplicar el curso con un gestor y con un profesor. Esperado: con gestor se conserva; con profesor sin permisos se descarta y el registro de la restauración lo avisa.
 
 ## Registro de prueba

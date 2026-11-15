@@ -1,6 +1,6 @@
 # Ajustes y pruebas antes de escalar
 
-Revisado para la versión 1.7.1 el 15-11-2026.
+Revisado para la versión 1.7.2 el 15-11-2026.
 
 ## Regla de intervención
 Buscar primero una solución con descripción de actividad, rúbrica o prompt. Revisar los tres y cambiar solo el elemento que explique el problema.
@@ -29,7 +29,8 @@ No bajar el umbral de confianza ni activar publicaciones para ocultar un mapeo i
 | Cada cambio del alumno gasta una corrección | Exigir el botón de envío en la tarea |
 | La parte visual no se valora | Pedirla como JPG o PNG de menos de 4 MB, hasta 5 por entrega; no usar DeepSeek |
 | Tarda demasiado o no llega a responder | Probar un modelo más rápido; limitar la extensión de la entrega |
-| AI Tutor aparece desactivado tras copiar el curso | Elegir de nuevo el usuario que firma y activar |
+| AI Tutor aparece desactivado tras copiar el curso | Activarlo de nuevo; elegir el usuario que firma si la copia viene de otro sitio |
+| Entregas con la nota de «no se ha podido calificar automáticamente» | Revisar clave, saldo y modelo; matricular al usuario que firma con un rol que pueda calificar; probar un modelo más rápido |
 
 Lo que el cliente no puede ajustar: recortes de caracteres, tamaños máximos, tiempo de espera, presupuesto de respuesta, duración del retraso, temperatura y ausencia de reintentos.
 

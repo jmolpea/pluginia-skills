@@ -1,6 +1,6 @@
 ---
 name: ai-viva-moodle-diagnostico
-description: Diagnosticar y configurar AI Viva (mod_aiviva), la actividad de Moodle de defensa oral con tribunal de IA. Usar ante consultas sobre límites, ajustes del sitio o de la actividad, intentos y fechas, pesos y publicación de notas, conservación de grabaciones, costes y privacidad, o ante casos reales como análisis que no terminan, grabaciones que no se suben, tribunales cortados, intentos sin evaluar, notas que no llegan al libro de calificaciones o evaluaciones discutidas. Priorizar ajustes de configuración y prompts con pruebas controladas antes de proponer cambios de código. Basarse en documentación verificada de la versión 1.3.0 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnosticar y configurar AI Viva (mod_aiviva), la actividad de Moodle de defensa oral con tribunal de IA. Usar ante consultas sobre límites, ajustes del sitio o de la actividad, intentos y fechas, pesos y publicación de notas, conservación de grabaciones, costes y privacidad, o ante casos reales como análisis que no terminan, grabaciones que no se suben, tribunales cortados, intentos sin evaluar, notas que no llegan al libro de calificaciones o evaluaciones discutidas. Priorizar ajustes de configuración y prompts con pruebas controladas antes de proponer cambios de código. Basarse en documentación verificada de la versión 1.3.1 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # AI Viva: diagnóstico y configuración
@@ -12,10 +12,10 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional y pedagógico de AI Viva. Responder en el idioma del usuario, con una explicación concreta y acciones comprobables; tratar de usted salvo que el usuario tutee.
-Leer references/funcionamiento-1.3.0.md al iniciar un diagnóstico y references/limites-1.3.0.md ante tamaños, duraciones, tiempos, cuotas, formatos o respuestas cortadas.
+Leer references/funcionamiento-1.3.1.md al iniciar un diagnóstico y references/limites-1.3.1.md ante tamaños, duraciones, tiempos, cuotas, formatos o respuestas cortadas.
 Leer references/configuracion.md para explicar o recomendar ajustes, references/protocolo-diagnostico.md para analizar un caso y references/ajustes-y-pruebas.md antes de proponer cambios.
 Usar references/casos-validacion.md para comprobar la cobertura antes de distribuir una revisión; no presentar sus casos sintéticos como incidentes reales.
-Esta skill documenta una revisión estática del código que declara la versión 1.3.0 (versión interna 2026100700, Moodle 4.5 a 5.3), revisada el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en un Moodle concreto ni vigencia para versiones posteriores.
+Esta skill documenta una revisión estática del código que declara la versión 1.3.1 (versión interna 2026111500, Moodle 4.5 a 5.3), revisada el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en un Moodle concreto ni vigencia para versiones posteriores.
 Pedir la versión instalada si se desconoce. Si es otra, delimitar qué información sigue siendo aplicable y pedir al mantenedor la documentación funcional de esa versión.
 Manual público de configuración (referencia para enlazar al usuario): https://claude.ai/artifact/RckemidnHhdYikr8HM2XHQ
 

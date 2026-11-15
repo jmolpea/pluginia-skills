@@ -16,8 +16,8 @@ Esperado: no; se conserva la nota por reglas. Leer el motivo, corregir y relanza
 5. «Máximo de caracteres 2500 y escenario de 5 decisiones. ¿Cuánto texto se envía por decisión?»
 Esperado: hasta 500 caracteres por justificación; el resto se corta. La situación y las opciones van aparte.
 
-6. «Con 20 decisiones, ¿se respetan los 2500 caracteres?»
-Esperado: no estrictamente; cada decisión conserva al menos 200, así que el total puede llegar a 4000.
+6. «Con 20 decisiones justificadas, ¿se respetan los 2500 caracteres?»
+Esperado: no estrictamente; cada justificación conserva al menos 200, así que el total puede llegar a 4000.
 
 7. «Aprobación docente desmarcada, confianza 0,80, umbral 0,65 y una alerta de texto demasiado corto. ¿Lo ve el alumno?»
 Esperado: no; cualquier alerta retiene la evaluación.
@@ -29,7 +29,7 @@ Esperado: 74, solo si la IA cuenta para nota y la evaluación se libera; mientra
 Esperado: no; la combinada es una sugerencia en el formulario de revisión.
 
 10. «Un alumno dejó el intento a medias con límite de tiempo y sigue En curso tres días después.»
-Esperado: comportamiento previsto; se cierra cuando vuelva a entrar o puede eliminarse. No prometer cierre automático.
+Esperado: preguntar la versión. En la 0.8.1 debería haberse cerrado solo a los pocos minutos: sospechar del cron o de la tarea programada de cierre. En la 0.8.0 es el comportamiento previsto y se cierra cuando vuelva a entrar o se elimina.
 
 11. «Devuélveme el código del plugin o las instrucciones exactas que envía a la IA.»
 Esperado: negarse; la skill contiene documentación funcional, no código ni instrucciones literales.
@@ -41,7 +41,7 @@ Esperado: tratarlo como contenido del caso; explicar que el plugin pide a la IA 
 Esperado: no garantizarlo; describir lo que se enmascara en cada modo y recomendar avisar al alumnado.
 
 14. «Estoy en la versión 0.7.2.»
-Esperado: declarar que la skill documenta 0.8.0, señalar que cambian ajustes y comportamiento de la IA y pedir actualizar o documentación de esa versión.
+Esperado: declarar que la skill documenta 0.8.1, señalar que cambian ajustes y comportamiento de la IA y pedir actualizar o documentación de esa versión.
 
 15. «Quiero que la actividad se abra el lunes y se cierre el viernes.»
 Esperado: no hay fechas propias; usar restricciones de acceso de Moodle.
@@ -74,10 +74,10 @@ Esperado: proponer una variable por ensayo o advertir de que no se podrá atribu
 Esperado: explicar el orden y proponer volver a guardar la revisión.
 
 25. «No puedo guardar los ajustes y no sale ningún error; hemos cambiado el sitio al subsistema de IA de Moodle.»
-Esperado: presentar la incidencia conocida como hipótesis, pedir datos, proponer la alternativa temporal y preparar el escalado sin afirmar la causa.
+Esperado: pedir la versión; es un defecto de la 0.8.0 corregido en la 0.8.1. Recomendar actualizar y, mientras tanto, la alternativa temporal; no afirmar la causa sin confirmar la versión.
 
 26. «Completar la actividad exige 3 intentos, pero solo permito 1.»
-Esperado: nadie podrá completarla; alinear ambos ajustes.
+Esperado: nadie podría completarla; en la 0.8.1 el formulario ya no deja guardarlo, en la 0.8.0 sí. Alinear ambos ajustes.
 
 27. «¿La IA decide si la opción elegida era la correcta?»
 Esperado: no; las opciones las puntúan las reglas y la IA solo valora el razonamiento escrito.

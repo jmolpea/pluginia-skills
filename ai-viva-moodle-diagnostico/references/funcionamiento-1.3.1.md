@@ -1,6 +1,6 @@
-# Funcionamiento de AI Viva 1.3.0
+# Funcionamiento de AI Viva 1.3.1
 
-Documentación funcional derivada de una revisión estática de la versión 1.3.0 (versión interna 2026100700), revisada el 15-11-2026. Todo lo que sigue es «hecho verificado en el código» salvo que se marque como hipótesis. No se ha ejecutado en un Moodle para escribir este documento.
+Documentación funcional derivada de una revisión estática de la versión 1.3.1 (versión interna 2026111500), revisada el 15-11-2026. Todo lo que sigue es «hecho verificado en el código» salvo que se marque como hipótesis. No se ha ejecutado en un Moodle para escribir este documento.
 Manual público: https://claude.ai/artifact/RckemidnHhdYikr8HM2XHQ
 
 ## Qué es
@@ -15,7 +15,7 @@ Sin licencia válida (evaluación terminada, clave caducada o de otra dirección
 
 ## Flujo del alumno
 1. Aviso de privacidad. Se muestra antes de cada intento. Al marcar la casilla y pulsar el botón de inicio se crea el intento. Sin consentimiento no se puede subir nada.
-2. Paso 1, documento. Sube un PDF y confirma; no puede cambiarlo en ese intento. El análisis se hace nada más subirlo; si el servidor no puede hacerlo en ese momento o falla, queda en cola para el cron. La página consulta el estado cada pocos segundos y avanza sola.
+2. Paso 1, documento. Sube un PDF y confirma; no puede cambiarlo en ese intento. El análisis se hace nada más subirlo; si el servidor no puede hacerlo en ese momento o falla, queda en cola para el cron. Además, desde 1.3.1 queda programada una tarea de respaldo que repite el análisis a los 30 minutos si se interrumpió sin dar error (lo mismo en la presentación); si el intento ya avanzó, no hace nada. La página consulta el estado cada pocos segundos y avanza sola.
 3. Paso 2, presentación. El navegador pide micrófono y después la pantalla o ventana a compartir. Cuenta atrás de 5 segundos, grabación con cronómetro y avisos cuando quedan 2 minutos y 1 minuto; al agotarse el tiempo se detiene sola. El alumno revisa la grabación y la envía o vuelve a grabar. Se suben tres cosas: el vídeo (para el docente), el audio en partes de 4 minutos (para transcribir) y capturas de pantalla periódicas (para el análisis visual). No se graba la cámara.
 4. Paso 3, tribunal. Pantalla previa con prueba de micrófono obligatoria. Al iniciar, el presidente (miembro 1) da la bienvenida y pide un resumen. Después los examinadores preguntan por turnos en orden 1, 2, 3, 1… El alumno responde pulsando un botón, hablando y volviéndolo a pulsar. Cada respuesta se transcribe, se muestra en pantalla y genera la siguiente pregunta, que se oye con la voz del examinador. Si el audio no llega se reintenta y, si sigue sin llegar, la pregunta se muestra solo como texto.
 5. Cierre. Al acabar el tiempo, el presidente se despide, el intento queda entregado y la evaluación se pone en cola. La página espera y se actualiza sola.
@@ -60,7 +60,7 @@ Un intento nuevo solo puede empezar cuando el anterior está calificado y public
 Ver cada intento: PDF, vídeo, transcripción, análisis, conversación con el audio de cada respuesta, puntuación por paso y alertas.
 Guardar una nota y comentarios editados (queda marcada como editada), publicar, retirar una nota publicada, eliminar el intento.
 Regenerar: solo el análisis del documento, solo el de la presentación, solo la evaluación final, o todo. Cualquier opción termina repitiendo la evaluación final. Solo en intentos ya entregados.
-Efectos de regenerar: no se notifica al alumno; una nota o comentarios editados por un docente se conservan (solo se actualizan la propuesta de la IA y el desglose); el estado de revisión se mantiene, salvo que la actividad no retenga notas y la nueva evaluación no tenga motivos de retención, en cuyo caso pasa a publicada.
+Efectos de regenerar: no se notifica al alumno; una nota o comentarios editados por un docente se conservan (solo se actualizan la propuesta de la IA y el desglose); el estado de revisión no cambia nunca (desde 1.3.1 una regeneración no publica por sí sola una nota retenida o retirada: la publica un docente, y entonces se avisa al alumno).
 Con grupos separados, un docente sin acceso a todos los grupos solo ve, descarga y regenera intentos de alumnos de sus grupos.
 
 ## Tareas programadas
@@ -87,7 +87,12 @@ Copia de seguridad: la configuración de la actividad, los avatares personalizad
 Finalización: condición propia «completar los tres pasos», que se cumple al terminar el tribunal aunque la nota no esté publicada. También admite las condiciones estándar por calificación.
 Notificaciones: «Calificación de AI Viva publicada» (alumno) y «Entrega de AI Viva pendiente de revisión» (docentes); cada usuario las gestiona en sus preferencias.
 
-## Lo que la versión 1.3.0 no hace
+## Reinicio del curso (nuevo en 1.3.1)
+El formulario de reinicio de curso de Moodle incluye un apartado de AI Viva con tres casillas: eliminar todos los intentos (con archivos, conversaciones y notas; marcada de fábrica), eliminar las excepciones de usuario (marcada) y eliminar las excepciones de grupo (sin marcar). Al eliminar los intentos se quitan sus notas del libro de calificaciones. Si el reinicio desplaza fechas, se desplazan igual la apertura y el cierre de las actividades y de las excepciones. La configuración de la actividad no se toca. En versiones anteriores a 1.3.1 el reinicio no eliminaba nada de AI Viva.
+
+## Cambio de la calificación máxima (nuevo en 1.3.1)
+Al guardar la actividad con otra calificación máxima, las notas ya guardadas (propuesta de la IA y nota final) se convierten a la escala nueva manteniendo la proporción y se actualiza el libro de calificaciones. En versiones anteriores quedaban en la escala antigua.
+
+## Lo que la versión 1.3.1 no hace
 No tiene entregas en grupo, ni eventos de calendario para las fechas, ni informe de costes o de uso, ni exportación de evaluaciones.
-El reinicio de curso de Moodle no elimina los intentos de AI Viva (no se encontró esa función en la revisión): hay que eliminarlos desde la página de entregas o borrar la actividad.
 No detecta plagio ni compara trabajos entre alumnos: las alertas de integridad salen solo de incoherencias entre el documento y lo dicho.

@@ -1,6 +1,6 @@
-# Límites y valores por defecto de Forumia: versión 1.8.2
+# Límites y valores por defecto de Forumia: versión 1.8.3
 
-Verificados leyendo el código de la versión 1.8.2 el 15-11-2026. «Carácter» significa carácter de texto plano, una vez quitado el formato HTML.
+Verificados leyendo el código de la versión 1.8.3 el 15-11-2026. «Carácter» significa carácter de texto plano, una vez quitado el formato HTML.
 
 ## Cómo interpretar los valores
 Distinguir tres cosas: lo que Moodle guarda (el mensaje completo del foro), lo que Forumia envía a la IA (recortado) y lo que el proveedor admite o factura. Ampliar un límite de Moodle no cambia lo que Forumia envía.
@@ -14,7 +14,7 @@ Una petición es una consulta a la IA: una respuesta, un resumen, una reactivaci
 | Por foro | «Límite diario de peticiones para este foro» (foro) | El formulario propone el máximo del sitio (100 si no se cambió) | Mínimo 1 con el asistente habilitado. Suma respuestas, resumen, reactivaciones y evaluaciones. |
 | Todo el sitio | «Activar límite de frecuencia de todo el sitio» y «Máximo de peticiones por día (todo el sitio)» | Desactivado; 100 | Suma todos los foros. Con 0 o negativo se ignora. |
 El día cambia a medianoche, hora del servidor. Las comprobaciones se hacen al ejecutar la tarea, no al publicar el estudiante.
-Las respuestas inmediatas que no caben en un límite no se contestan después. Las evaluaciones y las reactivaciones sí se retoman otro día.
+Las respuestas inmediatas que no caben en un límite no se contestan después, y las que estaban en cola se descartan si llegan durante una parada general o una pausa. Las evaluaciones y las reactivaciones sí se retoman otro día.
 Las evaluaciones para nota cuentan en el límite del foro aunque el proveedor falle.
 
 ## Recortes de lo que se envía a la IA
@@ -36,16 +36,17 @@ No se envían imágenes ni adjuntos de los mensajes: solo texto.
 
 ## Longitud de las respuestas
 - OpenAI con modelos de la familia GPT-5: presupuesto de 8.000 tokens de salida, que incluye el razonamiento interno del modelo, con esfuerzo de razonamiento bajo. No se envía temperatura.
-- OpenAI con modelos anteriores, Anthropic, Gemini y DeepSeek: 800 tokens de salida como máximo (del orden de 600 palabras). Temperatura 0,7 en OpenAI anteriores, Gemini y DeepSeek.
+- Gemini 2.5 Flash y Pro, y DeepSeek Reasoner (modelos que razonan): 8.000 tokens de salida, que incluyen el razonamiento (desde 1.8.3; antes 800, con lo que la respuesta podía llegar vacía y no publicarse). Temperatura 0,7.
+- OpenAI con modelos anteriores, Anthropic, Gemini 2.5 Flash-Lite y DeepSeek Chat: 800 tokens de salida como máximo (del orden de 600 palabras). Temperatura 0,7 en OpenAI anteriores, Gemini y DeepSeek.
 - Los prompts de fábrica piden entre 80 y 150 palabras (inmediato), 150 a 250 (diario) y 60 a 120 (reactivación).
-Probable, no verificado en ejecución: con modelos que razonan antes de responder y un máximo de 800 tokens (Gemini 2.5 Flash o Pro, DeepSeek Reasoner), el razonamiento puede consumir el presupuesto y la respuesta llegar vacía o cortada; en ese caso no se publica nada. Prueba controlada: cambiar a Gemini 2.5 Flash-Lite o DeepSeek Chat.
+No verificado contra los proveedores: el cambio de 1.8.3 se basa en su documentación, no en una ejecución real. Si con un modelo que razona siguen faltando respuestas, la prueba controlada es cambiar solo el modelo a Gemini 2.5 Flash-Lite o DeepSeek Chat.
 
 ## Tiempos
 | Concepto | Valor |
 |---|---|
 | Espera de la respuesta inmediata | Siguiente pasada del cron |
 | «Retrasar la respuesta IA 1 hora» | Aproximadamente 1 hora, fija |
-| Tiempo máximo de una consulta | 30 segundos; 120 con OpenAI de la familia GPT-5 |
+| Tiempo máximo de una consulta | 30 segundos; 120 con OpenAI de la familia GPT-5, Gemini 2.5 Flash y Pro, y DeepSeek Reasoner |
 | Reintentos ante error | Ninguno, salvo las evaluaciones para nota en pasadas posteriores |
 | Pausa por exceso de frecuencia del proveedor | 1 hora, todo el sitio |
 | Resumen diario | 08:00 (horario editable en tareas programadas); mensajes de las últimas 24 horas |
@@ -61,7 +62,7 @@ Probable, no verificado en ejecución: con modelos que razonan antes de responde
 |---|---|---|
 | OpenAI | GPT-5.6 Luna, GPT-5.1, GPT-5 mini, GPT-5 nano, GPT-4.1 mini, GPT-4.1 nano, GPT-4o mini, GPT-4o | GPT-5.6 Luna |
 | Anthropic | Claude Haiku 4.5, Claude Sonnet 4.6, Claude Sonnet 5, Claude Opus 4.8 | Claude Haiku 4.5 |
-| Google Gemini | Gemini 2.5 Flash-Lite, Gemini 2.5 Flash, Gemini 2.5 Pro | Gemini 2.5 Flash (la lista rotula Flash-Lite como recomendado) |
+| Google Gemini | Gemini 2.5 Flash-Lite, Gemini 2.5 Flash, Gemini 2.5 Pro | Gemini 2.5 Flash (la lista lo rotula como el de fábrica y a Flash-Lite como el más económico) |
 | DeepSeek | DeepSeek Chat, DeepSeek Reasoner | DeepSeek Chat |
 Las listas son cerradas: no se puede escribir otro modelo.
 «Endpoint de API» solo existe para OpenAI. Debe empezar por https y pertenecer a api.openai.com o a un subdominio de openai.azure.com. No se admiten direcciones numéricas, servidores propios ni otros proveedores compatibles. De fábrica: la dirección oficial de OpenAI para conversaciones.
@@ -69,6 +70,7 @@ Las listas son cerradas: no se puede escribir otro modelo.
 ## Calificación
 - Una evaluación por estudiante y foro, sin reevaluación.
 - Nota: número entero entre 0 y la nota máxima del foro. Un decimal válido se redondea; un valor fuera de rango se rechaza, no se ajusta.
+- Una sugerencia solo puede aceptarse si la nota máxima del foro es la misma que cuando se evaluó.
 - Solo foros con calificación del foro completo en puntos y calificación simple directa.
 
 ## Licencia

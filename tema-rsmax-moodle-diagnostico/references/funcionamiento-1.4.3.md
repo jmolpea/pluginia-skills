@@ -1,6 +1,6 @@
-# Cómo funciona el tema RSMAX: 1.4.2
+# Cómo funciona el tema RSMAX: 1.4.3
 
-Revisión estática del código de la versión 1.4.2 (interna 2026111400), hecha el 15-11-2026. Todo lo que sigue es hecho verificado en el código salvo donde se indica «hipótesis» o «no verificado».
+Revisión estática del código de la versión 1.4.3 (interna 2026111500), hecha el 15-11-2026. Todo lo que sigue es hecho verificado en el código salvo donde se indica «hipótesis» o «no verificado».
 
 ## Qué es
 - Un tema hijo de Boost para Moodle 5.3. Boost debe estar instalado (viene con Moodle). No se instala en versiones anteriores.
@@ -11,7 +11,7 @@ Revisión estática del código de la versión 1.4.2 (interna 2026111400), hecha
 ## Cómo llegan los ajustes a la pantalla
 1. El administrador guarda una pestaña de ajustes (Administración del sitio > Apariencia > Temas > RSMAX).
 2. Cada ajuste, al cambiar, vacía las cachés del tema; Moodle recalcula la hoja de estilos en la siguiente carga. La primera página tras guardar puede tardar más o salir con los estilos anteriores: se arregla recargando.
-3. Antes de usarse, cada valor se comprueba: los colores deben ser hexadecimales y el resto se toma de listas cerradas. Un valor no válido se descarta en silencio y se usa el de fábrica.
+3. Antes de usarse, cada valor se comprueba: los colores deben ser hexadecimales de 3, 6 u 8 dígitos y el resto se toma de listas cerradas. Un valor no válido se descarta en silencio y se usa el de fábrica.
 4. Moodle guarda solo la pestaña abierta: lo cambiado en otra pestaña sin guardar se pierde.
 
 ## Colores
@@ -50,7 +50,7 @@ Revisión estática del código de la versión 1.4.2 (interna 2026111400), hecha
 ## Lo que configura el docente
 - Banners (menú del curso > Más > Banners; requiere poder editar los ajustes del curso): banner del curso, dónde se muestra, aspecto de las páginas (solo con el Aula apagada) y un banner por sección. Una sección con banner propio usa el suyo en su página y sus actividades.
 - Presentación del módulo (con el Aula, en edición, enlace en cada sección): foto o vídeo, texto, texto completo y tarjeta «Sobre este módulo». YouTube y Vimeo se incrustan (YouTube en su dominio sin cookies); otra dirección se muestra como enlace.
-- Áreas (en edición, enlace bajo las actividades de cada sección; requiere poder gestionar actividades): crea un área de texto y medios marcada como área, al principio de la sección. Agrupa visualmente las actividades siguientes. No afecta a progreso, restricciones ni finalización.
+- Áreas (en edición, enlace bajo las actividades de cada sección; requiere poder gestionar actividades y poder añadir un área de texto y medios): crea un área de texto y medios marcada como área, al principio de la sección. Agrupa visualmente las actividades siguientes. No afecta a progreso, restricciones ni finalización.
 - Etiquetas en las marcas de cada actividad: tipo, duración y exclusión del progreso (ver configuracion.md).
 
 ## Página de matriculación
@@ -66,4 +66,5 @@ Revisión estática del código de la versión 1.4.2 (interna 2026111400), hecha
 ## Qué se guarda y qué no
 - Por curso: banners, dónde se muestran, aspecto de las páginas y la presentación de cada módulo con sus archivos. Se incluyen en la copia de seguridad y la restauración del curso, y se borran al borrar el curso o la sección.
 - No guarda datos personales. Al cargar una página no pide nada a otros sitios; la fuente Inter va incluida. Solo un vídeo externo incrustado se carga desde su servicio.
-- Los archivos de banners y presentaciones se sirven a quien puede entrar en el curso.
+- Archivos: el banner del curso se sirve como la imagen del curso (a quien el sitio deja entrar; con inicio de sesión obligatorio, a quien tiene sesión), porque también abre la página de matriculación. Los banners de sección se sirven a quien puede entrar en el curso. La presentación de un módulo y sus archivos, solo a quien puede abrir esa sección: una sección oculta o cerrada por una restricción no envía su presentación a un alumno; el profesorado las ve todas.
+- Al restaurar una copia fusionándola en un curso que ya tenía elegidos «dónde se muestra el banner» o el aspecto de sus páginas, esas opciones se conservan; en un curso nuevo o al sustituir el contenido se toman de la copia.

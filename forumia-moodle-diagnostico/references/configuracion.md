@@ -1,19 +1,20 @@
-# Configuración de Forumia (versión 1.8.2)
+# Configuración de Forumia (versión 1.8.3)
 
 Nombres tal como aparecen en Moodle en español. Revisado el 15-11-2026. Manual con ejemplos y simuladores: https://claude.ai/artifact/Qg9adYg7HtbnatxfFCi825
 
 ## Ajustes del sitio
-Dónde: Administración del sitio › Extensiones › Extensiones locales › Forumia - Asistente IA para foros. Solo administradores. Una sola página.
+Dónde: Administración del sitio › Extensiones › Extensiones locales › Forumia - Asistente IA para foros. Solo administradores. Una sola página, con un enlace al manual de configuración al principio.
 
 | Ajuste | De fábrica | Qué hace | Recomendación |
 |---|---|---|---|
 | Clave de licencia | Vacía (15 días de prueba) | Activa el plugin. Ligada a la dirección exacta del sitio. Debajo se ve el estado. | Introducirla al recibirla. Pedir otra si cambia la dirección del sitio. Una clave errónea desactiva el asistente aunque quede prueba. |
+| Deshabilitado en todo el sitio | No | Parada general. La marca el propio plugin cuando el proveedor rechaza la clave de API; mientras está marcada no se hace ninguna petición en ningún foro. Se desmarca sola al guardar una clave, un proveedor o un endpoint distintos. | Tras un aviso de clave rechazada: guardar la clave correcta o, si es la misma, desmarcarla y guardar. También sirve para parar todo el sitio a mano. |
 | Proveedor de IA | OpenAI | Empresa que genera respuestas, resúmenes y evaluaciones en todo el sitio. | Elegir el proveedor con el que la institución tenga acuerdo de tratamiento de datos. |
 | Clave de API de OpenAI / Anthropic / Google Gemini / DeepSeek | Vacías | Credencial del proveedor. Solo se muestra la del proveedor elegido; las demás se conservan. | Crear una clave solo para Moodle y poner un tope de gasto en la web del proveedor. |
 | Modelo de OpenAI | GPT-5.6 Luna | Modelo usado con OpenAI. Lista cerrada. | Mantener, o bajar a uno mini o nano para gastar menos. |
 | Endpoint de API | Dirección oficial de OpenAI | Dirección a la que se envían las consultas con OpenAI. | No tocar salvo que se use Azure OpenAI. Otra dirección no permitida hace que el asistente deje de responder. |
 | Modelo de Anthropic | Claude Haiku 4.5 | Modelo usado con Anthropic. | Mantener. |
-| Modelo de Gemini | Gemini 2.5 Flash | Modelo usado con Gemini. | Para el más económico, elegir Flash-Lite a mano. |
+| Modelo de Gemini | Gemini 2.5 Flash | Modelo usado con Gemini. Flash y Pro razonan antes de responder y tardan más. | Para el más económico, elegir Flash-Lite a mano. |
 | Modelo de DeepSeek | DeepSeek Chat | Modelo usado con DeepSeek. | Mantener. |
 | Activar límite de frecuencia de todo el sitio | No | Enciende el tope diario global de peticiones. | Activarlo cuando haya varios foros con asistente. |
 | Máximo de peticiones por día (todo el sitio) | 100 | Valor del tope global. También es el valor que se propone como límite al configurar un foro nuevo. | Estimar respuestas diarias de todos los foros más un margen. |
@@ -64,7 +65,7 @@ Notas de formulario:
 - Descripción del foro: es el único contexto del curso que recibe la IA (primeros 500 caracteres). Poner ahí la consigna.
 - Calificación del foro completo: tipo Puntuación y calificación simple directa, imprescindible para la calificación por IA.
 - Fecha límite de entrega del foro: detiene la reactivación si no hay fecha propia.
-- Roles: solo se responde y evalúa a quien está matriculado y no tiene en el curso un rol estándar de profesorado o gestión.
+- Roles: solo se responde y evalúa a quien está matriculado y no tiene en el curso un rol de profesorado o gestión, sea estándar o creado a partir de uno estándar.
 
 ## Página «Forumia: sugerencias de calificación por IA»
 Columnas: Estudiante, Publicaciones evaluadas, Calificación sugerida, Justificación de la IA, Calificación actual, Acciones. Botones: Aceptar, Descartar, Aceptar todas las sugerencias. En modo Automática solo muestra lo que no pudo aplicarse.

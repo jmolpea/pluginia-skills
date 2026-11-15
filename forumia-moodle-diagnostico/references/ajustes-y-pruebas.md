@@ -9,6 +9,7 @@ Avisar siempre de que cada prueba consume peticiones del proveedor y cuenta en l
 | Ámbito | Ajuste | Efecto esperado |
 |---|---|---|
 | Sitio | Proveedor, clave y modelo | Restablece el servicio; cambia calidad, velocidad y coste |
+| Sitio | Deshabilitado en todo el sitio | Reanuda el servicio tras una clave rechazada, o lo para a mano en todos los foros |
 | Sitio | Límite global y su valor | Controla el gasto total; demasiado bajo deja mensajes sin respuesta |
 | Sitio | Usuario IA predeterminado del sitio; permiso de cuenta del asistente | Permite habilitar foros y evita desactivaciones por falta de cuenta |
 | Sitio | Horario de las tres tareas programadas | Cambia la hora del resumen, de las evaluaciones y de la reactivación |
@@ -23,7 +24,7 @@ Avisar siempre de que cada prueba consume peticiones del proveedor y cuenta en l
 | Foro de Moodle | Fecha límite de entrega | Detiene la reactivación |
 | Curso | Roles de los participantes | Solo se atiende a quien cuenta como estudiante |
 
-## Lo que ningún ajuste cambia en la versión 1.8.2
+## Lo que ningún ajuste cambia en la versión 1.8.3
 - La espera del retraso es de una hora, fija.
 - Los recortes de texto enviados a la IA.
 - Una sola evaluación por estudiante y foro, sin reevaluación.

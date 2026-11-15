@@ -54,7 +54,7 @@ Una respuesta de la IA en una prueba no demuestra qué respondió en un caso pas
 - Ver o exportar el texto exacto enviado a la IA y su respuesta completa.
 - Cambiar los límites fijos (1.000 caracteres por respuesta, 6 preguntas, 3 avisos por ejecución, etc.).
 - Elegir un proveedor o modelo distinto solo para este bloque: usa el de Moodle.
-- Que el límite diario valga «sin límite» con 0.
+- Un límite diario «sin límite»: el mínimo es 1 (se puede poner un valor alto).
 - Detener el gasto de la tarea nocturna con el interruptor de avisos (hay que desactivar la tarea o bajar usuarios por ejecución).
 
 ## Solicitud final al mantenedor

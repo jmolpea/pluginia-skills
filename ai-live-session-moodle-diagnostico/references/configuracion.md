@@ -1,4 +1,4 @@
-# Configuración de AI Live Session 1.0.0
+# Configuración de AI Live Session 1.0.2
 
 Nombres tal como aparecen en pantalla (idioma español). Revisado el 15-11-2026. Detalle visual y simuladores en el manual: https://claude.ai/artifact/J58N9JJybXxofoznCsvqro
 
@@ -32,14 +32,14 @@ Dónde: formulario de configuración de la actividad.
 |---|---|---|---|
 | General | Nombre, Descripción | Identifican la actividad | — |
 | General | Pasos de la sesión | Solo vídeo / Vídeo y práctica / Vídeo, práctica y conversación | Decidir antes de abrir; «Solo vídeo» no usa IA |
-| Disponibilidad | Apertura, Cierre | Ventana de la sesión | Excepciones para casos individuales |
+| Disponibilidad | Apertura, Cierre | Ventana de la sesión; no afecta al modo prueba del docente | Excepciones para casos individuales |
 | Disponibilidad | Intentos permitidos | Repeticiones de práctica y conversación por bloque | 1 en exámenes; cada intento con conversación cuesta |
 | Nota y revisión | Un tutor valida la nota antes de que la vea el alumno | La propuesta espera a un tutor | Activado salvo en «Solo vídeo» |
 | Ajustes avanzados | Velocidad máxima | Tope de velocidad del vídeo | 1x si importa el tiempo de visionado |
 | Ajustes avanzados | Mostrar los subtítulos del vídeo si los tiene | Subtítulos de YouTube o Vimeo | Activado |
 | Ajustes avanzados | Tiempo que el reloj puede detenerse | Pausa máxima por cortes del navegador | 5 min en exámenes |
 | Ajustes avanzados | Modelo de IA para la conversación / para la evaluación | Modelo de cada tarea | El recomendado |
-| Calificación | Puntuación máxima | Escala de la nota | Tipo «Puntuación» |
+| Calificación | Puntuación máxima | Escala de la nota | Tipo «Puntuación», máximo de 1 o más; es lo único que admite el formulario |
 | Finalización | El alumno debe terminar una conversación | Completa al cerrar el último paso de todos los bloques | Según el curso |
 
 ## Diseñador (por bloque)
@@ -47,7 +47,7 @@ Dónde: barra «Tutor» de la actividad › Diseñador › Editar.
 
 | Paso | Campos | Claves |
 |---|---|---|
-| Vídeo y cortes | Título del bloque; Fuente; Enlace al vídeo o Archivo de vídeo; Comprobar el vídeo y leer su duración; Inicio y Final del bloque; Texto del vídeo | Comprobar siempre el vídeo. El final no puede pasar del final real. La transcripción con marcas de tiempo mejora los borradores |
+| Vídeo y cortes | Título del bloque; Fuente; Enlace al vídeo o Archivo de vídeo; Comprobar el vídeo y leer su duración; Inicio y Final del bloque; Texto del vídeo | Comprobar siempre el vídeo. El final no puede pasar del final real ni dejar preguntas en ese punto o después. La transcripción con marcas de tiempo mejora los borradores |
 | Preguntas | Tipo; Tiempo del vídeo; Pregunta; Opción, Correcta, Feedback de esta opción; Feedback tras responder; El vídeo solo continúa tras acertar; Puntos; Repasar desde | Una pregunta cada pocos minutos, dentro del fragmento. Solo puntúa el primer intento |
 | Práctica | El caso; Preparación máxima y mínima; Qué entrega el alumno; Qué debe mostrar la imagen; Datos corregidos | Misión concreta. Describir la solución para la IA. Varias respuestas válidas con barra vertical |
 | Conversación | Nombre y Papel del avatar; Tono; Personalidad y qué debe intentar el avatar; Duración máxima; Aspecto; Imagen del avatar; Voz | Plantillas: Patrocinador, Cliente, Mentor. De 8 a 12 minutos |

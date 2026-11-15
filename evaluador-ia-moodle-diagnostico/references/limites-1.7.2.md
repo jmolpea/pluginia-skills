@@ -1,6 +1,6 @@
-# Límites y valores por defecto: 1.7.1
+# Límites y valores por defecto: 1.7.2
 
-Verificados en el código de la versión 1.7.1 el 15-11-2026. Sin cambios respecto a 1.7.0.
+Verificados en el código de la versión 1.7.2 el 15-11-2026. Cambios respecto a 1.7.1: presupuesto de respuesta de Gemini 2.5, validación del prompt también en el servidor y conservación de contadores durante 30 días.
 
 ## Cómo interpretar los valores
 Distinguir cuatro cosas: límite del formulario, carga permitida por Moodle o el servidor, lectura del plugin y presupuesto del proveedor. Aumentar el máximo de subida de Moodle no aumenta lo que lee el plugin.
@@ -10,7 +10,7 @@ Ninguno de estos límites se puede cambiar desde la configuración, salvo las cu
 ## Lectura de entregas
 | Elemento | Límite o tratamiento verificado |
 |---|---|
-| Prompt docente | Máximo 16.000 caracteres, comprobado en el navegador. Se guarda como texto sin formato. Vacío = plantilla por defecto. |
+| Prompt docente | Máximo 16.000 caracteres, comprobado en el navegador y al guardar. Se guarda como texto sin formato. Vacío = plantilla por defecto. |
 | Descripción de la tarea | Primeros 8.000 caracteres tras quitar el HTML. Sin imágenes, adjuntos ni enlaces. |
 | Texto en línea | Hasta 150.000 caracteres, sin formato. |
 | TXT | Hasta 150.000 caracteres. Sin tope de tamaño de archivo propio. |
@@ -44,8 +44,9 @@ No afirmar que convertir a PDF conserva lo visual: comprobar texto e imágenes c
 | Máximo de peticiones por hora (por usuario) | 10 | Desactivado de fábrica. Suma todas las tareas del alumno. Con 0 o negativo no se aplica. |
 | Retraso opcional de la respuesta | 1 hora | Fijo; no se puede elegir otra duración. Desactivado de fábrica. |
 | Periodo de prueba | 15 días | Desde la instalación. |
+| Conservación de contadores diarios y por hora | 30 días | Los borra una tarea programada nocturna. El contador por alumno y tarea no caduca. |
 
-Todas las cuotas cuentan correcciones guardadas, no intentos fallidos. Una entrega que choca con una cuota no se corrige después sola.
+Todas las cuotas cuentan correcciones guardadas y respuestas de la IA sin nota utilizable, no los fallos del proveedor. Una entrega que choca con una cuota no se corrige después sola.
 Las comprobaciones de cuota y el incremento del contador no son simultáneos: con muchas entregas a la vez, el total puede superar ligeramente el tope.
 No confundir «calificaciones por alumno» del plugin con los intentos de entrega que permite la tarea de Moodle.
 
@@ -60,10 +61,10 @@ No confundir «calificaciones por alumno» del plugin con los intentos de entreg
 Que un modelo esté en la lista no garantiza que el proveedor lo siga ofreciendo. Para otro modelo, usar «Identificador de modelo personalizado».
 
 ## Respuesta del proveedor
-Presupuesto de salida: 3.000 tokens, con o sin imágenes. Para los modelos de OpenAI que el plugin trata como de razonamiento (familia GPT-5 y serie «o»): 8.000 tokens, que incluyen el razonamiento interno.
+Presupuesto de salida: 3.000 tokens, con o sin imágenes. Para los modelos de OpenAI que el plugin trata como de razonamiento (familia GPT-5 y serie «o») y para los modelos Gemini 2.5: 8.000 tokens, que incluyen el razonamiento interno.
 Estas cifras no son caracteres ni el límite de entrada del modelo. El plugin no comprueba que la entrada quepa en el modelo elegido: 200.000 caracteres pueden superar la capacidad de un modelo pequeño, y entonces el proveedor rechaza la petición.
 Una rúbrica con muchos criterios, que la IA debe repetir en su respuesta, presiona ese presupuesto. Sin la respuesta original ni el motivo de finalización, tratar el truncamiento como hipótesis. Con modelos que razonan internamente, parte del presupuesto se gasta en razonar.
-Tiempo de espera: 45 segundos para la corrección y 120 para la transcripción. Si se agota, la entrega queda sin corregir.
+Tiempo de espera: 45 segundos para la corrección y 120 para la transcripción. Si se agota el de la corrección, la entrega queda sin corregir, con la nota «esta entrega no se ha podido calificar automáticamente…»
 Reintentos: ninguno, ante ningún tipo de fallo.
 Confianza por defecto si la IA no la indica: 5.
 

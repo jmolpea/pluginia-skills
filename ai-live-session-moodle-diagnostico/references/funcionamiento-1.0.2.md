@@ -1,6 +1,6 @@
-# Funcionamiento verificado de AI Live Session 1.0.0
+# Funcionamiento verificado de AI Live Session 1.0.2
 
-Base: revisión estática del código que declara la versión 1.0.0 (versión interna 2026111301, Moodle 4.5 a 5.3, PHP 8.1 o posterior), el 15-11-2026. No se comparó el ZIP instalado ni se ejecutó Moodle para esta revisión. Manual público: https://claude.ai/artifact/J58N9JJybXxofoznCsvqro
+Base: revisión estática del código que declara la versión 1.0.2 (versión interna 2026111501, Moodle 4.5 a 5.3, PHP 8.1 o posterior), el 15-11-2026. No se comparó el ZIP instalado ni se ejecutó Moodle para esta revisión. Manual público: https://claude.ai/artifact/J58N9JJybXxofoznCsvqro
 
 ## Qué es
 Actividad de Moodle. Una sesión tiene uno o varios bloques que el alumno hace en orden. Cada bloque tiene hasta tres pasos: vídeo con preguntas, práctica cronometrada con entregable y conversación con un avatar de IA. El docente elige en «Pasos de la sesión» hasta dónde llega: solo vídeo, vídeo y práctica, o los tres.
@@ -9,13 +9,13 @@ Principio general: el servidor decide posición del vídeo, correcciones, reloje
 ## Requisitos para que un alumno pueda empezar
 - Licencia válida o periodo de evaluación vigente (15 días desde el primer uso, con todas las funciones). Sin ello, la actividad muestra un aviso y no hace nada.
 - Todos los bloques completos. Si falta algo, el alumno ve «Esta sesión todavía no está disponible» y el diseñador indica qué falta: vídeo, inicio y final, misión, avatar, rúbrica con pesos que sumen 100 o pesos de la nota que sumen 100. Solo se exige lo que usan los pasos elegidos.
-- Dentro de las fechas de apertura y cierre (con sus excepciones).
+- Dentro de las fechas de apertura y cierre (con sus excepciones). Las fechas no afectan al docente que prueba la sesión.
 - Aceptar el aviso de datos de la portada.
 - Para hablar: sitio en https y navegador con reconocimiento de voz (Chrome, Edge o Safari). Si no, escribe.
 
 ## Vídeo
 - Fuentes: YouTube, Vimeo o archivo subido. Cada bloque reproduce un fragmento (inicio y final) y varios bloques pueden compartir un vídeo.
-- El navegador informa de la posición de forma periódica. El servidor solo acepta avanzar al ritmo del tiempo real multiplicado por la «Velocidad máxima»; lo que vaya más allá no cuenta y las preguntas posteriores no se entregan. Se puede retroceder. Al cambiar de pestaña el vídeo se detiene.
+- El navegador informa de la posición de forma periódica. El servidor solo acepta avanzar al ritmo del tiempo real multiplicado por la «Velocidad máxima»; lo que vaya más allá no cuenta y las preguntas posteriores no se entregan. Se puede retroceder. Al cambiar de pestaña el vídeo se detiene. Si un aviso de posición falla, el vídeo espera, muestra «Problema de conexión» bajo el reproductor, lo reintenta solo y sigue al volver la conexión (desde la 1.0.1).
 - El vídeo se detiene en cada pregunta. Tipos: opción única, opción múltiple (todas las correctas), verdadero o falso, decisión sobre un caso y encuesta (sin puntos; muestra el reparto del grupo).
 - Solo puntúa la primera respuesta. Con «El vídeo solo continúa tras acertar», el alumno repite hasta acertar, pero la puntuación no cambia. Mientras deba repetir no se le muestra la solución.
 - El vídeo se completa al llegar al final del fragmento (con unos segundos de tolerancia) sin preguntas pendientes. Su resultado es el porcentaje de puntos conseguidos a la primera; si no hay preguntas puntuables, no hay resultado de vídeo (en «Solo vídeo» cuenta como 100).
@@ -41,12 +41,12 @@ Principio general: el servidor decide posición del vídeo, correcciones, reloje
 - Moderación: con modelo de OpenAI y el ajuste activado, cada respuesta del alumno pasa antes por el filtro de OpenAI; si la marca, no se contesta. Si el filtro no responde, la conversación sigue.
 
 ## Evaluación y nota
-- Siempre en segundo plano (depende del cron de Moodle). Si falla, Moodle la reintenta más tarde con esperas crecientes.
+- Siempre en segundo plano (depende del cron de Moodle). Si falla, Moodle la reintenta más tarde con esperas crecientes, hasta un número limitado de veces. Si un intento lleva más de 30 minutos esperando, el tutor ve «Evaluar de nuevo» en la revisión y puede volver a lanzarla (desde la 1.0.2).
 - La IA recibe la misión, la rúbrica con sus tres niveles, las instrucciones del docente para la evaluadora y la conversación etiquetada. Puntúa cada criterio de 0 a 100 citando frases del alumno; solo cuentan las palabras del alumno. La respuesta debe ser estructurada y con números en rango; si no, se rechaza y se reintenta.
 - Nota de la conversación: media de los criterios ponderada por sus pesos.
 - Nota del entregable: la del análisis de la imagen o texto; si además hay datos corregidos, la media de ambas. Una imagen pedida y no subida cuenta 0. Si no se pudo analizar, el entregable no cuenta y queda un aviso.
 - Nota del bloque con conversación: vídeo, entregable y conversación con los pesos del bloque; la parte que no existe reparte su peso. En «Vídeo y práctica»: media simple de vídeo y entregable. En «Solo vídeo»: porcentaje del vídeo.
-- Nota de la sesión: media simple del mejor intento evaluado de cada bloque, convertida a la puntuación máxima de la actividad. Solo se propone cuando todos los bloques tienen su último intento evaluado.
+- Nota de la sesión: media simple del mejor intento evaluado de cada bloque, convertida a la puntuación máxima de la actividad. Solo se propone cuando todos los bloques tienen su último intento evaluado. Si se cambia la puntuación máxima, las notas que aún no están en el libro de calificaciones se recalculan en proporción; con notas ya en el libro, Moodle no deja cambiar el máximo.
 - Con varios bloques y conversación, otra tarea redacta un comentario general a partir de los comentarios de cada bloque, sin puntuar nada.
 - Avisos posibles: sin participación, participación insuficiente (menos de 20 palabras), respuestas pegadas, posible intento de manipular a la IA, conversación interrumpida, entregable no leído, y los que señale la propia IA. Sin ninguna palabra del alumno no se llama a la IA: la conversación puntúa 0.
 
@@ -74,10 +74,12 @@ Principio general: el servidor decide posición del vídeo, correcciones, reloje
 - La licencia se comprueba sin conexión; el plugin no contacta con el vendedor.
 - Copias de seguridad: incluyen contenido y, con datos de usuario, todo lo del alumno; no incluyen problemas técnicos ni borradores. Sin datos de usuario solo viajan las excepciones de grupo.
 
-## Limitaciones conocidas de la 1.0.0 (verificadas leyendo el código, sin corregir)
-- Las fechas de apertura y cierre también frenan al docente en «Probar como alumno» al ver vídeo, responder o empezar la práctica, aunque la portada le deje entrar.
-- Si se acorta el fragmento de un bloque y queda una pregunta después del nuevo final, nadie puede completar ese vídeo hasta mover o borrar la pregunta.
-- La actividad está pensada para calificación por puntuación; con tipo «Ninguna» o una escala, la validación del tutor no funciona bien.
-- Un intento cuya evaluación agota los reintentos de Moodle se queda «En evaluación»: «Evaluar de nuevo» solo aparece en intentos ya evaluados. Requiere al mantenedor.
-- Al borrar un bloque, la nota solo se recalcula para quienes tenían intentos en él.
-- En la revisión, un intento con la preparación ya cerrada y la conversación sin empezar aparece como «Preparándose».
+## Cambios respecto a la 1.0.0
+- 1.0.1: reintento automático de los avisos del vídeo y aviso «Problema de conexión»; mejoras de pantalla completa y de tablas en móvil.
+- 1.0.2: las fechas ya no frenan el modo prueba; el editor rechaza un «Final del bloque» que deje preguntas en ese punto o después; el formulario de la actividad exige calificación por puntuación con máximo de 1 o más (las actividades guardadas antes con escala o «Ninguna» siguen pudiendo editarse tal como están); «Evaluar de nuevo» para evaluaciones que no llegan; al borrar un bloque se propone la nota de quienes ya habían terminado los demás; la lista de excepciones muestra «Ilimitado»; la revisión distingue «Preparado, sin empezar la conversación»; enlace al manual en los ajustes del sitio y en el formulario de la actividad.
+
+## Limitaciones conocidas de la 1.0.2 (verificadas leyendo el código)
+- Un bloque guardado con una versión anterior puede conservar una pregunta situada después del final del fragmento: nadie completa ese vídeo hasta moverla o borrarla. La 1.0.2 lo impide al guardar los cortes, pero no corrige lo ya guardado.
+- Una actividad guardada antes con escala o sin calificación sigue sin poder validar notas hasta que se cambie a puntuación.
+- «Evaluar de nuevo» en un intento sin evaluar aparece solo pasados 30 minutos, y respeta la espera de 5 minutos y el máximo de 5 al día.
+- Al borrar un bloque en una sesión de «Solo vídeo» o con notas ya propuestas, las notas existentes de quienes no tenían intentos en ese bloque no se recalculan.

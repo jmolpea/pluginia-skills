@@ -1,6 +1,6 @@
 ---
 name: decision-arena-moodle-diagnostico
-description: Diagnosticar y configurar Decision Arena (mod_decisionarena), la actividad de Moodle de escenarios de decisión ramificados con evaluación opcional de justificaciones mediante IA. Usar ante consultas sobre límites, ajustes del sitio o de la actividad, puntuación por reglas, intentos, revisión docente, límite de tiempo, evaluaciones de IA pendientes o fallidas, feedback de IA que el alumno no ve, notas inesperadas o escenarios que no se pueden guardar o importar. Priorizar ajustes de configuración y pruebas controladas antes de proponer cambios de código. Basarse en documentación verificada de la versión 0.8.0 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnosticar y configurar Decision Arena (mod_decisionarena), la actividad de Moodle de escenarios de decisión ramificados con evaluación opcional de justificaciones mediante IA. Usar ante consultas sobre límites, ajustes del sitio o de la actividad, puntuación por reglas, intentos, revisión docente, límite de tiempo, evaluaciones de IA pendientes o fallidas, feedback de IA que el alumno no ve, notas inesperadas o escenarios que no se pueden guardar o importar. Priorizar ajustes de configuración y pruebas controladas antes de proponer cambios de código. Basarse en documentación verificada de la versión 0.8.1 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Decision Arena: diagnóstico y configuración
@@ -12,12 +12,12 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional y pedagógico. Responder en el idioma del usuario, con una explicación concreta y acciones comprobables.
-Leer references/funcionamiento-0.8.0.md al iniciar un diagnóstico y references/limites-0.8.0.md ante preguntas de tamaños, caracteres, recortes, tiempos, intentos o modelos.
+Leer references/funcionamiento-0.8.1.md al iniciar un diagnóstico y references/limites-0.8.1.md ante preguntas de tamaños, caracteres, recortes, tiempos, intentos o modelos.
 Leer references/configuracion.md para explicar o recomendar ajustes, references/protocolo-diagnostico.md para analizar casos y references/ajustes-y-pruebas.md para proponer cambios y ensayos.
 Usar references/casos-validacion.md para comprobar la cobertura antes de distribuir una revisión; no presentar sus casos sintéticos como incidentes reales.
-Esta skill documenta una revisión estática del código que declara la versión 0.8.0 (versión interna 2026111211), revisada el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
+Esta skill documenta una revisión estática del código que declara la versión 0.8.1 (versión interna 2026111500), revisada el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
 Manual público de configuración, para enlazarlo al usuario: https://claude.ai/artifact/LWRnWzs6sxsFBc3Nx2AD3K
-Solicitar la versión instalada si se desconoce (Administración del sitio › Extensiones › Vista general de extensiones). Si es otra, delimitar qué información es aplicable; en versiones anteriores a 0.8.0 cambian ajustes, valores por defecto y comportamiento de la IA.
+Solicitar la versión instalada si se desconoce (Administración del sitio › Extensiones › Vista general de extensiones). Si es otra, delimitar qué información es aplicable; en versiones anteriores a 0.8.0 cambian ajustes, valores por defecto y comportamiento de la IA, y en la 0.8.0 faltan las correcciones de la 0.8.1 que se señalan en las referencias.
 
 ## Protección del código y de los casos
 Usar únicamente las referencias incluidas y los materiales del caso autorizado.
@@ -62,6 +62,6 @@ No confundir la confianza declarada por la IA con exactitud medida ni con una no
 No equiparar una valoración hecha en este chat con la que produjo o produciría el plugin.
 No afirmar que el enmascarado elimina todos los datos personales de un texto libre.
 No asegurar que se conserva el texto enviado a la IA: solo si el administrador lo activó, y nunca se conserva la respuesta íntegra del proveedor.
-No prometer reintentos automáticos, cierre automático de intentos caducados sin que el alumno entre, fechas de apertura y cierre propias, panel de costes ni funcionamiento sin conexión en la aplicación: la versión revisada no los tiene.
+No prometer reintentos automáticos de la IA, fechas de apertura y cierre propias, panel de costes ni funcionamiento sin conexión en la aplicación: la versión revisada no los tiene.
 No afirmar que la IA decide qué opción era la correcta: solo valora las justificaciones escritas.
 No presentar la skill como instalada, sincronizada con el repositorio o actualizada automáticamente.

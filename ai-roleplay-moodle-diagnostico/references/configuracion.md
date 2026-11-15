@@ -1,9 +1,9 @@
-# Configuración de AI Roleplay (versión 1.1.0)
+# Configuración de AI Roleplay (versión 1.1.1)
 
 Nombres tal como aparecen en pantalla en español. Entre paréntesis, el valor de fábrica. Revisado el 15-11-2026. Explicación ampliada para personas: https://claude.ai/artifact/9rrxnBoMsHAgMzhKErn92D
 
 ## Ajustes del sitio
-Ruta: Administración del sitio › Extensiones › Módulos de actividad › AI Roleplay. Una sola página con secciones. Todo se aplica tras «Guardar cambios».
+Ruta: Administración del sitio › Extensiones › Módulos de actividad › AI Roleplay. Una sola página con secciones; arriba hay un enlace al manual de configuración. Todo se aplica tras «Guardar cambios».
 
 ### Licencia
 - Clave de licencia (vacía). Ligada a la dirección exacta del sitio. Recomendación: pedir clave nueva ante cualquier cambio de dirección (http/https, www, subcarpeta).
@@ -81,7 +81,7 @@ Recomendación: lo que el alumno no debe saber va en la personalidad, no en el e
 - Modelo de IA para evaluación final (recomendado del proveedor). Prima el criterio; se ejecuta una vez por intento.
 
 ### Calificación y flujo de trabajo
-- Calificación máxima (100). Fijarla antes de que haya intentos.
+- Calificación máxima (100). Conviene fijarla antes de que haya intentos; si se cambia después, las notas guardadas se convierten a la nueva escala.
 - Revisión del profesor antes de publicar (valor del sitio). En gris si el administrador la bloquea.
 - Notificar al estudiante cuando se publique la calificación (sí).
 

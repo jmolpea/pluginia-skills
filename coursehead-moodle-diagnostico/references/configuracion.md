@@ -1,6 +1,6 @@
 # Configuración: ajustes y recomendaciones
 
-Nombres tal como se ven en Moodle en español, versión 1.2.0. Explicación ampliada y ejemplos interactivos en el manual: https://claude.ai/artifact/S1C8aFgCzaqxcegdHXqanX
+Nombres tal como se ven en Moodle en español, versión 1.2.1. Explicación ampliada y ejemplos interactivos en el manual: https://claude.ai/artifact/S1C8aFgCzaqxcegdHXqanX
 
 ## Ajustes del sitio
 Dónde: Administración del sitio › Extensiones › Extensiones locales › Recursos personalizados en el head del curso. Solo administradores. Una sola página.
@@ -13,7 +13,7 @@ Dónde: Administración del sitio › Extensiones › Extensiones locales › Re
 | Inyectar en la página principal del curso | Aplica los recursos en la página principal y en las de sección. | Encendido. |
 | Inyectar en páginas de actividades | Aplica los recursos dentro de actividades y recursos. | Encendido, salvo que se quiera limitar la personalización a la portada del curso. |
 | Inyectar en páginas de calificaciones | Aplica los recursos en el libro de calificaciones y sus informes. | Apagado: son páginas sensibles. |
-| Rutas excluidas | Lista de comienzos de ruta donde nunca se aplica nada. Una por línea, empezando por barra. | Mantener la línea de fábrica. Añadir /mod/quiz/ si hay exámenes que cuentan y, sobre todo, si se permite JavaScript. |
+| Rutas excluidas | Lista de comienzos de ruta donde nunca se aplica nada. Una por línea, empezando por barra. Es la única forma de dejar fuera páginas del curso que no son principal, actividad ni calificaciones. | Mantener la línea de fábrica. Añadir /mod/quiz/ si hay exámenes que cuentan y, sobre todo, si se permite JavaScript. |
 | Longitud máxima del CSS | Tope de caracteres por curso. 0 = sin límite. | Dejar 200000. |
 | Longitud máxima del JavaScript | Igual, para JavaScript. | Dejar 200000. |
 | Mostrar advertencias de seguridad | Aviso amarillo en la página del curso para quien puede editar JavaScript. | Encendido. |
@@ -24,7 +24,7 @@ Dónde: Administración del sitio › Usuarios › Permisos › Definir roles; b
 
 | Permiso | De fábrica | Recomendación |
 |---|---|---|
-| Gestionar los recursos personalizados del curso | Gestor | Imprescindible para entrar a la página. Quien lo tiene puede eliminar todos los recursos del curso. |
+| Gestionar los recursos personalizados del curso | Gestor | Imprescindible para entrar a la página. Para eliminar los recursos hace falta además el permiso de edición de cada tipo de código guardado. |
 | Editar el CSS personalizado del curso | Gestor | Se puede dar al profesorado con edición si la institución confía en él. Necesita también el anterior. |
 | Editar el JavaScript personalizado del curso (solo usuarios de confianza) | Gestor | No darlo a roles que no sean de total confianza: permite ejecutar programas en el navegador de todos los participantes. |
 
@@ -49,6 +49,7 @@ Dónde: dentro del curso, menú «Más» › Recursos personalizados del curso.
 - Máxima prudencia: apagar «Inyectar en páginas de actividades» para que solo cambie la portada de cada curso.
 
 ## Buenas prácticas para el código del cliente
+- Escribir selectores precisos: el CSS del tema se carga después y gana a igual precisión.
 - Guardar una copia del CSS y del JavaScript fuera de Moodle: el plugin no conserva versiones anteriores.
 - Probar con una cuenta de alumno y en móvil.
 - Ocultar un elemento con CSS no impide usarlo ni protege datos.

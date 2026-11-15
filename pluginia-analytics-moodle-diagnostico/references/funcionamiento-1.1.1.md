@@ -1,4 +1,4 @@
-# Funcionamiento verificado: Pluginia Analytics 1.1.0
+# Funcionamiento verificado: Pluginia Analytics 1.1.1
 
 Revisión estática del 15-11-2026. Todo lo que sigue es un hecho leído en esa versión, salvo donde se indica «hipótesis» o «no verificado en ejecución».
 
@@ -7,7 +7,8 @@ Plugin de tipo «local» para Moodle 4.5 a 5.3. No es una actividad ni un bloque
 - Ajustes del sitio: Administración del sitio › Extensiones › Extensiones locales › Pluginia Analytics (solo administradores con configuración del sitio).
 - Informes del sitio: Administración del sitio › Informes: «Pluginia Analytics» (panel del sitio), «Analíticas por categoría», «Seguimiento de alumnos» y «Auditoría de preparación».
 - En cada curso: menú Informes › «Pluginia Analytics» (página «Analíticas del curso»). Solo lo ven quienes tienen el permiso de ver las estadísticas del curso; el alumnado no.
-- Configuración por curso: página «Mensajes automáticos», con el botón «Configurar mensajes automáticos» situado bajo el panel de alumnos en riesgo.
+- Configuración por curso: página «Mensajes automáticos», con el botón «Configurar mensajes automáticos» al final de la pestaña Resumen (bajo el panel de alumnos en riesgo cuando ese panel se ve). Desde 1.1.1 lo ve toda persona que puede configurar los mensajes, vea o no el panel.
+- Enlace «Manual de configuración» (desde 1.1.1): al principio de los ajustes del sitio, en la página de mensajes del curso y junto a los botones del panel del curso.
 
 ## Cálculo de datos
 - Una tarea programada horaria («Agregar datos analíticos») recalcula cada curso visible y el conjunto del sitio y guarda el resultado en la caché de Moodle. Los paneles leen esa copia.
@@ -37,7 +38,7 @@ Se excluye siempre a quien ya completó el curso, a usuarios suspendidos o elimi
 - Caída de actividad: en los 14 días anteriores a la última semana tuvo al menos 20 eventos, y en los últimos 7 días su actividad es al menos un X % menor que su media semanal de esos 14 días.
 Las dos últimas dependen del ajuste del sitio «Alertas de comportamiento» y del registro estándar de Moodle.
 Los umbrales de inactividad y progreso salen del sitio y cada curso puede sustituirlos; los de las alertas se fijan en cada automatización (curso), con valor de partida en la plantilla del sitio.
-El panel lista los primeros 50 alumnos de cada grupo (los matriculados más antiguos primero, o la mayor caída primero) y añade «… y N más (no listados)». La exportación de alumnos en riesgo y la cola de intervención usan esa misma lista de hasta 50 por grupo.
+El panel lista los primeros 50 alumnos de cada grupo (los matriculados más antiguos primero, o la mayor caída primero) y añade «… y N más (no listados)». La cola de intervención y el mensaje manual en lote usan esa misma lista de hasta 50 por grupo. La exportación de alumnos en riesgo, desde 1.1.1, se calcula al descargarla e incluye a todos (en 1.1.0 solo los 50 listados).
 El panel con nombres, su exportación y la cola exigen el permiso «Ver demografía, satisfacción y los nombres de los alumnos en riesgo» en el curso. El panel no distingue grupos separados.
 
 ## Mensajes automáticos
@@ -46,6 +47,8 @@ El panel con nombres, su exportación y la cola exigen el permiso «Ver demograf
 - Para cada alumno candidato se toma la primera automatización activada que le corresponde, en este orden: Nunca accedió, Inactivo, Vista sin completar, Caída de actividad. Recibe un solo mensaje.
 - Plazo mínimo: no se envía si ese alumno recibió cualquier mensaje automático de ese curso dentro de los «Días mínimos entre mensajes». No existe un tope total: mientras siga cumpliendo la condición, recibe otro mensaje al vencer el plazo. Tampoco se tienen en cuenta las fechas de inicio o fin del curso.
 - Antes de enviar se comprueba que el destinatario existe, no está suspendido y sigue matriculado.
+- Desde 1.1.1 no se envía al personal del curso: quien tiene en ese curso el permiso de ver las estadísticas del curso (profesorado, gestores) se omite, aunque siga contando en el embudo y apareciendo en el panel. Un administrador del sitio matriculado como estudiante sí lo recibe. En 1.1.0 no existía este filtro.
+- El envío se anota en el historial aunque algún canal de entrega de Moodle (por ejemplo, el correo) falle: el historial indica que el plugin lo entregó a Moodle, no que llegó al buzón.
 - Texto: tres capas, gana la primera que exista: texto propio del curso, plantilla del sitio, texto incorporado. El incorporado se envía en el idioma del perfil de cada alumno (español, inglés, portugués de Brasil). Un texto propio se envía igual a todos, salvo bloques multiidioma. Si se guarda un texto idéntico al heredado, no se considera propio.
 - La plantilla es texto plano; se respetan los saltos de párrafo y las direcciones web se convierten en enlaces. El aspecto (color, logotipo o nombre del sitio, botón «Ir al curso», firma, pie con el motivo y el enlace a preferencias) lo añade el plugin según los ajustes del sitio.
 - Entrega: notificación de Moodle del tipo «Recordatorios del curso (alumnos inactivos o atascados)», activada de fábrica en web y correo. Cada alumno puede desactivarla en sus preferencias. El remitente es el usuario «no responder» del sitio.
@@ -55,7 +58,7 @@ El panel con nombres, su exportación y la cola exigen el permiso «Ver demograf
 - Mensaje manual desde el panel («Enviar mensaje» con alumnos seleccionados): es un mensaje personal de Moodle del propio docente; no se anota en el historial ni cuenta para el plazo mínimo; usa cinco marcadores propios.
 
 ## Resumen semanal a tutores
-Opción del curso «Enviarme un resumen semanal de este curso». La tarea semanal lo envía a todas las personas con el permiso de configurar los mensajes en ese curso (también gestores con ese permiso heredado), no solo a quien lo activó. Contiene: nuevas matrículas, finalizaciones, mensajes enviados, alumnos que volvieron tras un mensaje (7 días) y alumnos en riesgo. Si todas las cifras son cero, no se envía. Con IA configurada añade un «Apunte de la IA» (una llamada por curso y semana, fuera del límite por usuario). Solo cursos visibles.
+Opción del curso «Enviar un resumen semanal de este curso a sus tutores» (en 1.1.0 se llamaba «Enviarme un resumen semanal de este curso»; el comportamiento es el mismo). La tarea semanal lo envía a todas las personas con el permiso de configurar los mensajes en ese curso (también gestores con ese permiso heredado), no solo a quien lo activó. Contiene: nuevas matrículas, finalizaciones, mensajes enviados, alumnos que volvieron tras un mensaje (7 días) y alumnos en riesgo. Si todas las cifras son cero, no se envía. Con IA configurada añade un «Apunte de la IA», desde 1.1.1 en el idioma de cada destinatario (una llamada por curso, semana e idioma distinto entre los destinatarios, fuera del límite por usuario). Solo cursos visibles.
 
 ## Asistente de IA («Pregunta a Pluginia»)
 - Aparece en la pestaña Resumen del curso y en el panel del sitio solo si hay proveedor y clave.
@@ -71,14 +74,14 @@ Opción del curso «Enviarme un resumen semanal de este curso». La tarea semana
 - Satisfacción: NPS de una encuesta del plugin adicional Questionnaire y ganancia de conocimiento entre prueba inicial y final, detectadas por palabras clave en el nombre; hay valores manuales en los ajustes.
 - Horas de formación impartidas: horas del curso (campo personalizado numérico) × personas que lo completaron.
 - Panel del sitio: filtros, evolución de 12 meses, cohortes, clasificación de cursos, comparación de 2 a 5 cursos, exportaciones.
-- Exportación semanal programada por correo a destinatarios configurados.
+- Exportación semanal programada por correo a destinatarios configurados (desde 1.1.1 la dirección se reconoce sin distinguir mayúsculas).
 - Seguimiento de alumnos: estado, último acceso, progreso y nota de una persona en todos sus cursos visibles.
 - Auditoría de preparación: comprobaciones con estado Correcto, Aviso o Error y enlace para corregir.
 
 ## Licencia
 - 15 días de evaluación completa desde la instalación, sin clave.
 - La clave se valida sin conexión y está ligada a la dirección exacta del sitio (cuenta http frente a https; se ignora la barra final).
-- Clave con caducidad: tras la fecha sigue funcionando 30 días con aviso. Clave no válida: funciona mientras quede evaluación.
+- Clave con caducidad: es válida durante todo el día de la fecha indicada (desde 1.1.1); después sigue funcionando 30 días con aviso. Clave no válida: funciona mientras quede evaluación.
 - Sin licencia en vigor: los paneles muestran un aviso en lugar de cifras y las tareas de cálculo, mensajes, resumen y exportación no hacen nada. No se borra ningún dato ni ajuste.
 
 ## Qué guarda el plugin
@@ -98,4 +101,5 @@ Todo ello está declarado para las solicitudes de exportación y borrado de dato
 | Configurar y lanzar los mensajes automáticos a alumnos | Gestor, profesor con edición |
 | Ver el progreso de un alumno en todos sus cursos | Gestor |
 | Configurar Pluginia Analytics | Gestor |
-Consecuencia: de fábrica un profesor con edición puede configurar mensajes, pero no ve el panel de alumnos en riesgo ni el botón que lleva a esa configuración, que está junto a ese panel.
+Consecuencia: de fábrica un profesor con edición puede configurar mensajes y ve el botón que lleva a esa configuración, pero no ve el panel de alumnos en riesgo con nombres ni la cola de intervención. En 1.1.0 tampoco veía el botón.
+Los enlaces a la página de ajustes del plugin solo se ofrecen a quien puede abrirla (administradores con configuración del sitio).

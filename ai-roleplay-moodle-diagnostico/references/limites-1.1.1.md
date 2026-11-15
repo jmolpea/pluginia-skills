@@ -1,6 +1,6 @@
-# Límites y valores por defecto: AI Roleplay 1.1.0
+# Límites y valores por defecto: AI Roleplay 1.1.1
 
-Verificados leyendo la versión 1.1.0 (interna 2026110901), revisión del 15-11-2026. Un límite confirmado no demuestra que haya causado un incidente concreto.
+Verificados leyendo la versión 1.1.1 (interna 2026111500), revisión del 15-11-2026. Un límite confirmado no demuestra que haya causado un incidente concreto.
 
 ## Sesión, intentos y fechas
 | Elemento | Valor verificado |
@@ -38,10 +38,10 @@ Verificados leyendo la versión 1.1.0 (interna 2026110901), revisión del 15-11-
 |---|---|
 | Rúbrica | Comunicación 30 %, adherencia al rol 25 %, manejo del escenario 25 %, calidad del lenguaje 20 %. Fija. |
 | Puntuación por parte | 0 a 100; la nota global se recalcula en el servidor con dos decimales. |
-| Calificación máxima | Entero de 1 a 10000. De fábrica 100. |
+| Calificación máxima | Entero de 1 a 10000. De fábrica 100. Al cambiarla, las notas ya guardadas se convierten a la nueva escala (desde la 1.1.1). |
 | Participación mínima | Menos de 20 palabras del alumno: aviso y revisión obligatoria. 0 palabras: nota 0 sin llamar a la IA. |
 | Nota manual del profesor | Entre 0 y la calificación máxima. |
-| Recalcular evaluación | Espera de 5 minutos entre dos recálculos del mismo intento por el mismo profesor; máximo 5 al día (día UTC) por profesor e intento. |
+| Recalcular evaluación | No disponible en intentos calificados sin conversación guardada. Espera de 5 minutos entre dos recálculos del mismo intento por el mismo profesor; máximo 5 al día (día UTC) por profesor e intento. |
 | Espera del alumno | La página consulta el estado cada 5 segundos durante unos 10 minutos; después indica que puede salir y volver. |
 | Evaluación atascada | Tras 30 minutos «Evaluándose» puede volver a tomarse. |
 | Al libro de calificaciones | La mejor nota entre los intentos publicados. |
@@ -57,7 +57,8 @@ Verificados leyendo la versión 1.1.0 (interna 2026110901), revisión del 15-11-
 | Respuesta de un avatar | Como máximo 45 s de espera (o el ajuste anterior si es menor). |
 | Voz de servidor | Como máximo 25 s por frase. |
 | Moderación de OpenAI | Como máximo 10 s; si falla, la conversación sigue sin filtrar. |
-| Conexión de tiempo real | 20 s para establecerla. |
+| Conexión de tiempo real | 20 s para establecerla. Máximo de 6 conexiones por alumno y minuto; por encima, la sesión sigue por turnos. |
+| Frases guardadas en tiempo real | Máximo de 120 por alumno y minuto; las que excedan no se guardan. |
 | Reintentos | Hasta 3 intentos por llamada ante saturación o error del proveedor, con esperas crecientes y sin superar el tiempo disponible. |
 | Máximo de tokens por llamada API | De fábrica 4096. Mínimo efectivo 256. Con modelos que razonan, el plugin eleva el tope (hasta 16.000 en evaluación) aunque el ajuste sea menor. |
 | Proceso de evaluación | Hasta 5 minutos cuando lo pide el alumno; hasta 10 al recalcular. |

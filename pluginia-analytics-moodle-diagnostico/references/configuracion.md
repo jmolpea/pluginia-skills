@@ -1,4 +1,4 @@
-# Configuración: ajustes de sitio y de curso (1.1.0)
+# Configuración: ajustes de sitio y de curso (1.1.1)
 
 Nombres tal como se ven en pantalla en español. Manual público con ejemplos y simuladores: https://claude.ai/artifact/CZfR9hAnk2UnCQRgFTBH3R
 
@@ -52,14 +52,14 @@ Palabras clave de detección: encuesta con «satisfaction», «satisfacción», 
 Seguimiento de finalización (sitio, curso y actividades); cron; almacén de registros estándar; nota de aprobado del curso; base GeoIP en Administración del sitio › Ubicación (opcional); logotipo del sitio; correo saliente y mensajería; plugin Questionnaire para el NPS (opcional).
 
 ## Ajustes del curso
-Ruta: Curso › Informes › Pluginia Analytics › botón «Configurar mensajes automáticos» (bajo el panel de alumnos en riesgo). Requiere el permiso de configurar los mensajes.
+Ruta: Curso › Informes › Pluginia Analytics › botón «Configurar mensajes automáticos» (al final de la pestaña Resumen). Requiere el permiso de configurar los mensajes.
 
 ### Formulario «Mensajes automáticos»
-- Activar los mensajes automáticos (no): interruptor general del curso.
+- Activar los mensajes automáticos (no): interruptor general del curso. Sigue enviando tras la fecha de fin del curso hasta que se desactiva. El personal del curso no los recibe.
 - Inactividad para estar en riesgo (días) (0 = valor del sitio): también cambia el panel de alumnos en riesgo, con los mensajes activados o no.
 - Progreso para estar en riesgo (%) (0 = valor del sitio).
 - Días mínimos entre mensajes (7): solo visible con los mensajes activados.
-- Enviarme un resumen semanal de este curso (no): llega a todos los que pueden configurar los mensajes del curso.
+- Enviar un resumen semanal de este curso a sus tutores (no): llega a todos los que pueden configurar los mensajes del curso.
 
 ### Tabla «Automatizaciones»
 Columnas: Automatización, Quién lo recibe, Estado (Activada/Desactivada), Texto del mensaje («Texto incorporado», «Plantilla del sitio» o «Texto propio de este curso»), Acciones (Editar, Activar/Desactivar, Restaurar el texto por defecto).

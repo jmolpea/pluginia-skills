@@ -1,4 +1,4 @@
-# Límites y valores por defecto: 0.8.0
+# Límites y valores por defecto: 0.8.1
 
 Valores verificados en la revisión estática del 15-11-2026. Un límite documentado es un hecho; que haya causado un caso concreto es una conclusión aparte.
 
@@ -42,7 +42,7 @@ Con el subsistema de IA de Moodle no hay elección de modelo en el plugin y el t
 | Orientaciones para la IA | Vacío | Sin límite propio comprobado |
 | Modelo de IA | Primero de la lista del sitio | No aparece con el subsistema de IA de Moodle |
 | Confianza necesaria para liberar automáticamente | La del sitio (0.65) | De 0 a 1 |
-| Intentos a finalizar (finalización) | Sin marcar; 1 al marcar | No se valida contra los intentos permitidos |
+| Intentos a finalizar (finalización) | Sin marcar; 1 al marcar | No puede superar los intentos permitidos (el formulario lo impide desde la 0.8.1) |
 
 Las actividades creadas antes de 0.8.0 conservan «Último intento» como método y, si tenían IA, siguen combinándola en la nota.
 
@@ -50,17 +50,18 @@ Las actividades creadas antes de 0.8.0 conservan «Último intento» como métod
 - Tope absoluto de 50 decisiones por intento, también cuando el máximo es 0. Protege frente a escenarios con bucles.
 - Un intento en curso cuenta para «Intentos permitidos». Solo puede haber un intento en curso por alumno y actividad.
 - La justificación del alumno no tiene longitud mínima ni máxima en el plugin; se guarda como texto sin formato.
+- Un intento abandonado con el tiempo agotado se cierra solo pasados 5 minutos, por una tarea programada que corre cada 10 minutos (desde la 0.8.1).
 - El límite de tiempo no admite pausas. Los avisos accesibles de la cuenta atrás se dan a los 5 minutos, 1 minuto y 10 segundos.
 - La cuenta atrás se muestra en tono de urgencia cuando quedan 2 minutos o menos.
 - No existen fechas de apertura y cierre propias de la actividad.
 - Cambiar la «Calificación máxima» no recalcula las notas de intentos ya terminados.
 
 ## Texto enviado a la IA
-- El máximo de caracteres se reparte a partes iguales entre todas las decisiones del intento, tengan o no justificación. Cada justificación se corta por el final al llegar a su parte.
-- Cada decisión conserva siempre al menos 200 caracteres. Por eso, con más decisiones que el máximo dividido entre 200 (más de 12 con el valor de fábrica), el total enviado puede superar el máximo configurado.
+- El máximo de caracteres se reparte a partes iguales entre las decisiones que tienen justificación. Cada justificación se corta por el final al llegar a su parte. En la 0.8.0 el reparto contaba todas las decisiones, tuvieran o no justificación.
+- Cada justificación conserva siempre al menos 200 caracteres. Por eso, con más decisiones justificadas que el máximo dividido entre 200 (más de 12 con el valor de fábrica), el total enviado puede superar el máximo configurado. La ayuda del ajuste lo indica desde la 0.8.1.
 - Texto de la situación: hasta 600 caracteres por decisión, sin formato. No cuenta para el máximo anterior.
 - También se envían las opciones disponibles y la elegida, sin recorte propio.
-- Ejemplo: 2500 caracteres y 5 decisiones dan 500 caracteres por justificación.
+- Ejemplo: 2500 caracteres y 5 decisiones justificadas dan 500 caracteres por justificación.
 
 ## Respuesta de la IA
 - Comentario por criterio: hasta 300 caracteres. Comentario por decisión: hasta 400. Feedback general: se pide de hasta 600 y se guarda hasta 800.
@@ -85,5 +86,7 @@ Las actividades creadas antes de 0.8.0 conservan «Último intento» como métod
 - Valores por defecto al crear: variable con inicial 50, mínimo 0, máximo 100, «cuanto más alto, mejor»; criterio con puntuación máxima 25.
 
 ## Informe
-- 25 intentos por página. Filtros por estado, incidencia, estado de IA y nombre.
+- 25 intentos por página. Filtros por estado, incidencia, estado de IA y nombre. Desde la 0.8.1 las tarjetas «Intentos con incidencia» e «IA pendiente» filtran por lo mismo que cuentan, con los valores «Atención o crítica» y «Pendiente o procesando».
+- La navegación entre intentos del resultado solo recorre intentos terminados.
+- Con grupos separados, los contadores de la página de la actividad solo cuentan al alumnado de los grupos del docente (desde la 0.8.1).
 - Niveles de incidencia: «Atención» (revisión docente pendiente, IA pendiente, IA requiere revisión, IA con alertas) y «Crítica» (IA fallida).

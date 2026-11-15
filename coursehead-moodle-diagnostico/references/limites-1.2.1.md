@@ -1,6 +1,6 @@
-# Límites y valores por defecto: versión 1.2.0
+# Límites y valores por defecto: versión 1.2.1
 
-Verificados leyendo el código de 1.2.0 el 15-11-2026. Un límite documentado es un hecho; que haya causado un incidente concreto es una conclusión aparte.
+Verificados leyendo el código de 1.2.1 el 15-11-2026. Los valores de fábrica son los mismos que en 1.2.0. Un límite documentado es un hecho; que haya causado un incidente concreto es una conclusión aparte.
 
 ## Valores de fábrica del sitio
 | Ajuste | Valor de fábrica |
@@ -30,13 +30,16 @@ Verificados leyendo el código de 1.2.0 el 15-11-2026. Un límite documentado es
 ## Tamaños
 - La longitud se cuenta en caracteres, no en bytes; cuentan espacios y saltos de línea.
 - 0 (o un número negativo) en una longitud máxima significa sin límite del plugin. Siguen existiendo los límites del servidor para el envío de formularios, que el plugin no controla.
-- Los límites se aplican al guardar y al restaurar, no al servir. Bajar un límite no desactiva el código ya guardado, pero impide volver a guardar ese curso hasta que el código quepa.
+- Los límites se aplican al guardar y al restaurar, no al servir. Bajar un límite no desactiva el código ya guardado; solo se rechaza ese campo cuando alguien que puede editarlo vuelve a enviarlo. Quien no ve ese campo guarda con normalidad (en 1.2.0 quedaba bloqueado).
 - Un único CSS y un único JavaScript por curso. No hay varios archivos, ni versiones anteriores, ni historial: al guardar se sustituye lo anterior.
 - No se pueden subir imágenes, tipografías ni otros archivos.
 
 ## Validación: qué se rechaza
-- Seis fragmentos literales, sin distinguir mayúsculas: apertura y cierre de etiqueta style, apertura y cierre de etiqueta script, apertura de PHP y cierre de PHP (interrogación seguida de «mayor que»).
-- Falsos positivos conocidos: un JavaScript correcto que compare sin espacios una variable con otra cuyo nombre empiece por «script» o «style» (por ejemplo, un contador «menor que» scripts) contiene el fragmento y se rechaza. También una interrogación seguida inmediatamente de «mayor que» dentro de una cadena o de un selector. Solución: añadir un espacio entre los dos signos o partir la cadena.
+- Etiquetas style y script completas, de apertura o de cierre, sin distinguir mayúsculas: el nombre seguido de espacio, salto de línea, barra, «mayor que» o fin del texto.
+- Dos marcas literales de PHP: la de apertura y la de cierre (interrogación seguida de «mayor que»).
+- Falsos positivos que quedan en 1.2.1: una interrogación seguida inmediatamente de «mayor que» dentro de una cadena o de un selector, y una comparación sin espacios que forma una etiqueta completa (una variable llamada exactamente script o style entre «menor que» y «mayor que», o seguida de espacio). Solución: añadir un espacio entre los signos o partir la cadena.
+- Solo en 1.2.0: se rechazaba además cualquier comparación sin espacios con una variable cuyo nombre empezara por script o style (por ejemplo, un contador «menor que» scripts). Solución en 1.2.0: añadir un espacio; o actualizar a 1.2.1.
+- Un campo con solo espacios o líneas en blanco se guarda vacío (1.2.1).
 - No se detectan errores de sintaxis, selectores inexistentes, reglas inútiles ni programas dañinos.
 
 ## Páginas
@@ -50,6 +53,9 @@ Verificados leyendo el código de 1.2.0 el 15-11-2026. Un límite documentado es
 ## Ámbito
 - Por curso completo. No por sección, actividad concreta, grupo, rol ni usuario.
 - El mismo contenido para todos los participantes.
+
+## Orden respecto al tema
+El CSS del curso se carga antes que las hojas de estilo del tema (comprobado en Moodle 5.3). A igual precisión del selector gana el tema; la regla del curso necesita un selector más preciso.
 
 ## Caché y tiempos
 - Revisión: 16 caracteres; cambia en cada guardado y en cada restauración.

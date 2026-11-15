@@ -1,6 +1,6 @@
 ---
 name: recomendador-cursos-ia-moodle-diagnostico
-description: Diagnosticar y configurar el bloque Recomendador de cursos con IA (AI course recommender, block_aicourserecommender) de Moodle. Usar cuando el bloque no aparece, no hay recomendaciones, un curso concreto no se recomienda, se alcanza el límite diario, fallan las peticiones a la IA, no llegan avisos de cursos nuevos, no aparece el botón Matricularme, hay dudas sobre rutas de aprendizaje, o ante consultas sobre límites, costes, privacidad, datos enviados a la IA y significado de cada ajuste. Priorizar cambios de configuración con pruebas controladas antes de pedir cambios de código. Basarse en documentación verificada de la versión 1.0.0-beta4 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnosticar y configurar el bloque Recomendador de cursos con IA (AI course recommender, block_aicourserecommender) de Moodle. Usar cuando el bloque no aparece, no hay recomendaciones, un curso concreto no se recomienda, se alcanza el límite diario, fallan las peticiones a la IA, no llegan avisos de cursos nuevos, no aparece el botón Matricularme, hay dudas sobre rutas de aprendizaje, o ante consultas sobre límites, costes, privacidad, datos enviados a la IA y significado de cada ajuste. Priorizar cambios de configuración con pruebas controladas antes de pedir cambios de código. Basarse en documentación verificada de la versión 1.0.0-beta5 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Recomendador de cursos con IA: diagnóstico y configuración
@@ -12,10 +12,10 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional del bloque. Responder en el idioma del usuario, con una explicación concreta y pasos comprobables.
-Leer references/funcionamiento-1.0.0-beta4.md al iniciar un diagnóstico y references/limites-1.0.0-beta4.md ante cifras, cuotas, recortes, plazos o costes.
+Leer references/funcionamiento-1.0.0-beta5.md al iniciar un diagnóstico y references/limites-1.0.0-beta5.md ante cifras, cuotas, recortes, plazos o costes.
 Leer references/configuracion.md para explicar o recomendar ajustes, references/protocolo-diagnostico.md para analizar un caso y references/ajustes-y-pruebas.md antes de proponer cambios.
 Usar references/casos-validacion.md para comprobar la cobertura de la skill; no presentar sus casos sintéticos como incidentes reales.
-Esta skill documenta una revisión estática del código que declara 1.0.0-beta4 (versión interna 2026100600, Moodle 4.5 a 5.3), revisada el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en un Moodle concreto ni vigencia para versiones posteriores.
+Esta skill documenta una revisión estática del código que declara 1.0.0-beta5 (versión interna 2026111500, Moodle 4.5 a 5.3), revisada el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en un Moodle concreto ni vigencia para versiones posteriores.
 Manual público de configuración, para enlazar al usuario: https://claude.ai/artifact/LCZgLbHfAnSBkurowGLZ95
 Pedir la versión instalada si se desconoce. Si es otra, delimitar qué información sigue siendo aplicable y sugerir pedir al mantenedor la documentación de esa versión.
 
@@ -63,6 +63,6 @@ No afirmar qué proveedor o modelo se usa: lo decide la configuración de IA de 
 No calcular costes exactos: las cifras de las referencias son orientativas y dependen del proveedor.
 No afirmar que la redacción automática de datos personales es completa: sustituye patrones, no entiende el texto.
 No decir que el plugin guarda el texto enviado a la IA ni su respuesta completa: guarda el ranking resultante y un registro con tipo, éxito, error, duración y tokens.
-No confundir «0» con «sin límite»: en este plugin cada ajuste numérico tiene su propio comportamiento con 0.
+No confundir «0» con «sin límite»: cada ajuste numérico tiene su rango admitido y su propio significado de 0 (ver la referencia de límites).
 No prometer funciones que no existen: no hay ajustes por instancia del bloque, no se coloca en cursos, no hay recomendaciones para invitados, no hay matrícula directa con clave o pago.
 No presentar la skill como instalada en Moodle, conectada al sitio del cliente o actualizada automáticamente.
