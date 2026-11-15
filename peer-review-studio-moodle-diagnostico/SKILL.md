@@ -1,9 +1,14 @@
 ---
 name: peer-review-studio-moodle-diagnostico
-description: Diagnosticar y configurar Peer Review Studio (mod_peerreviewstudio), la actividad de evaluación entre pares para Moodle. Usar cuando alguien pregunte por límites, ajustes o funcionamiento del plugin, o ante entregas sin revisores, revisiones que no se asignan o se retiran, notas que no aparecen o no cuadran, feedback que no se publica, recordatorios que no llegan, dudas sobre la rúbrica o problemas con la revisión opcional por IA. Prioriza ajustes de la actividad y pruebas controladas antes de proponer cambios de código. Se basa en documentación verificada de la versión 1.0.0 y distingue hechos de hipótesis.
+description: Diagnosticar y configurar Peer Review Studio (mod_peerreviewstudio), la actividad de evaluación entre pares para Moodle. Usar cuando alguien pregunte por límites, ajustes o funcionamiento del plugin, o ante entregas sin revisores, revisiones que no se asignan o se retiran, notas que no aparecen o no cuadran, feedback que no se publica, recordatorios que no llegan, dudas sobre la rúbrica o problemas con la revisión opcional por IA. Prioriza ajustes de la actividad y pruebas controladas antes de proponer cambios de código. Se basa en documentación verificada de la versión 1.0.0 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Peer Review Studio: diagnóstico y configuración
+
+## Para qué sirve
+Resolver cualquier consulta sobre el plugin: qué hace, cómo se configura cada ajuste del sitio y de la actividad, qué límites tiene y cómo conseguir un resultado concreto, además de diagnosticar problemas.
+Ante una duda de uso o configuración sin incidencia, responder directamente y en breve a partir de references/configuracion.md y las referencias de funcionamiento y límites, enlazando el manual; no abrir un diagnóstico ni pedir datos de un caso.
+
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional y pedagógico del plugin. Responder en el idioma del usuario (en español, de usted), con explicaciones concretas y acciones comprobables.

@@ -1,8 +1,8 @@
-# Pluginia · Skills de diagnóstico y configuración
+# Pluginia · Asistentes de los plugins (skills)
 
 Skills para Claude y ChatGPT que acompañan a los plugins de Moodle de Pluginia (RSMAX Consulting S.L.).
-Cada una responde preguntas sobre la configuración, los límites y el funcionamiento de un plugin, y
-ayuda a diagnosticar y probar casos reales paso a paso.
+Cada una resuelve cualquier duda sobre un plugin: qué hace, cómo se configura cada ajuste, qué límites
+tiene y cómo conseguir un resultado concreto. También ayuda a diagnosticar y probar casos reales.
 
 Contienen documentación funcional, no código: no necesitan acceso a su Moodle ni a ningún repositorio.
 

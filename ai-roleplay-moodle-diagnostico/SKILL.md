@@ -1,9 +1,14 @@
 ---
 name: ai-roleplay-moodle-diagnostico
-description: Diagnosticar y configurar AI Roleplay (mod_airoleplay), la actividad de Moodle de simulaciones de conversación por voz con avatares de IA y evaluación automática. Usar ante sesiones que no arrancan, avatares que no suenan, micrófono que no funciona, evaluaciones que no llegan, notas de 0 o en revisión, avisos de límite de peticiones o de licencia, y consultas sobre límites, modelos, voces, costes, privacidad, intentos, excepciones y redacción de escenarios. Priorizar ajustes de configuración con pruebas controladas antes de pedir cambios de código. Basada en documentación funcional verificada de la versión 1.1.0; distingue hechos de hipótesis.
+description: Diagnosticar y configurar AI Roleplay (mod_airoleplay), la actividad de Moodle de simulaciones de conversación por voz con avatares de IA y evaluación automática. Usar ante sesiones que no arrancan, avatares que no suenan, micrófono que no funciona, evaluaciones que no llegan, notas de 0 o en revisión, avisos de límite de peticiones o de licencia, y consultas sobre límites, modelos, voces, costes, privacidad, intentos, excepciones y redacción de escenarios. Priorizar ajustes de configuración con pruebas controladas antes de pedir cambios de código. Basada en documentación funcional verificada de la versión 1.1.0; distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # AI Roleplay: diagnóstico y configuración
+
+## Para qué sirve
+Resolver cualquier consulta sobre el plugin: qué hace, cómo se configura cada ajuste del sitio y de la actividad, qué límites tiene y cómo conseguir un resultado concreto, además de diagnosticar problemas.
+Ante una duda de uso o configuración sin incidencia, responder directamente y en breve a partir de references/configuracion.md y las referencias de funcionamiento y límites, enlazando el manual; no abrir un diagnóstico ni pedir datos de un caso.
+
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional y pedagógico de AI Roleplay. Responder en el idioma del usuario, con una explicación concreta y acciones comprobables.

@@ -1,5 +1,5 @@
 interface:
-  display_name: Decision Arena · Diagnóstico
+  display_name: Decision Arena · Ayuda y diagnóstico
   short_description: Configura y diagnostica escenarios, notas e IA
   default_prompt: Usa $decision-arena-moodle-diagnostico para analizar este caso y proponer
     primero ajustes de configuración con una prueba controlada.

@@ -1,9 +1,14 @@
 ---
 name: evaluador-ia-moodle-diagnostico
-description: Diagnostica y ayuda a configurar RSMAX AI Tutor (local_rsmaxtutor), el evaluador de tareas de Moodle con IA. Se usa ante entregas que no se corrigen, rúbricas incompletas, notas distintas para una misma entrega, archivos ignorados, ausencia de retroalimentación, notas publicadas o retenidas sin esperarlo, y ante consultas sobre límites, ajustes del sitio y de cada tarea, prompts y diseño de rúbricas. Prioriza ajustes de configuración, descripción, rúbrica y prompt con pruebas controladas antes de proponer cambios de código. Se basa en documentación funcional verificada de la versión 1.7.1 y distingue hechos de hipótesis.
+description: Diagnostica y ayuda a configurar RSMAX AI Tutor (local_rsmaxtutor), el evaluador de tareas de Moodle con IA. Se usa ante entregas que no se corrigen, rúbricas incompletas, notas distintas para una misma entrega, archivos ignorados, ausencia de retroalimentación, notas publicadas o retenidas sin esperarlo, y ante consultas sobre límites, ajustes del sitio y de cada tarea, prompts y diseño de rúbricas. Prioriza ajustes de configuración, descripción, rúbrica y prompt con pruebas controladas antes de proponer cambios de código. Se basa en documentación funcional verificada de la versión 1.7.1 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # RSMAX AI Tutor: diagnóstico y configuración
+
+## Para qué sirve
+Resolver cualquier consulta sobre el plugin: qué hace, cómo se configura cada ajuste del sitio y de la actividad, qué límites tiene y cómo conseguir un resultado concreto, además de diagnosticar problemas.
+Ante una duda de uso o configuración sin incidencia, responder directamente y en breve a partir de references/configuracion.md y las referencias de funcionamiento y límites, enlazando el manual; no abrir un diagnóstico ni pedir datos de un caso.
+
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional y pedagógico. Responder en el idioma del usuario, con una explicación concreta y acciones comprobables.

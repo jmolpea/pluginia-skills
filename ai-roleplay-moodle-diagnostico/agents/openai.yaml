@@ -1,5 +1,5 @@
 interface:
-  display_name: AI Roleplay · Diagnóstico
+  display_name: AI Roleplay · Ayuda y diagnóstico
   short_description: Configura y diagnostica simulaciones con avatares de IA
   default_prompt: Usa $ai-roleplay-moodle-diagnostico para analizar este caso de
     AI Roleplay y proponer primero ajustes de configuración con una prueba controlada.

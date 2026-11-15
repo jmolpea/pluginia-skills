@@ -1,9 +1,14 @@
 ---
 name: decision-arena-moodle-diagnostico
-description: Diagnosticar y configurar Decision Arena (mod_decisionarena), la actividad de Moodle de escenarios de decisión ramificados con evaluación opcional de justificaciones mediante IA. Usar ante consultas sobre límites, ajustes del sitio o de la actividad, puntuación por reglas, intentos, revisión docente, límite de tiempo, evaluaciones de IA pendientes o fallidas, feedback de IA que el alumno no ve, notas inesperadas o escenarios que no se pueden guardar o importar. Priorizar ajustes de configuración y pruebas controladas antes de proponer cambios de código. Basarse en documentación verificada de la versión 0.8.0 y distinguir hechos de hipótesis.
+description: Diagnosticar y configurar Decision Arena (mod_decisionarena), la actividad de Moodle de escenarios de decisión ramificados con evaluación opcional de justificaciones mediante IA. Usar ante consultas sobre límites, ajustes del sitio o de la actividad, puntuación por reglas, intentos, revisión docente, límite de tiempo, evaluaciones de IA pendientes o fallidas, feedback de IA que el alumno no ve, notas inesperadas o escenarios que no se pueden guardar o importar. Priorizar ajustes de configuración y pruebas controladas antes de proponer cambios de código. Basarse en documentación verificada de la versión 0.8.0 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Decision Arena: diagnóstico y configuración
+
+## Para qué sirve
+Resolver cualquier consulta sobre el plugin: qué hace, cómo se configura cada ajuste del sitio y de la actividad, qué límites tiene y cómo conseguir un resultado concreto, además de diagnosticar problemas.
+Ante una duda de uso o configuración sin incidencia, responder directamente y en breve a partir de references/configuracion.md y las referencias de funcionamiento y límites, enlazando el manual; no abrir un diagnóstico ni pedir datos de un caso.
+
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional y pedagógico. Responder en el idioma del usuario, con una explicación concreta y acciones comprobables.

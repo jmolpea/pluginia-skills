@@ -1,5 +1,5 @@
 interface:
-  display_name: Course Head Assets · Diagnóstico
+  display_name: Course Head Assets · Ayuda y diagnóstico
   short_description: Resuelve por qué el CSS o JS de un curso no se aplica
   default_prompt: Usa $coursehead-moodle-diagnostico para analizar este caso y proponer
     primero ajustes de configuración con una prueba controlada.

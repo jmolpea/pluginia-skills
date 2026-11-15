@@ -1,9 +1,14 @@
 ---
 name: pluginia-analytics-moodle-diagnostico
-description: Diagnosticar y configurar Pluginia Analytics para Moodle (analíticas de participación, alumnos en riesgo, mensajes automáticos y asistente de IA). Usar ante paneles vacíos o desactualizados, etapas del embudo a cero, alumnos en riesgo que no aparecen, mensajes automáticos que no se envían o se repiten, docentes que no ven un panel, avisos de licencia, errores del asistente de IA o consultas sobre límites, permisos, privacidad y ajustes. Priorizar cambios de configuración y pruebas controladas antes de proponer cambios de código al mantenedor. Basarse en documentación verificada de la versión 1.1.0 y distinguir hechos de hipótesis.
+description: Diagnosticar y configurar Pluginia Analytics para Moodle (analíticas de participación, alumnos en riesgo, mensajes automáticos y asistente de IA). Usar ante paneles vacíos o desactualizados, etapas del embudo a cero, alumnos en riesgo que no aparecen, mensajes automáticos que no se envían o se repiten, docentes que no ven un panel, avisos de licencia, errores del asistente de IA o consultas sobre límites, permisos, privacidad y ajustes. Priorizar cambios de configuración y pruebas controladas antes de proponer cambios de código al mantenedor. Basarse en documentación verificada de la versión 1.1.0 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Pluginia Analytics: diagnóstico y configuración
+
+## Para qué sirve
+Resolver cualquier consulta sobre el plugin: qué hace, cómo se configura cada ajuste del sitio y de la actividad, qué límites tiene y cómo conseguir un resultado concreto, además de diagnosticar problemas.
+Ante una duda de uso o configuración sin incidencia, responder directamente y en breve a partir de references/configuracion.md y las referencias de funcionamiento y límites, enlazando el manual; no abrir un diagnóstico ni pedir datos de un caso.
+
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional. Responder en el idioma del usuario, con una explicación concreta y acciones comprobables.

@@ -1,5 +1,5 @@
 interface:
-  display_name: Recomendador de cursos IA · Diagnóstico
+  display_name: Recomendador de cursos IA · Ayuda y diagnóstico
   short_description: Configura y diagnostica el recomendador de cursos de Moodle
   default_prompt: Usa $recomendador-cursos-ia-moodle-diagnostico para analizar este
     caso y proponer primero ajustes de configuración con una prueba controlada.

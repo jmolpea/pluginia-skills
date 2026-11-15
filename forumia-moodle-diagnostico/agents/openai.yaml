@@ -1,5 +1,5 @@
 interface:
-  display_name: Forumia · Diagnóstico
+  display_name: Forumia · Ayuda y diagnóstico
   short_description: Configura y diagnostica el asistente IA de foros de Moodle
   default_prompt: Usa $forumia-moodle-diagnostico para analizar este caso de Forumia
     y proponer primero ajustes de configuración con una prueba controlada.

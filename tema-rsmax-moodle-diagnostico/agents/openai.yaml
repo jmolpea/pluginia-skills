@@ -1,5 +1,5 @@
 interface:
-  display_name: Tema RSMAX · Diagnóstico
+  display_name: Tema RSMAX · Ayuda y diagnóstico
   short_description: Configura colores, encabezado, pie y cursos del tema RSMAX
   default_prompt: Usa $tema-rsmax-moodle-diagnostico para analizar este caso del
     tema RSMAX y proponer primero ajustes del panel con una prueba controlada.

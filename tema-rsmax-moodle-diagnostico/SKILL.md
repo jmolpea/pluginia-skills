@@ -1,9 +1,14 @@
 ---
 name: tema-rsmax-moodle-diagnostico
-description: Diagnosticar y configurar el tema RSMAX de Moodle (theme_rsmax). Usar cuando alguien pregunta cómo cambiar colores, paletas, tipografía, logotipo, encabezado, pie, página de inicio, página de matriculación o el aspecto de los cursos (Aula RSMAX, banners, presentación del módulo, áreas, etiquetas de tipo y duración), o cuando algo no se ve como espera, por ejemplo colores que no cambian, logotipo ilegible, progreso que no aparece, botón o enlaces del pie ausentes, barra de navegación que falta o asistente de IA mal colocado. Priorizar ajustes del panel y pruebas controladas antes de proponer SCSS propio o cambios de código. Basarse en documentación verificada de la versión 1.4.2 y distinguir hechos de hipótesis.
+description: Diagnosticar y configurar el tema RSMAX de Moodle (theme_rsmax). Usar cuando alguien pregunta cómo cambiar colores, paletas, tipografía, logotipo, encabezado, pie, página de inicio, página de matriculación o el aspecto de los cursos (Aula RSMAX, banners, presentación del módulo, áreas, etiquetas de tipo y duración), o cuando algo no se ve como espera, por ejemplo colores que no cambian, logotipo ilegible, progreso que no aparece, botón o enlaces del pie ausentes, barra de navegación que falta o asistente de IA mal colocado. Priorizar ajustes del panel y pruebas controladas antes de proponer SCSS propio o cambios de código. Basarse en documentación verificada de la versión 1.4.2 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Tema RSMAX: diagnóstico y configuración
+
+## Para qué sirve
+Resolver cualquier consulta sobre el plugin: qué hace, cómo se configura cada ajuste del sitio y de la actividad, qué límites tiene y cómo conseguir un resultado concreto, además de diagnosticar problemas.
+Ante una duda de uso o configuración sin incidencia, responder directamente y en breve a partir de references/configuracion.md y las referencias de funcionamiento y límites, enlazando el manual; no abrir un diagnóstico ni pedir datos de un caso.
+
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional del tema. Responder en el idioma del usuario, con una explicación concreta y pasos comprobables en pantalla.

@@ -1,9 +1,14 @@
 ---
 name: forumia-moodle-diagnostico
-description: Diagnostica y ayuda a configurar Forumia - Asistente IA para foros de Moodle (local_forumia). Usar cuando el asistente no responde en un foro, responde solo a algunos estudiantes, no llega el resumen diario, no aparecen sugerencias de nota, reactiva debates antiguos, se desactiva solo, o ante consultas sobre límites diarios, modos de respuesta, prompts, calificación por IA, cuenta del asistente, licencia, proveedores y qué datos se envían a la IA. Prioriza ajustes de configuración con pruebas controladas antes de pedir cambios de código. Se basa en documentación verificada de la versión 1.8.2 y distingue hechos de hipótesis.
+description: Diagnostica y ayuda a configurar Forumia - Asistente IA para foros de Moodle (local_forumia). Usar cuando el asistente no responde en un foro, responde solo a algunos estudiantes, no llega el resumen diario, no aparecen sugerencias de nota, reactiva debates antiguos, se desactiva solo, o ante consultas sobre límites diarios, modos de respuesta, prompts, calificación por IA, cuenta del asistente, licencia, proveedores y qué datos se envían a la IA. Prioriza ajustes de configuración con pruebas controladas antes de pedir cambios de código. Se basa en documentación verificada de la versión 1.8.2 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Forumia: diagnóstico y configuración
+
+## Para qué sirve
+Resolver cualquier consulta sobre el plugin: qué hace, cómo se configura cada ajuste del sitio y de la actividad, qué límites tiene y cómo conseguir un resultado concreto, además de diagnosticar problemas.
+Ante una duda de uso o configuración sin incidencia, responder directamente y en breve a partir de references/configuracion.md y las referencias de funcionamiento y límites, enlazando el manual; no abrir un diagnóstico ni pedir datos de un caso.
+
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional de Forumia para administradores de Moodle y docentes. Responder en el idioma del usuario, con una explicación concreta y pasos comprobables. Tratar al usuario con respeto y sin dar por sabidos Moodle ni la IA.

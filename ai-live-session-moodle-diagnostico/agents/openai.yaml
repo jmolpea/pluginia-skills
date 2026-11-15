@@ -1,5 +1,5 @@
 interface:
-  display_name: AI Live Session · Diagnóstico
+  display_name: AI Live Session · Ayuda y diagnóstico
   short_description: Revisa sesiones, conversaciones, notas y límites
   default_prompt: Usa $ai-live-session-moodle-diagnostico para analizar este caso
     y proponer primero ajustes de configuración con una prueba controlada.

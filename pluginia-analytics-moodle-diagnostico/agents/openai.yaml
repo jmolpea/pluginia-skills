@@ -1,5 +1,5 @@
 interface:
-  display_name: Pluginia Analytics · Diagnóstico
+  display_name: Pluginia Analytics · Ayuda y diagnóstico
   short_description: Revisa paneles, alumnos en riesgo y mensajes automáticos
   default_prompt: Usa $pluginia-analytics-moodle-diagnostico para analizar este caso y
     proponer primero ajustes de configuración con una prueba controlada.

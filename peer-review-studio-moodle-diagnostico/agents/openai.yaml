@@ -1,5 +1,5 @@
 interface:
-  display_name: Peer Review Studio · Diagnóstico
+  display_name: Peer Review Studio · Ayuda y diagnóstico
   short_description: Configura y diagnostica la evaluación entre pares
   default_prompt: Usa $peer-review-studio-moodle-diagnostico para analizar este caso
     y proponer primero ajustes de la actividad con una prueba controlada.

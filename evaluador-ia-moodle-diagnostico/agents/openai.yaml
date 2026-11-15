@@ -1,5 +1,5 @@
 interface:
-  display_name: RSMAX AI Tutor · Diagnóstico
+  display_name: RSMAX AI Tutor · Ayuda y diagnóstico
   short_description: Configura y diagnostica el evaluador de tareas con IA
   default_prompt: Usa $evaluador-ia-moodle-diagnostico para analizar este caso de
     AI Tutor y proponer primero ajustes de configuración, descripción, rúbrica o

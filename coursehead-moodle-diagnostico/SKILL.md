@@ -1,9 +1,14 @@
 ---
 name: coursehead-moodle-diagnostico
-description: Diagnostica y ayuda a configurar el plugin de Moodle Course custom head assets (local_coursehead), que aplica CSS y JavaScript propios por curso. Se usa cuando el CSS o el JavaScript de un curso no se aplica, se aplica solo en algunas páginas, el formulario rechaza el código, falta el enlace o el campo en el curso, la personalización se pierde al restaurar o duplicar, o hay dudas sobre permisos, seguridad del JavaScript, caché, límites y ajustes. Prioriza ajustes de configuración y pruebas controladas antes de proponer cambios de código. Se basa en documentación verificada de la versión 1.2.0 y distingue hechos de hipótesis.
+description: Diagnostica y ayuda a configurar el plugin de Moodle Course custom head assets (local_coursehead), que aplica CSS y JavaScript propios por curso. Se usa cuando el CSS o el JavaScript de un curso no se aplica, se aplica solo en algunas páginas, el formulario rechaza el código, falta el enlace o el campo en el curso, la personalización se pierde al restaurar o duplicar, o hay dudas sobre permisos, seguridad del JavaScript, caché, límites y ajustes. Prioriza ajustes de configuración y pruebas controladas antes de proponer cambios de código. Se basa en documentación verificada de la versión 1.2.0 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Course custom head assets: diagnóstico y configuración
+
+## Para qué sirve
+Resolver cualquier consulta sobre el plugin: qué hace, cómo se configura cada ajuste del sitio y de la actividad, qué límites tiene y cómo conseguir un resultado concreto, además de diagnosticar problemas.
+Ante una duda de uso o configuración sin incidencia, responder directamente y en breve a partir de references/configuracion.md y las referencias de funcionamiento y límites, enlazando el manual; no abrir un diagnóstico ni pedir datos de un caso.
+
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional del plugin. Responder en el idioma del usuario, con una explicación concreta y pasos comprobables. Tratar de «usted» en español.

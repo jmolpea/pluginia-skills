@@ -1,9 +1,14 @@
 ---
 name: ai-live-session-moodle-diagnostico
-description: Diagnosticar y configurar AI Live Session (mod_ailivesession) para Moodle, la actividad de vídeo interactivo, práctica cronometrada y conversación con un avatar de IA. Usar ante conversaciones que se cortan, códigos ALS-, notas que no llegan o no se publican, vídeos que no se completan, entregables no leídos, problemas de voz o micrófono, intentos bloqueados, y consultas sobre límites, pasos de la sesión, rúbricas, pesos de la nota y ajustes del sitio o de la actividad. Priorizar ajustes de configuración con pruebas controladas antes de proponer cambios de código. Basarse en documentación verificada de la versión 1.0.0 y distinguir hechos de hipótesis.
+description: Diagnosticar y configurar AI Live Session (mod_ailivesession) para Moodle, la actividad de vídeo interactivo, práctica cronometrada y conversación con un avatar de IA. Usar ante conversaciones que se cortan, códigos ALS-, notas que no llegan o no se publican, vídeos que no se completan, entregables no leídos, problemas de voz o micrófono, intentos bloqueados, y consultas sobre límites, pasos de la sesión, rúbricas, pesos de la nota y ajustes del sitio o de la actividad. Priorizar ajustes de configuración con pruebas controladas antes de proponer cambios de código. Basarse en documentación verificada de la versión 1.0.0 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # AI Live Session: diagnóstico y configuración
+
+## Para qué sirve
+Resolver cualquier consulta sobre el plugin: qué hace, cómo se configura cada ajuste del sitio y de la actividad, qué límites tiene y cómo conseguir un resultado concreto, además de diagnosticar problemas.
+Ante una duda de uso o configuración sin incidencia, responder directamente y en breve a partir de references/configuracion.md y las referencias de funcionamiento y límites, enlazando el manual; no abrir un diagnóstico ni pedir datos de un caso.
+
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional y pedagógico del plugin. Responder en el idioma del usuario, con una explicación concreta y acciones comprobables.
