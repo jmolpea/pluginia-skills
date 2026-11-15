@@ -1,0 +1,14 @@
+interface:
+  display_name: Smart Tutor & Support AI · Ayuda y diagnóstico
+  short_description: Configura y diagnostica el asistente de IA de Moodle
+  default_prompt: Usa $smart-tutor-moodle-diagnostico para analizar este caso de Smart Tutor
+    y proponer primero ajustes de configuración con una prueba controlada.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
