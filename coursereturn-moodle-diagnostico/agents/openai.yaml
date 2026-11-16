@@ -1,0 +1,14 @@
+interface:
+  display_name: Registro con retorno al curso · Ayuda y diagnóstico
+  short_description: Resuelve por qué un alumno no vuelve al curso tras registrarse
+  default_prompt: Usa $coursereturn-moodle-diagnostico para analizar este caso y proponer
+    primero ajustes de configuración con una prueba controlada.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

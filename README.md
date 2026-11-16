@@ -22,6 +22,7 @@ Contienen documentación funcional, no código: no necesitan acceso a su Moodle 
 | Peer Review Studio (`mod_peerreviewstudio`) | 1.0.1 | [peer-review-studio-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/peer-review-studio-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/RzMxCe9u5hXWWZy9kPUcXq) |
 | Decision Arena (`mod_decisionarena`) | 0.8.1 | [decision-arena-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/decision-arena-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/LWRnWzs6sxsFBc3Nx2AD3K) |
 | AI Live Session (`mod_ailivesession`) | 1.0.2 | [ai-live-session-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/ai-live-session-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/J58N9JJybXxofoznCsvqro) |
+| Registro por email con retorno al curso (`auth_coursereturn`) | 1.1.0 | [coursereturn-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/coursereturn-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/S9nVg3PK3GW412ms6GScy9) |
 
 Los enlaces de descarga no cambian: siempre bajan la última versión de la skill.
 
