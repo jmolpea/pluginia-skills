@@ -1,6 +1,6 @@
-# Configuración de RSMAX AI Tutor 1.7.2: todos los ajustes
+# Configuración de RSMAX AI Tutor 1.8.0: todos los ajustes
 
-Nombres tal como se ven en pantalla en español. Valores de fábrica verificados el 15-11-2026.
+Nombres tal como se ven en pantalla en español. Valores de fábrica verificados el 17-11-2026.
 Manual público con explicaciones, maquetas y simuladores: https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk
 Para el diseño de prompts y rúbricas, ver configuracion-pedagogica.md.
 
@@ -26,6 +26,7 @@ Dónde: Administración del sitio › Extensiones › Extensiones locales › AI
 | Máximo de peticiones por hora (todo el sitio) | 100 | Correcciones por hora de reloj en todo el sitio. | Dimensionar para el pico de una fecha límite. |
 | Activar el límite de peticiones por usuario | No | Enciende el tope por hora de cada alumno. | Solo ante reenvíos abusivos. |
 | Máximo de peticiones por hora (por usuario) | 10 | Correcciones por hora que puede provocar un alumno. | No bajarlo demasiado si hay varias tareas el mismo día. |
+| Pruebas por usuario y día | 20 | Cuántas veces al día puede cada docente pulsar «Analizar prompt» o «Probar corrección». Cada una es una petición de pago. Con 0, sin límite. Está en el apartado «Límites de peticiones». | Subirlo si el profesorado prepara muchas tareas el mismo día; bajarlo para acotar el gasto en pruebas. |
 
 Avisos de la página: enlace al manual al principio; estado de la licencia bajo la clave; aviso amarillo «Migración desde la versión anterior» si el plugin antiguo sigue instalado.
 Al cambiar de proveedor hay que cambiar tres cosas: proveedor, clave y, si se usó, el identificador de modelo personalizado.
@@ -62,11 +63,22 @@ Dónde: Tarea › Más › AI Tutor («Configuración de AI Tutor»). Profesor c
 | Texto de aviso | «Esta retroalimentación ha sido generada por un asistente de IA. Tu profesor la revisará antes de que sea tu calificación definitiva.» | Se añade al final de la retroalimentación. Vacío = sin aviso. | Cambiarlo si nadie va a revisar: el texto de fábrica promete revisión. |
 | Límite diario de peticiones para esta tarea | 50 | Correcciones al día en la tarea. | Ponerlo por encima de los alumnos que pueden entregar el mismo día. |
 
+Herramientas de la misma página, que no son ajustes y no guardan nada (desde 1.8.0):
+
+| Elemento | Dónde | Qué hace |
+|---|---|---|
+| Revisión del prompt › «Analizar prompt» | Bajo el campo del prompt | La IA valora si el prompt encaja con la descripción, la escala y la rúbrica de la tarea, y propone uno reescrito. |
+| «Usar este prompt» | Bajo el resultado del análisis | Copia el prompt propuesto al campo. No se guarda hasta «Guardar cambios». |
+| Probar el tutor con una entrega de ejemplo | Sección al final de la página | Campos «Texto de ejemplo» y «Archivos de ejemplo» (hasta 5) y botón «Probar corrección». Muestra la nota, la rúbrica, la confianza, los avisos, qué pasaría con una entrega real y la retroalimentación. |
+
+Junto a los botones se indica cuántas pruebas le quedan hoy al docente. Las dos herramientas usan lo que hay escrito en la página, guardado o no. Si falta la licencia o la clave de API del sitio, aparece un aviso de «no disponible» en su lugar.
+
 Mensajes del formulario: «La configuración de AI Tutor se ha guardado correctamente»; errores si falta usuario, o si alguno de los dos topes es menor que 1.
 
 ## Combinaciones habituales
 | Situación | Configuración |
 |---|---|
+| Preparar una tarea nueva | Marcar la casilla de activar, escribir el prompt, «Analizar prompt», probar tres ejemplos (bueno, flojo y fuera de tema) con «Probar corrección» y guardar. |
 | El docente revisa todo | Flujo de trabajo activado; publicar directamente sin marcar. Es la de fábrica. |
 | El docente revisa solo lo dudoso | Publicar directamente marcado; reentregas sin marcar; umbral 8; adaptar el texto de aviso. |
 | Curso sin tutor | Publicar directamente y reentregas marcados; umbral 8; intentos adicionales en la tarea; máximo por alumno acorde; texto de aviso sin promesa de revisión. Alguien debe mirar periódicamente los borradores. |
@@ -74,10 +86,11 @@ Mensajes del formulario: «La configuración de AI Tutor se ha guardado correcta
 | Entregas habladas | Transcripción activada con clave de OpenAI; audios de menos de 25 MB. |
 | Fecha límite masiva | Límite diario de la tarea y tope por hora del sitio por encima del número de alumnos. |
 
-## Lo que no existe en 1.7.2
+## Lo que no existe en 1.8.0
 No hay ajustes por curso ni por categoría, ni configuración por defecto para tareas nuevas.
 No hay reintentos automáticos ni botón para volver a corregir una entrega, ni para corregir las anteriores a la activación, ni para reiniciar contadores.
-No hay panel de uso, de coste ni de historial; solo el evento en los registros de Moodle.
+No hay panel de uso, de coste ni de historial; solo el evento en los registros de Moodle. Las pruebas y los análisis del prompt no se guardan ni se pueden consultar después.
+No se puede probar una entrega ya hecha por un alumno ni comparar varios prompts a la vez: la prueba usa un ejemplo aportado en el momento.
 No hay ajustes de temperatura, de longitud de respuesta, de tiempo de espera ni de duración del retraso.
 No funciona con cuestionarios, foros, talleres ni otras actividades: solo con la actividad Tarea.
 No es un chat: el alumno no puede conversar con la IA.

@@ -1,6 +1,6 @@
 # Protocolo de casos
 
-Revisado para la versión 1.7.2 el 15-11-2026. En versiones anteriores, los casos de la fila «no se ha podido calificar» no dejaban ninguna nota.
+Revisado para la versión 1.8.0 el 17-11-2026. Las filas sobre «Analizar prompt» y «Probar corrección» solo se aplican desde 1.8.0. En versiones anteriores, los casos de la fila «no se ha podido calificar» no dejaban ninguna nota.
 
 ## Ficha mínima
 Pedir según la consulta:
@@ -30,6 +30,9 @@ No exigir todo para contestar una pregunta simple. No pedir claves ni acceso adm
 | La corrección ignora parte del trabajo | Recorte a 200.000 caracteres o a 5 imágenes; archivo omitido; imágenes de Word, Excel o PowerPoint; descripción más allá de 8.000 caracteres | Orden y tamaño de los archivos; dónde está la evidencia |
 | AI Tutor desactivado sin tocarlo | Usuario que firma eliminado o suspendido y sin reserva válida; tarea copiada o restaurada sin usuarios (llega siempre desactivada); restauración anterior a 1.7.1 | Usuario elegido en la tarea; origen de la tarea |
 | Doble corrección o doble cobro | Plugin antiguo «AI Tutor» aún instalado y activo | Aviso de migración en los ajustes del sitio |
+| No aparecen «Analizar prompt» ni «Probar corrección» | Casilla de activar sin marcar; licencia no válida o clave de API vacía (aviso de «no disponible»); versión anterior a 1.8.0; rol sin permiso para configurar AI Tutor | Versión instalada; estado de la casilla; aviso mostrado |
+| La prueba o el análisis devuelven un error | Tope diario de pruebas agotado; fallo o tiempo de espera del proveedor; clave rechazada; ejemplo sin contenido legible; respuesta del análisis ilegible | Texto exacto del mensaje; pruebas restantes que indica la página |
+| La prueba da una nota y la entrega real otra | Variación normal de la IA; cambios escritos pero no guardados al probar; contenido distinto; la entrega real era una reentrega o chocó con un tope | Si se guardó el formulario; contenido y formato de ambas; número de intento |
 | Aviso de autenticación a los administradores | Clave errónea, caducada, sin saldo o de otro proveedor | Proveedor elegido frente a la clave; cuenta del proveedor |
 
 Cada fila es una lista de hipótesis: ninguna queda confirmada sin su comprobación.

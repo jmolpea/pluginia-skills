@@ -1,9 +1,16 @@
-# Funcionamiento verificado de RSMAX AI Tutor 1.7.2
+# Funcionamiento verificado de RSMAX AI Tutor 1.8.0
 
-Base: revisión del código que declara la versión 1.7.2 (versión interna 2026111500), hecha el 15-11-2026. Componente `local_rsmaxtutor`; requiere Moodle 4.5 y declara compatibilidad hasta 5.3. Las pruebas automáticas del plugin se ejecutaron en Moodle 4.5; no se comparó el ZIP instalado en ningún sitio de cliente ni se probó con proveedores reales.
+Base: revisión del código que declara la versión 1.8.0 (versión interna 2026111700), hecha el 17-11-2026. Componente `local_rsmaxtutor`; requiere Moodle 4.5 y declara compatibilidad hasta 5.3. Las pruebas automáticas del plugin se ejecutaron en Moodle 4.5; no se comparó el ZIP instalado en ningún sitio de cliente ni se probó con proveedores reales.
 Manual público: https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk
 
-## Qué cambia en 1.7.2 respecto a 1.7.1
+## Qué cambia en 1.8.0 respecto a 1.7.2
+Dos herramientas nuevas en la página de AI Tutor de cada tarea, para comprobar la configuración sin entrar con cuentas de alumno. Ninguna guarda nada y las dos usan la configuración tal como está escrita en la página, guardada o no:
+- «Analizar prompt» (apartado «Revisión del prompt», bajo el campo del prompt): la IA valora si el prompt encaja con la tarea y propone uno reescrito.
+- «Probar el tutor con una entrega de ejemplo» (al final de la página): corrige un texto o unos archivos de ejemplo y muestra lo que registraría el tutor.
+- Ajuste nuevo del sitio «Pruebas por usuario y día» (20 de fábrica), que limita ambas y va aparte de todos los límites de las entregas de alumnos.
+La corrección de las entregas reales no cambia. Detalle en «Pruebas desde la configuración de la tarea». En versiones anteriores estas herramientas no existen: la única forma de probar es entregar con una cuenta de alumno.
+
+## Qué cambió en 1.7.2 respecto a 1.7.1
 - Una entrega que se leyó pero no se pudo corregir ya no queda en blanco: se deja en los comentarios la nota «esta entrega no se ha podido calificar automáticamente…» cuando el proveedor falla o agota el tiempo, cuando responde sin una nota utilizable (tareas de puntos o escala sin rúbrica) o cuando el usuario que firma no puede calificar en la tarea.
 - Se comprueba que el usuario que firma puede calificar antes de llamar a la IA: si no puede, no hay llamada ni coste.
 - La página de AI Tutor de la tarea muestra un aviso si la tarea no usa el flujo de trabajo de calificación.
@@ -25,6 +32,19 @@ La copia de seguridad y la restauración actúan únicamente sobre tareas. En ve
 Sitio: una sola página en Administración del sitio › Extensiones › Extensiones locales › AI Tutor (solo administradores).
 Tarea: dentro de cada actividad de tipo Tarea, menú «Más» › «AI Tutor», página «Configuración de AI Tutor». La ven quienes tienen el permiso de gestionar la configuración (por defecto, profesor con edición y gestor). No hay ajustes por curso ni dentro del formulario normal de la tarea.
 AI Tutor está apagado en todas las tareas hasta que alguien lo activa en cada una.
+
+## Pruebas desde la configuración de la tarea
+Quién: quien puede abrir la página de AI Tutor de la tarea (por defecto, profesor con edición y gestor). No hay un permiso distinto para probar.
+Requisitos: licencia válida o periodo de prueba, y clave de API en el sitio. Si falta alguno, en lugar de los botones aparece un aviso de «no disponible». Los campos solo se ven con «Activar AI Tutor en esta tarea» marcada; marcarla no activa nada para los alumnos hasta guardar.
+Qué configuración se usa: la que está escrita en la página en ese momento (prompt, método de calificación, texto de aviso, umbral de confianza y publicación directa), aunque no se haya guardado. Pulsar los botones no guarda el formulario.
+
+Analizar prompt. Envía a la IA el prompt, el nombre y la descripción de la tarea, las instrucciones de la actividad si las hay (indicando que el tutor no las recibe al corregir), la escala o los puntos y la rúbrica o guía de evaluación, indicando si el tutor está configurado para usarla o no. Devuelve una valoración general, las contradicciones con la tarea, las instrucciones ambiguas o que faltan, los cambios recomendados y un prompt propuesto. El botón «Usar este prompt» copia la propuesta al campo del prompt; no se guarda hasta pulsar «Guardar cambios». Las explicaciones salen en el idioma de la interfaz del docente y el prompt propuesto en el idioma del prompt original. Si el campo del prompt está vacío, se analiza la plantilla de fábrica. Si la respuesta no se puede leer, se avisa y se pide repetir; esa petición sí cuenta.
+
+Probar corrección. Admite un «Texto de ejemplo» y hasta 5 «Archivos de ejemplo» en los formatos que el plugin lee (audio solo si la transcripción está activa). El ejemplo pasa por la misma lectura de archivos, los mismos recortes, el mismo prompt, la misma petición y la misma interpretación de la respuesta que una entrega real. Lo único que no se hace es guardar. Muestra: la calificación; con rúbrica o guía, el nivel o la puntuación de cada criterio, los puntos y la nota que Moodle calcularía; la confianza frente al umbral; los avisos (confianza baja, correspondencia incompleta, nota ajustada, respuesta sin nota utilizable, rúbrica pedida pero inexistente); qué ocurriría con una entrega real (publicada, guardada como borrador para revisión, visible al momento si la tarea no usa el flujo de trabajo, o sin calificar con nota para el profesor); y la retroalimentación con el texto de aviso.
+Lo que la prueba no comprueba: el guardado de la nota, que el usuario que firma exista y pueda calificar, el cron, el retraso de una hora, los topes de la tarea, del alumno y por hora, ni el tratamiento de las reentregas (se calcula siempre como primera entrega).
+Lo que la prueba no deja: ninguna entrega, calificación, comentario, aviso ni evento en los registros de Moodle; no gasta el límite diario de la tarea ni las calificaciones de ningún alumno. Los archivos de ejemplo quedan en el área privada de borradores del docente, que Moodle vacía sola a los pocos días; su contenido sí se envía al proveedor de IA.
+Un ejemplo sin nada legible no hace ninguna petición y no gasta ninguna prueba. Un fallo del proveedor tampoco gasta prueba.
+La IA no responde siempre igual: una prueba y una entrega real con el mismo contenido pueden diferir ligeramente.
 
 ## Ejecución
 Qué la dispara: el envío de una entrega en una tarea con AI Tutor activado. Si la tarea no exige pulsar el botón de envío, cada vez que el alumno guarda cambios en su entrega cuenta como un envío nuevo.
@@ -104,6 +124,7 @@ Opcional y apagado de fábrica. Si el administrador lo activa y hay una clave de
 Prueba gratuita de 15 días desde la instalación, sin clave y con todas las funciones. La clave está ligada a la dirección exacta del sitio y se valida sin conexión. Una clave con fecha de caducidad vale hasta el final de ese día. Una clave no válida no acorta la prueba que quede. Sin prueba ni clave válida no se corrige nada en el sitio; el resto de Moodle no se ve afectado. En la página de la tarea aparece el motivo y la casilla de activar queda bloqueada.
 
 ## Contadores, registros y límites probatorios
+Las pruebas del docente tienen un contador propio, por persona y día, que sube con cada petición respondida por la IA (análisis o prueba) y no toca ninguno de los demás. Se borra a los 30 días como los otros contadores diarios.
 Los contadores (diario por tarea, por hora del sitio, por hora del usuario y por alumno y tarea) suben cuando una corrección termina su guardado sin error y cuando la IA respondió sin una nota utilizable. Las entregas no leídas, los fallos del proveedor y los guardados fallidos no cuentan. Los contadores por hora se llevan siempre, estén o no activados los límites.
 El contador por alumno y tarea no se reinicia nunca y no hay botón para ponerlo a cero. Los contadores diarios y por hora de más de 30 días los borra una tarea programada nocturna («AI Tutor: eliminar contadores de peticiones antiguos»). Al borrar una tarea se borran su configuración y todos sus contadores.
 Tras cada corrección guardada se registra en los registros de Moodle el evento «AI Tutor ha calificado una entrega», con la confianza, el estado pedido y el tipo de nota.
@@ -114,6 +135,6 @@ Los motivos de omisión solo aparecen como mensajes de depuración; verlos depen
 Gestionar la configuración de AI Tutor en una tarea: profesor con edición y gestor.
 Ver la retroalimentación de AI Tutor: está definido para alumnos, profesores y gestor, pero en esta versión no controla nada; la visibilidad la deciden los permisos normales de la tarea.
 El permiso de Moodle para calificar tareas decide quién puede ser usuario que firma y a quién no se le corrige.
-Privacidad: se declaran los destinos externos y se exportan y borran los contadores de cada alumno, tanto los de alumno y tarea como los de peticiones por hora.
+Privacidad: se declaran los destinos externos y se exportan y borran los contadores de cada alumno, tanto los de alumno y tarea como los de peticiones por hora, y el recuento diario de pruebas de cada docente. El contenido de un ejemplo de prueba se envía al proveedor igual que el de una entrega.
 Copias: la configuración de la tarea viaja con ella. Si la copia no incluye usuarios (duplicar, importar, restaurar sin datos de usuario), la tarea llega con AI Tutor desactivado. Dentro del mismo sitio conserva el usuario que firma, si sigue activo; si la copia viene de otro sitio, llega sin él. Los contadores y los ajustes del sitio no se copian.
 Si el plugin antiguo «AI Tutor» (local_aitutor, hasta 1.4.1) sigue instalado y activo en una tarea, cada entrega se corrige y se cobra dos veces; la página de ajustes del sitio lo advierte.

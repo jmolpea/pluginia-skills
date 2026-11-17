@@ -1,6 +1,6 @@
 # Configuración y diseño pedagógico
 
-Revisado para la versión 1.7.2 el 15-11-2026. Para la lista completa de ajustes, sus nombres de pantalla y valores de fábrica, ver configuracion.md y el manual público: https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk
+Revisado para la versión 1.8.0 el 17-11-2026. Para la lista completa de ajustes, sus nombres de pantalla y valores de fábrica, ver configuracion.md y el manual público: https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk
 
 ## Configuración verificable
 Valores predeterminados observados: confianza 7/10, máximo 3 evaluaciones por estudiante y tarea, máximo 50 solicitudes diarias por tarea.
@@ -13,10 +13,11 @@ Comprobar que la tarea usa el flujo de trabajo de calificación antes de confiar
 Si se publica sin revisión docente, adaptar el texto de aviso: el de fábrica promete que un profesor revisará la nota.
 
 ## Prompt
+Desde 1.8.0, recomendar el botón «Analizar prompt» de la página de AI Tutor de la tarea como primera revisión: contrasta el prompt con la descripción, la escala y la rúbrica reales y propone uno reescrito. Tratar su propuesta como un borrador: revisarla con los criterios de este apartado y validarla con «Probar corrección» sobre un ejemplo bueno, uno flojo y uno fuera de tema antes de guardar.
 Definir qué evidencia cuenta y cómo aplicar cada nivel. Evitar instrucciones que obliguen a devolver un formato incompatible con el que espera el plugin.
 El plugin ya incorpora descripción, rúbrica y puntos de Moodle. No duplicar toda la rúbrica dentro del prompt por defecto.
 Mantener las reglas esenciales de la actividad al principio de la descripción, dentro de los 8.000 caracteres efectivos, y eliminar redundancias. No presentar esa reorganización como solución si la pérdida real está en un archivo.
-Solicitar evaluación de todos los criterios con nombres y niveles reconocibles y no ambiguos. Preferir correspondencia exacta. En 1.7.2 se pueden ensayar referencias cortas si son subcadenas literales únicas de los nombres de Moodle, por ejemplo «Criterio 1» cuando solo hay «Criterio 1» a «Criterio 4». Verificar unicidad: «Criterio 1» también puede coincidir con «Criterio 10». No extrapolar este recurso a versiones no verificadas. No convertir el prompt en un sustituto de la configuración de Moodle.
+Solicitar evaluación de todos los criterios con nombres y niveles reconocibles y no ambiguos. Preferir correspondencia exacta. Desde 1.7.2 se pueden ensayar referencias cortas si son subcadenas literales únicas de los nombres de Moodle, por ejemplo «Criterio 1» cuando solo hay «Criterio 1» a «Criterio 4». Verificar unicidad: «Criterio 1» también puede coincidir con «Criterio 10». No extrapolar este recurso a versiones no verificadas. No convertir el prompt en un sustituto de la configuración de Moodle.
 Evitar exigir feedback muy extenso cuando debe compartir presupuesto con la respuesta estructurada.
 No pedir en el prompt un idioma, un formato de salida o un tratamiento de la confianza distintos de los que el plugin añade por su cuenta: la retroalimentación sale en el idioma de la entrega.
 Recordar que la IA solo ve los primeros 8.000 caracteres de la descripción y ningún adjunto del enunciado: lo que deba saber para corregir tiene que estar en ese texto o en el prompt.

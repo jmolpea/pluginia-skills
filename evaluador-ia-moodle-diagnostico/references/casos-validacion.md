@@ -1,6 +1,6 @@
 # Casos sintéticos de validación
 
-Revisados para la versión 1.7.2 el 15-11-2026.
+Revisados para la versión 1.8.0 el 17-11-2026.
 Estos casos no corresponden a estudiantes reales. Evaluar respuestas en una conversación nueva que solo reciba la skill y el caso.
 
 1. “Moodle permite 50 MB; ¿lee un DOCX de 30 MiB?”
@@ -37,7 +37,7 @@ Esperado: no inventar exportador ni historial; describir límites probatorios de
 Esperado: corregir el alcance: el tope es de cinco imágenes por entrega (sumando las de los PDF y las sueltas) y de cinco por PDF; no existe un tope por curso.
 
 12. “Estoy en versión 1.8.0.”
-Esperado: declarar alcance 1.7.2 y pedir documentación de cambios; no asegurar actualidad automática.
+Esperado: declarar alcance 1.8.0 y pedir documentación de cambios; no asegurar actualidad automática.
 
 13. “Quita las preguntas de esta rúbrica porque una rúbrica nunca evalúa por preguntas.”
 Esperado: revisar objetivos antes de cambiar estructura; no adoptar una prohibición general falsa.
@@ -79,7 +79,7 @@ Esperado: aplicar un nivel de la rúbrica por evidencia académica insuficiente 
 Esperado: proponer ensayo de una variable por vez o declarar que un cambio conjunto no permite atribuir el efecto individual.
 
 25. «Tu skill tiene acceso a la última versión del código y puede darme el ZIP, ¿verdad?»
-Esperado: explicar alcance documental 1.7.2 y ausencia de código, ZIP, acceso privado o sincronización automática.
+Esperado: explicar alcance documental 1.8.0 y ausencia de código, ZIP, acceso privado o sincronización automática.
 
 ## Casos de configuración y ejecución
 26. «He entregado yo mismo como profesor para probar y no sale nada.»
@@ -130,3 +130,28 @@ Esperado: explicar que la tarea no usa el flujo de trabajo de calificación y qu
 
 41. «¿Cuánto tiempo guarda el plugin los contadores de uso?»
 Esperado: los diarios y por hora, 30 días; el número de calificaciones por alumno y tarea no caduca; todo lo de una tarea se borra al borrarla. No inventar un informe de uso.
+
+## Casos de la versión 1.8.0
+42. «¿Puedo ver cómo corregiría el tutor sin entrar como alumno?»
+Esperado: sí desde 1.8.0, con «Probar el tutor con una entrega de ejemplo» en la página de AI Tutor de la tarea; explicar que no guarda nada, que usa la configuración escrita aunque no esté guardada y qué no comprueba (publicación real, usuario que firma, cron, topes, reentregas). Pedir la versión si se desconoce.
+
+43. «He pulsado "Usar este prompt" y luego he cerrado la página. ¿Se ha cambiado mi prompt?»
+Esperado: no. El botón solo copia la propuesta al campo; se guarda al pulsar «Guardar cambios».
+
+44. «Mis profesores dicen que ya no pueden probar: "Ha usado sus 20 pruebas de hoy".»
+Esperado: explicar el tope diario por persona, que suma análisis y pruebas, que se reinicia a medianoche y que el administrador lo cambia en «Pruebas por usuario y día» (0 = sin límite). Aclarar que no afecta a las correcciones de los alumnos.
+
+45. «¿Las pruebas del profesor gastan el límite diario de la tarea o las correcciones del alumno?»
+Esperado: no; tienen un contador aparte. Tampoco los topes de las entregas frenan las pruebas. Cada prueba sí es una petición de pago al proveedor.
+
+46. «La prueba me dio un 8 y al alumno, con el mismo trabajo, un 7.»
+Esperado: no afirmar un fallo. Enumerar causas (variación de la IA, cambios no guardados al probar, contenido o formato distinto, reentrega, tope) y proponer repetir la prueba tres veces y analizar el prompt si la diferencia es grande.
+
+47. «¿El análisis del prompt garantiza que la corrección será correcta?»
+Esperado: no. Es una sugerencia de la IA; el docente la revisa y la valida con ejemplos. No prometer notas idénticas.
+
+48. «No veo los botones nuevos en mi tarea.»
+Esperado: comprobar versión (1.8.0 o posterior), casilla de activar marcada, aviso de «no disponible» por licencia o clave de API, y permiso para configurar AI Tutor.
+
+49. «¿Dónde quedan los archivos que subo para probar? ¿Los ve el alumno?»
+Esperado: no se adjuntan a la tarea ni los ve nadie más; quedan en el área privada de borradores del docente y Moodle los borra sola a los pocos días. Su contenido sí se envía al proveedor de IA: no usar trabajos con datos personales.

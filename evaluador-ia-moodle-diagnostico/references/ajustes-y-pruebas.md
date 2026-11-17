@@ -1,6 +1,6 @@
 # Ajustes y pruebas antes de escalar
 
-Revisado para la versión 1.7.2 el 15-11-2026.
+Revisado para la versión 1.8.0 el 17-11-2026.
 
 ## Regla de intervención
 Buscar primero una solución con descripción de actividad, rúbrica o prompt. Revisar los tres y cambiar solo el elemento que explique el problema.
@@ -30,6 +30,9 @@ No bajar el umbral de confianza ni activar publicaciones para ocultar un mapeo i
 | La parte visual no se valora | Pedirla como JPG o PNG de menos de 4 MB, hasta 5 por entrega; no usar DeepSeek |
 | Tarda demasiado o no llega a responder | Probar un modelo más rápido; limitar la extensión de la entrega |
 | AI Tutor aparece desactivado tras copiar el curso | Activarlo de nuevo; elegir el usuario que firma si la copia viene de otro sitio |
+| El prompt y la rúbrica parecen contradecirse, o las notas no convencen | «Analizar prompt» en la página de AI Tutor de la tarea; revisar la propuesta y comprobarla con «Probar corrección» |
+| No aparecen los botones de análisis y de prueba | Marcar la casilla de activar; si hay aviso de «no disponible», revisar licencia y clave de API del sitio |
+| «Ha usado sus pruebas de hoy» | Esperar a medianoche o subir «Pruebas por usuario y día» en los ajustes del sitio |
 | Entregas con la nota de «no se ha podido calificar automáticamente» | Revisar clave, saldo y modelo; matricular al usuario que firma con un rol que pueda calificar; probar un modelo más rápido |
 
 Lo que el cliente no puede ajustar: recortes de caracteres, tamaños máximos, tiempo de espera, presupuesto de respuesta, duración del retraso, temperatura y ausencia de reintentos.
@@ -38,7 +41,8 @@ Lo que el cliente no puede ajustar: recortes de caracteres, tamaños máximos, t
 1. Registrar una línea base del fallo, sin atribuir causas todavía.
 2. Comparar los tres elementos y seleccionar un cambio único pertinente.
 3. Entregar el texto o ajuste completo cuando haga falta; explicar la diferencia.
-4. Usar una actividad de prueba, un participante de prueba con rol de alumno y una entrega anonimizada idéntica. Cada repetición gasta una de las calificaciones de ese alumno en la tarea y una petición del límite diario: subir ambos topes en la actividad de prueba o usar varios alumnos de prueba. Mantener versión, proveedor/modelo, rúbrica, escala y demás opciones.
+4. Desde 1.8.0, probar primero con «Probar corrección» en la página de AI Tutor de la tarea: usa la configuración escrita sin guardarla, no deja nada en Moodle y solo gasta pruebas del día del docente (20 de fábrica). Sirve para prompt, rúbrica, formatos y modelo. No sirve para comprobar publicación real, usuario que firma, cron, topes ni reentregas: para eso, seguir con el paso siguiente.
+4b. Usar una actividad de prueba, un participante de prueba con rol de alumno y una entrega anonimizada idéntica. Cada repetición gasta una de las calificaciones de ese alumno en la tarea y una petición del límite diario: subir ambos topes en la actividad de prueba o usar varios alumnos de prueba. Mantener versión, proveedor/modelo, rúbrica, escala y demás opciones.
 5. Para variabilidad, proponer tres ejecuciones por condición. No ejecutarlas automáticamente si tienen coste o afectan calificaciones; pedir que las realice el responsable o usar autorización existente.
 6. Comparar los niveles guardados por criterio, el comentario, la suma directa, la nota transformada por Moodle y el estado de publicación.
 7. Repetir con otro ajuste pertinente si el resultado lo justifica. No mezclar cambios sin registrar su efecto.

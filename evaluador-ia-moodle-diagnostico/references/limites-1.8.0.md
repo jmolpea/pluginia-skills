@@ -1,6 +1,6 @@
-# Límites y valores por defecto: 1.7.2
+# Límites y valores por defecto: 1.8.0
 
-Verificados en el código de la versión 1.7.2 el 15-11-2026. Cambios respecto a 1.7.1: presupuesto de respuesta de Gemini 2.5, validación del prompt también en el servidor y conservación de contadores durante 30 días.
+Verificados en el código de la versión 1.8.0 el 17-11-2026. Cambios respecto a 1.7.2: límite diario de pruebas por usuario, máximo de archivos de ejemplo, y presupuesto y tiempo de espera propios del análisis del prompt. Los límites de las entregas reales no cambian.
 
 ## Cómo interpretar los valores
 Distinguir cuatro cosas: límite del formulario, carga permitida por Moodle o el servidor, lectura del plugin y presupuesto del proveedor. Aumentar el máximo de subida de Moodle no aumenta lo que lee el plugin.
@@ -42,12 +42,15 @@ No afirmar que convertir a PDF conserva lo visual: comprobar texto e imágenes c
 | Umbral mínimo de confianza | 7 | De 1 a 10. |
 | Máximo de peticiones por hora (todo el sitio) | 100 | Desactivado de fábrica. Hora de reloj, hora del sitio. Con 0 o negativo no se aplica. |
 | Máximo de peticiones por hora (por usuario) | 10 | Desactivado de fábrica. Suma todas las tareas del alumno. Con 0 o negativo no se aplica. |
+| Pruebas por usuario y día | 20 | Ajuste del sitio. Cuenta juntos los análisis del prompt y las pruebas de corrección de cada persona, en todas sus tareas. Se reinicia a medianoche, hora del sitio. Con 0 no hay límite. |
+| Archivos de ejemplo por prueba | 5 | Fijo. Mismos formatos y tamaños que una entrega. |
 | Retraso opcional de la respuesta | 1 hora | Fijo; no se puede elegir otra duración. Desactivado de fábrica. |
 | Periodo de prueba | 15 días | Desde la instalación. |
 | Conservación de contadores diarios y por hora | 30 días | Los borra una tarea programada nocturna. El contador por alumno y tarea no caduca. |
 
 Todas las cuotas cuentan correcciones guardadas y respuestas de la IA sin nota utilizable, no los fallos del proveedor. Una entrega que choca con una cuota no se corrige después sola.
 Las comprobaciones de cuota y el incremento del contador no son simultáneos: con muchas entregas a la vez, el total puede superar ligeramente el tope.
+Las pruebas del docente no gastan ninguna de las cuotas de las entregas, y esas cuotas no frenan las pruebas. El tope por hora del sitio tampoco las cuenta.
 No confundir «calificaciones por alumno» del plugin con los intentos de entrega que permite la tarea de Moodle.
 
 ## Modelos disponibles en los desplegables
@@ -65,6 +68,7 @@ Presupuesto de salida: 3.000 tokens, con o sin imágenes. Para los modelos de Op
 Estas cifras no son caracteres ni el límite de entrada del modelo. El plugin no comprueba que la entrada quepa en el modelo elegido: 200.000 caracteres pueden superar la capacidad de un modelo pequeño, y entonces el proveedor rechaza la petición.
 Una rúbrica con muchos criterios, que la IA debe repetir en su respuesta, presiona ese presupuesto. Sin la respuesta original ni el motivo de finalización, tratar el truncamiento como hipótesis. Con modelos que razonan internamente, parte del presupuesto se gasta en razonar.
 Tiempo de espera: 45 segundos para la corrección y 120 para la transcripción. Si se agota el de la corrección, la entrega queda sin corregir, con la nota «esta entrega no se ha podido calificar automáticamente…»
+Análisis del prompt: presupuesto de salida de 6.000 tokens (12.000 para los modelos tratados como de razonamiento y para Gemini 2.5) y 120 segundos de espera, porque la respuesta incluye un prompt completo. El prompt propuesto se corta a 16.000 caracteres, el máximo del campo. La prueba de corrección usa el presupuesto y los 45 segundos de una entrega real.
 Reintentos: ninguno, ante ningún tipo de fallo.
 Confianza por defecto si la IA no la indica: 5.
 
