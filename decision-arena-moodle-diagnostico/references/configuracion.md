@@ -1,6 +1,6 @@
-# Configuración de Decision Arena 0.8.1
+# Configuración de Decision Arena 0.8.2
 
-Nombres tal como se ven en pantalla en español. Valores y límites: ver limites-0.8.1.md. Manual público con explicaciones y simuladores: https://claude.ai/artifact/LWRnWzs6sxsFBc3Nx2AD3K
+Nombres tal como se ven en pantalla en español. Valores y límites: ver limites-0.8.2.md. Manual público con explicaciones y simuladores: https://claude.ai/artifact/LWRnWzs6sxsFBc3Nx2AD3K
 
 ## Ajustes del sitio
 Ubicación: Administración del sitio › Extensiones › Módulos de actividad › Decision Arena. Todos tratan de la IA, que es opcional. Si no se usa IA, no hay nada que configurar.

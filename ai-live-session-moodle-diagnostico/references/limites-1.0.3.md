@@ -1,6 +1,6 @@
-# Límites y valores de fábrica de AI Live Session 1.0.2
+# Límites y valores de fábrica de AI Live Session 1.0.3
 
-Verificados leyendo el código de la versión 1.0.2 (interna 2026111501) el 15-11-2026. «Fijo» significa que no hay ajuste en pantalla para cambiarlo.
+Verificados leyendo el código de la versión 1.0.3 (interna 2026111700) el 17-11-2026. «Fijo» significa que no hay ajuste en pantalla para cambiarlo.
 
 ## Licencia
 | Dato | Valor |
@@ -22,7 +22,7 @@ Verificados leyendo el código de la versión 1.0.2 (interna 2026111501) el 15-1
 | Llamadas por usuario y minuto | 30 | Mínimo efectivo 1 (0 no es «sin límite») |
 | Llamadas por minuto, todo el sitio | 2000 | Mínimo efectivo 1; cuenta a todos los proveedores juntos |
 
-## Catálogo de modelos (1.0.2)
+## Catálogo de modelos (1.0.3)
 | Proveedor | Recomendado | Otros |
 |---|---|---|
 | OpenAI | GPT-6 Sol | GPT-6 Luna (económico), GPT-6 Astra (premium) |

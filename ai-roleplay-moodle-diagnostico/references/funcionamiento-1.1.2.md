@@ -1,6 +1,6 @@
-# Funcionamiento de AI Roleplay 1.1.1
+# Funcionamiento de AI Roleplay 1.1.2
 
-Documentación funcional derivada de una revisión estática de la versión 1.1.1 (interna 2026111500), revisada el 15-11-2026. Todo lo que sigue está verificado leyendo esa versión salvo lo marcado como «no verificado». Manual público: https://claude.ai/artifact/9rrxnBoMsHAgMzhKErn92D
+Documentación funcional derivada de una revisión estática de la versión 1.1.2 (interna 2026111700), revisada el 17-11-2026. Todo lo que sigue está verificado leyendo esa versión salvo lo marcado como «no verificado». Manual público: https://claude.ai/artifact/9rrxnBoMsHAgMzhKErn92D
 
 ## Qué es
 Actividad de Moodle (aparece como «AI Roleplay» al añadir una actividad). El alumno conversa, hablando o escribiendo, con 1 a 3 avatares interpretados por una IA dentro de un escenario redactado por el docente. Al acabar el tiempo, una IA evalúa lo que dijo el alumno con una rúbrica fija de cuatro partes, pone nota y redacta comentarios. El profesorado revisa conversaciones y notas en la página «Entregas».
@@ -72,3 +72,10 @@ Sin cron, las sesiones abandonadas no se cierran y las evaluaciones que no pidi�
 | Añadir una actividad AI Roleplay | no | no | sí | sí |
 Consecuencia: un profesor no puede hacer la sesión; para probar hace falta una cuenta con rol de estudiante. Los invitados no pueden ver la actividad.
 Con grupos separados, un profesor sin acceso a todos los grupos solo ve, califica y recalcula a los alumnos de sus grupos.
+
+## Resumen de actividades del curso (Moodle 5.0 o posterior)
+Desde la 1.1.2 la página de resumen de actividades del curso (en el curso, «Actividades» y luego AI Roleplay) muestra columnas propias en vez del aviso «Información no disponible». En Moodle 4.5 esa página no existe.
+- Profesorado (con «Ver todas las entregas»): «Cierre» (fecha de cierre de la actividad o «-»), «Estudiantes que completaron» (alumnos matriculados con permiso de participar que tienen al menos un intento terminado, es decir, pendiente de evaluación, evaluándose o calificado, sobre el total de esos alumnos), «Pendientes de revisión» (intentos calificados que siguen «En revisión») y «Acciones», un botón a «Entregas» que dice «Calificar» si hay pendientes y el usuario puede calificar, y «Ver» si no.
+- Con grupos separados, quien no tiene acceso a todos los grupos solo cuenta a los alumnos de sus grupos; si no está en ningún grupo, ve 0.
+- Alumnado (con «Participar en una sesión»): «Cierre» (la fecha de la actividad, no la de su excepción), «Estado» de su último intento (un intento calificado aún no publicado aparece «En revisión») e «Intentos usados» sobre el máximo que le corresponde con sus excepciones (solo el número si es ilimitado).
+- La columna de calificación la pone Moodle, no el plugin.

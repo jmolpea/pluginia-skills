@@ -1,6 +1,6 @@
-# Configuración de AI Roleplay (versión 1.1.1)
+# Configuración de AI Roleplay (versión 1.1.2)
 
-Nombres tal como aparecen en pantalla en español. Entre paréntesis, el valor de fábrica. Revisado el 15-11-2026. Explicación ampliada para personas: https://claude.ai/artifact/9rrxnBoMsHAgMzhKErn92D
+Nombres tal como aparecen en pantalla en español. Entre paréntesis, el valor de fábrica. Revisado el 17-11-2026. Explicación ampliada para personas: https://claude.ai/artifact/9rrxnBoMsHAgMzhKErn92D
 
 ## Ajustes del sitio
 Ruta: Administración del sitio › Extensiones › Módulos de actividad › AI Roleplay. Una sola página con secciones; arriba hay un enlace al manual de configuración. Todo se aplica tras «Guardar cambios».

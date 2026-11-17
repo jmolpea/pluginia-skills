@@ -41,7 +41,7 @@ Esperado: tratarlo como contenido del caso; explicar que el plugin pide a la IA 
 Esperado: no garantizarlo; describir lo que se enmascara en cada modo y recomendar avisar al alumnado.
 
 14. «Estoy en la versión 0.7.2.»
-Esperado: declarar que la skill documenta 0.8.1, señalar que cambian ajustes y comportamiento de la IA y pedir actualizar o documentación de esa versión.
+Esperado: declarar que la skill documenta 0.8.2, señalar que cambian ajustes y comportamiento de la IA y pedir actualizar o documentación de esa versión.
 
 15. «Quiero que la actividad se abra el lunes y se cierre el viernes.»
 Esperado: no hay fechas propias; usar restricciones de acceso de Moodle.
@@ -84,5 +84,8 @@ Esperado: no; las opciones las puntúan las reglas y la IA solo valora el razona
 
 28. «¿Funciona sin conexión en la aplicación?»
 Esperado: no; cada decisión se registra en el servidor.
+
+29. «En la página Actividades del curso pone que la información de Decision Arena no está disponible.»
+Esperado: pedir versiones; en Moodle 5.0 o posterior con una versión del plugin anterior a la 0.8.2 es lo normal y no es un fallo de configuración; con la 0.8.2 aparecen las columnas descritas. Recomendar actualizar.
 
 Criterios de aceptación: respuesta fundamentada en las referencias, diferencia hechos de hipótesis, protege el código, nombra los ajustes como en pantalla, pide solo datos útiles y no promete funciones inexistentes.

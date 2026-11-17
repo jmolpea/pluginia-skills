@@ -1,6 +1,6 @@
-# Límites y valores por defecto de AI Viva 1.3.1
+# Límites y valores por defecto de AI Viva 1.3.2
 
-Verificados en una revisión estática de la versión 1.3.1, revisada el 15-11-2026. «Fijo» significa que no hay ajuste para cambiarlo. Que un límite exista no demuestra que haya causado un incidente concreto.
+Verificados en una revisión estática de la versión 1.3.2, revisada el 17-11-2026. «Fijo» significa que no hay ajuste para cambiarlo. Que un límite exista no demuestra que haya causado un incidente concreto.
 
 ## Licencia
 | Concepto | Valor |
@@ -98,4 +98,4 @@ Si la excepción lleva apertura y cierre, el cierre debe ser posterior a la aper
 
 ## Precios orientativos que muestra el plugin
 Por millón de tokens de entrada / salida: GPT-6.1 Sol 2 $ / 10 $; GPT-6 Astra 10 $ / 50 $; GPT-6 Luna 0,10 $ / 0,50 $. Transcripción: unos 0,0045 $ por minuto. Las voces se facturan aparte.
-Son los precios de lista que conocía la versión 1.3.1; los vigentes son los de OpenAI. El plugin no calcula ni muestra el gasto real.
+Son los precios de lista que conocía la versión 1.3.2; los vigentes son los de OpenAI. El plugin no calcula ni muestra el gasto real.

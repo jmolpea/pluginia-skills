@@ -1,6 +1,6 @@
-# Funcionamiento verificado de AI Live Session 1.0.2
+# Funcionamiento verificado de AI Live Session 1.0.3
 
-Base: revisión estática del código que declara la versión 1.0.2 (versión interna 2026111501, Moodle 4.5 a 5.3, PHP 8.1 o posterior), el 15-11-2026. No se comparó el ZIP instalado ni se ejecutó Moodle para esta revisión. Manual público: https://claude.ai/artifact/J58N9JJybXxofoznCsvqro
+Base: revisión estática del código que declara la versión 1.0.3 (versión interna 2026111700, Moodle 4.5 a 5.3, PHP 8.1 o posterior), el 17-11-2026. No se comparó el ZIP instalado ni se ejecutó Moodle para esta revisión. Manual público: https://claude.ai/artifact/J58N9JJybXxofoznCsvqro
 
 ## Qué es
 Actividad de Moodle. Una sesión tiene uno o varios bloques que el alumno hace en orden. Cada bloque tiene hasta tres pasos: vídeo con preguntas, práctica cronometrada con entregable y conversación con un avatar de IA. El docente elige en «Pasos de la sesión» hasta dónde llega: solo vídeo, vídeo y práctica, o los tres.
@@ -65,7 +65,8 @@ Principio general: el servidor decide posición del vídeo, correcciones, reloje
 - Profesor sin edición: modo prueba, informe, problemas técnicos y validación.
 - Alumno: participa; puede retirar su consentimiento (borra sus datos de la sesión y necesita que un tutor lo reinicie para volver).
 - Modo prueba: IA real con coste real, puede saltar entre bloques y nada llega al libro de calificaciones.
-- Grupos separados: informe, revisión, avisos, excepciones y problemas técnicos se limitan a los alumnos que el tutor puede ver.
+- Resumen de actividades del curso (página «Actividades», solo en Moodle 5.0 o posterior; en 4.5 no existe): quien puede ver el informe ve, por actividad, «Fecha de cierre», «Estudiantes que empezaron» (aceptaron el aviso de datos) y «Estudiantes que terminaron» (nota propuesta o publicada), ambos sobre el total de alumnos, «Notas pendientes de un tutor» y un botón «Ver» que abre el informe, filtrado por «Por revisar» si hay notas esperando (con un indicador del número). El alumno ve «Fecha de cierre» (con sus excepciones), «Tu estado» (Sin empezar, En curso, En evaluación, Pendiente de un tutor, Publicada o Consentimiento retirado) y su nota cuando está publicada. Quienes solo prueban la sesión no cuentan. Antes de la 1.0.3 la página decía que la información no estaba disponible.
+- Grupos separados: el resumen del curso cuenta solo a los alumnos de los grupos del docente; informe, revisión, avisos, excepciones y problemas técnicos se limitan a los alumnos que el tutor puede ver.
 
 ## Qué se guarda y qué sale del sitio
 - Se guarda en Moodle: consentimiento, progreso del vídeo, respuestas, intentos (notas, datos, texto, análisis, puntuaciones, relojes), turnos de la conversación con su modo (hablado, escrito o pegado), resultado y comentario, excepciones, problemas técnicos y borradores del docente. La imagen entregada se guarda como archivo.
@@ -77,8 +78,9 @@ Principio general: el servidor decide posición del vídeo, correcciones, reloje
 ## Cambios respecto a la 1.0.0
 - 1.0.1: reintento automático de los avisos del vídeo y aviso «Problema de conexión»; mejoras de pantalla completa y de tablas en móvil.
 - 1.0.2: las fechas ya no frenan el modo prueba; el editor rechaza un «Final del bloque» que deje preguntas en ese punto o después; el formulario de la actividad exige calificación por puntuación con máximo de 1 o más (las actividades guardadas antes con escala o «Ninguna» siguen pudiendo editarse tal como están); «Evaluar de nuevo» para evaluaciones que no llegan; al borrar un bloque se propone la nota de quienes ya habían terminado los demás; la lista de excepciones muestra «Ilimitado»; la revisión distingue «Preparado, sin empezar la conversación»; enlace al manual en los ajustes del sitio y en el formulario de la actividad.
+- 1.0.3: columnas propias en el resumen de actividades del curso de Moodle 5.0 o posterior.
 
-## Limitaciones conocidas de la 1.0.2 (verificadas leyendo el código)
+## Limitaciones conocidas de la 1.0.3 (verificadas leyendo el código)
 - Un bloque guardado con una versión anterior puede conservar una pregunta situada después del final del fragmento: nadie completa ese vídeo hasta moverla o borrarla. La 1.0.2 lo impide al guardar los cortes, pero no corrige lo ya guardado.
 - Una actividad guardada antes con escala o sin calificación sigue sin poder validar notas hasta que se cambie a puntuación.
 - «Evaluar de nuevo» en un intento sin evaluar aparece solo pasados 30 minutos, y respeta la espera de 5 minutos y el máximo de 5 al día.

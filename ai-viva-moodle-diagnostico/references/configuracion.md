@@ -1,6 +1,6 @@
-# Configuración de AI Viva (versión 1.3.1)
+# Configuración de AI Viva (versión 1.3.2)
 
-Nombres tal como se ven en pantalla en español. Revisado el 15-11-2026. Manual público con fichas, maquetas y simuladores: https://claude.ai/artifact/RckemidnHhdYikr8HM2XHQ
+Nombres tal como se ven en pantalla en español. Revisado el 17-11-2026. Manual público con fichas, maquetas y simuladores: https://claude.ai/artifact/RckemidnHhdYikr8HM2XHQ
 
 ## Ajustes del sitio
 Dónde: Administración del sitio › Extensiones › Módulos de actividad › AI Viva. Una sola página con siete apartados. Solo administradores.

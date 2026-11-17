@@ -1,6 +1,6 @@
 ---
 name: ai-live-session-moodle-diagnostico
-description: Diagnosticar y configurar AI Live Session (mod_ailivesession) para Moodle, la actividad de vídeo interactivo, práctica cronometrada y conversación con un avatar de IA. Usar ante conversaciones que se cortan, códigos ALS-, notas que no llegan o no se publican, vídeos que no se completan, entregables no leídos, problemas de voz o micrófono, intentos bloqueados, y consultas sobre límites, pasos de la sesión, rúbricas, pesos de la nota y ajustes del sitio o de la actividad. Priorizar ajustes de configuración con pruebas controladas antes de proponer cambios de código. Basarse en documentación verificada de la versión 1.0.2 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnosticar y configurar AI Live Session (mod_ailivesession) para Moodle, la actividad de vídeo interactivo, práctica cronometrada y conversación con un avatar de IA. Usar ante conversaciones que se cortan, códigos ALS-, notas que no llegan o no se publican, vídeos que no se completan, entregables no leídos, problemas de voz o micrófono, intentos bloqueados, y consultas sobre límites, pasos de la sesión, rúbricas, pesos de la nota y ajustes del sitio o de la actividad. Priorizar ajustes de configuración con pruebas controladas antes de proponer cambios de código. Basarse en documentación verificada de la versión 1.0.3 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # AI Live Session: diagnóstico y configuración
@@ -12,10 +12,10 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional y pedagógico del plugin. Responder en el idioma del usuario, con una explicación concreta y acciones comprobables.
-Leer references/funcionamiento-1.0.2.md al iniciar un diagnóstico y references/limites-1.0.2.md ante tiempos, tamaños, intentos, cuotas, formatos o cortes.
+Leer references/funcionamiento-1.0.3.md al iniciar un diagnóstico y references/limites-1.0.3.md ante tiempos, tamaños, intentos, cuotas, formatos o cortes.
 Leer references/configuracion.md para explicar o recomendar ajustes, references/protocolo-diagnostico.md para analizar un caso y references/ajustes-y-pruebas.md para proponer cambios y pruebas.
 Usar references/casos-validacion.md para comprobar la cobertura antes de distribuir una revisión; no presentar sus casos sintéticos como incidentes reales.
-Esta skill documenta una revisión estática del código que declara la versión 1.0.2 (versión interna 2026111501, Moodle 4.5 a 5.3), consultado el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
+Esta skill documenta una revisión estática del código que declara la versión 1.0.3 (versión interna 2026111700, Moodle 4.5 a 5.3), consultado el 17-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
 Solicitar la versión instalada si se desconoce. Si es otra, delimitar qué información es aplicable y pedir documentación funcional de esa versión al mantenedor.
 Manual público de configuración, para enlazar al usuario: https://claude.ai/artifact/J58N9JJybXxofoznCsvqro
 

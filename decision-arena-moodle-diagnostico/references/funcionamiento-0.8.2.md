@@ -1,6 +1,6 @@
-# Funcionamiento verificado de Decision Arena 0.8.1
+# Funcionamiento verificado de Decision Arena 0.8.2
 
-Base: revisión estática del código que declara la versión 0.8.1 y versión interna 2026111500, el 15-11-2026. Requiere Moodle 4.5 y declara compatibilidad hasta Moodle 5.3; madurez beta. No se comparó el ZIP instalado por el cliente ni se ejecutó su Moodle.
+Base: revisión estática del código que declara la versión 0.8.2 y versión interna 2026111700, el 17-11-2026. Requiere Moodle 4.5 y declara compatibilidad hasta Moodle 5.3; madurez beta. No se comparó el ZIP instalado por el cliente ni se ejecutó su Moodle.
 Manual público: https://claude.ai/artifact/LWRnWzs6sxsFBc3Nx2AD3K
 
 ## Qué es
@@ -84,6 +84,14 @@ La copia de seguridad incluye escenario e imágenes y, con datos de usuario, int
 
 ## Aplicación Moodle
 El alumno puede hacer la actividad completa en la aplicación con conexión a internet. No hay modo sin conexión. La creación de escenarios, la revisión y la analítica solo están en el navegador.
+
+## Resumen de actividades del curso (Moodle 5.0 o posterior, desde la 0.8.2)
+En la página «Actividades» del curso, cada Decision Arena tiene su fila. Antes de la 0.8.2 Moodle mostraba que la información de Decision Arena no estaba disponible y remitía a la vista previa; no era un fallo de configuración.
+- Quien puede revisar intentos (profesores y gestor por defecto) ve «Estudiantes que lo intentaron» (alumnos con al menos un intento, en curso o terminado), «Pendientes de revisión» (intentos terminados en estado Entregado; si hay alguno, el número abre «Revisar intentos» filtrado por ese estado) y, en «Acciones», el botón «Ver» hacia «Revisar intentos» con el texto «N terminaron» (alumnos con al menos un intento terminado).
+- Con grupos separados, un docente sin acceso a todos los grupos solo cuenta a los alumnos de sus grupos; si no pertenece a ningún grupo, ve ceros.
+- El alumno ve «Tus intentos» (los empezados, «X de Y» si hay límite) y «Terminado» con una marca si ha terminado al menos un intento.
+- Las columnas de calificación y de finalización las pone Moodle. La actividad no tiene fecha de cierre propia, así que no hay columna de fecha límite.
+- En Moodle 4.5 esa página no existe.
 
 ## Registros
 Moodle anota intento iniciado, enviado, revisado y eliminado, y evaluación de IA procesada y revisada. No hay panel propio de consumo o coste.

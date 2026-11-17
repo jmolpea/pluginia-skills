@@ -1,6 +1,6 @@
-# Límites y valores por defecto: Peer Review Studio 1.0.1
+# Límites y valores por defecto: Peer Review Studio 1.0.2
 
-Verificados en el código de la versión 1.0.1 el 15-11-2026, salvo las filas marcadas como estimación. Distinguir siempre el límite del plugin del límite de Moodle o del servidor (tamaño de subida, cron, proveedor de IA).
+Verificados en el código de la versión 1.0.2 el 17-11-2026, salvo las filas marcadas como estimación. Distinguir siempre el límite del plugin del límite de Moodle o del servidor (tamaño de subida, cron, proveedor de IA).
 
 ## Requisitos
 | Elemento | Valor |
@@ -89,5 +89,5 @@ Verificados en el código de la versión 1.0.1 el 15-11-2026, salvo las filas ma
 | Página de prueba del administrador | Una petición mínima; admite hasta 5 minutos de espera |
 | Modelo, temperatura, tokens, coste | No los fija el plugin: dependen del proveedor de IA del sitio |
 
-## Lo que el plugin no hace en 1.0.1
+## Lo que el plugin no hace en 1.0.2
 No hay entregas en grupo, autoevaluación, revisión por el docente con rúbrica, borradores de revisión, edición de una revisión enviada, anonimato del revisor frente al tutor, exportación de notas propia, ni límite de carga por revisor. No lee PDF ni imágenes para la IA. No guarda el texto enviado a la IA.

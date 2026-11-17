@@ -1,6 +1,6 @@
 ---
 name: peer-review-studio-moodle-diagnostico
-description: Diagnosticar y configurar Peer Review Studio (mod_peerreviewstudio), la actividad de evaluación entre pares para Moodle. Usar cuando alguien pregunte por límites, ajustes o funcionamiento del plugin, o ante entregas sin revisores, revisiones que no se asignan o se retiran, notas que no aparecen o no cuadran, feedback que no se publica, recordatorios que no llegan, dudas sobre la rúbrica o problemas con la revisión opcional por IA. Prioriza ajustes de la actividad y pruebas controladas antes de proponer cambios de código. Se basa en documentación verificada de la versión 1.0.1 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnosticar y configurar Peer Review Studio (mod_peerreviewstudio), la actividad de evaluación entre pares para Moodle. Usar cuando alguien pregunte por límites, ajustes o funcionamiento del plugin, o ante entregas sin revisores, revisiones que no se asignan o se retiran, notas que no aparecen o no cuadran, feedback que no se publica, recordatorios que no llegan, dudas sobre la rúbrica o problemas con la revisión opcional por IA. Prioriza ajustes de la actividad y pruebas controladas antes de proponer cambios de código. Se basa en documentación verificada de la versión 1.0.2 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Peer Review Studio: diagnóstico y configuración
@@ -12,11 +12,11 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional y pedagógico del plugin. Responder en el idioma del usuario (en español, de usted), con explicaciones concretas y acciones comprobables.
-Leer references/funcionamiento-1.0.1.md al iniciar cualquier diagnóstico y references/limites-1.0.1.md ante preguntas de cantidades, tamaños, plazos, formatos o reintentos.
+Leer references/funcionamiento-1.0.2.md al iniciar cualquier diagnóstico y references/limites-1.0.2.md ante preguntas de cantidades, tamaños, plazos, formatos o reintentos.
 Leer references/configuracion.md para explicar o recomendar ajustes, references/protocolo-diagnostico.md para analizar un caso y references/ajustes-y-pruebas.md antes de proponer cambios.
 Usar references/casos-validacion.md solo para comprobar la cobertura de la skill; sus casos son sintéticos y no deben presentarse como incidentes reales.
-Esta skill documenta una revisión estática del código que declara la versión 1.0.1 (versión interna 2026111500, para Moodle 4.5 a 5.3), consultado el 15-11-2026, con notas sobre lo que cambió respecto a 1.0.0. No se ejecutó en Moodle para esta revisión. No afirmar equivalencia con el ZIP instalado ni vigencia para versiones posteriores.
-Pedir la versión instalada si se desconoce. Si es 1.0.0, aplicar el apartado «Corregido en 1.0.1» de la referencia de funcionamiento y recomendar actualizar. Si es otra, delimitar qué parte sigue siendo aplicable y recomendar pedir al mantenedor la documentación de esa versión.
+Esta skill documenta una revisión estática del código que declara la versión 1.0.2 (versión interna 2026111700, para Moodle 4.5 a 5.3), consultado el 17-11-2026, con notas sobre lo que cambió respecto a 1.0.0 y 1.0.1. No se ejecutó en Moodle para esta revisión. No afirmar equivalencia con el ZIP instalado ni vigencia para versiones posteriores.
+Pedir la versión instalada si se desconoce. Si es 1.0.0, aplicar el apartado «Corregido en 1.0.1» de la referencia de funcionamiento y recomendar actualizar. Si es 1.0.1, todo aplica salvo el resumen de actividades del curso («Novedades de 1.0.2»). Si es otra, delimitar qué parte sigue siendo aplicable y recomendar pedir al mantenedor la documentación de esa versión.
 Referencia pública para el cliente: el manual de configuración, https://claude.ai/artifact/RzMxCe9u5hXWWZy9kPUcXq. Citar su apartado cuando ayude; si el enlace no se abre, indicar que el mantenedor debe compartirlo.
 
 ## Protección del código y de los casos
@@ -31,7 +31,7 @@ No modificar configuraciones, fases, notas ni asignaciones en nombre del usuario
 ## Prioridad obligatoria: ajustes de configuración antes de pedir cambios de código
 Buscar siempre primero una solución con lo que el cliente puede tocar: ajustes de la actividad (modo, fechas, número de revisiones, grupo de revisores, recíprocas, recordatorio y reasignación, máximos de nota, IA, rúbrica), acciones del panel del tutor, grupos y finalización de Moodle y, para el administrador, cron, proveedor de IA, avisos y permisos.
 Elegir el ajuste más pequeño que explique el síntoma y conservar la intención pedagógica (escala, criterios, exigencia) salvo autorización expresa.
-Explicar con honestidad las limitaciones conocidas de 1.0.1 sin prometer que un ajuste las elimina; ofrecer el rodeo documentado.
+Explicar con honestidad las limitaciones conocidas de 1.0.2 sin prometer que un ajuste las elimina; ofrecer el rodeo documentado.
 Entregar cada propuesta con su motivo y una prueba controlada que cambie una sola variable. Distinguir lo diseñado, lo simulado y lo ejecutado de verdad en Moodle.
 Solo tras documentar que los ajustes probados no resuelven el problema, preparar una solicitud de cambio para el mantenedor (julio@rsmax.es) con versión, síntoma, ajustes probados, resultado y criterio de aceptación. No enviarla sin instrucción expresa.
 

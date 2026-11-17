@@ -1,6 +1,6 @@
-# Límites y valores por defecto: 0.8.1
+# Límites y valores por defecto: 0.8.2
 
-Valores verificados en la revisión estática del 15-11-2026. Un límite documentado es un hecho; que haya causado un caso concreto es una conclusión aparte.
+Valores verificados en la revisión estática del 17-11-2026. Un límite documentado es un hecho; que haya causado un caso concreto es una conclusión aparte.
 
 ## Ajustes del sitio (valores de fábrica)
 | Ajuste en pantalla | Valor de fábrica | Límites y notas |
@@ -89,4 +89,5 @@ Las actividades creadas antes de 0.8.0 conservan «Último intento» como métod
 - 25 intentos por página. Filtros por estado, incidencia, estado de IA y nombre. Desde la 0.8.1 las tarjetas «Intentos con incidencia» e «IA pendiente» filtran por lo mismo que cuentan, con los valores «Atención o crítica» y «Pendiente o procesando».
 - La navegación entre intentos del resultado solo recorre intentos terminados.
 - Con grupos separados, los contadores de la página de la actividad solo cuentan al alumnado de los grupos del docente (desde la 0.8.1).
+- Resumen de actividades del curso (Moodle 5.0 o posterior, desde la 0.8.2): para docentes, alumnos que lo intentaron, intentos pendientes de revisión y alumnos que terminaron; para el alumno, intentos empezados y si terminó alguno. Respeta los grupos separados.
 - Niveles de incidencia: «Atención» (revisión docente pendiente, IA pendiente, IA requiere revisión, IA con alertas) y «Crítica» (IA fallida).

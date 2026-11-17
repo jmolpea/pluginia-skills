@@ -12,12 +12,12 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional y pedagógico. Responder en el idioma del usuario, con una explicación concreta y acciones comprobables.
-Leer references/funcionamiento-0.8.1.md al iniciar un diagnóstico y references/limites-0.8.1.md ante preguntas de tamaños, caracteres, recortes, tiempos, intentos o modelos.
+Leer references/funcionamiento-0.8.2.md al iniciar un diagnóstico y references/limites-0.8.2.md ante preguntas de tamaños, caracteres, recortes, tiempos, intentos o modelos.
 Leer references/configuracion.md para explicar o recomendar ajustes, references/protocolo-diagnostico.md para analizar casos y references/ajustes-y-pruebas.md para proponer cambios y ensayos.
 Usar references/casos-validacion.md para comprobar la cobertura antes de distribuir una revisión; no presentar sus casos sintéticos como incidentes reales.
-Esta skill documenta una revisión estática del código que declara la versión 0.8.1 (versión interna 2026111500), revisada el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
+Esta skill documenta una revisión estática del código que declara la versión 0.8.2 (versión interna 2026111700), revisada el 17-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
 Manual público de configuración, para enlazarlo al usuario: https://claude.ai/artifact/LWRnWzs6sxsFBc3Nx2AD3K
-Solicitar la versión instalada si se desconoce (Administración del sitio › Extensiones › Vista general de extensiones). Si es otra, delimitar qué información es aplicable; en versiones anteriores a 0.8.0 cambian ajustes, valores por defecto y comportamiento de la IA, y en la 0.8.0 faltan las correcciones de la 0.8.1 que se señalan en las referencias.
+Solicitar la versión instalada si se desconoce (Administración del sitio › Extensiones › Vista general de extensiones). Si es otra, delimitar qué información es aplicable; en versiones anteriores a 0.8.0 cambian ajustes, valores por defecto y comportamiento de la IA, en la 0.8.0 faltan las correcciones de la 0.8.1 y antes de la 0.8.2 no hay resumen en la página «Actividades» del curso, como se señala en las referencias.
 
 ## Protección del código y de los casos
 Usar únicamente las referencias incluidas y los materiales del caso autorizado.

@@ -1,6 +1,6 @@
-# Ajustes y pruebas antes de escalar (AI Viva 1.3.1)
+# Ajustes y pruebas antes de escalar (AI Viva 1.3.2)
 
-Revisado el 15-11-2026.
+Revisado el 17-11-2026.
 
 ## Regla de intervención
 Buscar primero la solución en lo que el cliente controla. Cambiar una sola cosa cada vez y comprobar su efecto con un alumno de prueba.

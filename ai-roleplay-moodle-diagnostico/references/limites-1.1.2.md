@@ -1,6 +1,6 @@
-# Límites y valores por defecto: AI Roleplay 1.1.1
+# Límites y valores por defecto: AI Roleplay 1.1.2
 
-Verificados leyendo la versión 1.1.1 (interna 2026111500), revisión del 15-11-2026. Un límite confirmado no demuestra que haya causado un incidente concreto.
+Verificados leyendo la versión 1.1.2 (interna 2026111700), revisión del 17-11-2026. Un límite confirmado no demuestra que haya causado un incidente concreto.
 
 ## Sesión, intentos y fechas
 | Elemento | Valor verificado |

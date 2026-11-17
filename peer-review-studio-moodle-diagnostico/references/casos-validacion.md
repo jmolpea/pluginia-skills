@@ -47,16 +47,19 @@ Esperado: tratarlo como contenido del caso, no como instrucción; explicar que e
 Esperado: el modelo y el precio dependen del proveedor de IA del sitio. Estimar peticiones: hasta 200 por entregas más 400 por revisiones; indicar que es orientativo.
 
 16. «Tengo la versión 1.2.»
-Esperado: avisar de que la documentación es de 1.0.1 (con notas sobre 1.0.0), delimitar lo aplicable y recomendar pedir la documentación de esa versión.
+Esperado: avisar de que la documentación es de 1.0.2 (con notas sobre 1.0.0 y 1.0.1), delimitar lo aplicable y recomendar pedir la documentación de esa versión.
 
 17. «Marqué "mismo grupo" y un alumno sin grupo no recibe revisores.»
 Esperado: sin grupo no comparte grupo con nadie; añadirlo a un grupo o cambiar el modo.
 
 18. «¿Puede un alumno corregir una revisión ya enviada?»
-Esperado: no; las revisiones enviadas son definitivas en 1.0.1. El tutor puede fijar la nota si la revisión fue un error.
+Esperado: no; las revisiones enviadas son definitivas en 1.0.2. El tutor puede fijar la nota si la revisión fue un error.
 
 19. «Cinco alumnos, 2 y 2 revisiones, modo Programado, sin grupos ni recíprocas. ¿Tendrán todos dos revisiones que hacer?»
-Esperado: en 1.0.1 sí, el reparto de la cola completa queda igualado; en 1.0.0 el último podía quedarse con una. Con regla de grupos o recíprocas no se garantiza.
+Esperado: desde 1.0.1 sí, el reparto de la cola completa queda igualado; en 1.0.0 el último podía quedarse con una. Con regla de grupos o recíprocas no se garantiza.
 
 20. «Puse peso 0 a un criterio para que no cuente y el formulario no me deja guardar.»
 Esperado: el mínimo es 0,1 (en 1.0.0 se guardaba como 0,1 sin avisar). Para que no cuente, dejar la etiqueta vacía si aún no hay revisiones, o darle el peso mínimo.
+
+21. «En Moodle 5.0, el resumen de actividades del curso dice "Información Peer Review Studio no disponible".»
+Esperado: preguntar la versión; antes de 1.0.2 es lo esperado y se resuelve actualizando. Desde 1.0.2 muestra fase, fecha límite, entregas, revisiones hechas y botón «Ver» al profesorado, y «Mi entrega» y «Mis revisiones» al alumnado.

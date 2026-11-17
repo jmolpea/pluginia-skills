@@ -1,6 +1,6 @@
-# Funcionamiento de AI Viva 1.3.1
+# Funcionamiento de AI Viva 1.3.2
 
-Documentación funcional derivada de una revisión estática de la versión 1.3.1 (versión interna 2026111500), revisada el 15-11-2026. Todo lo que sigue es «hecho verificado en el código» salvo que se marque como hipótesis. No se ha ejecutado en un Moodle para escribir este documento.
+Documentación funcional derivada de una revisión estática de la versión 1.3.2 (versión interna 2026111700), revisada el 17-11-2026. Todo lo que sigue es «hecho verificado en el código» salvo que se marque como hipótesis. No se ha ejecutado en un Moodle para escribir este documento.
 Manual público: https://claude.ai/artifact/RckemidnHhdYikr8HM2XHQ
 
 ## Qué es
@@ -93,6 +93,12 @@ El formulario de reinicio de curso de Moodle incluye un apartado de AI Viva con 
 ## Cambio de la calificación máxima (nuevo en 1.3.1)
 Al guardar la actividad con otra calificación máxima, las notas ya guardadas (propuesta de la IA y nota final) se convierten a la escala nueva manteniendo la proporción y se actualiza el libro de calificaciones. En versiones anteriores quedaban en la escala antigua.
 
-## Lo que la versión 1.3.1 no hace
+## Resumen de actividades del curso (nuevo en 1.3.2)
+Solo en Moodle 5.0 o posterior: la página del curso que resume todas las actividades de un tipo (Curso › Actividades) muestra columnas propias de AI Viva; antes mostraba «Información no disponible». En Moodle 4.5 esa página no existe.
+Profesores y gestor (quien tiene «Ver todas las entregas»): «Fecha de cierre» (la de la actividad); «Estudiantes que terminaron», en forma «N de M»: alumnos con al menos un intento con el tribunal terminado (pendiente de evaluación, evaluándose o calificado) sobre el total de usuarios activos matriculados que pueden hacer la defensa; «Pendientes de revisión»: alumnos con un intento calificado cuya nota aún no está publicada (en revisión o retirada); y «Acciones», con un botón «Ver» que abre la página de entregas y un globo con ese mismo número.
+Alumnos: «Fecha de cierre» (la suya, con excepciones), «Tu estado» (estado de su último intento: «Sin empezar» si no tiene ninguno, el paso en que está, «Pendiente de evaluación», «Evaluándose», «En revisión» si hay nota sin publicar, o «Calificada» si está publicada) e «Intentos» («usados de máximo», con «Ilimitado» si no hay límite; cuenta todos los intentos empezados).
+Moodle añade por su cuenta las columnas de calificación y finalización. Con grupos separados, un docente sin acceso a todos los grupos solo cuenta a los alumnos de los grupos que puede ver; si no está en ningún grupo, los contadores salen a cero.
+
+## Lo que la versión 1.3.2 no hace
 No tiene entregas en grupo, ni eventos de calendario para las fechas, ni informe de costes o de uso, ni exportación de evaluaciones.
 No detecta plagio ni compara trabajos entre alumnos: las alertas de integridad salen solo de incoherencias entre el documento y lo dicho.

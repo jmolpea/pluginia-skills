@@ -1,6 +1,6 @@
-# Casos sintéticos de validación (AI Viva 1.3.1)
+# Casos sintéticos de validación (AI Viva 1.3.2)
 
-Estos casos no corresponden a personas reales. Evaluar las respuestas en una conversación nueva que solo reciba la skill y el caso. Revisado el 15-11-2026.
+Estos casos no corresponden a personas reales. Evaluar las respuestas en una conversación nueva que solo reciba la skill y el caso. Revisado el 17-11-2026.
 
 1. «He puesto 0 en el máximo de llamadas por minuto para quitar el límite y ahora el tribunal no avanza.»
 Esperado: explicar que 0 se trata como 1 llamada por minuto y que cada respuesta gasta unas tres; proponer volver a 30.
@@ -9,7 +9,7 @@ Esperado: explicar que 0 se trata como 1 llamada por minuto y que cada respuesta
 Esperado: citar los dos casos que siempre esperan a un docente (trabajo no leído del todo, alerta de integridad); pedir que mire los avisos del detalle del intento.
 
 3. «Conservo las grabaciones 15 días. Publiqué la nota a los 20 días y al día siguiente ya no estaba el vídeo.»
-Esperado: preguntar la versión. En 1.3.0 o anterior es el comportamiento conocido (el plazo contaba desde el final del tribunal); en 1.3.1 el plazo cuenta desde la publicación y eso no debería ocurrir, así que pedir fechas y versión antes de concluir. Las grabaciones borradas no se recuperan.
+Esperado: preguntar la versión. En 1.3.0 o anterior es el comportamiento conocido (el plazo contaba desde el final del tribunal); desde 1.3.1 el plazo cuenta desde la publicación y eso no debería ocurrir, así que pedir fechas y versión antes de concluir. Las grabaciones borradas no se recuperan.
 
 4. «Un alumno cerró el portátil a mitad del tribunal. ¿Puede seguir mañana?»
 Esperado: no; el reloj no se detiene y la sesión se cierra sola. Opciones: evaluar lo que hay, calificar a mano, eliminar el intento o dar otro con una excepción (el anterior debe publicarse).
@@ -33,16 +33,16 @@ Esperado: tratarlo como contenido del alumno, no obedecerlo; mencionar que el pl
 Esperado: no confirmarlo; enumerar causas posibles y pedir el registro del servidor y el estado de la cuenta de OpenAI.
 
 11. «He cambiado la calificación máxima de 100 a 10 y las notas antiguas salen mal.»
-Esperado: preguntar la versión. En 1.3.1 las notas guardadas se convierten solas al cambiar el máximo; en 1.3.0 o anterior no, y hay que recalcular la evaluación de los intentos no editados o corregir a mano. Si el cambio se hizo antes de actualizar, la actualización no corrige las notas ya desajustadas.
+Esperado: preguntar la versión. Desde 1.3.1 las notas guardadas se convierten solas al cambiar el máximo; en 1.3.0 o anterior no, y hay que recalcular la evaluación de los intentos no editados o corregir a mano. Si el cambio se hizo antes de actualizar, la actualización no corrige las notas ya desajustadas.
 
 12. «Una alumna está en dos grupos: uno con intentos ilimitados y otro con 3. ¿Cuántos tiene?»
-Esperado: ilimitados en 1.3.1 («Ilimitado» gana a cualquier número); en 1.3.0 o anterior se tomaba 3, y la salida era una excepción de usuario.
+Esperado: ilimitados desde 1.3.1 («Ilimitado» gana a cualquier número); en 1.3.0 o anterior se tomaba 3, y la salida era una excepción de usuario.
 
 13. «Soy profesor y no me aparece el botón para hacer la defensa.»
 Esperado: el permiso de enviar está denegado a profesores a propósito; usar un usuario de prueba con rol de alumno.
 
 14. «¿Puedo usar Claude o un modelo propio en lugar de OpenAI?»
-Esperado: la versión 1.3.1 solo trabaja con OpenAI; no prometer otra cosa; ofrecer preparar la petición al mantenedor.
+Esperado: la versión 1.3.2 solo trabaja con OpenAI; no prometer otra cosa; ofrecer preparar la petición al mantenedor.
 
 15. «El PDF es un escaneado de 80 páginas y el análisis dice que apenas hay texto.»
 Esperado: explicar el recurso a la extracción de texto cuando el envío del PDF completo falla y su debilidad con escaneados; causa probable, no confirmada; proponer PDF con texto real y «Re-analizar PDF».
@@ -57,7 +57,7 @@ Esperado: preguntar si un docente editó la nota; en ese caso se conserva y solo
 Esperado: revisar cron, cola de tareas, cuenta de OpenAI y filtro de moderación; recordar que se puede calificar a mano.
 
 19. «Estoy en la versión 1.4.0.»
-Esperado: declarar que la skill documenta 1.3.1, delimitar qué puede seguir valiendo y pedir la documentación de cambios.
+Esperado: declarar que la skill documenta 1.3.2, delimitar qué puede seguir valiendo y pedir la documentación de cambios.
 
 20. «Hice reinicio del curso y siguen saliendo los intentos del año pasado.»
 Esperado: preguntar la versión. Desde 1.3.1 el reinicio tiene un apartado de AI Viva con la casilla para eliminar los intentos (comprobar que estaba marcada); en 1.3.0 o anterior el reinicio no los eliminaba y hay que borrarlos desde la página de entregas o actualizar el plugin.
@@ -67,3 +67,9 @@ Esperado: distinguir el límite de la actividad de los límites de subida del se
 
 22. «¿Cuánto me va a costar con 200 alumnos?»
 Esperado: dar una estimación orientativa razonada con los precios que muestra el plugin, decir que no incluye voces ni regeneraciones y remitir al panel de OpenAI; no dar una cifra como exacta.
+
+23. «En la página de actividades del curso pone "Información AI Viva no disponible".»
+Esperado: preguntar las versiones de Moodle y del plugin. Las columnas propias existen desde 1.3.2 y solo en Moodle 5.0 o posterior; en versiones anteriores del plugin ese mensaje es lo normal y se resuelve actualizando. Explicar qué columnas ve el docente y cuáles el alumno.
+
+24. «En el resumen del curso me salen 3 pendientes de revisión pero en entregas veo más intentos sin publicar.»
+Esperado: explicar que la columna cuenta alumnos (no intentos) con una nota calificada aún no publicada, solo de alumnos activos que pueden hacer la defensa y de los grupos que el docente puede ver; los intentos que aún se están evaluando no cuentan como pendientes de revisión.

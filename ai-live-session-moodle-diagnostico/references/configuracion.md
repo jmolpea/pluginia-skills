@@ -1,6 +1,6 @@
-# Configuración de AI Live Session 1.0.2
+# Configuración de AI Live Session 1.0.3
 
-Nombres tal como aparecen en pantalla (idioma español). Revisado el 15-11-2026. Detalle visual y simuladores en el manual: https://claude.ai/artifact/J58N9JJybXxofoznCsvqro
+Nombres tal como aparecen en pantalla (idioma español). Revisado el 17-11-2026. Detalle visual y simuladores en el manual: https://claude.ai/artifact/J58N9JJybXxofoznCsvqro
 
 ## Ajustes del sitio
 Dónde: Administración del sitio › Extensiones › Módulos de actividad › AI Live Session. Solo administradores.

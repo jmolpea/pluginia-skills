@@ -1,6 +1,6 @@
 # Protocolo de diagnóstico de AI Viva
 
-Para la versión 1.3.1, revisado el 15-11-2026.
+Para la versión 1.3.2, revisado el 17-11-2026.
 
 ## Ficha mínima
 Pedir según la consulta, no todo siempre:
@@ -27,7 +27,7 @@ Nota: el alumno nunca ve el motivo real; no deducirlo del mensaje.
 
 ### El alumno se queda en «Analizando…» (documento o presentación)
 Causas: cron parado o lento (el análisis quedó en cola); análisis largo en curso; el proceso que hacía el análisis en el momento de la subida fue interrumpido por el servidor.
-Hecho (1.3.1): hay una tarea de respaldo que repite el análisis 30 minutos después de la subida si el intento sigue sin avanzar. En 1.3.0 y anteriores no existía y el intento podía quedarse esperando indefinidamente.
+Hecho (desde 1.3.1): hay una tarea de respaldo que repite el análisis 30 minutos después de la subida si el intento sigue sin avanzar. En 1.3.0 y anteriores no existía y el intento podía quedarse esperando indefinidamente.
 Comprobar: versión instalada; que el cron corre; tareas en cola pendientes de AI Viva; tiempo transcurrido.
 Salida: esperar al menos 30 a 40 minutos con el cron en marcha; si después sigue igual, el docente puede eliminar el intento para que el alumno empiece otro (acción irreversible).
 

@@ -91,6 +91,9 @@ Confirmado: evidencia directa del caso y regla aplicable.
 Probable: mecanismo compatible con el síntoma, pendiente de una comprobación identificada.
 No comprobable: falta evidencia decisiva; explicar qué dato permitiría avanzar.
 
+### La página «Actividades» del curso dice que la información de Decision Arena no está disponible
+Causa: Moodle 5.0 o posterior con una versión del plugin anterior a la 0.8.2, que no aportaba resumen. No es un fallo de configuración. Solución: actualizar a la 0.8.2 o posterior. Si con la 0.8.2 un docente ve ceros, comprobar el modo de grupos separados y si pertenece a algún grupo.
+
 ## Escalamiento
 Entregar una ficha breve: versiones, síntoma, comportamiento esperado, configuración relevante, reproducción anonimizada, resultados observados, hipótesis descartadas y evidencia faltante.
 Para solicitar un cambio, añadir los ajustes probados, el resultado de cada uno, el fallo residual, el comportamiento funcional solicitado y los criterios de aceptación. No incluir código ni afirmar que la solicitud ha sido enviada.

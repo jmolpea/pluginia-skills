@@ -1,6 +1,6 @@
-# Funcionamiento verificado de Peer Review Studio 1.0.1
+# Funcionamiento verificado de Peer Review Studio 1.0.2
 
-Base: revisión estática del código que declara la versión 1.0.1 (versión interna 2026111500, Moodle 4.5 a 5.3), el 15-11-2026. No se ejecutó Moodle ni se comparó con el ZIP instalado. Todo lo que sigue es hecho verificado en el código salvo donde se indica «hipótesis» o «estimación».
+Base: revisión estática del código que declara la versión 1.0.2 (versión interna 2026111700, Moodle 4.5 a 5.3), el 17-11-2026. No se ejecutó Moodle ni se comparó con el ZIP instalado. Todo lo que sigue es hecho verificado en el código salvo donde se indica «hipótesis» o «estimación».
 
 ## Qué es
 Actividad de Moodle de evaluación entre pares. Cada alumno entrega un trabajo, revisa con una rúbrica los trabajos de otros alumnos que el plugin le asigna y recibe comentarios anónimos y una nota. El tutor supervisa desde un panel. Opcionalmente, la IA del sitio da una segunda opinión.
@@ -91,6 +91,16 @@ Con grupos separados, un tutor sin acceso a todos los grupos solo ve y recibe av
 Exporta la entrega, el feedback recibido (sin identidad de revisores) y las revisiones escritas. Borrar a un autor elimina trabajo y ficheros; borrar a un revisor quita identidad y comentarios y conserva la nota propuesta.
 La copia de seguridad incluye ajustes y rúbrica siempre, y entregas, revisiones y notas solo con datos de usuario. El reinicio de curso puede vaciar la actividad y desplaza las fechas.
 
+## Resumen de actividades del curso (Moodle 5.0 o posterior)
+Desde 1.0.2 la página de resumen de actividades del curso (Curso › Actividades) muestra una fila por actividad en lugar de «Información no disponible». Con 1.0.1 o anterior en Moodle 5.0+ ese aviso es lo esperado: recomendar actualizar. En Moodle 4.5 esa página no existe. No tiene ajustes.
+- Para todos: «Fase» (Entrega, Asignación, Revisión, Feedback, Cerrada o, en Abierto, «Continua (autoformativa)») y «Fecha límite»: solo en Programado, el cierre de entregas durante Entrega y la fecha límite de revisión durante Revisión; en otro caso un guion.
+- Profesorado (quien ve el panel del tutor): «Entregas» = alumnos con entrega sobre alumnos activos que pueden entregar; «Revisiones hechas» = revisiones completadas sobre revisiones asignadas no retiradas; «Acciones» = botón «Ver» al panel con un número de entregas que requieren atención, contando solo las escaladas al tutor que no tienen todas sus revisiones ni nota fijada por el docente (no cuenta las demás filas de «Requiere atención», por eso el número puede ser menor que el del panel).
+- Alumnado: «Mi entrega» (estado de su entrega o «Sin entregar») y «Mis revisiones» (completadas sobre las requeridas), además de la calificación y la finalización estándar de Moodle.
+- Con grupos separados, un profesor sin acceso a todos los grupos solo cuenta a los alumnos de sus grupos; si no pertenece a ningún grupo ve un guion.
+
+## Novedades de 1.0.2
+- Resumen de actividades del curso en Moodle 5.0 o posterior (apartado anterior). Sin cambios de ajustes, permisos ni datos.
+
 ## Corregido en 1.0.1 respecto a 1.0.0
 - Modo Manual: recordatorios y retiradas ya no se adelantan por los días pasados en la fase Asignación.
 - Reparto: con la configuración de fábrica la carga de revisiones queda igualada cuando se reparte una cola entera (por ejemplo, al cerrar las entregas en Programado).
@@ -100,7 +110,7 @@ La copia de seguridad incluye ajustes y rúbrica siempre, y entregas, revisiones
 - Enlace al manual de configuración en los ajustes del sitio y en el formulario de la actividad.
 Si el cliente tiene 1.0.0, estos comportamientos siguen presentes en su sitio: recomendar actualizar.
 
-## Comportamientos conocidos de 1.0.1 que conviene tener presentes
+## Comportamientos conocidos de 1.0.2 que conviene tener presentes
 Verificados leyendo el código; no reproducidos en Moodle para esta revisión.
 - Con regla de grupos o de recíprocas, el reparto sigue siendo secuencial y puede dejar a algún alumno con menos revisiones asignadas que las requeridas y a otro con más. Rodeo: «Asignar manualmente».
 - Modo Abierto: una entrega «Revisada parcialmente» que agota las reasignaciones sigue sin publicarse hasta completar el objetivo; no hay aviso por mensaje ni respaldo por IA, solo la fila en «Requiere atención». Rodeo: asignar a mano, bajar el objetivo o fijar la nota.

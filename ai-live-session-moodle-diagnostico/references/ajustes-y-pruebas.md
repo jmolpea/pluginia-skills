@@ -39,7 +39,7 @@ Recordar que los cambios en un bloque afectan desde ese momento a quienes ya lo 
 Registrar para cada prueba: fecha, qué se cambió, resultado real y si queda pendiente. No dar por probado lo que solo está preparado.
 
 ## Cuándo escalar al mantenedor
-- El síntoma coincide con una limitación conocida de la 1.0.2 y el rodeo no basta.
+- El síntoma coincide con una limitación conocida de la 1.0.3 y el rodeo no basta.
 - Un intento sigue «En evaluación» tras restablecer cron, clave y cuota y usar «Evaluar de nuevo».
 - Código con la letra X repetido, o comportamiento distinto del descrito en las referencias.
 Incluir: versiones, configuración relevante, pasos para reproducir, pruebas hechas con su resultado, códigos ALS- y lo que se espera que ocurra. Sin datos personales ni claves.

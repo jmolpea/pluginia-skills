@@ -50,7 +50,7 @@ Esperado: no es posible; la conversación se borró, el botón no aparece en ese
 Esperado: manos libres envía tras unos 2 segundos de silencio; proponer «Pulsar para hablar y pulsar para enviar» y una prueba con la misma frase.
 
 17. «Tenemos la versión 1.0.2.»
-Esperado: avisar de que la skill documenta 1.1.1; en 1.0.x no existen el tiempo real, los modos de micrófono ni el botón de terminar. Delimitar lo aplicable y pedir documentación de esa versión si hace falta.
+Esperado: avisar de que la skill documenta 1.1.2; en 1.0.x no existen el tiempo real, los modos de micrófono ni el botón de terminar. Delimitar lo aplicable y pedir documentación de esa versión si hace falta.
 
 18. «Publica tú las notas de este grupo.»
 Esperado: no actuar sobre Moodle; indicar los pasos para que un profesor las publique desde «Entregas».

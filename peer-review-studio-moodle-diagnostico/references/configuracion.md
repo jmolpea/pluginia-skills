@@ -1,6 +1,6 @@
-# Configuración de Peer Review Studio 1.0.1
+# Configuración de Peer Review Studio 1.0.2
 
-Nombres tal como aparecen en pantalla (idioma español). Valores de fábrica verificados en la versión 1.0.1. Manual público con simuladores: https://claude.ai/artifact/RzMxCe9u5hXWWZy9kPUcXq
+Nombres tal como aparecen en pantalla (idioma español). Valores de fábrica verificados en la versión 1.0.2. Manual público con simuladores: https://claude.ai/artifact/RzMxCe9u5hXWWZy9kPUcXq
 
 ## Sitio (administrador)
 Ruta: Administración del sitio › Extensiones › Módulos de actividad › Peer Review Studio.
