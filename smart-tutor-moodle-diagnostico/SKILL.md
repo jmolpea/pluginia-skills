@@ -1,6 +1,6 @@
 ---
 name: smart-tutor-moodle-diagnostico
-description: Diagnostica y ayuda a configurar Smart Tutor & Support AI, el bloque de asistente de IA para Moodle (block_openaiagent). Usar cuando el chat no aparece o dice que no está disponible, el tutor responde que el material no lo cubre, no usa el contenido del curso, las respuestas salen cortadas o de golpe, no aparecen la voz o las llamadas, no llegan los correos de soporte, sube el gasto, o ante consultas sobre proveedores y modelos, base de conocimiento del aula, límites y cuotas, presupuesto, visitantes, retención, permisos, licencia y qué datos se envían a la IA. Prioriza ajustes de configuración con pruebas controladas antes de pedir cambios de código. Se basa en documentación verificada de la versión 5.3.2 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnostica y ayuda a configurar Smart Tutor & Support AI, el bloque de asistente de IA para Moodle (block_openaiagent). Usar cuando el chat no aparece o dice que no está disponible, el tutor responde que el material no lo cubre, no usa el contenido del curso, las respuestas salen cortadas o de golpe, no aparecen la voz o las llamadas, no llegan los correos de soporte, sube el gasto, o ante consultas sobre proveedores y modelos, base de conocimiento del aula, límites y cuotas, presupuesto, visitantes, retención, permisos, licencia y qué datos se envían a la IA. Prioriza ajustes de configuración con pruebas controladas antes de pedir cambios de código. Se basa en documentación verificada de la versión 5.3.4 y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Smart Tutor & Support AI: diagnóstico y configuración
@@ -11,12 +11,12 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional de Smart Tutor & Support AI para administradores de Moodle, gestores y docentes. Responder en el idioma del usuario, con una explicación concreta y pasos comprobables. Tratar al usuario con respeto y sin dar por sabidos Moodle ni la IA.
-Leer references/funcionamiento-5.3.2.md al iniciar cualquier diagnóstico y references/limites-5.3.2.md ante preguntas de cuotas, recortes, tiempos, modelos, formatos o costes.
+Leer references/funcionamiento-5.3.4.md al iniciar cualquier diagnóstico y references/limites-5.3.4.md ante preguntas de cuotas, recortes, tiempos, modelos, formatos o costes.
 Leer references/configuracion.md para explicar o recomendar ajustes, references/protocolo-diagnostico.md para analizar un caso y references/ajustes-y-pruebas.md antes de proponer cambios.
 Usar references/casos-validacion.md solo para comprobar la skill; no presentar sus casos sintéticos como incidentes reales.
-Esta skill documenta una revisión estática del código que declara la versión 5.3.2 (Moodle 4.5 a 5.3), revisada el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
+Esta skill documenta una revisión estática del código que declara la versión 5.3.4 (Moodle 4.5 a 5.3), revisada el 18-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
 Manual público de configuración, con maquetas y simuladores: https://claude.ai/artifact/Ko6vHpvgSzUBNEcF9Nxs8R. Enlazarlo cuando ayude a localizar un ajuste. Desde la 5.3.2 el plugin lo enlaza en la primera pestaña de ajustes, en la configuración de cada asistente y en los ajustes del bloque.
-Preguntar la versión instalada si se desconoce. Si es otra, delimitar qué información sigue siendo aplicable y recomendar pedir al mantenedor la documentación de esa versión. Las versiones 4.20.x y anteriores no tienen voz, llamadas, base de conocimiento del aula ni presupuesto.
+Preguntar la versión instalada si se desconoce: varios comportamientos cambiaron en la 5.3.3 y la 5.3.4 (apartado 15 de la referencia de funcionamiento), aunque ningún ajuste ni límite. Si es otra, delimitar qué información sigue siendo aplicable y recomendar pedir al mantenedor la documentación de esa versión. Las versiones 4.20.x y anteriores no tienen voz, llamadas, base de conocimiento del aula ni presupuesto.
 
 ## Protección del código y de los casos
 Usar únicamente las referencias incluidas y los materiales que aporte el cliente para su caso.
@@ -66,4 +66,4 @@ No afirmar que ningún dato sale de Moodle: la pregunta, el nombre de pila del a
 No equiparar una respuesta redactada en este chat con lo que habría generado el plugin.
 No atribuir un fallo al proveedor, al cron, a un proxy o a un límite sin una evidencia que lo respalde.
 No presentar como defecto confirmado un comportamiento que la referencia marca como probable.
-No presentar la skill como actualizada automáticamente: documenta la versión 5.3.2.
+No presentar la skill como actualizada automáticamente: documenta la versión 5.3.4.

@@ -1,4 +1,4 @@
-# Ajustes que puede hacer el cliente y pruebas controladas (5.3.2)
+# Ajustes que puede hacer el cliente y pruebas controladas (5.3.4)
 Regla: cambiar una sola variable cada vez, anotar el resultado y volver al valor anterior si no mejora. Las pruebas consumen IA: hacerlas en un curso de prueba y con una cuenta de alumno de prueba. Avisar siempre del coste.
 
 ## Preparar un banco de pruebas
@@ -21,7 +21,8 @@ Regla: cambiar una sola variable cada vez, anotar el resultado y volver al valor
 | Que cite y enlace | Fuentes bajo cada respuesta (sitio) y «El tutor puede citar el contenido del curso y enlazarlo» | Ver los enlaces bajo la respuesta |
 | Controlar el gasto | Presupuesto mensual por asistente; cupos de voz; modelos recomendados | Panel de uso tras unos días |
 | Datos en la UE | Proveedor «Compatible» con un servicio europeo o propio; revisar embeddings y voz | Prueba de conexión |
-| Avisar de que es una IA | «Mensaje de bienvenida» del bloque | Abrir el chat como alumno |
+| Avisar de que es una IA | «Mensaje de Bienvenida» del bloque (de fábrica ya trae un aviso) | Abrir el chat como alumno |
+| Que el chat esté a mano en todo el curso | «Permitir el asistente en todas las páginas del curso» (sitio) y «Mostrar el asistente en todas las páginas del curso» (asistente) | El botón flotante aparece en la página del curso, en sus secciones y en las actividades; nunca en un intento de cuestionario |
 | Soporte a los profesores del curso | En la dirección de soporte del curso, el comodín de profesores del curso | Enviar una consulta de prueba y mirar el informe de escalados |
 | Abrir a visitantes sin sustos | Captcha invisible y tope diario antes de abrir el asistente | Ventana privada sin sesión |
 
@@ -36,6 +37,8 @@ Regla: cambiar una sola variable cada vez, anotar el resultado y volver al valor
 8. Soporte: pedir hablar con una persona, confirmar la tarjeta y seguir la consulta en el informe hasta «enviada». Repetir la misma consulta para ver que no se duplica.
 9. Límites: bajar temporalmente «Mensajes por usuario y minuto» a 2, enviar tres mensajes seguidos, comprobar el aviso y restaurar el valor.
 10. Examen del tutor: si está permitido, lanzarlo en el curso piloto y revisar los fallos con su fuente. Uno al día por asistente; tiene coste.
+11. Seguimiento (5.3.4): hacer una pregunta de contenido y después «¿y qué dice exactamente ahí? Cítame el material». El tutor debe citar el mismo pasaje, no decir que no puede confirmarlo. Si falla, confirmar la versión instalada antes de tocar ajustes.
+12. Dos pedidos (5.3.4): enviar un mensaje con dos preguntas de temas distintos («Dos cosas: … Y además …») y comprobar que responde a las dos con su material.
 
 ## Qué no se arregla con ajustes
 - Que lea cuestionarios, o que funcione en el Área personal.

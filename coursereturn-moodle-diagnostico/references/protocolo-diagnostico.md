@@ -5,7 +5,7 @@ Pedir según la consulta, no todo siempre:
 - Versión de Moodle y del plugin.
 - Si «Registro por email con retorno al curso» está habilitado y elegido como autorregistro en Gestionar autenticación.
 - Por dónde entró el visitante: la página del curso, el enlace de entrada al registro, una web externa o el formulario de registro directamente.
-- Qué vio en cada paso: aviso del curso en el formulario, página tras el registro, email recibido (asunto y si nombra el curso), página del enlace, mensaje literal si lo hubo y página final.
+- Qué vio en cada paso: aviso del curso en el formulario, página tras el registro, email recibido (asunto, si nombra el curso y si lleva logo y botón), página del enlace, mensaje literal si lo hubo y página final.
 - Si se pulsó el botón de la página de confirmación.
 - Captura de la página de diagnóstico del plugin con la cuenta afectada (sin nombre ni email visibles).
 - Del curso: método de automatriculación (habilitado, nuevas matrículas, clave, claves de grupo, fechas, plazas, cohorte).
@@ -48,6 +48,15 @@ Es el comportamiento esperado: Moodle pide MFA, políticas y campos obligatorios
 2. ¿Puede ver el curso una cuenta recién creada? El email y la página del enlace se comprueban con la cuenta ya creada: si el curso está oculto o en una categoría que esa cuenta no puede ver, no se nombra.
 3. ¿Empezó el registro en el curso? Ver el síntoma «termina en el Área personal».
 4. ¿Hay una personalización de idioma que cambie el texto?
+
+## Síntoma: el email se ve distinto de lo esperado (desde 1.1.1)
+1. Versión del plugin: el email con logo y botón existe desde la 1.1.1 (en el diagnóstico, 2026111601). En 1.1.0 el email del curso es solo texto.
+2. Sin logo y sin botón, con el texto estándar de Moodle: es un reenvío, o un registro sin curso o con un curso que la cuenta no puede ver. No es un fallo.
+3. Con el texto del plugin pero sin formato: el programa de correo de esa persona muestra solo texto. Pedir que lo abra en otro programa o en el correo web. Si le pasa a todo el mundo, revisar el formato de email por defecto de las cuentas nuevas del sitio (No verificado: ver la referencia de funcionamiento).
+4. Con formato pero sin logo, con el nombre del sitio en su lugar: el campo «Logo» del sitio está vacío (un logo guardado solo en los ajustes del tema no cuenta), o el programa de correo bloquea las imágenes, o el sitio no es accesible desde donde se abre el email.
+5. Botón de un color inesperado: se usa el color de marca del tema activo; si el tema no lo tiene o no está en hexadecimal, el azul por defecto de Moodle.
+6. Sin botón, con el enlace como texto dentro de una frase: una personalización de idioma ha quitado al enlace su párrafo propio.
+7. «Pulsé el botón del email y no pasó nada»: el botón abre la página de confirmación; falta pulsar el botón de esa página.
 
 ## Síntoma: un alumno dice que no pidió la cuenta o que entró en una cuenta ajena
 La página de confirmación muestra el email de la cuenta medio oculto para que cada persona reconozca la suya; no confirma hasta pulsar el botón. Si alguien confirmó una cuenta que no es suya, el administrador puede suspenderla o eliminarla.

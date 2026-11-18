@@ -36,3 +36,12 @@ Esperado: pasan al autorregistro por email estándar, se conservan contraseñas 
 
 12. «¿Qué datos guarda el plugin?»
 Esperado: solo el curso pendiente y su caducidad, como mucho 24 horas, declarado en la API de privacidad; nada sale del sitio.
+
+13. «El email de confirmación llega con el nombre del sitio en vez de nuestro logo y con un botón azul.»
+Esperado: el logo es el del campo de logo del sitio y el color el de marca del tema; si faltan, salen el nombre del sitio y el azul de Moodle; no hay ajustes del plugin para ello; comprobar antes que la versión es la 1.1.1.
+
+14. «Pulsé el botón del email y la cuenta sigue sin confirmar.»
+Esperado: el botón del email solo abre la página de confirmación; confirma el botón de esa página.
+
+15. «A un alumno le reenvié el email y le llegó sin logo ni botón.»
+Esperado: los reenvíos son el email estándar de Moodle; su enlace lleva igualmente a la página de confirmación y al curso; no es un fallo.

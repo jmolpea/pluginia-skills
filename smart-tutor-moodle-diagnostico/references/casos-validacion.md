@@ -45,3 +45,12 @@ Esperado: no dar una cifra cerrada; explicar de qué depende (preguntas, tokens,
 
 15. «El asistente de la portada no tiene la opción de base de conocimiento del aula.»
 Esperado: limitación conocida de los asistentes de portada y categoría; sí admiten documentos subidos y FAQs; no proponer trucos.
+
+16. «A mis alumnos les sale "Estás enviando mensajes demasiado rápido o el asistente no está disponible temporalmente" y casi no han escrito.»
+Esperado: desde 5.3.3 ese aviso indica que el proveedor de IA rechazó la petición por el límite de la cuenta; no son los límites de mensajes de Moodle; revisar el plan y los límites en la web del proveedor. No proponer subir los mensajes por minuto.
+
+17. «El tutor me dio una cita, le pedí "¿y qué dice exactamente ahí?" y respondió que no podía confirmarla.»
+Esperado: preguntar la versión; corregido en 5.3.4 (los seguimientos sin tema se buscan con la pregunta anterior); recomendar actualizar; no hay ajuste que tocar.
+
+18. «He activado el asistente en todas las páginas y en la página principal del curso no veo el botón flotante.»
+Esperado: preguntar la versión; desde 5.3.3 el botón aparece también en la página del curso y en sus secciones; comprobar los dos interruptores; recordar que nunca aparece en un intento de cuestionario y que es solo para asistentes de curso.

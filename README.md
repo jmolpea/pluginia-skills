@@ -10,7 +10,7 @@ Contienen documentación funcional, no código: no necesitan acceso a su Moodle 
 
 | Plugin | Versión documentada | Skill (zip) | Manual de configuración |
 |---|---|---|---|
-| Smart Tutor & Support AI (`block_openaiagent`) | 5.3.2 | [smart-tutor-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/smart-tutor-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/Ko6vHpvgSzUBNEcF9Nxs8R) |
+| Smart Tutor & Support AI (`block_openaiagent`) | 5.3.4 | [smart-tutor-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/smart-tutor-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/Ko6vHpvgSzUBNEcF9Nxs8R) |
 | AI Tutor (`local_rsmaxtutor`) | 1.8.0 | [evaluador-ia-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/evaluador-ia-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk) |
 | AI course recommender (`block_aicourserecommender`) | 1.0.0-beta5 | [recomendador-cursos-ia-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/recomendador-cursos-ia-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/LCZgLbHfAnSBkurowGLZ95) |
 | Forumia (`local_forumia`) | 1.8.3 | [forumia-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/forumia-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/Qg9adYg7HtbnatxfFCi825) |
@@ -22,7 +22,7 @@ Contienen documentación funcional, no código: no necesitan acceso a su Moodle 
 | Peer Review Studio (`mod_peerreviewstudio`) | 1.0.2 | [peer-review-studio-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/peer-review-studio-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/RzMxCe9u5hXWWZy9kPUcXq) |
 | Decision Arena (`mod_decisionarena`) | 0.8.2 | [decision-arena-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/decision-arena-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/LWRnWzs6sxsFBc3Nx2AD3K) |
 | AI Live Session (`mod_ailivesession`) | 1.0.3 | [ai-live-session-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/ai-live-session-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/J58N9JJybXxofoznCsvqro) |
-| Registro por email con retorno al curso (`auth_coursereturn`) | 1.1.0 | [coursereturn-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/coursereturn-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/S9nVg3PK3GW412ms6GScy9) |
+| Registro por email con retorno al curso (`auth_coursereturn`) | 1.1.1 | [coursereturn-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/coursereturn-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/S9nVg3PK3GW412ms6GScy9) |
 
 Los enlaces de descarga no cambian: siempre bajan la última versión de la skill.
 

@@ -42,7 +42,8 @@ Pedir solo lo que haga falta para la consulta. No pedir claves ni acceso de admi
 5. Sin búsqueda por significado (proveedor de embeddings «Desactivado» o sin clave) → busca por palabras exactas.
 6. La respuesta está en un cuestionario → nunca se lee.
 7. Documento con más de 200 páginas o texto muy largo → solo se lee el principio; la página lo indica.
-8. La pregunta fue al ayudante equivocado → revisar si se editó el prompt del enrutador; devolverlo al texto de fábrica.
+8. La pregunta fue al ayudante equivocado → preguntar la versión (antes de 5.3.3, palabras como «fecha de entrega», «me falta» o «da error» mandaban preguntas de la materia al asistente, y «cómo mejorar X» a la revisión del trabajo); revisar si se editó el prompt del enrutador y devolverlo al texto de fábrica.
+8 bis. El tutor dice que no puede confirmar una cita que acaba de dar, o responde solo a una de dos preguntas del mismo mensaje → antes de 5.3.4 los seguimientos sin tema y los mensajes con dos pedidos se buscaban mal; recomendar actualizar.
 9. Prompt del tutor del curso vacío o demasiado restrictivo.
 10. Respuesta recortada por la comprobación con el material → probar con la comprobación apagada, cambiando solo eso.
 
@@ -50,7 +51,13 @@ Pedir solo lo que haga falta para la consulta. No pedir claves ni acceso de admi
 1. Cortadas a mitad de frase → subir los tokens máximos de salida; frecuente con modelos que razonan.
 2. Aparecen de golpe con el streaming activado → un servicio intermedio (proxy, CDN) retiene la respuesta; lo resuelve el equipo técnico. Sigue funcionando.
 3. Muy lentas → esfuerzo de razonamiento alto, modo «Todo el curso en cada respuesta», comprobación de respuestas, o modelo propio lento (subir la espera del servidor compatible).
-4. «El asistente no está disponible temporalmente» → fallo del proveedor: saldo, clave revocada, modelo retirado o dirección base cambiada. Usar la prueba de conexión.
+4. «El asistente no está disponible temporalmente» → fallo del proveedor: saldo, clave revocada, modelo retirado o dirección base cambiada. Usar la prueba de conexión. Desde 5.3.3 el plugin ya ha repetido la llamada una vez si fue un corte o un error interno del proveedor.
+5. «Estás enviando mensajes demasiado rápido o el asistente no está disponible temporalmente» (desde 5.3.3) → el proveedor de IA rechazó la petición por el límite de uso de la cuenta del cliente; no son los límites de mensajes de Moodle. Revisar el plan y los límites en la web del proveedor. El aviso corto, sin la segunda parte, sí es el límite por minuto o por día de Moodle.
+
+## Árbol: datos de Moodle que da el asistente
+1. Dice que no puede consultar algo → la herramienta correspondiente está desmarcada en «Herramientas del asistente habilitadas», o el asistente está apagado en ese bloque.
+2. No sabe explicar por qué una actividad o una semana está bloqueada, o cita un número en lugar del nombre de la actividad → corregido en 5.3.3; preguntar la versión.
+3. Responde en español a una pregunta corta en portugués → corregido en 5.3.3; comprobar además que la «Política de idioma» está en «Automático».
 
 ## Árbol: voz y llamadas
 1. No aparece el micrófono → «Permitir la voz» (sitio), voz activada en el asistente, permiso de voz del rol, plugin y asistente habilitados. No existe en asistentes de portada o categoría.
@@ -65,6 +72,7 @@ Pedir solo lo que haga falta para la consulta. No pedir claves ni acceso de admi
 3. Enviada pero no llega → estado en el informe (en cola: falta cron; fallida: correo saliente de Moodle, con el motivo al lado); probar el correo en las herramientas de prueba.
 4. Al guardar el formulario, error en las direcciones → mal escritas o de un dominio no permitido (desde 5.3.2 el aviso distingue los dos casos también en el enrutado por categoría).
 5. Curso restaurado desde otro sitio → las direcciones de destino no se copian; hay que ponerlas otra vez.
+6. El correo de un asistente de categoría o de portada lleva el nombre del sitio en lugar del curso → comportamiento anterior a 5.3.3. Desde 5.3.3 nombra el curso de la página donde se muestra el asistente o el que nombra la conversación, si es un curso del propio participante dentro de esa categoría; si no se puede determinar, sigue saliendo el del sitio.
 
 ## Árbol: gasto
 1. Mirar en el panel de uso qué curso, modelo y función concentran el coste.

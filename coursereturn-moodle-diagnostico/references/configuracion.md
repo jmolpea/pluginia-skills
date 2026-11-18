@@ -1,6 +1,6 @@
 # Configuración: ajustes y recomendaciones
 
-Nombres tal como se ven en Moodle en español, versión 1.1.0. Explicación ampliada y ejemplos en el manual: https://claude.ai/artifact/S9nVg3PK3GW412ms6GScy9
+Nombres tal como se ven en Moodle en español, versión 1.1.1. Los ajustes son los mismos que en 1.1.0 y 1.0.0. Explicación ampliada y ejemplos en el manual: https://claude.ai/artifact/S9nVg3PK3GW412ms6GScy9
 
 ## Puesta en marcha (ajustes de Moodle, no del plugin)
 Dónde: Administración del sitio › Extensiones › Autenticación › Gestionar autenticación. Solo administradores.
@@ -11,7 +11,7 @@ Son dos ajustes distintos: habilitado sin elegirlo como autorregistro, nadie se 
 4. Recomendado: activar el CAPTCHA (ver abajo) y revisar los dominios de email permitidos y denegados de Moodle.
 
 ## Ajustes del plugin
-Dónde: Administración del sitio › Extensiones › Autenticación › Registro por email con retorno al curso. Una sola página. Arriba, un texto de ayuda y el enlace «Diagnóstico de registro y retorno al curso».
+Dónde: Administración del sitio › Extensiones › Autenticación › Registro por email con retorno al curso. Una sola página. Arriba, por este orden: el enlace «Manual de configuración» (se abre en una pestaña nueva), un texto de ayuda y el enlace «Diagnóstico de registro y retorno al curso».
 
 | Ajuste | Valor de fábrica | Qué hace | Recomendación |
 |---|---|---|---|
@@ -23,6 +23,18 @@ Dónde: Administración del sitio › Extensiones › Autenticación › Registr
 El nombre exacto en español del ajuste de CAPTCHA y de los de bloqueo es el que trae el paquete de idioma de Moodle (No verificado en pantalla).
 
 El texto de ayuda de arriba pide no excluir del MFA la página final del plugin que nombra: si se excluyera, el plugin repite igualmente la comprobación de MFA.
+
+## Aspecto del email de confirmación (desde 1.1.1)
+El plugin no tiene ajustes para el aspecto del email. La versión con formato usa lo que el sitio ya tiene:
+
+| Qué | De dónde sale | Si falta |
+|---|---|---|
+| Logo | Administración del sitio › Apariencia › Logos, campo «Logo» | Aparece el nombre del sitio como texto |
+| Color del botón | El color de marca del tema activo (en Boost, «Color de marca») | El color de marca general del sitio si existe; si no, el azul por defecto de Moodle |
+| Firma | La firma estándar de los emails del sitio (quien figura como soporte) | Se omite |
+| Frases y texto del botón | Los textos del plugin, en el idioma del registro | Se cambian con la personalización de idioma |
+
+Recomendación: subir el logo del sitio y fijar el color de marca en el tema; con eso el email queda con la imagen de la institución sin tocar el plugin. Al personalizar las frases, dejar el enlace solo en su párrafo, entre líneas en blanco, para conservar el botón. El nombre exacto en español de los ajustes de logo y color es el del paquete de idioma de Moodle y del tema (No verificado en pantalla).
 
 ## Configuración en cada curso
 No hay ajustes del plugin dentro del curso. Para la matriculación automática, en el curso: Participantes › Métodos de matriculación › Automatriculación:
@@ -38,4 +50,4 @@ El rol, la duración y el mensaje de bienvenida son los de ese método.
 - Quien abre directamente el formulario de registro sin pasar por un curso termina en el Área personal.
 
 ## Idiomas
-Los textos del plugin, el email incluido, están en inglés, español y portugués de Brasil. El texto puede ajustarse con la personalización de idioma estándar de Moodle (Administración del sitio › Idioma › Personalización del idioma), buscando las cadenas del plugin.
+Los textos del plugin, el email incluido, están en inglés, español y portugués de Brasil. El texto puede ajustarse con la personalización de idioma estándar de Moodle (Administración del sitio › Idioma › Personalización del idioma), buscando las cadenas del plugin. El cambio se aplica a la versión de solo texto y a la versión con formato del email, porque las dos salen del mismo texto.
