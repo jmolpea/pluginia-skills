@@ -44,7 +44,7 @@ Esperado: no; cuatro proveedores, listas cerradas y el endpoint solo admite Open
 Esperado: no se envían nombres, correos ni identificadores; los autores se sustituyen por etiquetas; el texto escrito por las personas viaja tal cual, así que un nombre dentro del mensaje sí sale. En reactivación se envían también mensajes de docentes.
 
 15. «Tenemos Forumia 1.7.1 y no contesta a quien abre un tema.»
-Esperado: indicar que la skill documenta 1.8.3, que esa corrección figura en 1.8.2 y recomendar actualizar; delimitar qué no puede asegurar de la 1.7.1.
+Esperado: indicar que la skill documenta 1.8.4, que esa corrección figura en 1.8.2 y recomendar actualizar; delimitar qué no puede asegurar de la 1.7.1.
 
 16. «El asistente ha escrito en veinte debates del año pasado.»
 Esperado: la reactivación revisa todos los debates; proponer fecha límite, días de repetición altos o desactivarla; explicar el papel de la fecha límite del foro.
@@ -54,3 +54,6 @@ Esperado: en 1.8.3 esas sugerencias se rechazan (no se aplican) y hay que descar
 
 18. «¿Cuánto me va a costar al mes?»
 Esperado: estimación a partir de peticiones diarias y del modelo, declarada como orientativa; remitir al simulador del manual y a la tarifa del proveedor; recomendar topes.
+
+19. «Quiero usar GPT-6 o Claude 5.5 y no aparecen en la lista de modelos.»
+Esperado: preguntar la versión. Las listas son cerradas y esos modelos se añaden en 1.8.4; en 1.8.3 o anterior, recomendar actualizar. En 1.8.4 se eligen en la página de ajustes del sitio; advertir de que razonan antes de responder, tardan algo más y suelen costar más que el modelo de fábrica, que no cambia.

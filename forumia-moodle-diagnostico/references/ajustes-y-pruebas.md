@@ -24,7 +24,7 @@ Avisar siempre de que cada prueba consume peticiones del proveedor y cuenta en l
 | Foro de Moodle | Fecha límite de entrega | Detiene la reactivación |
 | Curso | Roles de los participantes | Solo se atiende a quien cuenta como estudiante |
 
-## Lo que ningún ajuste cambia en la versión 1.8.3
+## Lo que ningún ajuste cambia en la versión 1.8.4
 - La espera del retraso es de una hora, fija.
 - Los recortes de texto enviados a la IA.
 - Una sola evaluación por estudiante y foro, sin reevaluación.

@@ -1,6 +1,6 @@
-# Configuración de Forumia (versión 1.8.3)
+# Configuración de Forumia (versión 1.8.4)
 
-Nombres tal como aparecen en Moodle en español. Revisado el 15-11-2026. Manual con ejemplos y simuladores: https://claude.ai/artifact/Qg9adYg7HtbnatxfFCi825
+Nombres tal como aparecen en Moodle en español. Revisado el 23-11-2026. Manual con ejemplos y simuladores: https://claude.ai/artifact/Qg9adYg7HtbnatxfFCi825
 
 ## Ajustes del sitio
 Dónde: Administración del sitio › Extensiones › Extensiones locales › Forumia - Asistente IA para foros. Solo administradores. Una sola página, con un enlace al manual de configuración al principio.
@@ -11,9 +11,9 @@ Dónde: Administración del sitio › Extensiones › Extensiones locales › Fo
 | Deshabilitado en todo el sitio | No | Parada general. La marca el propio plugin cuando el proveedor rechaza la clave de API; mientras está marcada no se hace ninguna petición en ningún foro. Se desmarca sola al guardar una clave, un proveedor o un endpoint distintos. | Tras un aviso de clave rechazada: guardar la clave correcta o, si es la misma, desmarcarla y guardar. También sirve para parar todo el sitio a mano. |
 | Proveedor de IA | OpenAI | Empresa que genera respuestas, resúmenes y evaluaciones en todo el sitio. | Elegir el proveedor con el que la institución tenga acuerdo de tratamiento de datos. |
 | Clave de API de OpenAI / Anthropic / Google Gemini / DeepSeek | Vacías | Credencial del proveedor. Solo se muestra la del proveedor elegido; las demás se conservan. | Crear una clave solo para Moodle y poner un tope de gasto en la web del proveedor. |
-| Modelo de OpenAI | GPT-5.6 Luna | Modelo usado con OpenAI. Lista cerrada. | Mantener, o bajar a uno mini o nano para gastar menos. |
+| Modelo de OpenAI | GPT-5.6 Luna | Modelo usado con OpenAI. Lista cerrada; desde 1.8.4 incluye los GPT-6. | Mantener, o bajar a uno mini o nano para gastar menos. |
 | Endpoint de API | Dirección oficial de OpenAI | Dirección a la que se envían las consultas con OpenAI. | No tocar salvo que se use Azure OpenAI. Otra dirección no permitida hace que el asistente deje de responder. |
-| Modelo de Anthropic | Claude Haiku 4.5 | Modelo usado con Anthropic. | Mantener. |
+| Modelo de Anthropic | Claude Haiku 4.5 | Modelo usado con Anthropic. Desde 1.8.4 la lista incluye los Claude 5.5. | Mantener. |
 | Modelo de Gemini | Gemini 2.5 Flash | Modelo usado con Gemini. Flash y Pro razonan antes de responder y tardan más. | Para el más económico, elegir Flash-Lite a mano. |
 | Modelo de DeepSeek | DeepSeek Chat | Modelo usado con DeepSeek. | Mantener. |
 | Activar límite de frecuencia de todo el sitio | No | Enciende el tope diario global de peticiones. | Activarlo cuando haya varios foros con asistente. |

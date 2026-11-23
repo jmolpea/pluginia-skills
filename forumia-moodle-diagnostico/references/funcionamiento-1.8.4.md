@@ -1,6 +1,6 @@
-# Funcionamiento de Forumia: versión 1.8.3
+# Funcionamiento de Forumia: versión 1.8.4
 
-Revisión estática del código de la versión 1.8.3, hecha el 15-11-2026. Compatibilidad declarada: Moodle 4.5 a 5.3, PHP 8.2 o superior. Manual público: https://claude.ai/artifact/Qg9adYg7HtbnatxfFCi825
+Revisión estática del código de la versión 1.8.4, hecha el 23-11-2026. Respecto a 1.8.3 solo cambian las listas de modelos (se añaden GPT-6 y Claude 5.5) y la forma de pedir respuesta a esos modelos; el resto del funcionamiento es el mismo. Compatibilidad declarada: Moodle 4.5 a 5.3, PHP 8.2 o superior. Manual público: https://claude.ai/artifact/Qg9adYg7HtbnatxfFCi825
 Salvo que se indique «probable», todo lo que sigue es un hecho verificado leyendo el código, no una prueba en un Moodle real.
 
 ## Qué es

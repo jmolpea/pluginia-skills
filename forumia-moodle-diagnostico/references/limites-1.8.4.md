@@ -1,6 +1,6 @@
-# Límites y valores por defecto de Forumia: versión 1.8.3
+# Límites y valores por defecto de Forumia: versión 1.8.4
 
-Verificados leyendo el código de la versión 1.8.3 el 15-11-2026. «Carácter» significa carácter de texto plano, una vez quitado el formato HTML.
+Verificados leyendo el código de la versión 1.8.4 el 23-11-2026. «Carácter» significa carácter de texto plano, una vez quitado el formato HTML.
 
 ## Cómo interpretar los valores
 Distinguir tres cosas: lo que Moodle guarda (el mensaje completo del foro), lo que Forumia envía a la IA (recortado) y lo que el proveedor admite o factura. Ampliar un límite de Moodle no cambia lo que Forumia envía.
@@ -35,18 +35,19 @@ Las evaluaciones para nota cuentan en el límite del foro aunque el proveedor fa
 No se envían imágenes ni adjuntos de los mensajes: solo texto.
 
 ## Longitud de las respuestas
-- OpenAI con modelos de la familia GPT-5: presupuesto de 8.000 tokens de salida, que incluye el razonamiento interno del modelo, con esfuerzo de razonamiento bajo. No se envía temperatura.
+- OpenAI con modelos GPT-5 y posteriores (incluidos los GPT-6, desde 1.8.4): presupuesto de 8.000 tokens de salida, que incluye el razonamiento interno del modelo, con esfuerzo de razonamiento bajo. No se envía temperatura.
 - Gemini 2.5 Flash y Pro, y DeepSeek Reasoner (modelos que razonan): 8.000 tokens de salida, que incluyen el razonamiento (desde 1.8.3; antes 800, con lo que la respuesta podía llegar vacía y no publicarse). Temperatura 0,7.
-- OpenAI con modelos anteriores, Anthropic, Gemini 2.5 Flash-Lite y DeepSeek Chat: 800 tokens de salida como máximo (del orden de 600 palabras). Temperatura 0,7 en OpenAI anteriores, Gemini y DeepSeek.
+- Anthropic con Claude 5.5 y posteriores (modelos que razonan por defecto): 8.000 tokens de salida, que incluyen el razonamiento, con esfuerzo bajo (desde 1.8.4). No se envía temperatura.
+- OpenAI con modelos anteriores a GPT-5, Anthropic con modelos anteriores a Claude 5.5, Gemini 2.5 Flash-Lite y DeepSeek Chat: 800 tokens de salida como máximo (del orden de 600 palabras). Temperatura 0,7 en OpenAI anteriores, Gemini y DeepSeek.
 - Los prompts de fábrica piden entre 80 y 150 palabras (inmediato), 150 a 250 (diario) y 60 a 120 (reactivación).
-No verificado contra los proveedores: el cambio de 1.8.3 se basa en su documentación, no en una ejecución real. Si con un modelo que razona siguen faltando respuestas, la prueba controlada es cambiar solo el modelo a Gemini 2.5 Flash-Lite o DeepSeek Chat.
+Según las notas de la versión 1.8.4, las peticiones a GPT-6 y Claude 5.5 se probaron contra OpenAI y Anthropic el 23-11-2026 (respuesta en foro y evaluación de participación). No verificado contra los proveedores: el cambio de 1.8.3 para Gemini y DeepSeek se basa en su documentación, no en una ejecución real. Si con un modelo que razona siguen faltando respuestas, la prueba controlada es cambiar solo el modelo a Gemini 2.5 Flash-Lite o DeepSeek Chat.
 
 ## Tiempos
 | Concepto | Valor |
 |---|---|
 | Espera de la respuesta inmediata | Siguiente pasada del cron |
 | «Retrasar la respuesta IA 1 hora» | Aproximadamente 1 hora, fija |
-| Tiempo máximo de una consulta | 30 segundos; 120 con OpenAI de la familia GPT-5, Gemini 2.5 Flash y Pro, y DeepSeek Reasoner |
+| Tiempo máximo de una consulta | 30 segundos; 120 con OpenAI GPT-5 y posteriores, Claude 5.5 y posteriores, Gemini 2.5 Flash y Pro, y DeepSeek Reasoner |
 | Reintentos ante error | Ninguno, salvo las evaluaciones para nota en pasadas posteriores |
 | Pausa por exceso de frecuencia del proveedor | 1 hora, todo el sitio |
 | Resumen diario | 08:00 (horario editable en tareas programadas); mensajes de las últimas 24 horas |
@@ -60,8 +61,8 @@ No verificado contra los proveedores: el cambio de 1.8.3 se basa en su documenta
 ## Proveedores y modelos de la lista
 | Proveedor | Modelos que ofrece la página de ajustes | De fábrica |
 |---|---|---|
-| OpenAI | GPT-5.6 Luna, GPT-5.1, GPT-5 mini, GPT-5 nano, GPT-4.1 mini, GPT-4.1 nano, GPT-4o mini, GPT-4o | GPT-5.6 Luna |
-| Anthropic | Claude Haiku 4.5, Claude Sonnet 4.6, Claude Sonnet 5, Claude Opus 4.8 | Claude Haiku 4.5 |
+| OpenAI | GPT-5.6 Luna, GPT-6 Luna, GPT-6 Sol, GPT-6.1 Terra, GPT-6 Astra, GPT-5.1, GPT-5 mini, GPT-5 nano, GPT-4.1 mini, GPT-4.1 nano, GPT-4o mini, GPT-4o | GPT-5.6 Luna |
+| Anthropic | Claude Haiku 4.5, Claude Sonnet 4.6, Claude Sonnet 5, Claude Opus 4.8, Claude Haiku 5.5, Claude Sonnet 5.5, Claude Opus 5.5 | Claude Haiku 4.5 |
 | Google Gemini | Gemini 2.5 Flash-Lite, Gemini 2.5 Flash, Gemini 2.5 Pro | Gemini 2.5 Flash (la lista lo rotula como el de fábrica y a Flash-Lite como el más económico) |
 | DeepSeek | DeepSeek Chat, DeepSeek Reasoner | DeepSeek Chat |
 Las listas son cerradas: no se puede escribir otro modelo.
