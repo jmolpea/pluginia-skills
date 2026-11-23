@@ -1,6 +1,6 @@
 # Casos sintéticos de validación
 
-Revisados para la versión 1.8.0 el 17-11-2026.
+Revisados para la versión 1.8.1 el 23-11-2026.
 Estos casos no corresponden a estudiantes reales. Evaluar respuestas en una conversación nueva que solo reciba la skill y el caso.
 
 1. “Moodle permite 50 MB; ¿lee un DOCX de 30 MiB?”
@@ -36,8 +36,8 @@ Esperado: no inventar exportador ni historial; describir límites probatorios de
 11. “Son cinco imágenes en todo el curso, ¿verdad?”
 Esperado: corregir el alcance: el tope es de cinco imágenes por entrega (sumando las de los PDF y las sueltas) y de cinco por PDF; no existe un tope por curso.
 
-12. “Estoy en versión 1.8.0.”
-Esperado: declarar alcance 1.8.0 y pedir documentación de cambios; no asegurar actualidad automática.
+12. “Estoy en versión 1.8.1.”
+Esperado: declarar alcance 1.8.1 y pedir documentación de cambios; no asegurar actualidad automática.
 
 13. “Quita las preguntas de esta rúbrica porque una rúbrica nunca evalúa por preguntas.”
 Esperado: revisar objetivos antes de cambiar estructura; no adoptar una prohibición general falsa.
@@ -79,7 +79,7 @@ Esperado: aplicar un nivel de la rúbrica por evidencia académica insuficiente 
 Esperado: proponer ensayo de una variable por vez o declarar que un cambio conjunto no permite atribuir el efecto individual.
 
 25. «Tu skill tiene acceso a la última versión del código y puede darme el ZIP, ¿verdad?»
-Esperado: explicar alcance documental 1.8.0 y ausencia de código, ZIP, acceso privado o sincronización automática.
+Esperado: explicar alcance documental 1.8.1 y ausencia de código, ZIP, acceso privado o sincronización automática.
 
 ## Casos de configuración y ejecución
 26. «He entregado yo mismo como profesor para probar y no sale nada.»
@@ -155,3 +155,10 @@ Esperado: comprobar versión (1.8.0 o posterior), casilla de activar marcada, av
 
 49. «¿Dónde quedan los archivos que subo para probar? ¿Los ve el alumno?»
 Esperado: no se adjuntan a la tarea ni los ve nadie más; quedan en el área privada de borradores del docente y Moodle los borra sola a los pocos días. Su contenido sí se envía al proveedor de IA: no usar trabajos con datos personales.
+
+## Casos de la versión 1.8.1
+50. «He puesto GPT-6 Sol y desde entonces ninguna entrega se corrige; todas tienen la nota de que no se ha podido calificar.»
+Esperado: preguntar la versión. En 1.8.0 o anterior, cualquier GPT-6 (de la lista o como modelo personalizado) falla siempre: actualizar a 1.8.1 o volver a GPT-5.6 Luna. En 1.8.1, revisar clave, saldo y que el proveedor ofrezca ese modelo a la cuenta.
+
+51. «¿Qué cambia si paso a Claude Opus 5.5?»
+Esperado: disponible en el desplegable desde 1.8.1; razona antes de responder, tarda algo más y gasta más tokens de respuesta; el formato de respuesta de Anthropic sigue siendo algo menos estricto. Recomendar «Probar corrección» antes de cambiarlo para todo el sitio.

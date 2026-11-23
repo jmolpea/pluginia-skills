@@ -1,6 +1,6 @@
-# Configuración de RSMAX AI Tutor 1.8.0: todos los ajustes
+# Configuración de RSMAX AI Tutor 1.8.1: todos los ajustes
 
-Nombres tal como se ven en pantalla en español. Valores de fábrica verificados el 17-11-2026.
+Nombres tal como se ven en pantalla en español. Valores de fábrica verificados el 23-11-2026.
 Manual público con explicaciones, maquetas y simuladores: https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk
 Para el diseño de prompts y rúbricas, ver configuracion-pedagogica.md.
 
@@ -13,8 +13,8 @@ Dónde: Administración del sitio › Extensiones › Extensiones locales › AI
 | Proveedor de IA | OpenAI | Empresa que corrige: OpenAI, Anthropic (Claude), Google Gemini o DeepSeek. | DeepSeek no analiza imágenes. Al cambiar, sustituir la clave y revisar el modelo. |
 | Clave de API | Vacía | Clave del proveedor elegido. Sin ella no se corrige. | Clave exclusiva para Moodle, con facturación activa y tope de gasto en la cuenta del proveedor. |
 | Identificador de organización de OpenAI | Vacío | Solo OpenAI: a qué organización de la cuenta se carga el consumo. | Dejar vacío salvo cuentas con varias organizaciones. |
-| Modelo de OpenAI | GPT-5.6 Luna | Modelo usado cuando el proveedor es OpenAI. | Cambiar solo por calidad, coste o lentitud. |
-| Modelo de Anthropic | Claude Sonnet 4.6 | Modelo usado con Anthropic. | El formato de respuesta es algo menos estricto: revisar los primeros borradores. |
+| Modelo de OpenAI | GPT-5.6 Luna | Modelo usado cuando el proveedor es OpenAI. Desde 1.8.1 incluye los GPT-6. | Cambiar solo por calidad, coste o lentitud. |
+| Modelo de Anthropic | Claude Sonnet 4.6 | Modelo usado con Anthropic. Desde 1.8.1 incluye los Claude 5.5. | El formato de respuesta es algo menos estricto: revisar los primeros borradores. |
 | Modelo de Gemini | Gemini 2.5 Flash | Modelo usado con Gemini. | Activar la facturación; las claves gratuitas tienen cupos muy bajos. |
 | Modelo de DeepSeek | DeepSeek Chat | Modelo usado con DeepSeek. | Reasoner es más lento. |
 | Identificador de modelo personalizado | Vacío | Nombre exacto de un modelo; si tiene algo, manda sobre todos los desplegables. | Usar solo cuando el proveedor retira o estrena un modelo. Vaciarlo al cambiar de proveedor. |
@@ -86,7 +86,7 @@ Mensajes del formulario: «La configuración de AI Tutor se ha guardado correcta
 | Entregas habladas | Transcripción activada con clave de OpenAI; audios de menos de 25 MB. |
 | Fecha límite masiva | Límite diario de la tarea y tope por hora del sitio por encima del número de alumnos. |
 
-## Lo que no existe en 1.8.0
+## Lo que no existe en 1.8.1
 No hay ajustes por curso ni por categoría, ni configuración por defecto para tareas nuevas.
 No hay reintentos automáticos ni botón para volver a corregir una entrega, ni para corregir las anteriores a la activación, ni para reiniciar contadores.
 No hay panel de uso, de coste ni de historial; solo el evento en los registros de Moodle. Las pruebas y los análisis del prompt no se guardan ni se pueden consultar después.

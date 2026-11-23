@@ -1,6 +1,6 @@
 # Protocolo de casos
 
-Revisado para la versión 1.8.0 el 17-11-2026. Las filas sobre «Analizar prompt» y «Probar corrección» solo se aplican desde 1.8.0. En versiones anteriores, los casos de la fila «no se ha podido calificar» no dejaban ninguna nota.
+Revisado para la versión 1.8.1 el 23-11-2026. Las filas sobre «Analizar prompt» y «Probar corrección» solo se aplican desde 1.8.0. En versiones anteriores, los casos de la fila «no se ha podido calificar» no dejaban ninguna nota.
 
 ## Ficha mínima
 Pedir según la consulta:
@@ -19,7 +19,7 @@ No exigir todo para contestar una pregunta simple. No pedir claves ni acceso adm
 | Síntoma | Causas posibles, de más a menos frecuente | Comprobación |
 |---|---|---|
 | La entrega no tiene nota, comentario ni aviso | Entregó una cuenta que puede calificar; AI Tutor no estaba activado al entregar; retraso de una hora; cron parado; licencia caducada o clave de API vacía; tope alcanzado; comentarios de retroalimentación desactivados en la tarea; versión anterior a 1.7.2 | Rol de quien entregó; página de AI Tutor; tareas ad hoc pendientes; estado de la licencia; número de correcciones del día; versión instalada; salida del cron |
-| Nota de «no se ha podido calificar automáticamente» | Fallo o tiempo de espera del proveedor; clave rechazada o sin saldo; modelo inexistente; dirección personalizada errónea; respuesta sin nota utilizable en tarea de puntos o escala; usuario que firma sin permiso para calificar | Notificaciones a administradores; proveedor, modelo y modelo personalizado; matrícula y rol del usuario que firma; tamaño de la entrega; salida del cron |
+| Nota de «no se ha podido calificar automáticamente» | Fallo o tiempo de espera del proveedor; clave rechazada o sin saldo; modelo inexistente; dirección personalizada errónea; respuesta sin nota utilizable en tarea de puntos o escala; usuario que firma sin permiso para calificar; modelo GPT-6 en una versión anterior a 1.8.1 (falla siempre) | Notificaciones a administradores; proveedor, modelo y modelo personalizado; matrícula y rol del usuario que firma; tamaño de la entrega; salida del cron |
 | Aviso de «no se ha podido leer» | Formato no admitido; archivo protegido, vacío o dañado; tamaño superior al tope; audio sin transcripción activa | Extensión y tamaño de cada archivo frente a la tabla de límites |
 | Nota sin comentario | Comentarios de retroalimentación desactivados en la tarea | Tipos de retroalimentación de la tarea |
 | El alumno ve una nota que debía revisarse | La tarea no usa el flujo de trabajo de calificación | Ajuste de calificación de la tarea |

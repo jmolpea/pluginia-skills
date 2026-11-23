@@ -1,6 +1,6 @@
 # Configuración y diseño pedagógico
 
-Revisado para la versión 1.8.0 el 17-11-2026. Para la lista completa de ajustes, sus nombres de pantalla y valores de fábrica, ver configuracion.md y el manual público: https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk
+Revisado para la versión 1.8.1 el 23-11-2026. Para la lista completa de ajustes, sus nombres de pantalla y valores de fábrica, ver configuracion.md y el manual público: https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk
 
 ## Configuración verificable
 Valores predeterminados observados: confianza 7/10, máximo 3 evaluaciones por estudiante y tarea, máximo 50 solicitudes diarias por tarea.

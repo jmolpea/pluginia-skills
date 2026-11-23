@@ -1,6 +1,6 @@
-# Límites y valores por defecto: 1.8.0
+# Límites y valores por defecto: 1.8.1
 
-Verificados en el código de la versión 1.8.0 el 17-11-2026. Cambios respecto a 1.7.2: límite diario de pruebas por usuario, máximo de archivos de ejemplo, y presupuesto y tiempo de espera propios del análisis del prompt. Los límites de las entregas reales no cambian.
+Verificados en el código de la versión 1.8.1 el 23-11-2026. Cambios respecto a 1.8.0: modelos GPT-6 y Claude 5.5 en los desplegables, y presupuesto de respuesta ampliado para todos los GPT desde GPT-5 y para Claude 5.5 y posteriores. Cambios de 1.8.0 respecto a 1.7.2: límite diario de pruebas por usuario, máximo de archivos de ejemplo, y presupuesto y tiempo de espera propios del análisis del prompt. Los límites de las entregas reales no cambian.
 
 ## Cómo interpretar los valores
 Distinguir cuatro cosas: límite del formulario, carga permitida por Moodle o el servidor, lectura del plugin y presupuesto del proveedor. Aumentar el máximo de subida de Moodle no aumenta lo que lee el plugin.
@@ -56,19 +56,19 @@ No confundir «calificaciones por alumno» del plugin con los intentos de entreg
 ## Modelos disponibles en los desplegables
 | Proveedor | De fábrica | Otras opciones |
 |---|---|---|
-| OpenAI | GPT-5.6 Luna | GPT-5.1, GPT-5 Mini, GPT-5 Nano, GPT-4.1, GPT-4.1 Mini, GPT-4.1 Nano (no recomendado), GPT-4o, GPT-4o Mini |
-| Anthropic | Claude Sonnet 4.6 | Claude Opus 4.8, Claude Sonnet 5, Claude Haiku 4.5 |
+| OpenAI | GPT-5.6 Luna | GPT-6 Luna, GPT-6 Sol, GPT-6.1 Terra, GPT-6 Astra (desde 1.8.1), GPT-5.1, GPT-5 Mini, GPT-5 Nano, GPT-4.1, GPT-4.1 Mini, GPT-4.1 Nano (no recomendado), GPT-4o, GPT-4o Mini |
+| Anthropic | Claude Sonnet 4.6 | Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5 (desde 1.8.1), Claude Opus 4.8, Claude Sonnet 5, Claude Haiku 4.5 |
 | Google Gemini | Gemini 2.5 Flash | Gemini 2.5 Pro, Gemini 2.5 Flash-Lite (no recomendado), Gemini 2.0 Flash |
 | DeepSeek | DeepSeek Chat | DeepSeek Reasoner |
 
 Que un modelo esté en la lista no garantiza que el proveedor lo siga ofreciendo. Para otro modelo, usar «Identificador de modelo personalizado».
 
 ## Respuesta del proveedor
-Presupuesto de salida: 3.000 tokens, con o sin imágenes. Para los modelos de OpenAI que el plugin trata como de razonamiento (familia GPT-5 y serie «o») y para los modelos Gemini 2.5: 8.000 tokens, que incluyen el razonamiento interno.
+Presupuesto de salida: 3.000 tokens, con o sin imágenes. Para los modelos de OpenAI que el plugin trata como de razonamiento (GPT-5 y posteriores, incluidos todos los GPT-6, y serie «o»), para Claude 5.5 y posteriores y para los modelos Gemini 2.5: 8.000 tokens, que incluyen el razonamiento interno.
 Estas cifras no son caracteres ni el límite de entrada del modelo. El plugin no comprueba que la entrada quepa en el modelo elegido: 200.000 caracteres pueden superar la capacidad de un modelo pequeño, y entonces el proveedor rechaza la petición.
 Una rúbrica con muchos criterios, que la IA debe repetir en su respuesta, presiona ese presupuesto. Sin la respuesta original ni el motivo de finalización, tratar el truncamiento como hipótesis. Con modelos que razonan internamente, parte del presupuesto se gasta en razonar.
 Tiempo de espera: 45 segundos para la corrección y 120 para la transcripción. Si se agota el de la corrección, la entrega queda sin corregir, con la nota «esta entrega no se ha podido calificar automáticamente…»
-Análisis del prompt: presupuesto de salida de 6.000 tokens (12.000 para los modelos tratados como de razonamiento y para Gemini 2.5) y 120 segundos de espera, porque la respuesta incluye un prompt completo. El prompt propuesto se corta a 16.000 caracteres, el máximo del campo. La prueba de corrección usa el presupuesto y los 45 segundos de una entrega real.
+Análisis del prompt: presupuesto de salida de 6.000 tokens (12.000 para los modelos tratados como de razonamiento, para Claude 5.5 y posteriores y para Gemini 2.5) y 120 segundos de espera, porque la respuesta incluye un prompt completo. El prompt propuesto se corta a 16.000 caracteres, el máximo del campo. La prueba de corrección usa el presupuesto y los 45 segundos de una entrega real.
 Reintentos: ninguno, ante ningún tipo de fallo.
 Confianza por defecto si la IA no la indica: 5.
 

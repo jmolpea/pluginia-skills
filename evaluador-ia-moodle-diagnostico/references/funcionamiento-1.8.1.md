@@ -1,7 +1,13 @@
-# Funcionamiento verificado de RSMAX AI Tutor 1.8.0
+# Funcionamiento verificado de RSMAX AI Tutor 1.8.1
 
-Base: revisión del código que declara la versión 1.8.0 (versión interna 2026111700), hecha el 17-11-2026. Componente `local_rsmaxtutor`; requiere Moodle 4.5 y declara compatibilidad hasta 5.3. Las pruebas automáticas del plugin se ejecutaron en Moodle 4.5; no se comparó el ZIP instalado en ningún sitio de cliente ni se probó con proveedores reales.
+Base: revisión del código que declara la versión 1.8.1 (versión interna 2026112300), hecha el 23-11-2026. Componente `local_rsmaxtutor`; requiere Moodle 4.5 y declara compatibilidad hasta 5.3. Las pruebas automáticas del plugin se ejecutaron en Moodle 4.5; no se comparó el ZIP instalado en ningún sitio de cliente. Las peticiones de los modelos nuevos de 1.8.1 se probaron contra los proveedores reales; el resto de proveedores y modelos no.
 Manual público: https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk
+
+## Qué cambia en 1.8.1 respecto a 1.8.0
+- Modelos nuevos en los desplegables: GPT-6 Luna, GPT-6 Sol, GPT-6.1 Terra y GPT-6 Astra (OpenAI), y Claude Opus 5.5, Claude Sonnet 5.5 y Claude Haiku 5.5 (Anthropic). Los modelos de fábrica no cambian.
+- Corregido: en 1.8.0 cualquier modelo GPT-6, elegido de la lista o escrito en «Identificador de modelo personalizado», fallaba en todas las correcciones (el proveedor rechazaba la petición) y la entrega quedaba con la nota «esta entrega no se ha podido calificar automáticamente…». Desde 1.8.1 todos los modelos GPT a partir de GPT-5 se tratan como modelos de razonamiento.
+- Claude 5.5 y posteriores razonan antes de responder y ese razonamiento gasta del presupuesto de respuesta; desde 1.8.1 reciben el presupuesto ampliado de los modelos de razonamiento. Los Claude anteriores no cambian.
+- Ante un cliente con GPT-6 en 1.8.0 que no corrige nada: la causa es la versión; actualizar a 1.8.1 o volver a un modelo GPT-5.
 
 ## Qué cambia en 1.8.0 respecto a 1.7.2
 Dos herramientas nuevas en la página de AI Tutor de cada tarea, para comprobar la configuración sin entrar con cuentas de alumno. Ninguna guarda nada y las dos usan la configuración tal como está escrita en la página, guardada o no:
@@ -112,7 +118,7 @@ La nota queda registrada a nombre del usuario que firma como IA.
 ## Proveedor y modelo
 Proveedores: OpenAI, Anthropic, Google Gemini y DeepSeek. Solo se usa el desplegable de modelo del proveedor elegido. El identificador de modelo personalizado, si tiene algo, manda sobre todos los desplegables y con cualquier proveedor.
 La dirección personalizada solo se aplica a OpenAI; debe ser https y pública. Las direcciones internas o locales se rechazan.
-Temperatura 0,3 con Gemini, DeepSeek y los modelos de OpenAI que no son de razonamiento. No se envía con Anthropic ni con los modelos de OpenAI que el plugin trata como de razonamiento (familia GPT-5 y serie «o»). No hay garantía de determinismo.
+Temperatura 0,3 con Gemini, DeepSeek y los modelos de OpenAI que no son de razonamiento. No se envía con Anthropic ni con los modelos de OpenAI que el plugin trata como de razonamiento (GPT-5 y posteriores, incluidos todos los GPT-6, y serie «o»). No hay garantía de determinismo.
 Se pide respuesta estructurada forzada a OpenAI, Gemini y DeepSeek Chat. Con Anthropic y DeepSeek Reasoner depende de que el modelo siga las instrucciones.
 DeepSeek: las imágenes se descartan y se corrige solo el texto.
 Errores del proveedor: clave rechazada, cuota del proveedor agotada, error del servidor, tiempo de espera agotado o respuesta ilegible terminan la corrección sin calificación y sin reintento, y dejan en la entrega la nota «esta entrega no se ha podido calificar automáticamente…». Solo la clave rechazada genera además una notificación a los administradores, que indica qué revisar; la configuración no se toca y las entregas siguientes se intentan con normalidad.

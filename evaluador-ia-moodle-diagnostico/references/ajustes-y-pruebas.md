@@ -1,6 +1,6 @@
 # Ajustes y pruebas antes de escalar
 
-Revisado para la versión 1.8.0 el 17-11-2026.
+Revisado para la versión 1.8.1 el 23-11-2026.
 
 ## Regla de intervención
 Buscar primero una solución con descripción de actividad, rúbrica o prompt. Revisar los tres y cambiar solo el elemento que explique el problema.

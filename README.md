@@ -11,7 +11,7 @@ Contienen documentación funcional, no código: no necesitan acceso a su Moodle 
 | Plugin | Versión documentada | Skill (zip) | Manual de configuración |
 |---|---|---|---|
 | Smart Tutor & Support AI (`block_openaiagent`) | 5.3.4 | [smart-tutor-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/smart-tutor-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/Ko6vHpvgSzUBNEcF9Nxs8R) |
-| AI Tutor (`local_rsmaxtutor`) | 1.8.0 | [evaluador-ia-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/evaluador-ia-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk) |
+| AI Tutor (`local_rsmaxtutor`) | 1.8.1 | [evaluador-ia-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/evaluador-ia-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/FsE6HtPSgw77e3w7uVcKsk) |
 | AI course recommender (`block_aicourserecommender`) | 1.0.0-beta5 | [recomendador-cursos-ia-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/recomendador-cursos-ia-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/LCZgLbHfAnSBkurowGLZ95) |
 | Forumia (`local_forumia`) | 1.8.3 | [forumia-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/forumia-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/Qg9adYg7HtbnatxfFCi825) |
 | AI Roleplay (`mod_airoleplay`) | 1.1.2 | [ai-roleplay-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/ai-roleplay-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/9rrxnBoMsHAgMzhKErn92D) |
