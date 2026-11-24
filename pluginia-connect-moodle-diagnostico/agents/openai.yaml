@@ -1,0 +1,14 @@
+interface:
+  display_name: Pluginia Connect · Ayuda y diagnóstico
+  short_description: Configura y diagnostica la conexión de asistentes de IA con Moodle
+  default_prompt: Usa $pluginia-connect-moodle-diagnostico para analizar este caso de
+    Pluginia Connect y proponer primero ajustes de configuración con una prueba controlada.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
