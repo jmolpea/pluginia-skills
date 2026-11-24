@@ -12,7 +12,7 @@ El asistente nunca recibe la contraseña: la persona entra en el sitio como siem
 ## Estado de esta versión
 - Alfa: no es para sitios en producción. Sitios de prueba y datos inventados.
 - La pasarela Pluginia Connect (connect.pluginia.es) no está en servicio: el registro del sitio no se puede completar y el modo pasarela no se puede usar todavía.
-- Según la documentación del proyecto, no se ha hecho ninguna conexión real desde Claude, ChatGPT ni Copilot Cowork, y las reglas de servidor para la raíz del dominio no se han probado contra ellos.
+- Según la documentación del proyecto, solo consta una primera conexión real de prueba desde Claude (web) en modo directo, y ninguna desde ChatGPT ni Copilot Cowork; las reglas de servidor para la raíz del dominio no se han probado contra ellos.
 - Las notas de la versión la marcan como no publicada todavía.
 
 ## Qué puede y qué no puede hacer un asistente conectado
@@ -54,6 +54,11 @@ La página «Diagnostics» (diagnóstico) comprueba todo lo anterior; ver refere
 5. La persona recibe la notificación «An AI assistant was connected to your account» con un enlace para desconectar si no ha sido ella.
 «Read and changes» solo se ofrece si no está activo «Read-only mode», si la persona tiene el permiso «Allow AI assistant connections to request changes» en al menos un curso dentro del alcance del sitio, si hay alguna acción de cambio encendida en «Actions by profile» para alguno de los perfiles que esa persona puede elegir (sin ninguna, la opción no añadiría nada y no se muestra) y, con Copilot Cowork, si el sitio no lo ha limitado a solo lectura.
 Lo concedido queda fijado en ese momento: solo entran los grupos de permisos que tienen alguna acción encendida para ese perfil. Si el administrador enciende después una acción de un grupo que la conexión no tiene, hay que desconectar y volver a conectar.
+Qué pide el asistente al conectarse lo decide el ajuste «Permissions an assistant asks for when it connects». El sitio anuncia una lista de grupos de permisos y asistentes como Claude piden exactamente esa lista, una sola vez, sin ampliarla después. La página de consentimiento solo puede conceder lo que el asistente pidió, recortado por el perfil y el nivel de acceso que elige la persona.
+- Con el valor de fábrica, «Everything switched on in this site (recommended)», el sitio anuncia la lectura básica más todos los grupos que tienen alguna acción encendida en «Actions by profile» para algún perfil permitido en el sitio. Si «Read-only mode» está encendido o el conector apagado, no anuncia ningún grupo de cambio. La lista se calcula en cada petición: encender o apagar una acción, un perfil o el modo de solo lectura cambia lo que se anuncia al momento.
+- Con «Basic reading only: profile, courses and grades», solo anuncia leer el perfil, los cursos y las calificaciones de la persona. Con un asistente que no pide más por su cuenta, la página de consentimiento solo ofrece «Read only» y todos los perfiles muestran la misma lista de acciones, sin las de docente, gestor ni administrador.
+- Cambiar el ajuste no modifica las conexiones existentes: cada persona desconecta el asistente y lo conecta de nuevo.
+Este ajuste se añadió en la versión 0.2.0 tras la primera conexión real con Claude, en la que el sitio solo anunciaba la lectura básica y desde Claude no se podía alcanzar ninguna acción de cambio ni de gestor o administrador. Que la corrección funcione con Claude no consta todavía como probado con el asistente real; consta probado en un sitio de desarrollo simulando su forma de pedir permisos.
 
 ## Perfiles
 Un perfil es lo máximo que puede hacer una conexión. Son acumulativos.

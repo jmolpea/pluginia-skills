@@ -17,6 +17,7 @@ Tras cualquier cambio en el servidor web, volver a ejecutar «Diagnostics».
 | Sitio | Perfiles permitidos, administradores autorizados, «Excluded cohorts» | Quién puede conectar y con qué tope |
 | Sitio | «Allowed categories», «Excluded categories», «Excluded courses», «Include hidden courses» | Qué cursos alcanza el conector |
 | Sitio | «Who may receive email addresses of other users», campos de perfil | Qué datos personales se devuelven |
+| Sitio | «Permissions an assistant asks for when it connects» | Qué grupos de permisos pide el asistente al conectarse: todo lo encendido (de fábrica) o solo la lectura básica |
 | Sitio | «Allowed return addresses», registro propio, documentos de metadatos y dominios de confianza, direcciones en el propio ordenador | Qué aplicaciones pueden conectar en modo directo |
 | Sitio | Caducidades de credencial, de inactividad y de duración; revocar al cambiar la contraseña | Cuánto dura una conexión |
 | Sitio | Límites de llamadas, registros por hora, tamaños | Solo a la baja |
@@ -68,6 +69,7 @@ La forma de añadir el conector en cada asistente no consta en esta documentaci�
 | Rechazo | Repetir y pulsar «Reject» | «The change was rejected. Nothing was changed.» |
 | Caducidad de la aprobación | Repetir y esperar más de 15 minutos | «This request expired without being approved. Nothing was changed.» |
 | Permiso de cambios | Conectar con el profesor sin edición | No se ofrece «Read and changes» |
+| Permisos anunciados | Con «Set activity visibility» encendida para «Teacher», conectar el asistente con el profesor con edición; repetir con «Permissions an assistant asks for when it connects» en «Basic reading only» | Con el valor de fábrica, la página de consentimiento ofrece «Read and changes» y la acción; con «Basic reading only», solo «Read only» y la misma lista en todos los perfiles |
 | Sin acciones de cambio | Con todas las acciones de cambio apagadas, conectar con el profesor con edición | No se ofrece «Read and changes»; al encender una para «Teacher» y volver a conectar, sí |
 | Modo de solo lectura | Encender «Read-only mode» | Los cambios responden «Changes through the connector are disabled on this site.» |
 | Desconexión | «Disconnect» en «My AI connections» | El asistente pierde el acceso en el acto |

@@ -1,6 +1,6 @@
 ---
 name: pluginia-connect-moodle-diagnostico
-description: Diagnostica y ayuda a configurar Pluginia Connect (local_pluginiaconnect), el plugin de Moodle que conecta asistentes de IA (Claude, ChatGPT, Microsoft 365 Copilot Cowork) con un sitio Moodle por MCP y OAuth 2.1. Usar cuando el asistente no encuentra el sitio o no puede conectar, falla la página de autorización, conecta pero no ve acciones, una acción dice que no tiene permiso, un cambio no se aplica o queda pendiente, no llega la notificación de aprobación, la conexión caduca, el asistente no ve un curso o una entrega que la persona sí ve, o ante consultas sobre perfiles, acciones por perfil, modo directo y modo pasarela, requisitos del servidor, página de diagnóstico, límites, auditoría y privacidad. Prioriza ajustes de configuración con pruebas controladas antes de pedir cambios de código. Se basa en documentación verificada de la versión 0.2.0 (alfa) y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué puede y qué no puede hacer un asistente conectado, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnostica y ayuda a configurar Pluginia Connect (local_pluginiaconnect), el plugin de Moodle que conecta asistentes de IA (Claude, ChatGPT, Microsoft 365 Copilot Cowork) con un sitio Moodle por MCP y OAuth 2.1. Usar cuando el asistente no encuentra el sitio o no puede conectar, falla la página de autorización, conecta pero no ve acciones o solo le ofrece «Read only», una acción dice que no tiene permiso, un cambio no se aplica o queda pendiente, no llega la notificación de aprobación, la conexión caduca, el asistente no ve un curso o una entrega que la persona sí ve, o ante consultas sobre perfiles, acciones por perfil, modo directo y modo pasarela, requisitos del servidor, página de diagnóstico, límites, auditoría y privacidad. Prioriza ajustes de configuración con pruebas controladas antes de pedir cambios de código. Se basa en documentación verificada de la versión 0.2.0 (alfa) y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué puede y qué no puede hacer un asistente conectado, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Pluginia Connect: diagnóstico y configuración
@@ -21,7 +21,7 @@ Preguntar la versión instalada si se desconoce. Si es otra, delimitar qué info
 ## Tres advertencias que hay que decir siempre que vengan al caso
 1. La versión 0.2.0 es alfa: no es para sitios en producción ni para datos reales. Recomendar un sitio de pruebas con datos inventados.
 2. La pasarela Pluginia Connect (connect.pluginia.es) todavía no está en servicio: hoy no se puede completar el registro del sitio ni conectar desde el directorio de un asistente. Lo único utilizable es el modo directo.
-3. Según la documentación del proyecto, todavía no se ha hecho ninguna conexión real desde Claude, ChatGPT ni Copilot Cowork. No describir pantallas, menús ni pasos de esos asistentes: no constan. Decir «en su asistente, donde se añaden conectores» y remitir a la ayuda del proveedor.
+3. Según la documentación del proyecto, solo consta una primera conexión real de prueba desde Claude (web) en modo directo, el 24-11-2026, y ninguna desde ChatGPT ni Copilot Cowork. Aquella prueba reveló que el sitio solo anunciaba la lectura básica; la versión 0.2.0 lo corrige con el ajuste «Permissions an assistant asks for when it connects», que todavía no consta probado con Claude real. No describir pantallas, menús ni pasos de esos asistentes: no constan. Decir «en su asistente, donde se añaden conectores» y remitir a la ayuda del proveedor.
 
 ## Idioma de la interfaz
 El plugin solo trae la interfaz en inglés. Citar cada página, ajuste, botón y mensaje tal como sale en pantalla, en inglés y entre comillas, con su traducción al español la primera vez. No inventar una traducción «oficial»: en pantalla no existe.
@@ -68,7 +68,7 @@ Indicar qué se ha probado de verdad y qué queda pendiente. Pedir al final solo
 Mantener breves las consultas simples de configuración.
 
 ## Límites del diagnóstico
-No asegurar que un asistente concreto conectará: ninguna conexión real con Claude, ChatGPT o Copilot Cowork consta como probada.
+No asegurar que un asistente concreto conectará: solo consta una conexión real de prueba con Claude, y ninguna con ChatGPT o Copilot Cowork.
 No describir como disponible nada que dependa de la pasarela.
 No afirmar que el asistente puede hacer algo fuera de las 31 acciones del catálogo, ni actuar sobre otros plugins, ni borrar nada, ni actuar en nombre de otro usuario. Si piden dar de baja a un alumno, explicar que esa acción no existe: «Set enrolment status» suspende o reactiva su matrícula en el curso sin borrar nada, y «Set user suspension» suspende la cuenta entera.
 No presentar la confirmación en dos pasos como una revisión humana: el segundo paso lo puede dar el asistente solo. La revisión por una persona es la aprobación en el sitio.

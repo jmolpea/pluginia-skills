@@ -24,6 +24,7 @@ Los contadores van por ventanas de reloj (el minuto, la hora o el día en curso 
 | Las 22 acciones que leen | Encendidas para sus perfiles |
 | Las 9 acciones que cambian algo | Apagadas para todos los perfiles |
 | Nivel de acceso propuesto al conectar | «Read only» |
+| «Permissions an assistant asks for when it connects» | «Everything switched on in this site (recommended)» |
 | «Include hidden courses» | Apagado |
 | «Who may receive email addresses of other users» | «Teacher profile and above» |
 | «Allow return addresses on the own computer» | Apagado |

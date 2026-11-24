@@ -65,7 +65,7 @@ Esperado: «My AI connections» › «Disconnect» de inmediato, cambiar la cont
 Esperado: indicar que la skill documenta la 0.2.0; las nueve acciones de cambio llegan en la 0.2.0 y la 0.1.0 rechaza todo cambio. Recomendar actualizar y delimitar lo que no se puede asegurar de la 0.1.0.
 
 22. «¿Podemos ponerlo ya en el campus de producción con datos reales?»
-Esperado: no se recomienda: versión alfa, pasarela sin servicio, ninguna conexión real con los asistentes probada según la documentación del proyecto. Sitio de pruebas y datos inventados.
+Esperado: no se recomienda: versión alfa, pasarela sin servicio, según la documentación del proyecto, solo una conexión real de prueba con Claude y ninguna con ChatGPT ni Copilot Cowork. Sitio de pruebas y datos inventados.
 
 23. «¿Qué datos nuestros se guardan o salen del sitio?»
 Esperado: en el sitio, conexiones, resúmenes irreversibles de credenciales, registro de llamadas sin contenido, cambios en espera y respuestas guardadas un día. Fuera, lo que la persona pide va al proveedor de su asistente; la pasarela, si se usara, transporta sin guardar contenido. Conservación de la auditoría: 180 días (30 a 730).
@@ -87,3 +87,6 @@ Esperado: las llamadas de una conexión que devuelven datos de otras personas se
 
 29. «¿Puede el asistente publicar un aviso firmado por otro profesor?»
 Esperado: no. Todo se ejecuta y se registra como la persona conectada; ninguna acción actúa en nombre de otro usuario.
+
+30. «He conectado Claude como administrador y solo me deja elegir "Read only"; además, con el perfil de gestor veo las mismas acciones que con el de docente.»
+Esperado: el asistente pidió solo la lectura básica al conectarse. Revisar «Permissions an assistant asks for when it connects» («Settings» › «Sign-in and tokens»; de fábrica «Everything switched on in this site (recommended)») y las acciones encendidas en «Actions by profile»; después desconectar y volver a conectar. Aclarar que anunciar un permiso no lo concede: la página de consentimiento sigue recortando por perfil y nivel. No recomendar ampliar roles.

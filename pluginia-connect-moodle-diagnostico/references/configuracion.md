@@ -45,6 +45,7 @@ Se aplican a las conexiones directas.
 | «Allow assistants to register on their own» | Encendido | El asistente se registra antes de que el usuario entre. Solo si todas sus direcciones de retorno están en la lista. | Mantener. |
 | «Accept assistants identified by a metadata document» | Encendido | El asistente se identifica con la dirección de un documento que publica. Solo de los dominios de confianza. | Apagarlo si el servidor solo sale a internet por un proxy. |
 | «Trusted domains for metadata documents» | claude.ai, chatgpt.com, connect.pluginia.es | Dominios aceptados. Vacío = cualquiera con HTTPS. | No dejar vacío. |
+| «Permissions an assistant asks for when it connects» (permisos que pide un asistente al conectarse) | «Everything switched on in this site (recommended)» | Qué grupos de permisos anuncia el sitio a un asistente que conecta. Con el valor de fábrica, todos los que tienen al menos una acción encendida en «Actions by profile» para un perfil permitido, sin ninguno de cambio si «Read-only mode» está encendido. Con «Basic reading only: profile, courses and grades», solo esos tres. Claude pide exactamente lo anunciado y no vuelve a pedir más. Anunciar no concede: la página de consentimiento sigue recortando por perfil y nivel de acceso. | Mantener el valor de fábrica. Tras cambiarlo, o tras encender acciones nuevas, cada persona desconecta el asistente y lo conecta de nuevo. |
 | «Access token lifetime» | 3600 | Segundos de validez de la credencial de acceso (300 a 3600). El asistente la renueva solo. | Mantener. |
 | «Connection idle time» | 2592000 | Segundos sin uso tras los que hay que volver a conectar (30 días de fábrica). | Bajar en entornos sensibles. |
 | «Connection lifetime» | 15552000 | Segundos tras los que hay que autorizar de nuevo (180 días de fábrica). | Bajar a 30 o 90 días si la política lo pide. |
@@ -76,6 +77,7 @@ Una fila por acción con una casilla por cada perfil que puede usarla; botón de
 - Apagar una casilla retira la acción en el acto para todas las conexiones de ese perfil.
 - Mientras no haya ninguna acción de cambio encendida para los perfiles de una persona, la página de consentimiento no le ofrece «Read and changes».
 - Encender una acción no la da a las conexiones que ya existían si no tenían su grupo de permisos: esas personas deben desconectar y volver a conectar.
+- Con «Permissions an assistant asks for when it connects» en su valor de fábrica, lo que se enciende aquí decide también qué grupos de permisos pide el asistente al conectarse. Con «Basic reading only», un asistente como Claude no pide más que la lectura básica, aunque haya acciones encendidas.
 Recomendación: donde un error salga caro (calificaciones, matrículas), elegir «Approval on this site».
 
 ## «Diagnostics» (diagnóstico)

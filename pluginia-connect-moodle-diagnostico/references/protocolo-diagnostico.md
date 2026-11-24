@@ -56,7 +56,7 @@ La columna «Reason» dice qué capa rechazó la llamada:
 Si la llamada no aparece en el informe, no llegó a identificarse en el sitio: el problema está antes (servidor, dirección, credencial).
 
 ## Árbol: el asistente no encuentra el sitio o no puede conectar
-1. Se intenta por el directorio del asistente o por la pasarela → no está en servicio. Solo cabe el modo directo, y ninguna conexión real con Claude, ChatGPT o Copilot Cowork consta como probada. Copilot Cowork no puede conectar en modo directo.
+1. Se intenta por el directorio del asistente o por la pasarela → no está en servicio. Solo cabe el modo directo, y solo consta una conexión real de prueba con Claude; ninguna con ChatGPT o Copilot Cowork. Copilot Cowork no puede conectar en modo directo.
 2. Conector apagado → «Diagnostics»: «The connector is switched off. Its endpoints answer that the service is unavailable.» El asistente recibe «The connector is switched off on this site.»
 3. Ningún modo activado → «The connector is on but no connection mode is enabled, so no assistant can connect.»
 4. Sin HTTPS → «HTTPS is required.»; en «Diagnostics», error en «HTTPS».
@@ -84,7 +84,8 @@ Si la llamada no aparece en el informe, no llegó a identificarse en el sitio: e
 | «Choose one of the profiles listed.» | Perfil no válido | Elegir uno de la lista |
 | «Your session expired before the form was sent. Check the details and try again.» | La sesión del sitio caducó con la página abierta | Repetir |
 Otros casos:
-- No aparece «Read and changes» («no me deja elegir lectura y cambios») → no hay ninguna acción de cambio encendida en «Actions by profile» para los perfiles de esa persona (lo más frecuente: de fábrica están todas apagadas); «Read-only mode» encendido; la persona no tiene «Allow AI assistant connections to request changes» en ningún curso dentro del alcance (de fábrica, el profesor sin edición no lo tiene); o Copilot Cowork limitado a «Read only».
+- El asistente solo ofrece «Read only», con cualquier perfil aparece la misma lista de acciones, o no aparecen las acciones de gestor o de administrador → el asistente pidió solo la lectura básica al conectarse. Revisar «Permissions an assistant asks for when it connects» en «Settings» › «Sign-in and tokens» (debe estar en «Everything switched on in this site (recommended)») y que las acciones esperadas estén encendidas para ese perfil en «Actions by profile». Después, desconectar el asistente (en el asistente y en «My AI connections») y conectarlo de nuevo: el asistente solo pide permisos al conectarse. Si persiste con el ajuste correcto, recoger la lista de acciones que muestra la página de consentimiento para cada perfil y escalar.
+- No aparece «Read and changes» («no me deja elegir lectura y cambios») → no hay ninguna acción de cambio encendida en «Actions by profile» para los perfiles de esa persona (lo más frecuente: de fábrica están todas apagadas); «Read-only mode» encendido; el asistente pidió solo la lectura básica (caso anterior); la persona no tiene «Allow AI assistant connections to request changes» en ningún curso dentro del alcance (de fábrica, el profesor sin edición no lo tiene); o Copilot Cowork limitado a «Read only».
 - Falta un perfil en la lista tras cambiar un rol o sus permisos → el cambio tiene efecto inmediato; si sigue faltando, la causa es otra: perfil apagado, o permiso de perfil no concedido en ningún curso o categoría dentro del alcance.
 - La persona pulsa «Allow» y el asistente dice que la conexión falló → el código entregado vale 60 segundos y un solo uso: comprobar reloj del servidor («Server clock»), cabecera Authorization y que el asistente no tardó o repitió la operación. Probable, no comprobable sin más datos.
 - La página no llega a mostrarse y el asistente recibe un error → la petición del asistente no era válida (por ejemplo, pedía acceso para otra dirección). Recoger el texto que muestre el asistente y escalar.
@@ -95,8 +96,9 @@ Otros casos:
 3. La acción está apagada para ese perfil en «Actions by profile».
 4. Es una acción de cambio: apagada de fábrica; la conexión es «Read only»; «Read-only mode» encendido; o Copilot Cowork en «Read only».
 5. La acción se encendió después de conectar → la conexión no incluye su grupo de permisos. Al llamarla: «This connection is read-only. Reconnect and choose 'Read and changes' to allow it.» o «This connection does not include the access this action needs. Reconnect to grant it.» Desconectar y volver a conectar.
-6. El asistente conserva la lista anterior → el sitio le permite reutilizarla cinco minutos; esperar o reiniciar la conversación. Probable.
-7. El asistente decide no usar una acción aunque la tenga → no es cosa del plugin; comprobar en la página de consentimiento, que lista las acciones de cada perfil, y pedir la acción por su nombre.
+6. El asistente pidió solo la lectura básica al conectarse («Permissions an assistant asks for when it connects» en «Basic reading only», o conexión creada antes de encender las acciones) → ver «Otros casos» del árbol anterior.
+7. El asistente conserva la lista anterior → el sitio le permite reutilizarla cinco minutos; esperar o reiniciar la conversación. Probable.
+8. El asistente decide no usar una acción aunque la tenga → no es cosa del plugin; comprobar en la página de consentimiento, que lista las acciones de cada perfil, y pedir la acción por su nombre.
 
 ## Árbol: una acción dice que no tiene permiso
 | Mensaje que recibe el asistente | Qué revisar |
