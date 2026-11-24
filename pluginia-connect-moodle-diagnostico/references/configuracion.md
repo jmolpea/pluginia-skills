@@ -1,6 +1,6 @@
 # Configuración de Pluginia Connect (versión 0.2.0)
 
-Nombres tal como aparecen en Moodle. El plugin solo trae la interfaz en inglés; la traducción entre paréntesis es orientativa y no aparece en pantalla. Revisado el 24-11-2026. Manual de configuración: https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y
+Nombres tal como aparecen en Moodle. El plugin solo trae la interfaz en inglés; la traducción entre paréntesis es orientativa y no aparece en pantalla. Revisado el 25-11-2026. Manual de configuración: https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y
 
 Dónde: Administración del sitio › Extensiones › Extensiones locales › Pluginia Connect. Seis páginas: «Settings», «Actions by profile», «Gateway registration», «Diagnostics», «Connections» y «Audit report». Las cuatro primeras, solo administradores. La página «Settings» empieza con el enlace «Configuration manual» («Open the configuration manual of Pluginia Connect (opens in a new tab)»), que lleva al manual.
 
@@ -12,7 +12,7 @@ Orden recomendado en un sitio de pruebas: 1) «Diagnostics» sin errores; 2) per
 | «Enable the connector» (activar el conector) | Apagado | Interruptor principal. Apagado, todas las direcciones del conector responden que el servicio no está disponible y ningún asistente lee ni cambia nada. | Encenderlo al final, con todo lo demás decidido. Es también la parada general. |
 | «Read-only mode» (modo de solo lectura) | Apagado | Bloquea todas las acciones que cambian algo, para todos. Tampoco se ofrece «Read and changes» al conectar. | Encenderlo si solo se quiere consulta, o para parar los cambios sin cortar las lecturas. |
 | «Allow direct connections» (permitir conexiones directas) | Apagado | Los asistentes conectan directamente con el sitio. | Es el único modo utilizable hoy. |
-| «Allow the Pluginia Connect gateway» (permitir la pasarela) | Apagado | Admite conexiones a través de la pasarela. Se enciende solo al registrar el sitio. Apagarlo corta la pasarela en el acto sin dar de baja el sitio. | No tocar: la pasarela no está en servicio. |
+| «Allow the Pluginia Connect gateway» (permitir la pasarela) | Apagado | Admite conexiones a través de la pasarela. Se enciende solo al registrar el sitio. Apagarlo corta la pasarela en el acto sin dar de baja el sitio. | No tocarlo a mano: se enciende al registrar el sitio. La pasarela está en servicio y es gratuita por ahora, pero sin conexión real de un asistente comprobada todavía. |
 | «Notice shown before connecting» (aviso antes de conectar) | Vacío | Texto de la institución en la página de consentimiento. | Indicar qué cuentas de asistente se permiten (personales o de la organización). |
 | «Privacy policy of the institution» (política de privacidad) | Vacío | Enlace en la página de consentimiento. | Rellenarlo. |
 
@@ -98,10 +98,10 @@ Tabla con «Check», «Status» («OK», «Optional», «Warning», «Error») y
 Cuando el sitio no puede llamarse a sí mismo, las comprobaciones de cabecera y de ruta salen como aviso: «The site could not call itself to run this check.» Hay que probarlas desde fuera, como indica el mensaje.
 
 ## «Gateway registration» (registro en la pasarela)
-Servicio todavía no disponible: el formulario existe, pero el registro no se puede completar.
-- Muestra «State» («This site is not registered.», «This site is registered.» o «This site was removed here, but the gateway has not confirmed it.») y la tabla «Data sent to Pluginia when you register»: dirección del sitio, versión del software y del plugin, si se ofrece el perfil de alumno, la declaración sobre menores de 13 años, un valor de verificación de un solo uso, un secreto creado en ese momento y la clave de licencia, que no se guarda en el sitio. No se envía ningún dato de usuarios.
+Servicio en marcha desde el 24-11-2026 y gratuito por ahora: el registro no exige clave de licencia (el campo existe y se deja vacío).
+- Muestra «State» («This site is not registered.», «This site is registered.» o «This site was removed here, but the gateway has not confirmed it.») y la tabla «Data sent to Pluginia when you register»: dirección del sitio, versión del software y del plugin, si se ofrece el perfil de alumno, la declaración sobre menores de 13 años, un valor de verificación de un solo uso, un secreto creado en ese momento y la clave de licencia solo si se escribe una («The licence key you type below, or nothing if you leave it empty»), que no se guarda en el sitio. No se envía ningún dato de usuarios.
 - Requisitos previos que la página exige («The site cannot be registered yet:»): conector encendido, sitio en HTTPS y extensión sodium.
-- Campos: «Licence key», la casilla de condiciones y contrato de encargo de tratamiento y, con el perfil de alumno encendido, la declaración sobre menores de 13 años. Botón «Register this site».
+- Campos: «Licence key» (opcional; dejarla vacía: la ayuda del campo dice que por ahora la pasarela es gratuita y no necesita clave; si se escribe algo, debe tener entre 8 y 200 caracteres o sale «The licence key is not valid.»), la casilla de condiciones y contrato de encargo de tratamiento y, con el perfil de alumno encendido, la declaración sobre menores de 13 años. Botón «Register this site».
 - Para salir: «Remove this site from the gateway». Desconecta en el acto todas las conexiones hechas por la pasarela y apaga ese modo; las directas no se ven afectadas. Si no se pudo avisar a la pasarela, botón «Tell the gateway again».
 
 ## Permisos

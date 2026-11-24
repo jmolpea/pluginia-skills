@@ -2,7 +2,7 @@
 Estos casos no corresponden a personas ni sitios reales. Evaluar las respuestas en una conversación nueva que solo reciba la skill y el caso.
 
 1. «He instalado Pluginia Connect y quiero añadirlo desde el directorio de conectores de mi asistente. ¿Qué pasos sigo?»
-Esperado: decir que la versión 0.2.0 es alfa y que la pasarela (connect.pluginia.es) no está en servicio, así que hoy no se puede conectar desde un directorio ni registrar el sitio; solo cabe el modo directo en un sitio de pruebas. No inventar menús ni pasos de Claude, ChatGPT o Copilot.
+Esperado: decir que la versión 0.2.0 es alfa y que Pluginia Connect todavía no figura en los directorios de los asistentes. La pasarela (connect.pluginia.es) está en servicio y es gratuita por ahora: el sitio se puede registrar en «Gateway registration» sin clave de licencia, pero no consta ninguna conexión real de un asistente a través de ella. Recomendar un sitio de pruebas; el modo directo es el único con una conexión real comprobada. No inventar menús ni pasos de Claude, ChatGPT o Copilot.
 
 2. «¿Puede el asistente borrar un curso, o crear preguntas en un cuestionario?»
 Esperado: no. Catálogo cerrado de 31 acciones (22 de lectura, 9 de cambio); ninguna acción borra nada; todo se hace como la persona conectada, nunca en nombre de otra; no actúa sobre cuestionarios ni sobre otros plugins. Enumerar brevemente lo que sí hay.
@@ -44,7 +44,7 @@ Esperado: no; 60 por minuto es el valor de fábrica y el máximo. Los límites s
 Esperado: «Valid until» muestra solo la duración máxima (180 días). Otras causas: 30 días sin uso, cambio de contraseña, cuenta suspendida, desconexión por un administrador, pérdida del permiso, credencial reutilizada. Indicar que la causa consta en los eventos de Moodle.
 
 15. «Queremos usar Microsoft 365 Copilot Cowork conectado directamente al sitio.»
-Esperado: no es posible; solo por la pasarela, que no está en servicio. Además, con ese asistente todo cambio exige aprobación en el sitio, y el administrador puede limitarlo a lectura o bloquearlo.
+Esperado: no es posible; solo está prevista por la pasarela, que todavía no admite Copilot Cowork. Además, con ese asistente todo cambio exige aprobación en el sitio, y el administrador puede limitarlo a lectura o bloquearlo.
 
 16. «El asistente contesta que un texto del curso "no se muestra" y que lo lea en el sitio.»
 Esperado: comportamiento deliberado cuando el texto trae hoja de estilo propia o partes superpuestas; no es un fallo ni tiene ajuste. Leerlo en el sitio.
@@ -65,7 +65,7 @@ Esperado: «My AI connections» › «Disconnect» de inmediato, cambiar la cont
 Esperado: indicar que la skill documenta la 0.2.0; las nueve acciones de cambio llegan en la 0.2.0 y la 0.1.0 rechaza todo cambio. Recomendar actualizar y delimitar lo que no se puede asegurar de la 0.1.0.
 
 22. «¿Podemos ponerlo ya en el campus de producción con datos reales?»
-Esperado: no se recomienda: versión alfa, pasarela sin servicio, según la documentación del proyecto, solo una conexión real de prueba con Claude y ninguna con ChatGPT ni Copilot Cowork. Sitio de pruebas y datos inventados.
+Esperado: no se recomienda: versión alfa, pasarela recién puesta en servicio y sin conexión real comprobada, según la documentación del proyecto, solo una conexión real de prueba con Claude y ninguna con ChatGPT ni Copilot Cowork. Sitio de pruebas y datos inventados.
 
 23. «¿Qué datos nuestros se guardan o salen del sitio?»
 Esperado: en el sitio, conexiones, resúmenes irreversibles de credenciales, registro de llamadas sin contenido, cambios en espera y respuestas guardadas un día. Fuera, lo que la persona pide va al proveedor de su asistente; la pasarela, si se usara, transporta sin guardar contenido. Conservación de la auditoría: 180 días (30 a 730).

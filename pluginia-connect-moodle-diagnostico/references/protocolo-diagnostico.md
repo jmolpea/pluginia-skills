@@ -5,7 +5,7 @@ Los mensajes entre comillas son los textos exactos de la versión 0.2.0, en ingl
 ## Ficha mínima
 Pedir solo lo que haga falta para la consulta. No pedir tokens, códigos, claves ni acceso de administrador.
 - Versión de Moodle y de Pluginia Connect. ¿Sitio de pruebas o de producción? (la 0.2.0 es alfa).
-- Modo de conexión que se intenta: directo o pasarela (la pasarela no está en servicio).
+- Modo de conexión que se intenta: directo o pasarela (la pasarela está en servicio desde el 24-11-2026, sin conexión real de un asistente comprobada todavía).
 - Asistente (Claude, ChatGPT, Copilot Cowork u otro) y si es de escritorio, web o de línea de comandos.
 - Resultado de «Diagnostics»: las filas que no estén en «OK».
 - Estado de «Enable the connector», «Allow direct connections», «Read-only mode» y de los cuatro perfiles.
@@ -56,7 +56,7 @@ La columna «Reason» dice qué capa rechazó la llamada:
 Si la llamada no aparece en el informe, no llegó a identificarse en el sitio: el problema está antes (servidor, dirección, credencial).
 
 ## Árbol: el asistente no encuentra el sitio o no puede conectar
-1. Se intenta por el directorio del asistente o por la pasarela → no está en servicio. Solo cabe el modo directo, y solo consta una conexión real de prueba con Claude; ninguna con ChatGPT o Copilot Cowork. Copilot Cowork no puede conectar en modo directo.
+1. Se intenta por el directorio del asistente → Pluginia Connect todavía no figura en los directorios. Por la pasarela (dirección https://connect.pluginia.es/mcp) el sitio tiene que estar registrado en «Gateway registration»; está en servicio, pero no consta ninguna conexión real de un asistente a través de ella. Solo consta una conexión real de prueba con Claude en modo directo; ninguna con ChatGPT o Copilot Cowork. Copilot Cowork no puede conectar en modo directo y la pasarela todavía no lo admite.
 2. Conector apagado → «Diagnostics»: «The connector is switched off. Its endpoints answer that the service is unavailable.» El asistente recibe «The connector is switched off on this site.»
 3. Ningún modo activado → «The connector is on but no connection mode is enabled, so no assistant can connect.»
 4. Sin HTTPS → «HTTPS is required.»; en «Diagnostics», error en «HTTPS».
@@ -200,8 +200,8 @@ Una conexión revocada desaparece de las listas de activas; su causa queda en lo
 - Con varios servidores web y contadores locales, los límites no se aplican bien: fila «Rate limit store».
 
 ## Árbol: registro en la pasarela
-Recordar primero que el servicio no está disponible. Mensajes de la página: «The connector is switched off. Switch it on in the settings first: the gateway reads the connection details of the site while registering.»; «The site is not served over HTTPS.»; «The Sodium extension of PHP is not available.»; «The gateway could not be reached. Nothing was changed on this site.»; «The gateway could not verify this site. Check that the site is reachable from the internet over HTTPS and that the connector is switched on, then try again.»; «The licence key is not valid.»; «This licence key is already registered for another site.»; «The gateway does not accept the address of this site. It must be a public HTTPS address.»; «The student profile is on. To register, you must declare that the site is not directed to children under 13, or switch the student profile off.»; «You must accept the terms and the data processing agreement.»; «Too many registration attempts. Try again later.»; «The gateway gave an unexpected answer. Nothing was changed on this site.»
-Hoy lo esperable es «The gateway could not be reached…» o una respuesta inesperada: no es un fallo del sitio.
+El servicio está en marcha y es gratuito por ahora: la clave de licencia se deja vacía. Mensajes de la página: «The connector is switched off. Switch it on in the settings first: the gateway reads the connection details of the site while registering.»; «The site is not served over HTTPS.»; «The Sodium extension of PHP is not available.»; «The gateway could not be reached. Nothing was changed on this site.»; «The gateway could not verify this site. Check that the site is reachable from the internet over HTTPS and that the connector is switched on, then try again.»; «The licence key is not valid.»; «This licence key is already registered for another site.»; «The gateway does not accept the address of this site. It must be a public HTTPS address.»; «The student profile is on. To register, you must declare that the site is not directed to children under 13, or switch the student profile off.»; «You must accept the terms and the data processing agreement.»; «Too many registration attempts. Try again later.»; «The gateway gave an unexpected answer. Nothing was changed on this site.»
+Con la clave vacía no deben salir los mensajes de licencia; si salen, comprobar que el campo está realmente vacío. «The gateway could not verify this site…» → el sitio no es accesible desde internet por HTTPS con su dirección pública o el conector está apagado. «The gateway could not be reached…» o una respuesta inesperada → reintentar más tarde; no se ha cambiado nada en el sitio.
 
 ## Árbol: seguridad y dudas de la persona
 - Notificación de una conexión que la persona no hizo → «My AI connections» › «Disconnect» de inmediato; cambiar la contraseña; avisar al administrador.

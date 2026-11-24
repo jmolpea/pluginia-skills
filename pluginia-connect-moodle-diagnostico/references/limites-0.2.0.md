@@ -1,12 +1,12 @@
 # Límites y valores de fábrica de Pluginia Connect: versión 0.2.0
 
-Verificados leyendo el código de la versión 0.2.0 el 24-11-2026. Los nombres entre comillas son los de la pantalla (en inglés). Manual: https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y
+Verificados leyendo el código de la versión 0.2.0 el 24-11-2026 y revisados el 25-11-2026. Los nombres entre comillas son los de la pantalla (en inglés). Manual: https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y
 
 ## Cómo interpretar los valores
 Distinguir tres clases:
 - Límites ajustables en «Settings»: se pueden bajar, nunca subir por encima del máximo indicado. Si se escribe un valor fuera del intervalo, la página responde «Enter a whole number between … and ….» y no lo guarda.
 - Límites fijos del plugin: no tienen ajuste.
-- Límites de la pasarela: los fija el servicio, que todavía no está en producción; se citan según la documentación del proyecto y pueden cambiar.
+- Límites de la pasarela: los fija el servicio (en marcha desde el 24-11-2026, gratuito por ahora); se citan según la documentación del proyecto y pueden cambiar.
 «Por conexión» significa por cada asistente conectado por cada persona: dos personas, o dos asistentes de la misma persona, no comparten contador.
 Los contadores van por ventanas de reloj (el minuto, la hora o el día en curso del servidor), no por los últimos 60 segundos. Cuentan todas las llamadas autenticadas, también las rechazadas.
 
@@ -126,7 +126,7 @@ Mensajes: «Too many requests from this address. Try again in a minute.»; «Too
 | «Remove expired codes, tokens and pending changes» | Cada hora |
 | «Remove old records of calls» | Una vez al día |
 
-## Pasarela (servicio todavía no disponible)
+## Pasarela (en servicio, gratuita por ahora)
 Según la documentación del proyecto, no verificable en el plugin: 120 llamadas por minuto y 10 conexiones por persona y sitio; la undécima conexión cierra la más antigua.
 
 ## Direcciones y listas de fábrica

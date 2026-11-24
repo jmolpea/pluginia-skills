@@ -37,7 +37,7 @@ Tras cualquier cambio en el servidor web, volver a ejecutar «Diagnostics».
 - Ningún cambio se aplica a la primera. El paso adicional se puede endurecer, no suavizar; la suspensión o reactivación de una matrícula y la de una cuenta exigen siempre aprobación en el sitio.
 - Los máximos de los límites no se pueden superar. Los 200 destinatarios de mensajes por día y conexión, los 5 cambios en espera, los 5 minutos del código de confirmación y los 15 minutos de la aprobación son fijos.
 - Copilot Cowork no conecta en modo directo y todos sus cambios exigen aprobación.
-- La pasarela no está en servicio: no se puede registrar el sitio ni conectar desde el directorio de un asistente.
+- La pasarela está en servicio y es gratuita por ahora, pero Pluginia Connect todavía no figura en los directorios de los asistentes y no consta ninguna conexión real de un asistente a través de ella.
 - La interfaz está solo en inglés.
 - Los textos con hoja de estilo propia o con partes superpuestas se retienen enteros.
 - Los cursos nuevos nacen vacíos y ocultos; las fechas de una tarea se mueven, no se quitan; las tareas con rúbrica o guía de evaluación no se califican desde el asistente.

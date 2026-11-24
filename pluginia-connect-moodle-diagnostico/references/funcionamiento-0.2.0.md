@@ -1,17 +1,17 @@
 # Funcionamiento de Pluginia Connect: versión 0.2.0
 
-Revisión estática del código de la versión 0.2.0, hecha el 24-11-2026. Madurez declarada: alfa. Compatibilidad declarada: Moodle 4.5 a 5.3, PHP 8.1 o superior. Manual público: https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y
+Revisión estática del código de la versión 0.2.0, hecha el 24-11-2026 y revisada el 25-11-2026. Madurez declarada: alfa. Compatibilidad declarada: Moodle 4.5 a 5.3, PHP 8.1 o superior. Manual público: https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y
 Salvo que se indique «probable» o «según la documentación del proyecto», todo lo que sigue es un hecho verificado leyendo el código, no una prueba en un Moodle real.
 El plugin solo trae la interfaz en inglés: los nombres entre comillas son los que salen en pantalla, con su traducción entre paréntesis.
 
 ## Qué es
 Un plugin de tipo «local» que permite a una persona conectar un asistente de IA (Claude, ChatGPT o Microsoft 365 Copilot Cowork) a su propia cuenta del sitio. El asistente puede entonces pedir al sitio que ejecute acciones de una lista cerrada, en nombre de esa persona y dentro de sus permisos.
-No añade actividades ni bloques. No usa los tokens de servicios web de Moodle ni necesita que los servicios web estén activados. No lleva comprobación de licencia dentro del plugin (la licencia solo interviene al registrar el sitio en la pasarela).
+No añade actividades ni bloques. No usa los tokens de servicios web de Moodle ni necesita que los servicios web estén activados. No lleva comprobación de licencia dentro del plugin. Al registrar el sitio en la pasarela, la clave de licencia es opcional y hoy no hace falta.
 El asistente nunca recibe la contraseña: la persona entra en el sitio como siempre y autoriza la conexión en una página del propio sitio.
 
 ## Estado de esta versión
 - Alfa: no es para sitios en producción. Sitios de prueba y datos inventados.
-- La pasarela Pluginia Connect (connect.pluginia.es) no está en servicio: el registro del sitio no se puede completar y el modo pasarela no se puede usar todavía.
+- La pasarela Pluginia Connect (connect.pluginia.es) está en servicio desde el 24-11-2026 y es gratuita por ahora: el registro no exige clave de licencia (el campo existe y se deja vacío). Todavía no figura en los directorios de los asistentes, no admite Copilot Cowork y, según la documentación del proyecto, ningún asistente real se ha conectado aún a través de ella.
 - Según la documentación del proyecto, solo consta una primera conexión real de prueba desde Claude (web) en modo directo, y ninguna desde ChatGPT ni Copilot Cowork; las reglas de servidor para la raíz del dominio no se han probado contra ellos.
 - Las notas de la versión la marcan como no publicada todavía.
 
@@ -31,7 +31,7 @@ Lo que no hace:
 
 ## Modo directo y modo pasarela
 - Modo directo («Allow direct connections», permitir conexiones directas): el asistente habla con el sitio. No interviene ningún servidor de Pluginia; el único tercero es el proveedor del asistente. Solo pueden conectar las aplicaciones cuyas direcciones de retorno están en «Allowed return addresses» (de fábrica, las de Claude y ChatGPT). Microsoft 365 Copilot Cowork no puede conectar en modo directo: su dirección de retorno es común a todos los complementos de Microsoft 365 y el plugin la rechaza siempre, diga lo que diga la lista.
-- Modo pasarela («Allow the Pluginia Connect gateway», permitir la pasarela): una única dirección de conexión para todos los sitios registrados, pensada para los directorios de los asistentes. Exige registrar el sitio en «Gateway registration» con una clave de licencia. La pasarela transporta peticiones y respuestas, no guarda su contenido y no puede conceder lo que el sitio no concede. Es la única vía para Copilot Cowork. Todavía no está en servicio.
+- Modo pasarela («Allow the Pluginia Connect gateway», permitir la pasarela): una única dirección de conexión para todos los sitios registrados, pensada para los directorios de los asistentes. Exige registrar el sitio en «Gateway registration»; por ahora es gratuita y el campo de clave de licencia se deja vacío. La pasarela transporta peticiones y respuestas, no guarda su contenido y no puede conceder lo que el sitio no concede. Es la única vía prevista para Copilot Cowork, que todavía no está disponible. En servicio y gratuita por ahora; sin conexión real de un asistente comprobada todavía.
 - El conector necesita «Enable the connector» encendido y al menos un modo. Cada conexión pertenece al modo con el que se creó: si ese modo se apaga, sus conexiones dejan de funcionar aunque el otro siga encendido.
 - La dirección que hay que dar al asistente en modo directo no aparece en ninguna pantalla del plugin: consultarla en el manual.
 
