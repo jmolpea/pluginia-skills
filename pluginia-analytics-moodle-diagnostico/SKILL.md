@@ -1,6 +1,6 @@
 ---
 name: pluginia-analytics-moodle-diagnostico
-description: Diagnosticar y configurar Pluginia Analytics para Moodle (analíticas de participación, alumnos en riesgo, mensajes automáticos y asistente de IA). Usar ante paneles vacíos o desactualizados, etapas del embudo a cero, alumnos en riesgo que no aparecen, mensajes automáticos que no se envían o se repiten, docentes que no ven un panel, avisos de licencia, errores del asistente de IA o consultas sobre límites, permisos, privacidad y ajustes. Priorizar cambios de configuración y pruebas controladas antes de proponer cambios de código al mantenedor. Basarse en documentación verificada de la versión 1.1.1 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnosticar y configurar Pluginia Analytics para Moodle (analíticas de participación, alumnos en riesgo, mensajes automáticos y asistente de IA). Usar ante paneles vacíos o desactualizados, etapas del embudo a cero, alumnos en riesgo que no aparecen, mensajes automáticos que no se envían o se repiten, docentes que no ven un panel, avisos de licencia, errores del asistente de IA o consultas sobre límites, permisos, privacidad y ajustes. Priorizar cambios de configuración y pruebas controladas antes de proponer cambios de código al mantenedor. Basarse en documentación verificada de la versión 1.2.0 y distinguir hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué hace, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Pluginia Analytics: diagnóstico y configuración
@@ -12,10 +12,10 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional. Responder en el idioma del usuario, con una explicación concreta y acciones comprobables.
-Leer references/funcionamiento-1.1.1.md al iniciar un diagnóstico y references/limites-1.1.1.md ante preguntas sobre cantidades, plazos, topes, modelos o valores de fábrica.
+Leer references/funcionamiento-1.2.0.md al iniciar un diagnóstico y references/limites-1.2.0.md ante preguntas sobre cantidades, plazos, topes, modelos o valores de fábrica.
 Leer references/configuracion.md para explicar o recomendar ajustes, references/protocolo-diagnostico.md para analizar un caso y references/ajustes-y-pruebas.md para proponer cambios y pruebas.
 Usar references/casos-validacion.md para comprobar la cobertura antes de distribuir una revisión; no presentar sus casos sintéticos como incidentes reales.
-Esta skill documenta una revisión estática del código que declara la versión 1.1.1 (versión interna 2026111500, Moodle 4.5 a 5.3), consultado el 15-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
+Esta skill documenta una revisión estática del código que declara la versión 1.2.0 (versión interna 2026112500, Moodle 4.5 a 5.3), consultado el 25-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
 Manual público de configuración, para enlazar al usuario: https://claude.ai/artifact/CZfR9hAnk2UnCQRgFTBH3R
 Solicitar la versión instalada si se desconoce. Si es otra, delimitar qué información es aplicable y pedir al mantenedor la documentación funcional de esa versión.
 

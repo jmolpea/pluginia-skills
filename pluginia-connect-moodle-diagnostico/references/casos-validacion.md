@@ -2,7 +2,7 @@
 Estos casos no corresponden a personas ni sitios reales. Evaluar las respuestas en una conversación nueva que solo reciba la skill y el caso.
 
 1. «He instalado Pluginia Connect y quiero añadirlo desde el directorio de conectores de mi asistente. ¿Qué pasos sigo?»
-Esperado: decir que la versión 0.2.0 es alfa y que Pluginia Connect todavía no figura en los directorios de los asistentes. La pasarela (connect.pluginia.es) está en servicio y es gratuita por ahora: el sitio se puede registrar en «Gateway registration» sin clave de licencia, pero no consta ninguna conexión real de un asistente a través de ella. Recomendar un sitio de pruebas; el modo directo es el único con una conexión real comprobada. No inventar menús ni pasos de Claude, ChatGPT o Copilot.
+Esperado: decir que la versión 0.3.0-dev es alfa y no está publicada y que Pluginia Connect todavía no figura en los directorios de los asistentes. La pasarela (connect.pluginia.es) está en servicio y es gratuita por ahora: el sitio se puede registrar en «Gateway registration» sin clave de licencia, pero no consta ninguna conexión real de un asistente a través de ella. Recomendar un sitio de pruebas; el modo directo es el único con una conexión real comprobada. No inventar menús ni pasos de Claude, ChatGPT o Copilot.
 
 2. «¿Puede el asistente borrar un curso, o crear preguntas en un cuestionario?»
 Esperado: no. Catálogo cerrado de 31 acciones (22 de lectura, 9 de cambio); ninguna acción borra nada; todo se hace como la persona conectada, nunca en nombre de otra; no actúa sobre cuestionarios ni sobre otros plugins. Enumerar brevemente lo que sí hay.
@@ -62,7 +62,7 @@ Esperado: fila «Rate limit store» de «Diagnostics»; asignar los contadores a
 Esperado: «My AI connections» › «Disconnect» de inmediato, cambiar la contraseña, avisar al administrador (que puede ver «Connections» y «Audit report»). No pedir credenciales.
 
 21. «Tenemos la versión 0.1.0 y el asistente no puede poner notas.»
-Esperado: indicar que la skill documenta la 0.2.0; las nueve acciones de cambio llegan en la 0.2.0 y la 0.1.0 rechaza todo cambio. Recomendar actualizar y delimitar lo que no se puede asegurar de la 0.1.0.
+Esperado: indicar que la skill documenta la 0.3.0-dev; las acciones de cambio llegan en la 0.2.0 (nueve) y la 0.3.0 (dos de foros), y la 0.1.0 rechaza todo cambio. Recomendar actualizar y delimitar lo que no se puede asegurar de la 0.1.0.
 
 22. «¿Podemos ponerlo ya en el campus de producción con datos reales?»
 Esperado: no se recomienda: versión alfa, pasarela recién puesta en servicio y sin conexión real comprobada, según la documentación del proyecto, solo una conexión real de prueba con Claude y ninguna con ChatGPT ni Copilot Cowork. Sitio de pruebas y datos inventados.
@@ -90,3 +90,12 @@ Esperado: no. Todo se ejecuta y se registra como la persona conectada; ninguna a
 
 30. «He conectado Claude como administrador y solo me deja elegir "Read only"; además, con el perfil de gestor veo las mismas acciones que con el de docente.»
 Esperado: el asistente pidió solo la lectura básica al conectarse. Revisar «Permissions an assistant asks for when it connects» («Settings» › «Sign-in and tokens»; de fábrica «Everything switched on in this site (recommended)») y las acciones encendidas en «Actions by profile»; después desconectar y volver a conectar. Aclarar que anunciar un permiso no lo concede: la página de consentimiento sigue recortando por perfil y nivel. No recomendar ampliar roles.
+
+## Caso: «¿cuántas visitas ha tenido hoy el sitio?» (0.3.0)
+Esperado: explicar que la acción «Get site activity summary» lo responde con recuentos sin nombres (personas que han entrado, entradas, vistas de curso, día a día), solo para el perfil de administrador; que viene apagada y hay que encenderla en «Actions by profile»; y que la persona tiene que conectar con el perfil «Administrator» y marcar «Course reports» en «Additional areas». Si el registro estándar de Moodle está desactivado, la acción responde que no hay actividad que contar.
+
+## Caso: un tutor pregunta cuántos alumnos van con retraso (0.3.0)
+Esperado: «List overdue submissions» (entregas vencidas sin presentar, con la fecha de cada alumno) y «Get course progress summary» (cifras de avance y número de alumnos con tareas vencidas o sin entrar). Apagadas de fábrica; área «Course reports» al conectar. Con grupos separados, solo cuentan sus grupos.
+
+## Caso: el asistente no ve las acciones de Pluginia Analytics
+Esperado: comprobar, en este orden, que Pluginia Analytics es 1.2.0 o posterior, que «Diagnostics» muestra «Actions of Pluginia plugins» en OK con Pluginia Analytics, que las acciones están encendidas en «Actions by profile», que la persona marcó «Pluginia plugins» al conectar (si no, volver a conectar) y que la licencia de Pluginia Analytics está activa o en evaluación.

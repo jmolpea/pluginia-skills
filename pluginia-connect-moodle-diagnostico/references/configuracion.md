@@ -1,4 +1,4 @@
-# Configuración de Pluginia Connect (versión 0.2.0)
+# Configuración de Pluginia Connect (versión 0.3.0-dev)
 
 Nombres tal como aparecen en Moodle. El plugin solo trae la interfaz en inglés; la traducción entre paréntesis es orientativa y no aparece en pantalla. Revisado el 25-11-2026. Manual de configuración: https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y
 
@@ -52,7 +52,7 @@ Se aplican a las conexiones directas.
 | «Revoke connections when the password changes» | Encendido | Termina todas las conexiones de un usuario cuando cambia su contraseña. | Mantener. |
 
 ## «Settings» › «Limits», «Retention» y «Assistants»
-Los límites se pueden bajar y no subir; valores e intervalos en references/limites-0.2.0.md.
+Los límites se pueden bajar y no subir; valores e intervalos en references/limites-0.3.0.md.
 | Ajuste | De fábrica | Qué hace |
 |---|---|---|
 | «Read calls per minute» / «Read calls per day» | 60 / 2000 | Lecturas por conexión. |
@@ -62,6 +62,8 @@ Los límites se pueden bajar y no subir; valores e intervalos en references/limi
 | «Answer size» | 48000 | Caracteres por respuesta; lo que excede se corta y se marca. |
 | «Users per bulk action» | 50 | Usuarios por matrícula, o por suspensión o reactivación de matrículas. |
 | «Recipients per message» | 50 | Destinatarios por mensaje. |
+| «Forum posts per day» | 20 | Debates y respuestas que una conexión puede publicar en foros en un día (1 a 20). |
+| «Days per log query» | 31 | Periodo máximo de una consulta de registros, de participación o de actividad del sitio (1 a 31). |
 | «Keep the record of calls for» | 180 | Días de conservación de la auditoría (30 a 730). |
 | «Keep network addresses» | Encendido | Guarda la dirección de red de cada petición en la auditoría y con las credenciales. |
 | «Assistants that can work unattended» | copilot-cowork | Identificadores de asistentes que pueden trabajar sin nadie delante. Para ellos todo cambio exige aprobación en el sitio. Se pueden añadir; el de fábrica se conserva siempre. |
@@ -70,8 +72,10 @@ Validaciones visibles: «Enter a whole number between … and ….» en los núm
 
 ## «Actions by profile» (acciones por perfil)
 Una fila por acción con una casilla por cada perfil que puede usarla; botón de guardar cambios; mensaje «Changes saved: N.».
-- «Actions that read» (acciones que leen): 22, encendidas de fábrica.
-- «Actions that change something» (acciones que cambian algo): 9, apagadas de fábrica y tras cada actualización que añada alguna. Encender una a una y por perfil.
+- «Actions that read» (acciones que leen): 35. Las 22 de la primera versión, encendidas de fábrica; las 13 añadidas en la 0.3.0, apagadas al instalar y al actualizar.
+- «Actions that change something» (acciones que cambian algo): 11, apagadas de fábrica y tras cada actualización que añada alguna. Encender una a una y por perfil.
+- Las acciones de los plugins de Pluginia instalados (hoy, 3 de Pluginia Analytics 1.2.0) aparecen en la misma página, apagadas.
+- Las acciones de informes, foros y plugins de Pluginia solo llegan a las conexiones en las que la persona marcó su área al conectar: tras encenderlas, cada persona tiene que volver a conectar y marcar el área.
 - Debajo de cada acción, una línea indica su identificador, si lee o cambia, su grupo de permisos y los permisos de Moodle que se comprueban en cada llamada.
 - En las acciones de cambio, el desplegable «Extra step before "…"» elige el paso adicional: «Confirmation in two steps» o «Approval on this site». Solo se ofrecen el mínimo de la acción y los más estrictos.
 - Apagar una casilla retira la acción en el acto para todas las conexiones de ese perfil.
@@ -95,6 +99,7 @@ Tabla con «Check», «Status» («OK», «Optional», «Warning», «Error») y
 | «Server clock» | Muestra la hora del servidor; error si es claramente incorrecta | Sincronizar el reloj |
 | «Outgoing proxy» | Aviso: el sitio usa proxy de salida y se aceptan documentos de metadatos | Apagar «Accept assistants identified by a metadata document» si el servidor solo sale por el proxy |
 | «Pluginia Connect gateway» | «Optional» si el sitio no está registrado; aviso o error si lo está y algo falla | Los de la página de registro |
+| «Actions of Pluginia plugins» | «Optional» si ningún plugin de Pluginia ofrece acciones; aviso si alguna no se ha cargado, con el motivo | Actualizar el plugin nombrado a la versión que espera el conector, o el conector a su última versión |
 Cuando el sitio no puede llamarse a sí mismo, las comprobaciones de cabecera y de ruta salen como aviso: «The site could not call itself to run this check.» Hay que probarlas desde fuera, como indica el mensaje.
 
 ## «Gateway registration» (registro en la pasarela)

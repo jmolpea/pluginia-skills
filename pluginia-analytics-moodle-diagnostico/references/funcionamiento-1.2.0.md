@@ -1,4 +1,4 @@
-# Funcionamiento verificado: Pluginia Analytics 1.1.1
+# Funcionamiento verificado: Pluginia Analytics 1.2.0
 
 Revisión estática del 15-11-2026. Todo lo que sigue es un hecho leído en esa versión, salvo donde se indica «hipótesis» o «no verificado en ejecución».
 
@@ -77,6 +77,18 @@ Opción del curso «Enviar un resumen semanal de este curso a sus tutores» (en 
 - Exportación semanal programada por correo a destinatarios configurados (desde 1.1.1 la dirección se reconoce sin distinguir mayúsculas).
 - Seguimiento de alumnos: estado, último acceso, progreso y nota de una persona en todos sus cursos visibles.
 - Auditoría de preparación: comprobaciones con estado Correcto, Aviso o Error y enlace para corregir.
+
+## Uso desde un asistente con Pluginia Connect (desde 1.2.0)
+Opcional. Solo si el sitio tiene también Pluginia Connect 0.3.0 o posterior, otro plugin de Pluginia que conecta Claude, ChatGPT o Microsoft 365 Copilot con Moodle. Sin él, Pluginia Analytics funciona igual que en 1.1.1 y no carga nada nuevo.
+Tres acciones de solo lectura, que nunca devuelven nombres de alumnos:
+| Acción (nombre en pantalla) | Qué devuelve | Quién |
+|---|---|---|
+| «Get Pluginia Analytics course report» | Embudo del curso con porcentajes, finalización de cada actividad visible, eventos por semana (hasta 26 semanas), número de alumnos en cada nivel de riesgo y alerta, media de días hasta el primer acceso y hasta completar, horas de formación impartidas | Permiso «Ver las analíticas del curso»; en un curso con grupos separados, solo quien ve todos los grupos (las cifras son del curso entero) |
+| «Get Pluginia Analytics site report» | Embudo del sitio, registros, finalizaciones y activos de los últimos doce meses, embudo de cada curso visible de mayor a menor | Permiso «Ver el panel del sitio» y perfil de gestor o administrador en Pluginia Connect |
+| «Get Pluginia Analytics messaging settings» | Si los mensajes y el resumen semanal están activos en el curso, plazo entre mensajes, umbrales, cada automatización con su umbral y el origen de su texto (curso, sitio o predeterminado), mensajes enviados | Permiso «Gestionar los mensajes» del curso |
+No devuelven demografía, geografía, satisfacción, la lista nominal de alumnos en riesgo, el recorrido de un alumno, el asunto ni el texto de los mensajes, ni nada de la configuración de IA o de la licencia. No cambian nada ni usan la IA configurada.
+Vienen apagadas: el administrador las enciende en Pluginia Connect («Actions by profile») y la persona marca «Pluginia plugins» al conectar su asistente. Siguen la misma regla de licencia que los paneles.
+El informe de sitio lee las cifras ya preparadas: si todavía no lo están (instalación reciente, cachés vaciadas, cron parado), responde que se están preparando y deja en cola su cálculo, como el panel.
 
 ## Licencia
 - 15 días de evaluación completa desde la instalación, sin clave.

@@ -1,6 +1,6 @@
-# Funcionamiento de Pluginia Connect: versión 0.2.0
+# Funcionamiento de Pluginia Connect: versión 0.3.0-dev
 
-Revisión estática del código de la versión 0.2.0, hecha el 24-11-2026 y revisada el 25-11-2026. Madurez declarada: alfa. Compatibilidad declarada: Moodle 4.5 a 5.3, PHP 8.1 o superior. Manual público: https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y
+Revisión estática del código de la versión 0.3.0-dev (sin publicar), hecha el 25-11-2026 sobre la de la 0.2.0 del 24-11-2026. Madurez declarada: alfa. Compatibilidad declarada: Moodle 4.5 a 5.3, PHP 8.1 o superior. Manual público: https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y
 Salvo que se indique «probable» o «según la documentación del proyecto», todo lo que sigue es un hecho verificado leyendo el código, no una prueba en un Moodle real.
 El plugin solo trae la interfaz en inglés: los nombres entre comillas son los que salen en pantalla, con su traducción entre paréntesis.
 
@@ -19,12 +19,12 @@ El asistente nunca recibe la contraseña: la persona entra en el sitio como siem
 Cuatro reglas explican casi todo:
 1. Decide el sitio. Cada llamada se comprueba en el sitio, en ese momento, contra los permisos reales de la persona en el curso, la categoría o el sitio de que se trate.
 2. Cada capa solo resta. Lo que puede hacer una conexión es la intersección de: permisos de la persona en Moodle, perfil elegido al conectar, permisos concedidos en la página de consentimiento (solo lectura, o lectura y cambios) y política del sitio (ajustes y «Actions by profile»).
-3. Lista cerrada. Solo existen las 31 acciones del catálogo: 22 que leen y 9 que cambian algo. No hay ninguna acción genérica del tipo «ejecuta esta función» o «ejecuta esta consulta».
-4. Apagado de fábrica. Al instalar, el conector y los dos modos de conexión están apagados. Las acciones de cambio siguen apagadas hasta que el administrador enciende cada una para cada perfil, y ninguna se aplica la primera vez que se pide.
+3. Lista cerrada. Solo existen las 46 acciones del catálogo (35 que leen y 11 que cambian algo) y las que añaden los plugins de Pluginia de una lista fija, si están instalados (hoy, 3 de Pluginia Analytics 1.2.0 o posterior). No hay ninguna acción genérica del tipo «ejecuta esta función» o «ejecuta esta consulta».
+4. Apagado de fábrica. Al instalar, el conector y los dos modos de conexión están apagados. Las acciones de cambio, las 13 de lectura añadidas en la 0.3.0 y las de los plugins de Pluginia siguen apagadas hasta que el administrador enciende cada una para cada perfil, al instalar y al actualizar; solo las 22 de lectura de la primera versión vienen encendidas. Ninguna acción de cambio se aplica la primera vez que se pide.
 
 Lo que no hace:
-- No actúa sobre otros plugins, sobre actividades distintas de las que cubre el catálogo ni sobre contenidos fuera de él. De los foros solo lee y publica en el foro de avisos del curso. No lee cuestionarios, mensajes privados, bases de datos, wikis ni contenido de archivos (de un archivo adjunto devuelve nombre, tamaño y tipo, nunca el contenido ni un enlace de descarga).
-- No borra nada: ni cursos, ni usuarios, ni matrículas, ni calificaciones, ni entregas. Ninguna acción del catálogo borra. No existe la baja de matrícula: una matrícula se suspende o se reactiva. Un aviso publicado o un mensaje enviado no se pueden retirar desde el asistente.
+- No actúa sobre otros plugins (salvo las acciones de los plugins de Pluginia de la lista), sobre actividades distintas de las que cubre el catálogo ni sobre contenidos fuera de él. En los foros lee los debates que la persona puede leer y, si se enciende, abre debates y responde a su nombre; nunca edita ni borra mensajes, ni hace respuestas privadas ni adjunta archivos. De los cuestionarios solo da intentos, estado y nota más alta, nunca preguntas ni respuestas. No lee mensajes privados, bases de datos, wikis ni contenido de archivos (de un archivo adjunto devuelve nombre, tamaño y tipo, nunca el contenido ni un enlace de descarga).
+- No borra nada: ni cursos, ni usuarios, ni matrículas, ni calificaciones, ni entregas, ni mensajes de foro. Ninguna acción del catálogo ni de un plugin de Pluginia borra. No existe la baja de matrícula: una matrícula se suspende o se reactiva. Un aviso publicado o un mensaje enviado no se pueden retirar desde el asistente.
 - Todo se ejecuta y se registra como la persona conectada. Ninguna acción actúa en nombre de otro usuario ni deja constancia a nombre de otro.
 - No concede nada que la persona no pueda hacer ya en el sitio, y un perfil alto no da más permisos: es solo un tope.
 - No deja crear una conexión a un invitado, a una cuenta suspendida, sin confirmar o sin acceso, ni a un administrador que ha entrado «como» otro usuario.
@@ -49,11 +49,11 @@ La página «Diagnostics» (diagnóstico) comprueba todo lo anterior; ver refere
 ## Cómo se crea una conexión
 1. La persona inicia la conexión desde su asistente.
 2. El sitio le pide que entre como siempre (incluida la autenticación en varios pasos si el sitio la usa).
-3. El sitio muestra «Connect an AI assistant» (conectar un asistente de IA) con: «Asking for access» (quién pide acceso), «You will be sent back to» (a dónde se la devolverá), «Profile for this connection» (perfil), «Access level» (nivel de acceso: «Read only», solo lectura, marcado de fábrica; «Read and changes», lectura y cambios, solo si se le puede ofrecer), la lista de acciones que podrá usar el asistente con cada perfil, el aviso de la institución y el enlace a su política de privacidad si están configurados.
+3. El sitio muestra «Connect an AI assistant» (conectar un asistente de IA) con: «Additional areas» (áreas adicionales: «Course reports», «Forums», «Pluginia plugins»), casillas sin marcar salvo las que ya concedió a esa misma aplicación, que solo aparecen si el área tiene alguna acción encendida para sus perfiles; y además «Asking for access» (quién pide acceso), «You will be sent back to» (a dónde se la devolverá), «Profile for this connection» (perfil), «Access level» (nivel de acceso: «Read only», solo lectura, marcado de fábrica; «Read and changes», lectura y cambios, solo si se le puede ofrecer), la lista de acciones que podrá usar el asistente con cada perfil, el aviso de la institución y el enlace a su política de privacidad si están configurados.
 4. Al pulsar «Allow» (permitir) se crea la conexión. Nunca hay aprobación silenciosa: la página se muestra siempre, también a quien ya conectó antes.
 5. La persona recibe la notificación «An AI assistant was connected to your account» con un enlace para desconectar si no ha sido ella.
 «Read and changes» solo se ofrece si no está activo «Read-only mode», si la persona tiene el permiso «Allow AI assistant connections to request changes» en al menos un curso dentro del alcance del sitio, si hay alguna acción de cambio encendida en «Actions by profile» para alguno de los perfiles que esa persona puede elegir (sin ninguna, la opción no añadiría nada y no se muestra) y, con Copilot Cowork, si el sitio no lo ha limitado a solo lectura.
-Lo concedido queda fijado en ese momento: solo entran los grupos de permisos que tienen alguna acción encendida para ese perfil. Si el administrador enciende después una acción de un grupo que la conexión no tiene, hay que desconectar y volver a conectar.
+Lo concedido queda fijado en ese momento: solo entran los grupos de permisos que tienen alguna acción encendida para ese perfil y, de las áreas adicionales, solo las marcadas. Si el administrador enciende después una acción de un grupo que la conexión no tiene, hay que desconectar y volver a conectar.
 Qué pide el asistente al conectarse lo decide el ajuste «Permissions an assistant asks for when it connects». El sitio anuncia una lista de grupos de permisos y asistentes como Claude piden exactamente esa lista, una sola vez, sin ampliarla después. La página de consentimiento solo puede conceder lo que el asistente pidió, recortado por el perfil y el nivel de acceso que elige la persona.
 - Con el valor de fábrica, «Everything switched on in this site (recommended)», el sitio anuncia la lectura básica más todos los grupos que tienen alguna acción encendida en «Actions by profile» para algún perfil permitido en el sitio. Si «Read-only mode» está encendido o el conector apagado, no anuncia ningún grupo de cambio. La lista se calcula en cada petición: encender o apagar una acción, un perfil o el modo de solo lectura cambia lo que se anuncia al momento.
 - Con «Basic reading only: profile, courses and grades», solo anuncia leer el perfil, los cursos y las calificaciones de la persona. Con un asistente que no pide más por su cuenta, la página de consentimiento solo ofrece «Read only» y todos los perfiles muestran la misma lista de acciones, sin las de docente, gestor ni administrador.
@@ -98,7 +98,35 @@ La lista de perfiles disponibles para una persona se recuerda diez minutos como 
 | Administrador | «List installed plugins» | Plugins instalados |
 Todas están encendidas de fábrica en «Actions by profile», pero no sirven de nada hasta que se enciende el conector, un modo y el perfil correspondiente.
 
-## Catálogo: 9 acciones que cambian algo
+## Catálogo: 13 acciones que leen, añadidas en la 0.3.0
+Todas apagadas de fábrica, también al actualizar desde la 0.2.0. Las de informes y foros solo llegan a una conexión si la persona marcó al conectar la casilla de su área («Course reports» o «Forums»).
+| Perfil mínimo | Acción (título en pantalla) | Qué devuelve | Área |
+|---|---|---|---|
+| Docente | «Get course activity log» (registro de actividad del curso) | Eventos del registro estándar de un curso en un periodo obligatorio de 31 días como máximo; opcionalmente de un participante o de una actividad. Nunca la dirección IP ni los eventos anónimos. Con grupos separados, solo los de sus grupos | Informes |
+| Docente | «Get activity participation report» (participación en una actividad) | Por alumno, vistas y publicaciones en una actividad en un periodo, también quienes no la abrieron | Informes |
+| Docente | «Get activity completion report» (finalización por actividad) | Por alumno, actividades completadas, aprobadas, suspendidas y pendientes | Informes |
+| Docente | «Get quiz attempts report» (resultados de un cuestionario) | Por alumno, intentos, estado del último y nota más alta; sin preguntas ni respuestas; sin las vistas previas de los docentes | Informes |
+| Docente | «Get course progress summary» (resumen del avance) | Solo cifras, sin nombres: alumnos, progreso medio y mediano, alumnos por tramo de avance, terminados, sin entrar nunca, inactivos y con tareas vencidas | Informes |
+| Docente | «List overdue submissions» (entregas vencidas sin presentar) | Alumnos con tareas vencidas y sin entregar, con la fecha que les aplica (excepciones y prórrogas incluidas) y los días de retraso. Deja fuera, y cuenta, las tareas en equipo y las de calificación anónima | Informes |
+| Docente | «Get forum participation summary» (participación en un foro) | Por alumno, debates abiertos, respuestas y último mensaje | Informes |
+| Docente | «List course forums» (foros del curso) | Foros que puede leer, con tipo y número de debates | Foros |
+| Docente | «List forum discussions» (debates de un foro) | Debates: asunto, autor, respuestas, última actividad | Foros |
+| Docente | «Get forum discussion» (leer un debate) | Mensajes de un debate como texto sin formato y sin adjuntos; el texto oculto se quita | Foros |
+| Administrador | «Get site activity summary» (actividad del sitio) | Solo recuentos en un periodo de 31 días como máximo: personas distintas que han entrado y entradas, entradas fallidas, vistas de curso, usuarios activos, día a día, y los diez cursos más vistos. Sin nombres | Informes |
+| Administrador | «List failed tasks» (tareas fallidas) | Tareas que fallan y últimas ejecuciones fallidas con un extracto de 2.000 caracteres de su salida, con rutas, direcciones y correos sustituidos; si parece contener una contraseña o una clave, no se devuelve | — |
+| Administrador | «Get site checks» (comprobaciones del sitio) | Resultado de las comprobaciones de estado, seguridad o rendimiento de Moodle, con resumen en texto | — |
+Para un tutor: el avance de sus alumnos y los porcentajes salen de «Get course progress summary» (cifras) y de «Get course completion report» o «Get activity completion report» (por alumno); quién va con retraso, de «List overdue submissions» (entregas) y «List inactive participants» (sin entrar). Para el administrador, las visitas del sitio salen de «Get site activity summary».
+
+## Acciones de los plugins de Pluginia
+El conector solo acepta acciones de una lista fija de plugins de Pluginia y comprueba cada una al cargarla: que solo lea o que, si cambia algo, solo acepte opciones cerradas; que no lea ni escriba claves, licencias, instrucciones de la IA, proveedor, modelo ni coste; que no borre ni actúe en nombre de otro. Una acción que no cumple no se carga y la página «Diagnostics» lo dice en «Actions of Pluginia plugins»; las demás siguen funcionando. Todas nacen apagadas y van en el área «Pluginia plugins» del consentimiento. Si se desinstala el plugin, sus acciones desaparecen.
+| Plugin | Perfil mínimo | Acción (título en pantalla) | Qué devuelve |
+|---|---|---|---|
+| Pluginia Analytics 1.2.0 | Docente | «Get Pluginia Analytics course report» | Embudo de aprendizaje, finalización por actividad, actividad semanal y número de alumnos en cada nivel de riesgo, solo cifras. En un curso con grupos separados se niega a quien no ve todos los grupos |
+| Pluginia Analytics 1.2.0 | Gestor | «Get Pluginia Analytics site report» | Embudo del sitio, últimos doce meses y embudo de cada curso; mientras el plugin prepara las cifras, lo dice |
+| Pluginia Analytics 1.2.0 | Docente | «Get Pluginia Analytics messaging settings» | Si los mensajes automáticos y el resumen semanal están activos, umbrales y número de mensajes enviados; nunca el texto de los mensajes |
+Siguen la misma regla de licencia que los paneles del plugin: con la evaluación terminada sin licencia, responden que hace falta una licencia activa.
+
+## Catálogo: 11 acciones que cambian algo
 | Perfil mínimo | Acción (título en pantalla) | Paso adicional mínimo | A qué se limita |
 |---|---|---|---|
 | Docente | «Save assignment grade» (guardar calificación) | Confirmación en dos pasos | Un alumno por llamada. Rechaza tareas con rúbrica o guía de evaluación, tareas sin calificación y notas bloqueadas o anuladas. No toca el estado del flujo de calificación |
@@ -110,6 +138,8 @@ Todas están encendidas de fábrica en «Actions by profile», pero no sirven de
 | Gestor | «Create course» (crear curso) | Confirmación en dos pasos | Un curso vacío, siempre oculto para los alumnos |
 | Gestor | «Set enrolment status» (suspender o reactivar matrícula) | Aprobación en el sitio | Suspende o reactiva la matrícula de usuarios concretos en un curso. No borra la matrícula ni las notas, entregas, roles o grupos. Solo matrícula manual; nunca la propia |
 | Administrador | «Set user suspension» (suspender o reactivar cuenta) | Aprobación en el sitio | Una cuenta entera del sitio (no puede entrar en ningún curso); nunca un administrador del sitio, el invitado ni la propia |
+| Docente | «Post forum discussion» (abrir un debate) | Confirmación en dos pasos | Un debate de texto en un foro del curso, siempre a nombre de la persona conectada, sin adjuntos. Rechaza el foro de avisos y, en un foro con grupos, pide el grupo salvo a quien ve todos. Nueva en 0.3.0, área «Forums» |
+| Docente | «Reply to forum post» (responder en un foro) | Confirmación en dos pasos | Una respuesta de texto, siempre a nombre de la persona conectada; nunca privada, nunca edita ni borra mensajes. El foro decide si se admite. Nueva en 0.3.0, área «Forums» |
 No confundir «Set enrolment status» (la matrícula en un curso; la persona sigue pudiendo entrar al sitio y a sus otros cursos) con «Set user suspension» (la cuenta entera). En esta versión no existe ninguna acción para dar de baja o borrar una matrícula: eso se hace en el sitio.
 Todas están apagadas tras instalar o actualizar. Además de encender la acción hace falta: conexión con «Read and changes», el permiso «Allow AI assistant connections to request changes» en el curso o lugar donde se hace el cambio (de fábrica: profesor con edición y gestor; el profesor sin edición no) y los permisos propios de Moodle para esa operación.
 

@@ -1,6 +1,6 @@
-# Límites y valores de fábrica: Pluginia Analytics 1.1.1
+# Límites y valores de fábrica: Pluginia Analytics 1.2.0
 
-Valores leídos en la versión 1.1.1 el 15-11-2026. Un límite documentado es un hecho; que haya causado un caso concreto es una conclusión aparte.
+Valores leídos en la versión 1.2.0 el 25-11-2026 (sin cambios respecto a la 1.1.1 salvo el uso con Pluginia Connect). Un límite documentado es un hecho; que haya causado un caso concreto es una conclusión aparte.
 
 ## Datos y actualización
 | Elemento | Valor verificado |
@@ -93,3 +93,13 @@ Destinos de red: api.anthropic.com, api.openai.com, generativelanguage.googleapi
 | Ligadura de la clave | Dirección exacta del sitio |
 
 No hay límites verificados distintos de estos; no inventar topes (por ejemplo, de número de cursos del sitio o de alumnos por curso).
+
+## Uso con Pluginia Connect (1.2.0)
+| Elemento | Valor |
+|---|---|
+| Versión mínima de Pluginia Connect | 0.3.0 |
+| Acciones | 3, solo de lectura, apagadas de fábrica |
+| Actividades listadas en el informe de curso | 50 como máximo |
+| Semanas de actividad en el informe de curso | Las últimas 26 |
+| Cursos por llamada en el informe del sitio | 50 como máximo, con continuación |
+| Curso con grupos separados | Informe de curso solo para quien ve todos los grupos |

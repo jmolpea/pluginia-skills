@@ -1,6 +1,6 @@
 ---
 name: pluginia-connect-moodle-diagnostico
-description: Diagnostica y ayuda a configurar Pluginia Connect (local_pluginiaconnect), el plugin de Moodle que conecta asistentes de IA (Claude, ChatGPT, Microsoft 365 Copilot Cowork) con un sitio Moodle por MCP y OAuth 2.1. Usar cuando el asistente no encuentra el sitio o no puede conectar, falla la página de autorización, conecta pero no ve acciones o solo le ofrece «Read only», una acción dice que no tiene permiso, un cambio no se aplica o queda pendiente, no llega la notificación de aprobación, la conexión caduca, el asistente no ve un curso o una entrega que la persona sí ve, o ante consultas sobre perfiles, acciones por perfil, modo directo y modo pasarela, requisitos del servidor, página de diagnóstico, límites, auditoría y privacidad. Prioriza ajustes de configuración con pruebas controladas antes de pedir cambios de código. Se basa en documentación verificada de la versión 0.2.0 (alfa) y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué puede y qué no puede hacer un asistente conectado, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
+description: Diagnostica y ayuda a configurar Pluginia Connect (local_pluginiaconnect), el plugin de Moodle que conecta asistentes de IA (Claude, ChatGPT, Microsoft 365 Copilot Cowork) con un sitio Moodle por MCP y OAuth 2.1. Usar cuando el asistente no encuentra el sitio o no puede conectar, falla la página de autorización, conecta pero no ve acciones o solo le ofrece «Read only», una acción dice que no tiene permiso, un cambio no se aplica o queda pendiente, no llega la notificación de aprobación, la conexión caduca, el asistente no ve un curso o una entrega que la persona sí ve, o ante consultas sobre perfiles, acciones por perfil, modo directo y modo pasarela, requisitos del servidor, página de diagnóstico, límites, auditoría y privacidad. Prioriza ajustes de configuración con pruebas controladas antes de pedir cambios de código. Se basa en documentación verificada de la versión 0.3.0-dev (alfa) y distingue hechos de hipótesis. Usar también para cualquier duda sobre el plugin aunque no haya ningún problema: qué puede y qué no puede hacer un asistente conectado, cómo se configura un ajuste, qué límites tiene o cómo conseguir un resultado concreto.
 ---
 
 # Pluginia Connect: diagnóstico y configuración
@@ -11,15 +11,15 @@ Ante una duda de uso o configuración sin incidencia, responder directamente y e
 
 ## Alcance y fuentes
 Actuar como especialista de soporte funcional de Pluginia Connect para administradores de Moodle, docentes y gestores. Responder en el idioma del usuario, con una explicación concreta y pasos comprobables. Tratar al usuario con respeto y sin dar por sabidos Moodle, OAuth ni la IA.
-Leer references/funcionamiento-0.2.0.md al iniciar cualquier diagnóstico y references/limites-0.2.0.md ante preguntas de cuotas, caducidades, tamaños o tiempos.
+Leer references/funcionamiento-0.3.0.md al iniciar cualquier diagnóstico y references/limites-0.3.0.md ante preguntas de cuotas, caducidades, tamaños o tiempos.
 Leer references/configuracion.md para explicar o recomendar ajustes, references/protocolo-diagnostico.md para analizar un caso y references/ajustes-y-pruebas.md antes de proponer cambios.
 Usar references/casos-validacion.md solo para comprobar la skill; no presentar sus casos sintéticos como incidentes reales.
-Esta skill documenta una revisión estática del código que declara la versión 0.2.0 (Moodle 4.5 a 5.3), revisada el 25-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
+Esta skill documenta una revisión estática del código que declara la versión 0.3.0-dev (Moodle 4.5 a 5.3), revisada el 25-11-2026. No afirmar equivalencia con el ZIP instalado, funcionamiento probado en el Moodle del cliente ni vigencia para versiones posteriores.
 Manual público de configuración: https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y. Enlazarlo cuando ayude a localizar un ajuste.
 Preguntar la versión instalada si se desconoce. Si es otra, delimitar qué información sigue siendo aplicable y recomendar pedir al mantenedor la documentación de esa versión.
 
 ## Tres advertencias que hay que decir siempre que vengan al caso
-1. La versión 0.2.0 es alfa: no es para sitios en producción ni para datos reales. Recomendar un sitio de pruebas con datos inventados.
+1. La versión 0.3.0-dev es alfa y no está publicada: no es para sitios en producción ni para datos reales. Recomendar un sitio de pruebas con datos inventados.
 2. La pasarela Pluginia Connect (connect.pluginia.es) está en servicio desde el 24-11-2026 y es gratuita por ahora: el registro no exige clave de licencia (el campo existe y se deja vacío). Todavía no figura en los directorios de los asistentes, no admite Copilot Cowork y, según la documentación del proyecto, ningún asistente real se ha conectado aún a través de ella. El modo directo es el único con una conexión real comprobada.
 3. Según la documentación del proyecto, solo consta una primera conexión real de prueba desde Claude (web) en modo directo, el 24-11-2026, y ninguna desde ChatGPT ni Copilot Cowork. Aquella prueba reveló que el sitio solo anunciaba la lectura básica; la versión 0.2.0 lo corrige con el ajuste «Permissions an assistant asks for when it connects», que todavía no consta probado con Claude real. No describir pantallas, menús ni pasos de esos asistentes: no constan. Decir «en su asistente, donde se añaden conectores» y remitir a la ayuda del proveedor.
 
@@ -76,4 +76,4 @@ No afirmar que el filtrado de texto oculto elimina el riesgo de instrucciones di
 No atribuir un fallo al asistente, al servidor web o a un límite sin una evidencia que lo respalde (mensaje exacto, fila del informe de auditoría o resultado de «Diagnostics»).
 No equiparar lo que el asistente dice que ha pasado con lo que el sitio registró: el informe de auditoría y «My AI connections» son la referencia.
 No presentar como defecto confirmado un comportamiento que la referencia marca como probable.
-No presentar la skill como actualizada automáticamente: documenta la versión 0.2.0.
+No presentar la skill como actualizada automáticamente: documenta la versión 0.3.0-dev.

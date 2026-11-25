@@ -2,7 +2,7 @@
 
 ## Regla de intervención
 Buscar primero la solución en lo que el cliente puede cambiar. Cambiar una sola cosa cada vez y anotar el resultado real.
-La versión 0.2.0 es alfa: todas las pruebas se hacen en un sitio de pruebas con datos inventados, nunca con alumnos reales.
+La versión 0.3.0-dev es alfa: todas las pruebas se hacen en un sitio de pruebas con datos inventados, nunca con alumnos reales.
 No ampliar roles, encender perfiles ni activar acciones de cambio para «hacer desaparecer» un rechazo sin saber antes qué capa lo produjo (columna «Reason» de «Audit report»).
 Avisar de que lo que el asistente lee sale del sitio hacia el proveedor del asistente, que lo trata con sus propias condiciones, y de que cada prueba cuenta en los límites de la conexión.
 Tras cualquier cambio en el servidor web, volver a ejecutar «Diagnostics».
@@ -30,7 +30,7 @@ Tras cualquier cambio en el servidor web, volver a ejecutar «Diagnostics».
 | Usuario | Preferencias de notificación | Recibir o no los avisos de conexión y de aprobación |
 | Sitio | Mensajería y salidas de notificación de Moodle | Que funcionen el envío de mensajes y las notificaciones |
 
-## Lo que ningún ajuste cambia en la versión 0.2.0
+## Lo que ningún ajuste cambia en la versión 0.3.0-dev
 - El catálogo es de 31 acciones. No se pueden añadir acciones, ni hacer que el asistente actúe sobre otros plugins, otros foros, cuestionarios o archivos.
 - No se puede borrar nada desde el asistente, ni dar de baja una matrícula (solo suspenderla o reactivarla), ni retirar un aviso o un mensaje ya enviados.
 - Todo se ejecuta y se registra como la persona conectada; ninguna acción actúa en nombre de otro usuario.

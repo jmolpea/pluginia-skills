@@ -15,7 +15,7 @@ Contienen documentación funcional, no código: no necesitan acceso a su Moodle 
 | AI course recommender (`block_aicourserecommender`) | 1.0.0-beta5 | [recomendador-cursos-ia-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/recomendador-cursos-ia-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/LCZgLbHfAnSBkurowGLZ95) |
 | Forumia (`local_forumia`) | 1.8.4 | [forumia-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/forumia-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/Qg9adYg7HtbnatxfFCi825) |
 | AI Roleplay (`mod_airoleplay`) | 1.1.2 | [ai-roleplay-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/ai-roleplay-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/9rrxnBoMsHAgMzhKErn92D) |
-| Pluginia Analytics (`local_pluginia_analytics`) | 1.1.1 | [pluginia-analytics-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/pluginia-analytics-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/CZfR9hAnk2UnCQRgFTBH3R) |
+| Pluginia Analytics (`local_pluginia_analytics`) | 1.2.0 | [pluginia-analytics-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/pluginia-analytics-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/CZfR9hAnk2UnCQRgFTBH3R) |
 | Course custom head assets (`local_coursehead`) | 1.2.1 | [coursehead-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/coursehead-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/S1C8aFgCzaqxcegdHXqanX) |
 | AI Viva (`mod_aiviva`) | 1.3.2 | [ai-viva-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/ai-viva-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/RckemidnHhdYikr8HM2XHQ) |
 | RSMAX (`theme_rsmax`) | 1.4.3 | [tema-rsmax-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/tema-rsmax-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/UgYL8Job3Sh5p6a56HMjSQ) |
@@ -23,7 +23,7 @@ Contienen documentación funcional, no código: no necesitan acceso a su Moodle 
 | Decision Arena (`mod_decisionarena`) | 0.8.2 | [decision-arena-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/decision-arena-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/LWRnWzs6sxsFBc3Nx2AD3K) |
 | AI Live Session (`mod_ailivesession`) | 1.0.3 | [ai-live-session-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/ai-live-session-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/J58N9JJybXxofoznCsvqro) |
 | Registro por email con retorno al curso (`auth_coursereturn`) | 1.1.1 | [coursereturn-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/coursereturn-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/S9nVg3PK3GW412ms6GScy9) |
-| Pluginia Connect (`local_pluginiaconnect`) | 0.2.0 (alfa) | [pluginia-connect-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/pluginia-connect-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y) |
+| Pluginia Connect (`local_pluginiaconnect`) | 0.3.0-dev (alfa) | [pluginia-connect-moodle-diagnostico](https://github.com/jmolpea/pluginia-skills/raw/main/dist/pluginia-connect-moodle-diagnostico.zip) | [Manual](https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y) |
 
 Los enlaces de descarga no cambian: siempre bajan la última versión de la skill.
 

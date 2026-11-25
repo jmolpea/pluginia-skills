@@ -1,4 +1,4 @@
-# Configuración: ajustes de sitio y de curso (1.1.1)
+# Configuración: ajustes de sitio y de curso (1.2.0)
 
 Nombres tal como se ven en pantalla en español. Manual público con ejemplos y simuladores: https://claude.ai/artifact/CZfR9hAnk2UnCQRgFTBH3R
 

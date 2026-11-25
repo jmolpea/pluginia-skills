@@ -1,10 +1,10 @@
 # Protocolo de diagnóstico de Pluginia Connect
 
-Los mensajes entre comillas son los textos exactos de la versión 0.2.0, en inglés, como salen en pantalla o como los recibe el asistente (que suele repetirlos o parafrasearlos). Pedir siempre el texto literal.
+Los mensajes entre comillas son los textos exactos de la versión 0.3.0-dev, en inglés, como salen en pantalla o como los recibe el asistente (que suele repetirlos o parafrasearlos). Pedir siempre el texto literal.
 
 ## Ficha mínima
 Pedir solo lo que haga falta para la consulta. No pedir tokens, códigos, claves ni acceso de administrador.
-- Versión de Moodle y de Pluginia Connect. ¿Sitio de pruebas o de producción? (la 0.2.0 es alfa).
+- Versión de Moodle y de Pluginia Connect. ¿Sitio de pruebas o de producción? (la 0.3.0-dev es alfa).
 - Modo de conexión que se intenta: directo o pasarela (la pasarela está en servicio desde el 24-11-2026, sin conexión real de un asistente comprobada todavía).
 - Asistente (Claude, ChatGPT, Copilot Cowork u otro) y si es de escritorio, web o de línea de comandos.
 - Resultado de «Diagnostics»: las filas que no estén en «OK».
@@ -210,3 +210,11 @@ Con la clave vacía no deben salir los mensajes de licencia; si salen, comprobar
 
 ## Cierre
 Clasificar cada causa como confirmada, probable o no comprobable. Proponer el ajuste según references/ajustes-y-pruebas.md. Si hay que escalar, redactar la solicitud al mantenedor con pasos reproducibles, el mensaje literal, el «Request ID» y sin datos personales.
+
+## Acciones nuevas de la 0.3.0 que no aparecen
+1. ¿Están encendidas en «Actions by profile» para el perfil de la conexión? Vienen apagadas, también tras actualizar.
+2. ¿La persona marcó el área («Course reports», «Forums» o «Pluginia plugins») en «Additional areas» al conectar? Si la conexión es anterior o no la marcó, al llamarlas sale «This connection does not include the access this action needs. Reconnect to grant it.»: desconectar y volver a conectar marcándola.
+3. Informes con periodo: «'from' must be an ISO 8601 date-time with a time zone…» o «The period may cover at most N days on this site. Ask for a shorter period.» El asistente tiene que pedir un periodo de 31 días como máximo (o el de «Days per log query»).
+4. «The standard log of this site is switched off, so there is no activity to report.»: el registro estándar de Moodle está desactivado en el sitio.
+5. Foros: «This connection has published its N forum posts for today. Try again tomorrow.» (límite «Forum posts per day»); «This is the announcements forum of the course: use …» (para avisos está «Post course announcement»); «This forum uses groups: give … with one of your groups.» (en un foro con grupos hay que indicar uno de los grupos de la persona)
+6. Pluginia Analytics: «Pluginia Analytics needs an active licence on this site…» (licencia); «This report covers every group of the course, and the course uses separate groups.» (el informe de curso se niega a quien no ve todos los grupos).

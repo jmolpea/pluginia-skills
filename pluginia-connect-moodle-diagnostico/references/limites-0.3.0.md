@@ -1,6 +1,6 @@
-# Límites y valores de fábrica de Pluginia Connect: versión 0.2.0
+# Límites y valores de fábrica de Pluginia Connect: versión 0.3.0-dev
 
-Verificados leyendo el código de la versión 0.2.0 el 24-11-2026 y revisados el 25-11-2026. Los nombres entre comillas son los de la pantalla (en inglés). Manual: https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y
+Verificados leyendo el código de la versión 0.3.0-dev el 25-11-2026, sobre la revisión de la 0.2.0 del 24-11-2026. Los nombres entre comillas son los de la pantalla (en inglés). Manual: https://claude.ai/artifact/XSFJRPaBcavfAJyFBo7K2Y
 
 ## Cómo interpretar los valores
 Distinguir tres clases:
@@ -21,8 +21,11 @@ Los contadores van por ventanas de reloj (el minuto, la hora o el día en curso 
 | Perfil «Teacher» | Encendido |
 | Perfil «Manager» | Encendido |
 | Perfil «Administrator» | Apagado |
-| Las 22 acciones que leen | Encendidas para sus perfiles |
-| Las 9 acciones que cambian algo | Apagadas para todos los perfiles |
+| Las 22 acciones que leen de la primera versión | Encendidas para sus perfiles |
+| Las 13 acciones que leen añadidas en la 0.3.0 | Apagadas para todos los perfiles, también al actualizar |
+| Las 11 acciones que cambian algo | Apagadas para todos los perfiles |
+| Las acciones de los plugins de Pluginia | Apagadas para todos los perfiles |
+| Casillas de «Additional areas» al conectar | Sin marcar, salvo las que la persona ya concedió a esa aplicación |
 | Nivel de acceso propuesto al conectar | «Read only» |
 | «Permissions an assistant asks for when it connects» | «Everything switched on in this site (recommended)» |
 | «Include hidden courses» | Apagado |
@@ -58,14 +61,18 @@ Los valores nuevos se aplican a las conexiones y renovaciones posteriores al cam
 | Cambios por día | «Changes per day» | 200 | 1 a 200 |
 | Registros de otras personas por hora | «Records of other people per hour» | 1.000 | 1 a 1.000 |
 | Destinatarios de mensajes por día | Fijo | 200 | — |
+| Publicaciones en foros por día | «Forum posts per day» | 20 | 1 a 20 |
+| Días por consulta de registros (actividad del curso, participación, actividad del sitio) | «Days per log query» | 31 | 1 a 31 |
 De fábrica todos están ya en su máximo, salvo el tamaño de la respuesta.
-Mensajes que recibe el asistente: «Too many requests. Try again in N seconds.»; «This connection has reached its hourly limit of records about other people. Try again in N seconds.»; «This connection can message 200 recipients per day and has N left today.»
-El límite por hora de registros de otras personas afecta a participantes, entregas, libro de calificaciones, informe de finalización, participantes inactivos y búsqueda de usuarios, y a los cambios cuya descripción nombra a personas. Al alcanzarlo se lanza un evento.
+Mensajes que recibe el asistente: «This connection has published its N forum posts for today. Try again tomorrow.»; «The period may cover at most N days on this site. Ask for a shorter period.»; «Too many requests. Try again in N seconds.»; «This connection has reached its hourly limit of records about other people. Try again in N seconds.»; «This connection can message 200 recipients per day and has N left today.»
+El límite por hora de registros de otras personas afecta a participantes, entregas, libro de calificaciones, informes de finalización, participantes inactivos, búsqueda de usuarios, registro de actividad (cada evento de otra persona), participación, resultados de cuestionarios, entregas vencidas, debates y mensajes de foros, y a los cambios cuya descripción nombra a personas. Al alcanzarlo se lanza un evento.
 Los límites de lectura y de cambios son exactos también con llamadas simultáneas: cada llamada se cuenta de una en una.
 Las llamadas de una misma conexión que devuelven datos de otras personas se atienden de una en una. Si una espera más de 10 segundos a la anterior, responde límite alcanzado con reintento a los 5 segundos: «Another request of this connection is still reading records about other people. Try again in 5 seconds.»
 Si los contadores no están disponibles, las llamadas se rechazan.
 
 ## Tamaños
+Extracto de la salida de una tarea fallida: 2.000 caracteres como máximo, con el final de la salida. Comprobaciones del sitio: dejan de lanzarse a los 15 segundos de la llamada; las restantes salen como no ejecutadas.
+
 | Límite | Ajuste | De fábrica | Mínimo y máximo |
 |---|---|---|---|
 | Elementos por llamada | «Items per page» | 50 | 1 a 50 |
